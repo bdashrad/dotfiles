@@ -9,7 +9,7 @@ else
 fi
 
 # IP addresses
-alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias wanip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias lanip="ipconfig getifaddr en1"
 
 # Enhanced WHOIS lookups
