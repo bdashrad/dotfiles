@@ -1,0 +1,7 @@
+[user]
+  email = bdashrad@gmail.com
+  name = Brad Clark
+
+[core]
+  excludesfile = ~/.gitignore
+  attributesfile = ~/.gitattributes
