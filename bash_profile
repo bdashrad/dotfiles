@@ -27,11 +27,17 @@ export HISTTIMEFORMAT='%F %T '
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+# Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# Add brew coreutils to $PATH
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
-# Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+# system bash completion
+[ -f /etc/bash_completion ] && source /etc/bash_completion
 
 # enable homebrew bash_completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
