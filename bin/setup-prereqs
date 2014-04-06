@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# install rvm stable
+\curl -sSL https://get.rvm.io | bash -s stable
+
+# install homebrew
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+
+# install brew apps
+brew bundle ~/Brewfile
