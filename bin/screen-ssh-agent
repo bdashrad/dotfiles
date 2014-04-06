@@ -1,0 +1,3 @@
+#!/bin/sh
+#ssh-agent | head -2 | cut -d\; -f1 | sed s/^/setenv\ / | sed s/=/\ /  > $HOME/.ssh/screen_agent
+echo -e "setenv setenv SSH_AUTH_SOCK ${SSH_AUTH_SOCK}\nsetenv SSH_AGENT_PID $SSH_AGENT_PID" > $HOME/.ssh/screen_agent
