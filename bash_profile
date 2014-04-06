@@ -2,8 +2,6 @@
 
 # Environment
 export TZ=US/Eastern
-export FULLNAME="Brad Clark"
-export EMAIL="me@bdashrad.com"
 export EDITOR=$(which vim)
 
 # set PATH so it includes user's private bin if it exists
