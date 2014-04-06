@@ -20,7 +20,7 @@ set diffopt=filler " Add vertical spaces to keep right and left aligned
 set hidden " leave buffers open with unsaved changes when opening new files
 set hlsearch " Highlight searches
 set history=1000 " command history length
-set nu " enable line numbers
+set number " enable line numbers
 set title  " Show the filename in the window titlebar.
 set ruler" show cursor position
 set visualbell
