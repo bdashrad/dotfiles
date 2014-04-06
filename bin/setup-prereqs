@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# install xcode command line tools
+echo "Installing xcode-command line tools"
+xcode-select --install
+
 # install rvm stable
 echo "Installing rvm..."
 \curl -sSL https://get.rvm.io | bash -s stable
