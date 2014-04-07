@@ -6,11 +6,16 @@ export EDITOR=$(which vim)
 
 # ignore duplicate history lines
 export HISTCONTROL=ignoredupes:ignorespace
+
 # Larger bash history (32^3 entries)
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
-# set timestamps
+
+# set timestamps in history
 export HISTTIMEFORMAT='%F %T '
 
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# aws-cli config file
+export AWS_CONFIG_FILE=/Users/brad.clark/.aws/config
