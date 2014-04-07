@@ -17,9 +17,6 @@ shopt -s histappend
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 # Add brew coreutils to $PATH
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
