@@ -18,4 +18,4 @@ export HISTTIMEFORMAT='%F %T '
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # aws-cli config file
-export AWS_CONFIG_FILE=/Users/brad.clark/.aws/config
+export AWS_CONFIG_FILE=$HOME/.aws/config
