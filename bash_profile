@@ -33,4 +33,4 @@ shopt -s histappend
 [ -f "/usr/local/bin/aws_completer" ] && complete -C aws_completer aws
 
 # include .bashrc if it exists
-[ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
+#[ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
