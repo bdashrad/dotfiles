@@ -19,3 +19,9 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # aws-cli config file
 export AWS_CONFIG_FILE=$HOME/.aws/config
+
+# homebrew applications
+export PATH="/usr/local/bin:$PATH"
+
+# java home
+export JAVA_HOME=$(/usr/libexec/java_home)
