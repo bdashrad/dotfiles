@@ -23,3 +23,6 @@ alias trimcopy="tr -d '\n' | pbcopy"
 
 # ROT13-encode text. Works for decoding, too! ;)
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
+
+# Update fork from upstream repo
+alias gitupstream='echo -n "rebase current repo with upstream repo? (CTRL+C to quit): "; read doit; git fetch upstream; git rebase upstream/master;'
