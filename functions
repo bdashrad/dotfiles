@@ -19,3 +19,13 @@ function epoch2human()
 {
   date -d @$1
 }
+
+function epoch2iso8601
+{
+  date -d @$1 -Iseconds
+}
+
+function taskdate2epoch()
+{
+  date -d "$1" +%s
+}
