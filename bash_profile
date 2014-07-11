@@ -32,5 +32,8 @@ shopt -s histappend
 # enable aws-cli completion
 [ -f "/usr/local/bin/aws_completer" ] && complete -C aws_completer aws
 
+# use homebrew coreutils manpages
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
 # include .bashrc if it exists
 #[ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
