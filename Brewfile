@@ -24,6 +24,7 @@ install ack
 install git
 install rename
 install tree
+install terminal-notifier
 
 # Install more recent versions of some OS X tools
 # tap homebrew/dupes
