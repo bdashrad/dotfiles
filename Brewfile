@@ -30,6 +30,9 @@ install tree
 # install homebrew/dupes/grep
 # tap josegonzalez/homebrew-php
 
+# Install some linters
+install shellcheck
+
 # Install homebrew-cask
 tap phinze/cask
 install brew-cask
