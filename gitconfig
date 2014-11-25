@@ -1,3 +1,22 @@
 [core]
   excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
+
+[mergetool "p4merge"]
+  cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+  keepTemporaries = false
+  trustExitCode = false
+  keepBackup = false
+
+[merge]
+  tool = p4merge
+  prompt = false
+
+[difftool "p4merge"]
+  cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$LOCAL" "$REMOTE"
+
+[diff]
+  tool = p4merge
+
+[difftool]
+  prompt = false
