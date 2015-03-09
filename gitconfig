@@ -19,6 +19,11 @@
 [difftool "p4merge"]
   cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$LOCAL" "$REMOTE"
 
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+
 [merge]
   tool = kdiff3
   prompt = false
@@ -39,7 +44,5 @@
   cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
   trustExitCode = false
 
-[filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
+[push]
+  default = simple
