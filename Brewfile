@@ -18,6 +18,8 @@ install wget --enable-iri
 
 # Install bash-completion
 install bash-completion
+brew tap homebrew/completions
+brew install vagrant-completion
 
 # Install everything else
 install ack
