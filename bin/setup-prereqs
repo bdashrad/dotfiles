@@ -9,9 +9,13 @@ echo "Installing rvm..."
 \curl -sSL https://get.rvm.io | bash -s stable
 
 # install homebrew
-echo "Installing homebrew..."
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+if test ! $(which brew)
+then
+  echo "  Installing Homebrew for you."
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 
 # install brew apps
 echo "Installing brew apps..."
-brew bundle ~/Brewfile
+./brew.sh
+./brew-cask.sh
