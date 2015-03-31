@@ -37,8 +37,9 @@ install terminal-notifier
 install shellcheck
 
 # Install homebrew-cask
-tap phinze/cask
-install brew-cask
+#tap phinze/cask
+#install brew-cask
+install caskroom/cask/brew-cask
 
 # Remove outdated versions from the cellar
 cleanup
