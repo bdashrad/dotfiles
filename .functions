@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+function ascii2bin()
+{
+  perl -lpe '$_=unpack"B*"';
+}
+
+function bin2ascii()
+{
+  perl -lpe '$_=pack"B*",$_';
+}
+
+function epoch2nsca()
+{
+  date -d @$1 "+%d/%b/%Y:%T"
+}
+
+function epoch2human()
+{
+  date -d @$1
+}
+
+function epoch2iso8601
+{
+  date -d @$1 -Iseconds
+}
+
+function taskdate2epoch()
+{
+  date -d "$1" +%s
+}

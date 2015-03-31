@@ -1,0 +1,48 @@
+[core]
+  excludesfile = ~/.gitignore
+  attributesfile = ~/.gitattributes
+
+[diff]
+  tool = kdiff3
+
+[difftool]
+  prompt = false
+
+[difftool "kdiff3"]
+  path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+  trustExitCode = false]
+
+[difftool "opendiff"]
+  path = /usr/bin/opendiff
+  trustExitCode = false
+
+[difftool "p4merge"]
+  cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$LOCAL" "$REMOTE"
+
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+
+[merge]
+  tool = kdiff3
+  prompt = false
+
+[mergetool]
+  keepTemporaries = false
+  keepBackup = false
+
+[mergetool "kdiff3"]
+  path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+  trustExitCode = false
+
+[mergetool "opendiff"]
+  cmd = /usr/bin/opendiff "$LOCAL" "$REMOTE" -ancestor "$BASE" -merge "$MERGED"
+  trustExitCode = false
+
+[mergetool "p4merge"]
+  cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+  trustExitCode = false
+
+[push]
+  default = simple
