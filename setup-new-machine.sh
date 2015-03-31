@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# update osx
+sudo softwareupdate -i -a
+
 # install xcode command line tools
 echo "Installing xcode-command line tools"
 xcode-select --install
