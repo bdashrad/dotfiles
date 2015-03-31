@@ -52,6 +52,7 @@ brew install node
 brew install pv
 brew install rename
 brew install speedtest_cli
+brew install stow
 brew install swig
 brew install tree
 brew install terminal-notifier
