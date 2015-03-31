@@ -33,5 +33,11 @@ brew cask install virtualbox
 brew cask install vlc
 
 # quicklook plugins
+brew cask install betterzipql
+brew cask install qlcolorcode
 brew cask install qlmarkdown
+brew cask install qlprettypatch
 brew cask install qlstephen
+brew cask install quicklook-csv
+brew cask install quicklook-json
+brew cask install suspicious-package
