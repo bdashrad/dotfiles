@@ -23,10 +23,12 @@ Lots of this content taken from various people, but particularly
 * [ ] Wifi Settings and passwords
   *  `/Volumes/MacintoshHD/Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist`
 * [ ] `.extra`
-* [ ] .ssh and .gnupg
+* [ ] .ssh
+* [ ] .gnupg
 * [ ] .osx settings
 * [ ] Adium Settings
   *  
-* [x] Automator scripts
+* [ ] Automator scripts
   * `~/Library/Services`
-* [x] Documents folder
+* [ ] Documents folder
+* [ ] /etc/hosts
