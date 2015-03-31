@@ -44,6 +44,7 @@ brew install gist
 brew install git
 brew install grepcidr
 brew install hub
+brew install lnav
 brew install logstalgia
 brew install mtr
 brew install nmap
