@@ -1,8 +1,0 @@
-# readline config
-# Be 8-bit clean
-set input-meta on
-set output-meta on
-
-# Allow jumping words with readline using ctrl-arrows
-"\e[1;5D": backward-word
-"\e[1;5C": forward-word
