@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Make sure we’re using the latest Homebrew
 brew update
 
@@ -38,12 +40,18 @@ brew install homebrew/dupes/screen
 # Install everything else
 brew install ack
 brew install bfg
+brew install gist
 brew install git
+brew install grepcidr
+brew install hub
+brew install logstalgia
+brew install mtr
 brew install nmap
 brew install node
 brew install pv
 brew install rename
 brew install speedtest_cli
+brew install swig
 brew install tree
 brew install terminal-notifier
 
