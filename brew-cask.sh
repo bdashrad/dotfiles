@@ -21,6 +21,8 @@ brew cask install transmission
 
 # chat
 brew cask install adium
+brew cask install mumble
+brew cask install skype
 brew cask install slack
 
 # development
