@@ -1,6 +1,8 @@
-set nocompatible "make vim more useful
+" make vim more useful
+set nocompatible
 
-syntax enable " enable syntax highlighting
+" enable syntax highlighting
+syntax enable
 set encoding=utf-8 nobomb
 set t_Co=256
 set background=dark
