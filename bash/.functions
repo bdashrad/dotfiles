@@ -31,10 +31,18 @@ function taskdate2epoch()
 }
 
 # update git repo with upstream
-git_upstream_sync ()
+function git_upstream_sync ()
 {
   git fetch upstream
   git fetch upstream --tags
   git merge upstream/master
   git push origin master --tags
+}
+
+# shortcut for pywikid
+function wikid ()
+{
+  pushd ~/bin/pywikid/ > /dev/null
+  ./pywikid.py $WIKIDSITE
+  popd > /dev/null
 }
