@@ -35,5 +35,9 @@ shopt -s nocaseglob
 # enable aws-cli completion
 [ -f "/usr/local/bin/aws_completer" ] && complete -C aws_completer aws
 
+# Add tab completion for `defaults read|write NSGlobalDomain`
+# You could just use `-g` instead, but I like being explicit
+complete -W "NSGlobalDomain" defaults
+
 # include .bashrc if it exists
 #[ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
