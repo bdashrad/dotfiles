@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-
 # Install native apps
+
+# Link Homebrew casks in `/Applications` rather than `~/Applications`
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
