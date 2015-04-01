@@ -11,6 +11,9 @@ unset file
 # append to history file, don't overwrite
 shopt -s histappend
 
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob
+
 # Load the default .profile
 [[ -s "$HOME/.profile" ]] && . "$HOME/.profile"
 
