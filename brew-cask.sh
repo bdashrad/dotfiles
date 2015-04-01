@@ -14,9 +14,7 @@ brew cask install firefox
 brew cask install flux
 brew cask install google-chrome
 brew cask install google-drive
-brew cask install gyazo
 brew cask install rescuetime
-brew cask install skitch
 brew cask install spectacle
 brew cask install stay
 brew cask install transmission
@@ -36,6 +34,9 @@ brew cask install vagrant-manager
 brew cask install virtualbox
 
 # multimedia
+brew cask install chromecast
+brew cask install gyazo
+brew cask install skitch
 brew cask install spotify
 brew cask install vlc
 
