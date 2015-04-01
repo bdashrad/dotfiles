@@ -14,13 +14,12 @@ brew cask install firefox
 brew cask install flux
 brew cask install google-chrome
 brew cask install google-drive
-brew cask install lastpass
+brew cask install gyazo
+brew cask install rescuetime
+brew cask install skitch
 brew cask install spectacle
-brew cask install spotify
 brew cask install stay
 brew cask install transmission
-brew cask install tunnelblick
-brew cask install vlc
 
 # chat
 brew cask install adium
@@ -36,6 +35,10 @@ brew cask install vagrant
 brew cask install vagrant-manager
 brew cask install virtualbox
 
+# multimedia
+brew cask install spotify
+brew cask install vlc
+
 # quicklook plugins
 brew cask install betterzipql
 brew cask install qlcolorcode
@@ -45,3 +48,9 @@ brew cask install qlstephen
 brew cask install quicklook-csv
 brew cask install quicklook-json
 brew cask install suspicious-package
+
+# security
+brew cask install keepassx
+brew cask install lastpass
+brew cask install torbrowser
+brew cask install tunnelblick
