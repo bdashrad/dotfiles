@@ -60,7 +60,7 @@ brew install terminal-notifier
 brew linkapps terminal-notifier
 
 # Install some linters
-install shellcheck
+brew install shellcheck
 
 # Remove outdated versions from the cellar
 brew cleanup
