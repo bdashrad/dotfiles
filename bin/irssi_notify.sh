@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # yes, we need a way to flush the file on disconnect; i don't know one
 ssh $1 "tail -n 10 $HOME/.irssi/fnotify; > $HOME/.irssi/fnotify; tail -f $HOME/.irssi/fnotify" |
 #	sed -u 's/[<@&]//g' |
