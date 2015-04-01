@@ -558,7 +558,7 @@ defaults write org.m0k.transmission WarningLegal -bool false
 ###############################################################################
 
 for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" \
-  "Mail" "Safari" "SystemUIServer" "Terminal" "Transmission" \
+  "Mail" "Safari" "SystemUIServer" "Transmission" \
   "Activity Monitor" "iCal" "iTunes" "Spectacle" "Google Chrome"; do
   killall "$app" > /dev/null 2>&1
 done
