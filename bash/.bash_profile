@@ -40,5 +40,8 @@ shopt -s nocaseglob
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
 
+# grc colorizing
+[[ -e $(brew --prefix)/etc/grc.bashrc ]] && . $(brew --prefix)/etc/grc.bashrc
+
 # include .bashrc if it exists
 #[ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
