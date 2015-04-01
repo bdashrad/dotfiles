@@ -27,11 +27,11 @@ shopt -s nocaseglob
 [[ -s "$HOME/.ssh/config" ]] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
 # system bash completion
-[[ -e /etc/bash_completion ]] && . /etc/bash_completion
+[[ -e "/etc/bash_completion" ]] && . /etc/bash_completion
 
 # enable homebrew bash_completion
-[[ -e $(brew --prefix)/etc/bash_completion ]] && . $(brew --prefix)/etc/bash_completion
-[[ -e $(brew --prefix)/share/bash-completion/bash_completion ]] && . $(brew --prefix)/share/bash-completion/bash_completion
+[[ -e "$(brew --prefix)/etc/bash_completion" ]] && . "$(brew --prefix)/etc/bash_completion"
+[[ -e "$(brew --prefix)/share/bash-completion/bash_completion" ]] && . "$(brew --prefix)/share/bash-completion/bash_completion"
 
 # enable aws-cli completion
 [ -f "/usr/local/bin/aws_completer" ] && complete -C aws_completer aws
@@ -41,7 +41,7 @@ shopt -s nocaseglob
 complete -W "NSGlobalDomain" defaults
 
 # grc colorizing
-[[ -e $(brew --prefix)/etc/grc.bashrc ]] && . $(brew --prefix)/etc/grc.bashrc
+[[ -e "$(brew --prefix)/etc/grc.bashrc" ]] && . "$(brew --prefix)/etc/grc.bashrc"
 
 # include .bashrc if it exists
 #[ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
