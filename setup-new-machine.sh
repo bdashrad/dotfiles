@@ -26,7 +26,7 @@ echo "Installing brew apps..."
 
 # change to bash 4 (installed by homebrew)
 BASHPATH=$(brew --prefix)/bin/bash
-sudo echo $BASHPATH >> /etc/shells
+echo $BASHPATH | sudo tee -a /etc/shells > /dev/null
 chsh -s $BASHPATH # will set for current user only.
 echo $BASH_VERSION # should be 4.x not the old 3.2.X
 
