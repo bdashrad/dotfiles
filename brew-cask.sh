@@ -17,6 +17,7 @@ brew cask install google-drive
 brew cask install rescuetime
 brew cask install spectacle
 brew cask install stay
+brew cask install the-unarchiver
 brew cask install transmission
 
 # chat
@@ -30,10 +31,12 @@ brew cask install atom
 brew cask install iterm2
 brew cask install menumeters
 brew cask install kdiff3
+brew cask install p4merge
 brew cask install sublime-text3
 brew cask install vagrant
 brew cask install vagrant-manager
 brew cask install virtualbox
+brew cask install wireshark
 
 # multimedia
 brew cask install chromecast
