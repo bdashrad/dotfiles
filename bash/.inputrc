@@ -6,3 +6,10 @@ set output-meta on
 # Allow jumping words with readline using ctrl-arrows
 "\e[1;5D": backward-word
 "\e[1;5C": forward-word
+
+# Make Tab autocomplete regardless of filename case
+set completion-ignore-case on
+
+# List all matches in case multiple possible completions are possible
+set show-all-if-ambiguous on
+
