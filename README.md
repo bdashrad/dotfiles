@@ -29,6 +29,7 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
   * `~/Library/Services`
 * [ ] Documents folder
 * [ ] /etc/hosts
+* [ ] run LastPass installer `open "/opt/hombrew-cask/Caskroom/lastpass/latest/LastPass Installer.app"`
 
 ## Thanks to...
 Lots of this content taken from various people, but particularly
