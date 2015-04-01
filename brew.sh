@@ -14,7 +14,7 @@ brew install findutils
 # Install some other useful utilities like `sponge`
 brew install moreutils
 # Install GNU `sed`, overwriting the built-in `sed`
-brew install gnu-sed --default-names
+brew install gnu-sed --with-default-names
 
 # Install Bash 4
 brew install bash
