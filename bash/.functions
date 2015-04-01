@@ -29,3 +29,12 @@ function taskdate2epoch()
 {
   date -d "$1" +%s
 }
+
+# update git repo with upstream
+git_upstream_sync ()
+{
+  git fetch upstream
+  git fetch upstream --tags
+  git merge upstream/master
+  git push origin master --tags
+}
