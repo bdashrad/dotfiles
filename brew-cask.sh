@@ -20,6 +20,7 @@ brew cask install google-drive
 brew cask install iterm2
 brew cask install lastpass
 brew cask install menumeters
+brew cask install kdiff3
 brew cask install slack
 brew cask install spectacle
 brew cask install spotify
