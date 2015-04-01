@@ -31,7 +31,7 @@ shopt -s nocaseglob
 
 # enable homebrew bash_completion
 [[ -e "$(brew --prefix)/etc/bash_completion" ]] && . "$(brew --prefix)/etc/bash_completion"
-[[ -e "$(brew --prefix)/share/bash-completion/bash_completion" ]] && . "$(brew --prefix)/share/bash-completion/bash_completion"
+#[[ -e "$(brew --prefix)/share/bash-completion/bash_completion" ]] && . "$(brew --prefix)/share/bash-completion/bash_completion"
 
 # enable aws-cli completion
 [ -f "/usr/local/bin/aws_completer" ] && complete -C aws_completer aws
