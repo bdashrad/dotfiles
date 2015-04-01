@@ -1,19 +1,15 @@
-# brad's dotfiles
+brad's dotfiles
+===============
 
-various config files
+Manage dotfiles, configs, etc using bash, gnu stow, and more.
 
-## Thanks to...
-Lots of this content taken from various people, but particularly
-
-[paulirish](https://github.com/paulirish/dotfiles/)
-
-[mathiasbynens](https://github.com/mathiasbynens/dotfiles/)
 
 ## How to use
 1. Clone repo
 2. run setup-new-machine.sh
-3. ?????
-4. Profit
+3. use stow to install various config files
+4. ?????
+5. Profit
 
 ## Manual Migrations
 * [ ] .app's I really want and aren't in my caskfile.
@@ -33,3 +29,10 @@ Lots of this content taken from various people, but particularly
   * `~/Library/Services`
 * [ ] Documents folder
 * [ ] /etc/hosts
+
+## Thanks to...
+Lots of this content taken from various people, but particularly
+
+[paulirish](https://github.com/paulirish/dotfiles/)
+
+[mathiasbynens](https://github.com/mathiasbynens/dotfiles/)
