@@ -20,6 +20,7 @@ Lots of this content taken from various people, but particularly
 * [ ] read `brew list` and `brew cask list` to see whats worth reinstalling
 * [ ] read `npm list -g --depth=0` to see global npm packages
 * [ ] bash history?
+* [ ] Install Package Control for Sublime Text 3
 * [ ] Wifi Settings and passwords
   *  `/Volumes/MacintoshHD/Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist`
 * [ ] `.extra`

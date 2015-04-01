@@ -1,0 +1,27 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"ApplySyntax",
+		"BeautifyRuby",
+		"ChangeQuotes",
+		"Dotfiles Syntax Highlighting",
+		"FileBrowser",
+		"Git",
+		"GitGutter",
+		"GitHub Flavored Markdown Preview",
+		"Markdown Preview",
+		"Package Control",
+		"Pretty JSON",
+		"sublime-github",
+		"SublimeLinter",
+		"SublimeLinter-rubocop",
+		"SublimeLinter-shellcheck",
+		"TrailingSpaces",
+		"Vagrant",
+		"Varnish VCL",
+		"Whitespace"
+	]
+}
