@@ -57,6 +57,8 @@ brew install swig
 brew install tree
 brew install terminal-notifier
 
+brew linkapps terminal-notifier
+
 # Install some linters
 install shellcheck
 
