@@ -47,5 +47,6 @@
   cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
   trustExitCode = false
 
+# push easily. http://stackoverflow.com/a/23918418/89484
 [push]
   default = current
