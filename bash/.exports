@@ -14,7 +14,6 @@ export HISTCONTROL=ignoredupes:ignorespace
 # Larger bash history (32^3 entries)
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
-export HISTCONTROL=ignoredups
 
 # set timestamps in history
 export HISTTIMEFORMAT='%F %T '
