@@ -21,6 +21,7 @@ brew cask install spectacle
 brew cask install stay
 brew cask install the-unarchiver
 brew cask install transmission
+brew cask install xquartz
 
 # chat
 brew cask install adium
