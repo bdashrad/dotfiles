@@ -48,4 +48,4 @@
   trustExitCode = false
 
 [push]
-  default = simple
+  default = current
