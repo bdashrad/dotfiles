@@ -59,7 +59,7 @@ brew cask install quicklook-json
 brew cask install suspicious-package
 
 # security
-brew cask install keepassx
+brew cask install keepassx0
 brew cask install lastpass
 brew cask install torbrowser
 brew cask install tunnelblick
