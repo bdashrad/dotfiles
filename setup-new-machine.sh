@@ -7,6 +7,9 @@ sudo softwareupdate -i -a
 echo "Installing xcode-command line tools"
 xcode-select --install
 
+# accept xcode license so command line tools work
+sudo xcodebuild -license
+
 # install rvm stable
 echo "Installing rvm..."
 \curl -sSL https://get.rvm.io | bash -s stable
