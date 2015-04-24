@@ -22,6 +22,9 @@ then
   brew doctor
 fi
 
+# install pip
+sudo easy_install pip
+
 # install brew apps
 echo "Installing brew apps..."
 ./brew.sh
