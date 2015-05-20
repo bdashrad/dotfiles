@@ -65,4 +65,5 @@ brew cask install torbrowser
 brew cask install tunnelblick
 
 # utilities
+brew cask install capsee
 brew cask install logitech-unifying
