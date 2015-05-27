@@ -10,7 +10,7 @@ fi
 
 # IP addresses
 alias wanip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias lanip="ipconfig getifaddr en1"
+alias lanip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 
 # Enhanced WHOIS lookups

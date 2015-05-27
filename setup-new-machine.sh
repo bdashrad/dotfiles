@@ -7,6 +7,9 @@ sudo softwareupdate -i -a
 echo "Installing xcode-command line tools"
 xcode-select --install
 
+# accept xcode license so command line tools work
+sudo xcodebuild -license
+
 # install rvm stable
 echo "Installing rvm..."
 \curl -sSL https://get.rvm.io | bash -s stable
@@ -18,6 +21,9 @@ then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   brew doctor
 fi
+
+# install pip
+sudo easy_install pip
 
 # install brew apps
 echo "Installing brew apps..."
