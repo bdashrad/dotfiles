@@ -27,6 +27,7 @@ set title  " Show the filename in the window titlebar.
 set ruler" show cursor position
 set visualbell
 set undofile " Persistent Undo.
+set backspace=indent,eol,start
 
 " command tab completion
 set wildmenu
