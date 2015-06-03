@@ -68,7 +68,7 @@
 [url "git@github.com:bdashrad/"]
   insteadOf = "git://github.com/bdashrad/"
 [help]
-  autocorrect = 1
+  autocorrect = 50
 
 # push easily. http://stackoverflow.com/a/23918418/89484
 [push]
