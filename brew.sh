@@ -21,7 +21,7 @@ brew install bash
 
 # Install bash-completion
 brew tap homebrew/versions
-#brew install homebrew/versions/bash-completion2
+# brew install homebrew/versions/bash-completion2
 brew install bash-completion
 brew tap homebrew/completions
 brew install vagrant-completion
@@ -31,6 +31,11 @@ brew install grc
 
 # Install wget with IRI support
 brew install wget --with-iri
+
+# Install r
+brew tap homebrew/science
+brew install r
+mkdir -p ~/Library/R/3.2/library
 
 # Install more recent versions of some OS X tools
 brew install vim --override-system-vi
