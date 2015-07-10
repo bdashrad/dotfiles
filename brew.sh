@@ -52,6 +52,7 @@ brew install hub
 brew install lnav
 brew install logstalgia
 brew install mtr
+brew install ncdu
 brew install nmap
 brew install node
 brew install pv
