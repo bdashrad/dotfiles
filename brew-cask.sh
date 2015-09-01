@@ -9,6 +9,7 @@ brew tap caskroom/versions
 
 # always
 brew cask install alfred
+brew cask install bettertouchtool
 brew cask install caffeine
 brew cask install dropbox
 brew cask install evernote
@@ -43,6 +44,7 @@ brew cask install wireshark
 
 # multimedia
 brew cask install chromecast
+brew cask install exiftool
 brew cask install gyazo
 brew cask install skitch
 brew cask install spotify
