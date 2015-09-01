@@ -73,3 +73,8 @@
 # push easily. http://stackoverflow.com/a/23918418/89484
 [push]
   default = current
+
+[user]
+  name = "Brad Clark"
+  email = bdashrad@gmail.com
+
