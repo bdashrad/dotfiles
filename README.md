@@ -23,6 +23,7 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
 * [ ] .ssh
 * [ ] .gnupg
 * [ ] .osx settings
+* [ ] Tunnelblick Profiles
 * [ ] Adium Settings
   *  
 * [ ] Automator scripts

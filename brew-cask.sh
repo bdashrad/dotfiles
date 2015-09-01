@@ -65,3 +65,7 @@ brew cask install keepassx0
 brew cask install lastpass
 brew cask install torbrowser
 brew cask install tunnelblick
+
+# utilities
+brew cask install capsee
+brew cask install logitech-unifying

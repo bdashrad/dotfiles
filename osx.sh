@@ -24,6 +24,8 @@ defaults write com.apple.systemuiserver menuExtras -array \
   "/System/Library/CoreServices/Menu Extras/Clock.menu" \
   "/System/Library/CoreServices/Menu Extras/User.menu"
 
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+
 # Disable opening and closing window animations
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 

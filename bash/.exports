@@ -29,6 +29,7 @@ export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
 # homebrew applications
 export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 
 # Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
