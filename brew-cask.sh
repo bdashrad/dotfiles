@@ -46,6 +46,7 @@ brew cask install wireshark
 brew cask install chromecast
 brew cask install exiftool
 brew cask install gyazo
+brew cask install lastfm
 brew cask install skitch
 brew cask install spotify
 brew cask install vlc
