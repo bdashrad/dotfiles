@@ -2,6 +2,6 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.synced_folder "#{ENV['HOME']}", "/vagrant/home"
+#  config.vm.synced_folder "#{ENV['HOME']}", "/vagrant/home"
 #  config.vm.provision :shell, :path => File.join(File.dirname(__FILE__), "scripts", "provision.sh")
 end
