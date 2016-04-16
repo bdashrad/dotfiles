@@ -1,5 +1,6 @@
 {
-	"font_size": 14,
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"font_size": 13,
 	"ignored_packages":
 	[
 		"Vintage"

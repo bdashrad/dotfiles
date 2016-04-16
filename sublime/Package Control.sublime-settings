@@ -1,4 +1,5 @@
 {
+	"bootstrapped": true,
 	"in_process_packages":
 	[
 	],
@@ -6,17 +7,20 @@
 	[
 		"ApplySyntax",
 		"BeautifyRuby",
+		"Better CoffeeScript",
 		"ChangeQuotes",
 		"Dotfiles Syntax Highlighting",
-		"FileBrowser",
 		"Git",
 		"GitGutter",
 		"GitHub Flavored Markdown Preview",
 		"Markdown Preview",
 		"Package Control",
 		"Pretty JSON",
+		"Puppet",
+		"Sort Lines (Numerically)",
 		"sublime-github",
 		"SublimeLinter",
+		"SublimeLinter-contrib-puppet",
 		"SublimeLinter-rubocop",
 		"SublimeLinter-shellcheck",
 		"TrailingSpaces",
