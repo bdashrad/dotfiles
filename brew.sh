@@ -14,16 +14,17 @@ brew install findutils
 # Install some other useful utilities like `sponge`
 brew install moreutils
 # Install GNU `sed`, overwriting the built-in `sed`
-brew install gnu-sed --with-default-names
+brew install gnu-sed --default-names
 
 # Install Bash 4
 brew install bash
 
 # Install bash-completion
 brew tap homebrew/versions
-# brew install homebrew/versions/bash-completion2
-brew install bash-completion
+brew install bash-completion2
+# brew install bash-completion
 brew tap homebrew/completions
+brew install brew-cask-completion
 brew install vagrant-completion
 
 # generic colouriser  http://kassiopeia.juls.savba.sk/~garabik/software/grc/
@@ -42,22 +43,36 @@ brew install vim --override-system-vi
 brew install homebrew/dupes/grep --default-names
 brew install homebrew/dupes/screen
 
-# Install everything else
+# run this script when this file changes guy.
+brew install entr
+
+# find stuff
 brew install ack
+brew install fzf
+brew install the_silver_searcher
+
+# git stuff
 brew install bfg
 brew install gist
 brew install git
-brew install grepcidr
 brew install hub
+
+# network stuff
+brew install grepcidr
+brew install mtr
+brew install nmap
+brew install speedtest_cli
+
+# log parsing things
 brew install lnav
 brew install logstalgia
-brew install mtr
+
+# Install everything else
+brew install ffmpeg --with-libvpx
 brew install ncdu
-brew install nmap
 brew install node
 brew install pv
 brew install rename
-brew install speedtest_cli
 brew install stow
 brew install swig
 brew install tree

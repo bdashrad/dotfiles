@@ -2,6 +2,9 @@
 
 # ~/.osx — http://mths.be/osx
 
+# FWIW, this `defaults find` is good at finding some set preferences.
+# e.g.    defaults find com.apple.ActivityMonitor
+
 # Ask for the administrator password upfront
 sudo -v
 
@@ -56,8 +59,8 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # # Disable Resume system-wide
 # defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 
-# Disable automatic termination of inactive apps
-defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
+# Enable automatic termination of inactive apps
+defaults write NSGlobalDomain NSDisableAutomaticTermination -bool false
 
 # # Disable the crash reporter
 # defaults write com.apple.CrashReporter DialogType -string "none"
@@ -302,6 +305,9 @@ defaults write com.apple.dock autohide -bool true
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
+# Don't make Dock icons of hidden applications translucent
+defaults write com.apple.dock showhidden -bool false
+
 # Reset Launchpad, but keep the desktop wallpaper intact
 find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
 
@@ -456,6 +462,12 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 # Sort Activity Monitor results by CPU usage
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
+
+# Show Data in the Disk graph (instead of IO)
+defaults write com.apple.ActivityMonitor DiskGraphType -int 1
+
+# Show Data in the Network graph (instead of packets)
+defaults write com.apple.ActivityMonitor NetworkGraphType -int 1
 
 ###############################################################################
 # Address Book, Dashboard, iCal, TextEdit, and Disk Utility                   #
