@@ -33,7 +33,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 ###
 # PATH
-echo $PATH
 # homebrew applications
 # PATH="/usr/local/bin:$PATH"
 PATH="/usr/local/sbin:$PATH"
