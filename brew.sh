@@ -21,8 +21,8 @@ brew install bash
 
 # Install bash-completion
 brew tap homebrew/versions
+brew install bash-completion
 brew install bash-completion2
-# brew install bash-completion
 brew tap homebrew/completions
 brew install brew-cask-completion
 brew install vagrant-completion
@@ -69,6 +69,7 @@ brew install logstalgia
 
 # Install everything else
 brew install ffmpeg --with-libvpx
+brew install keybase
 brew install ncdu
 brew install node
 brew install pv
@@ -77,6 +78,7 @@ brew install stow
 brew install swig
 brew install tree
 brew install terminal-notifier
+brew install xz
 
 brew linkapps terminal-notifier
 
