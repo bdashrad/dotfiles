@@ -40,7 +40,6 @@ PATH="/usr/local/sbin:$PATH"
 # Add brew coreutils to $PATH
 PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
-
 # Heroku Toolbelt
 PATH="$PATH:/usr/local/heroku/bin"
 
