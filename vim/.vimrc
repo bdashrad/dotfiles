@@ -38,3 +38,18 @@ nnoremap <F8> :set invpaste paste?<CR>
 set pastetoggle=<F8>
 set showmode  " Show the current mode.
 
+" Plugins -------------------------------------------------------------
+
+" Load plugins {{{
+call plug#begin('~/.vim/plugged')
+
+Plug 'joker1007/vim-ruby-heredoc-syntax'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/vim-easy-align'
+Plug 'rking/ag.vim'
+Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-markdown',     { 'for': 'markdown' }
+Plug 'vim-ruby/vim-ruby'
+
+call plug#end()
+" }}}
