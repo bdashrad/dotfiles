@@ -4,7 +4,7 @@
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-#brew install caskroom/cask/brew-cask
+# brew install caskroom/cask/brew-cask
 brew tap caskroom/cask
 brew tap caskroom/versions
 
@@ -34,7 +34,7 @@ brew cask install slack
 # development
 brew cask install atom
 brew cask install iterm2
-brew cask install menumeters
+# brew cask install menumeters
 brew cask install kdiff3
 brew cask install p4merge
 brew cask install sublime-text3
@@ -44,10 +44,9 @@ brew cask install virtualbox
 brew cask install wireshark
 
 # multimedia
-brew cask install chromecast
-brew cask install exiftool
+# brew cask install exiftool
 brew cask install gyazo
-brew cask install lastfm
+# brew cask install lastfm
 brew cask install skitch
 brew cask install spotify
 brew cask install vlc
@@ -63,7 +62,7 @@ brew cask install quicklook-json
 brew cask install suspicious-package
 
 # security
-brew cask install keepassx0
+# brew cask install keepassx0
 brew cask install lastpass
 brew cask install torbrowser
 brew cask install tunnelblick
