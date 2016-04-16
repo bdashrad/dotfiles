@@ -1,7 +1,3 @@
 .extra
-.path
-.ssh
-extra
-path
-ssh
+.gitconfig.local
 vim/.vim/.netrwhist
