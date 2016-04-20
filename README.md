@@ -9,11 +9,13 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
 2. `cd ~/dotfiles`
 3. `setup-new-machine.sh`
 4. use [stow](https://www.gnu.org/software/stow/) to install various config files:
-  1. `cd ~/dotfiles`
-    * `stow bash`
+  * standards
+    * `stow {bash,fzf,git,ruby,screen,ssh,vagrant}`
+  * ~/home/bin
     * `stow -t ~/bin/ bin`
-    * `stow ruby`
-    * etc.
+  * sublime text 3
+    * `stow -t ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/ sublime/`
+  * vim
 5. Enjoy!
 
 ## Manual Migrations
