@@ -42,6 +42,10 @@ fi
 # set PATH so it includes user's private bin if it exists
 [[ -d "$HOME/bin" ]] && export PATH="$PATH:$HOME/bin"
 
+# z beats cd most of the time.
+#  github.com/rupa/z
+[[ -s "$HOME/bin/z/z.sh" ]] && . ~/bin/z/z.sh
+
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [[ -s "$HOME/.ssh/config" ]] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
