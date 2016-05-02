@@ -1,7 +1,8 @@
 # This prompt inspired by gf3, sindresorhus, alrra, and mathiasbynens.
 # but customized to me. <3
 
-default_username='bradclark'
+#default_username='bradclark'
+default_username=${USERNAME:-bradclark}
 
 
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
