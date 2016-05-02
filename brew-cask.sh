@@ -10,7 +10,7 @@ brew tap caskroom/versions
 
 # always
 brew cask install alfred
-brew cask install bettertouchtool
+# brew cask install bettertouchtool
 brew cask install caffeine
 brew cask install dropbox
 brew cask install evernote
@@ -26,8 +26,8 @@ brew cask install transmission
 brew cask install xquartz
 
 # chat
-brew cask install adium
-brew cask install mumble
+# brew cask install adium
+# brew cask install mumble
 brew cask install skype
 brew cask install slack
 
@@ -69,4 +69,4 @@ brew cask install tunnelblick
 
 # utilities
 brew cask install capsee
-brew cask install logitech-unifying
+# brew cask install logitech-unifying
