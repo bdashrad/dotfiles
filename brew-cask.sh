@@ -63,10 +63,12 @@ brew cask install suspicious-package
 
 # security
 # brew cask install keepassx0
+brew cask install 1password
 brew cask install lastpass
 brew cask install torbrowser
 brew cask install tunnelblick
 
 # utilities
+brew cask install amethyst
 brew cask install capsee
 # brew cask install logitech-unifying
