@@ -69,6 +69,7 @@ brew install logstalgia
 
 # Install everything else
 brew install ffmpeg --with-libvpx
+brew install jq
 brew install keybase
 brew install ncdu
 brew install node
