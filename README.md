@@ -10,18 +10,18 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
 3. `setup-new-machine.sh`
 4. use [stow](https://www.gnu.org/software/stow/) to install various config files:
   * standards
-    * `stow {bash,fzf,git,ruby,screen,ssh,vagrant}`
+    * `stow {bash,fzf,git,ruby,screen,ssh,tmux,vagrant,vim}`
   * ~/home/bin
     * `stow -t ~/bin/ bin`
   * sublime text 3
     * `stow -t ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/ sublime/`
-  * vim
 5. Enjoy!
 
 ## Manual Migrations
 * [ ] .app's I really want and aren't in my caskfile.
 * [ ] read `brew list` and `brew cask list` to see whats worth reinstalling
 * [ ] read `npm list -g --depth=0` to see global npm packages
+* [ ] read `gem list` to see gems
 * [ ] missing .osx settings?
 * [ ] bash history?
 * [ ] Install Package Control for Sublime Text 3 from `sublime/`
