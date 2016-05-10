@@ -18,6 +18,7 @@ brew cask install firefox
 brew cask install flux
 brew cask install google-chrome
 brew cask install google-drive
+brew caks install karabiner
 brew cask install rescuetime
 brew cask install spectacle
 brew cask install stay
