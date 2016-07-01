@@ -122,3 +122,10 @@ function wikid ()
   ./pywikid.py $WIKIDSITE
   popd > /dev/null
 }
+
+# validate puppet erb
+validate_erb()
+{
+  erb -P -x -T '-' $1 | ruby -c
+}
+
