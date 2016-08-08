@@ -72,4 +72,5 @@ brew cask install tunnelblick
 # utilities
 brew cask install amethyst
 brew cask install capsee
+brew cask install screenhero
 # brew cask install logitech-unifying
