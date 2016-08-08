@@ -129,3 +129,13 @@ validate_erb()
   erb -P -x -T '-' $1 | ruby -c
 }
 
+# ssh loop with 10s timeout
+retry_ssh()
+{
+  local args l host sshargs
+  args=( $@ )
+  host=${args[${#args[@]}-1]}
+  unset args[${#args[@]}-1]
+  local sshargs=${args[@]}
+  while true; do ssh ${sshargs} -o ConnectTimeout=5 "${host}" && break; sleep 5; done
+}
