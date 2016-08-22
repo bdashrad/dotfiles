@@ -12,6 +12,7 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
   * standards
     * `stow {bash,fzf,git,ruby,screen,ssh,tmux,vagrant,vim}`
   * ~/home/bin
+    * `mkdir -p ~/bin`
     * `stow -t ~/bin/ bin`
   * sublime text 3
     * `stow -t ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/ sublime/`
