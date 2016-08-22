@@ -29,7 +29,7 @@ brew cask install xquartz
 # chat
 # brew cask install adium
 # brew cask install mumble
-brew cask install skype
+# brew cask install skype
 brew cask install slack
 
 # development
@@ -70,7 +70,7 @@ brew cask install torbrowser
 brew cask install tunnelblick
 
 # utilities
-brew cask install amethyst
+# brew cask install amethyst
 brew cask install capsee
 brew cask install screenhero
 # brew cask install logitech-unifying
