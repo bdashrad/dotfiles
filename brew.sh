@@ -68,6 +68,7 @@ brew install lnav
 brew install logstalgia
 
 # Install everything else
+brew install awscli
 brew install ffmpeg --with-libvpx
 brew install jq
 brew install keybase
