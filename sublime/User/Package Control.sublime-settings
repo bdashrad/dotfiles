@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"Ansible",
 		"ApplySyntax",
 		"BeautifyRuby",
 		"Better CoffeeScript",
@@ -20,12 +21,14 @@
 		"nginx",
 		"Package Control",
 		"Pretty JSON",
+		"Pretty YAML",
 		"Puppet",
 		"Sort Lines (Numerically)",
 		"sublime-github",
 		"SublimeLinter",
 		"SublimeLinter-contrib-puppet",
 		"SublimeLinter-contrib-puppet-lint",
+		"SublimeLinter-pylint",
 		"SublimeLinter-rubocop",
 		"SublimeLinter-shellcheck",
 		"Terraform",
