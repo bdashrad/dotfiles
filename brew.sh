@@ -52,7 +52,7 @@ brew install fzf
 brew install the_silver_searcher
 
 # git stuff
-brew install bfg
+# brew install bfg
 brew install gist
 brew install git
 brew install hub
