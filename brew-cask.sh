@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # Install native apps
 
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
