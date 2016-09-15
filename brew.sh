@@ -70,6 +70,7 @@ brew install logstalgia
 # Install everything else
 brew install awscli
 brew install ffmpeg --with-libvpx
+brew install htop
 brew install jq
 brew install keybase
 brew install ncdu
@@ -80,6 +81,10 @@ brew install stow
 brew install swig
 brew install tree
 brew install terminal-notifier
+
+# Install compression stuff
+brew install p7zip
+brew install unrar
 brew install xz
 
 brew linkapps terminal-notifier
