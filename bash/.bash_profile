@@ -22,7 +22,7 @@ export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
-if which shopt > /dev/null; then
+if type shopt &> /dev/null; then
   # append to history file, don't overwrite
   shopt -s histappend
 
