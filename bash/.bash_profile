@@ -39,9 +39,6 @@ fi
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-# set PATH so it includes user's private bin if it exists
-[[ -d "$HOME/bin" ]] && export PATH="$PATH:$HOME/bin"
-
 # z beats cd most of the time.
 #  github.com/rupa/z
 [[ -s "$HOME/bin/z/z.sh" ]] && . ~/bin/z/z.sh

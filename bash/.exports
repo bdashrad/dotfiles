@@ -33,6 +33,9 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 ###
 # PATH
+# set PATH so it includes user's private bin if it exists
+[[ -d "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
+
 # homebrew applications
 # PATH="/usr/local/bin:$PATH"
 PATH="/usr/local/sbin:$PATH"
