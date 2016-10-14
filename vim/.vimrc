@@ -38,6 +38,9 @@ nnoremap <F8> :set invpaste paste?<CR>
 set pastetoggle=<F8>
 set showmode  " Show the current mode.
 
+" map w!! to allow writing to files with sudo
+cmap w!! w !sudo tee > /dev/null %
+
 " Plugins -------------------------------------------------------------
 
 " Load plugins {{{
