@@ -52,6 +52,8 @@ Plug 'junegunn/vim-easy-align'
 Plug 'rking/ag.vim'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-markdown',     { 'for': 'markdown' }
+Plug 'vim-scripts/ingo-library',
+Plug 'vim-scripts/AdvancedSorters',
 Plug 'vim-ruby/vim-ruby'
 
 call plug#end()
