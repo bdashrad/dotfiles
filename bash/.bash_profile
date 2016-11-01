@@ -71,3 +71,6 @@ complete -W "NSGlobalDomain" defaults
 
 # set up fzf keybindings
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# use local folder for CPAN instead of homebrew cellar
+eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
