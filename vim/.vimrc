@@ -38,6 +38,9 @@ nnoremap <F8> :set invpaste paste?<CR>
 set pastetoggle=<F8>
 set showmode  " Show the current mode.
 
+" map w!! to allow writing to files with sudo
+cnoremap w!! w !sudo tee > /dev/null %
+
 " Plugins -------------------------------------------------------------
 
 " Load plugins {{{
@@ -49,6 +52,8 @@ Plug 'junegunn/vim-easy-align'
 Plug 'rking/ag.vim'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-markdown',     { 'for': 'markdown' }
+Plug 'vim-scripts/ingo-library',
+Plug 'vim-scripts/AdvancedSorters',
 Plug 'vim-ruby/vim-ruby'
 
 call plug#end()

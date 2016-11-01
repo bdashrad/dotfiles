@@ -47,7 +47,7 @@
 
 # git diff
 [diff]
-  tool = kdiff3
+  tool = p4merge
 
 [difftool]
   prompt = false
@@ -72,7 +72,7 @@
   autocorrect = 50
 
 [merge]
-  tool = kdiff3
+  tool = p4merge
   prompt = false
 
 [mergetool]
