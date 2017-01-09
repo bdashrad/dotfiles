@@ -69,10 +69,9 @@ brew install logstalgia
 
 # Install everything else
 brew install awscli
-brew install ffmpeg --with-libvpx
+# brew install ffmpeg --with-libvpx
 brew install htop
 brew install jq
-brew install keybase
 brew install ncdu
 brew install node
 brew install pv
@@ -81,6 +80,12 @@ brew install stow
 brew install swig
 brew install tree
 brew install terminal-notifier
+
+# Install pgp stuff
+brew install gpg
+brew install gpg-agent
+brew install keybase
+brew install pinentry-mac
 
 # Install compression stuff
 brew install p7zip
