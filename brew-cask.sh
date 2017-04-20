@@ -19,7 +19,7 @@ brew cask install firefox
 brew cask install flux
 brew cask install google-chrome
 brew cask install google-drive
-brew caks install karabiner
+brew cask install karabiner
 brew cask install rescuetime
 brew cask install spectacle
 brew cask install stay
@@ -29,6 +29,7 @@ brew cask install xquartz
 
 # chat
 # brew cask install adium
+brew cask install google-hangouts
 # brew cask install mumble
 # brew cask install skype
 brew cask install slack
@@ -66,6 +67,7 @@ brew cask install suspicious-package
 # security
 # brew cask install keepassx0
 brew cask install 1password
+brew cask install keybase
 brew cask install lastpass
 brew cask install torbrowser
 brew cask install tunnelblick
