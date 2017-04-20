@@ -60,6 +60,9 @@ fi
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
 
+# travis completion
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+
 # grc colorizing
 [[ -e "$(brew --prefix)/etc/grc.bashrc" ]] && . "$(brew --prefix)/etc/grc.bashrc"
 
