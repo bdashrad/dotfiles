@@ -4,13 +4,13 @@
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
 for file in ~/.{extra,path,exports,aliases,functions,bash_prompt}; do
-  [ -r "$file" ] && [ -f "$file" ] && . "$file"
+  [ -f "$file" ] && [ -r "$file" ] && . "$file"
 done
 unset file
 
 # to help sublimelinter etc with finding my PATHS
 case $- in
-   *i*) source ~/.extra
+  *i*) source ~/.extra
 esac
 
 # highlighting inside manpages and elsewhere
@@ -47,10 +47,10 @@ fi
 [[ -s "$HOME/.ssh/config" ]] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
 # system bash completion
-[[ -e "/etc/bash_completion" ]] && . /etc/bash_completion
+[[ -f "/etc/bash_completion" ]] && . /etc/bash_completion
 
 # enable homebrew bash_completion
-[[ -e "$(brew --prefix)/etc/bash_completion" ]] && . "$(brew --prefix)/etc/bash_completion"
+[[ -f "$(brew --prefix)/etc/bash_completion" ]] && . "$(brew --prefix)/etc/bash_completion"
 #[[ -e "$(brew --prefix)/share/bash-completion/bash_completion" ]] && . "$(brew --prefix)/share/bash-completion/bash_completion"
 
 # enable aws-cli completion
