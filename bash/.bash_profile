@@ -56,12 +56,15 @@ fi
 # enable aws-cli completion
 [ -f "/usr/local/bin/aws_completer" ] && complete -C aws_completer aws
 
+# enable hugo completion
+[[ -f "$HOME/.hugo/hugo.sh" ]] && . "$HOME/.hugo/hugo.sh"
+
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
 
 # travis completion
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+[ -f ~/.travis/travis.sh ] && . ~/.travis/travis.sh
 
 # grc colorizing
 [[ -e "$(brew --prefix)/etc/grc.bashrc" ]] && . "$(brew --prefix)/etc/grc.bashrc"
@@ -70,17 +73,20 @@ complete -W "NSGlobalDomain" defaults
 #[ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
 
 # set up fzf keybindings
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.fzf.bash ] && . ~/.fzf.bash
 
 # use local folder for CPAN instead of homebrew cellar
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 
 # Start GPG agent
 if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
-  source ~/.gnupg/.gpg-agent-info
+  . ~/.gnupg/.gpg-agent-info
   export GPG_AGENT_INFO
   GPG_TTY=$(tty)
   export GPG_TTY
 else
   eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
 fi
+
+# source nvm
+[[ -s "/usr/local/opt/nvm/nvm.sh" ]] && . "/usr/local/opt/nvm/nvm.sh"
