@@ -22,7 +22,7 @@ brew install bash
 # Install bash-completion
 brew tap homebrew/versions
 brew install bash-completion
-brew install bash-completion2
+#brew install bash-completion2
 brew tap homebrew/completions
 brew install brew-cask-completion
 brew install vagrant-completion
@@ -39,7 +39,7 @@ brew install r
 mkdir -p ~/Library/R/3.2/library
 
 # Install more recent versions of some OS X tools
-brew install vim --override-system-vi
+brew install vim --with-override-system-vi
 brew install homebrew/dupes/grep --default-names
 brew install homebrew/dupes/screen
 
@@ -51,11 +51,19 @@ brew install ack
 brew install fzf
 brew install the_silver_searcher
 
-# git stuff
+# dev stuff
+brew install autoconf
+brew install automake
 # brew install bfg
 brew install gist
 brew install git
+brew install go
+brew install heroku
 brew install hub
+brew install jq
+brew install node
+brew install openssl@1.1
+brew install python
 
 # network stuff
 brew install grepcidr
@@ -67,13 +75,19 @@ brew install speedtest_cli
 brew install lnav
 brew install logstalgia
 
+# infra management
+brew install ansible
+brew install terraform
+brew install vault
+
 # Install everything else
+brew install aws-elasticbeanstalk
 brew install awscli
 # brew install ffmpeg --with-libvpx
+brew install graphviz
 brew install htop
-brew install jq
+brew install imagemagick
 brew install ncdu
-brew install node
 brew install pv
 brew install rename
 brew install stow
@@ -84,15 +98,12 @@ brew install terminal-notifier
 # Install pgp stuff
 brew install gpg
 brew install gpg-agent
-brew install keybase
 brew install pinentry-mac
 
 # Install compression stuff
 brew install p7zip
 brew install unrar
 brew install xz
-
-brew linkapps terminal-notifier
 
 # Install some linters
 brew install shellcheck
