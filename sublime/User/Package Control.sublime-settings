@@ -21,8 +21,11 @@
 		"nginx",
 		"Package Control",
 		"Pretty JSON",
+		"Pretty Ruby",
 		"Pretty YAML",
 		"Puppet",
+		"ScalaFormat",
+		"Scalariver",
 		"Sort Lines (Numerically)",
 		"sublime-github",
 		"SublimeLinter",
@@ -32,8 +35,10 @@
 		"SublimeLinter-rubocop",
 		"SublimeLinter-shellcheck",
 		"Terraform",
+		"TOML",
 		"TrailingSpaces",
 		"Vagrant",
+		"VAlign",
 		"Varnish VCL",
 		"Whitespace"
 	]

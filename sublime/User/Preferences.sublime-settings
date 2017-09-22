@@ -1,10 +1,25 @@
 {
 	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
-	"font_size": 13,
+	"font_size": 14,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
+	"paths":
+	{
+		"linux":
+		[
+		],
+		"osx":
+		[
+			"/usr/local/bin",
+			"/Users/bradclark/.rvm/rubies/ruby-2.3.0/bin"
+		],
+		"windows":
+		[
+		]
+	},
 	"tab_size": 2,
+	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true
 }
