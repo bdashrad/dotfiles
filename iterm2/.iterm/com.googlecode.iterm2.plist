@@ -42,19 +42,19 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>970 768 620 392 0 0 2560 1417 </string>
+	<string>530 477 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 76 618 519 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>121 58 918 512 0 0 1680 1027 </string>
+	<string>124 272 796 473 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1281 14 1277 690 0 0 2560 1417 </string>
+	<string>562 25 1116 1002 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>842 26 851 996 0 0 1680 1027 </string>
+	<string>842 28 836 996 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>364 30 1277 1387 0 0 2560 1417 </string>
+	<string>-1678 135 836 996 -1680 109 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>564 -260 1277 1387 0 0 2560 1417 </string>
+	<string>-1678 135 815 996 -1680 109 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>760 -268 1277 1387 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
@@ -598,7 +598,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>10000</integer>
+			<integer>50000</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -632,7 +632,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.24420072115384617</real>
+			<real>0.071186205621301818</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -1251,7 +1251,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>2FC58B45-C9B1-4C3F-8C7B-9B3B420A634F</string>
 	<key>NoSyncLastTipTime</key>
-	<real>498151321.533436</real>
+	<real>504365014.868182</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1289,11 +1289,57 @@
 		<string>0019</string>
 		<string>0020</string>
 		<string>0021</string>
+		<string>0022</string>
+		<string>0023</string>
+		<string>0024</string>
+		<string>0025</string>
+		<string>0026</string>
+		<string>0027</string>
+		<string>0028</string>
+		<string>0029</string>
+		<string>0030</string>
+		<string>0031</string>
+		<string>0032</string>
+		<string>0033</string>
+		<string>0034</string>
+		<string>0035</string>
+		<string>0036</string>
+		<string>0037</string>
+		<string>0038</string>
+		<string>0039</string>
+		<string>0040</string>
+		<string>0041</string>
+		<string>0042</string>
+		<string>0043</string>
+		<string>0044</string>
+		<string>0045</string>
+		<string>0046</string>
+		<string>0047</string>
+		<string>0048</string>
+		<string>0049</string>
+		<string>0050</string>
+		<string>0051</string>
+		<string>0052</string>
+		<string>0053</string>
+		<string>0054</string>
+		<string>0055</string>
+		<string>0056</string>
+		<string>0057</string>
+		<string>0058</string>
+		<string>0059</string>
+		<string>0060</string>
+		<string>0061</string>
+		<string>0062</string>
+		<string>0063</string>
+		<string>0064</string>
+		<string>0065</string>
 	</array>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
 	<false/>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1338,18 +1384,20 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-10-13T15:42:50Z</date>
+	<date>2016-12-27T20:06:42Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
+	<false/>
+	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>TabTitlesUseSmartTruncation</key>
 	<true/>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
 	<key>findRegex_iTerm</key>
-	<false/>
+	<true/>
 	<key>iTerm Version</key>
-	<string>3.0.9</string>
+	<string>3.0.12</string>
 </dict>
 </plist>
