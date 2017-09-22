@@ -139,3 +139,21 @@ retry_ssh()
   local sshargs=${args[@]}
   while true; do ssh ${sshargs} -o ConnectTimeout=5 "${host}" && break; sleep 5; done
 }
+
+white-board-cleaner()
+{
+  local path input input_no_ext output
+  path=$(dirname $1)
+  input=$(basename $1)
+  input_no_ext=${input%.*}
+  output=${2:-$path/cleaned-$input_no_ext.png}
+  echo "${output}"
+  convert "${path}/${input}" \
+    -morphology Convolve DoG:15,100,0 \
+    -negate \
+    -normalize \
+    -blur 0x1 \
+    -channel RBG \
+    -level 60%,91%,0.1 "${output}";
+  echo "${output}"
+}
