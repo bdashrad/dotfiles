@@ -29,7 +29,8 @@ export AWS_CONFIG_FILE="$HOME/.aws/config"
 # use homebrew coreutils manpages
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+# NVM
+export NVM_DIR="$HOME/.nvm"
 
 ###
 # PATH
@@ -59,3 +60,10 @@ export PATH
 # github.com/trapd00r/LS_COLORS
 command -v gdircolors >/dev/null 2>&1 || alias gdircolors="dircolors"
 eval "$(gdircolors -b ~/.dircolors)"
+
+# CPAN Stuff
+PATH="/Users/bradclark/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/bradclark/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/bradclark/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/bradclark/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/bradclark/perl5"; export PERL_MM_OPT;
