@@ -20,7 +20,7 @@
 
 from glob import glob
 import os.path
-
+import os
 import sys
 import github
 import subprocess
@@ -30,9 +30,10 @@ reset = '\033[0m'
 DRY_RUN = len(sys.argv) > 1 and sys.argv[1] == '--dry-run'
 
 
-tokenpath = os.path.expanduser('~/.githubtoken')
-tokenfile = open(tokenpath)
-token = tokenfile.read().strip();
+# tokenpath = os.path.expanduser('~/.githubtoken')
+# tokenfile = open(tokenpath)
+# token = tokenfile.read().strip();
+token = os.environ['GITHUB_TOKEN']
 
 
 def get_branch_heads():
