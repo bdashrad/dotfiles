@@ -1,6 +1,10 @@
+# standard junk
+.DS_Store
+
 # local config settings
 .extra
 .gitconfig.local
 
 # vim things
 vim/.vim/.netrwhist
+
