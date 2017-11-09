@@ -5,6 +5,8 @@
 .extra
 .gitconfig.local
 
+# ssh config
+ssh/.ssh/config
+
 # vim things
 vim/.vim/.netrwhist
-
