@@ -15,7 +15,7 @@ brew cask install alfred
 brew cask install caffeine
 brew cask install dropbox
 brew cask install evernote
-brew cask install firefox
+# brew cask install firefox
 brew cask install flux
 brew cask install google-chrome
 brew cask install google-drive
