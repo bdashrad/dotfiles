@@ -50,6 +50,7 @@ brew install entr
 brew install ack
 brew install fzf
 brew install the_silver_searcher
+brew install z
 
 # dev stuff
 brew install autoconf
