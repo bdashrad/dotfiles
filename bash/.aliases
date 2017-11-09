@@ -63,16 +63,5 @@ alias diskspace_report="df -P -kHl"
 # File size
 alias fs="stat -f \"%z bytes\""
 
-# generic colouriser
-GRC=$(which grc)
-if [ "$TERM" != dumb ] && [ -n "$GRC" ]
-  then
-    alias colourify="$GRC -es --colour=auto"
-    alias configure='colourify ./configure'
-    for app in {diff,make,gcc,g++,ping,traceroute}; do
-      alias "$app"='colourify '$app
-  done
-fi
-
 # apple wireless scan
 alias wifiscan='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport scan'
