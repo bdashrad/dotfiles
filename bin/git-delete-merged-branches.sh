@@ -8,7 +8,7 @@ echo "Enter Y to confirm"
 read -p "> " confirm
 
 kill_branches(){
-  echo $branches_to_die | xargs -n 1 git branch -d
+  echo $branches_to_die | xargs -n 1 git branch -D
 }
 
 [[ $confirm == "Y"  ]] && kill_branches
