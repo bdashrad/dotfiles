@@ -32,10 +32,14 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 # NVM
 export NVM_DIR="$HOME/.nvm"
 
+# CPAN Stuff
+export PERL5LIB="/Users/bradclark/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}";
+export PERL_LOCAL_LIB_ROOT="/Users/bradclark/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}";
+export PERL_MB_OPT='--install_base "/Users/bradclark/perl5"';
+export PERL_MM_OPT="INSTALL_BASE=/Users/bradclark/perl5";
+
 ###
 # PATH
-# set PATH so it includes user's private bin if it exists
-[[ -d "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
 
 # homebrew applications
 # PATH="/usr/local/bin:$PATH"
@@ -46,6 +50,12 @@ PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
 # Heroku Toolbelt
 PATH="$PATH:/usr/local/heroku/bin"
+
+# CPAN
+PATH="$PATH:/Users/bradclark/perl5/bin"
+
+# set PATH so it includes user's private bin if it exists
+[[ -d "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
 
 # Add RVM to PATH for scripting
 PATH="$HOME/.rvm/bin:$PATH"
@@ -60,10 +70,3 @@ export PATH
 # github.com/trapd00r/LS_COLORS
 command -v gdircolors >/dev/null 2>&1 || alias gdircolors="dircolors"
 eval "$(gdircolors -b ~/.dircolors)"
-
-# CPAN Stuff
-PATH="/Users/bradclark/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/Users/bradclark/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/Users/bradclark/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/Users/bradclark/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/bradclark/perl5"; export PERL_MM_OPT;
