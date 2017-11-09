@@ -98,17 +98,20 @@
 
 # rewrites
 [url "git@github.com:"]
-  insteadOf = "gh:"
+  insteadOf = "https://github.com/"
   pushInsteadOf = "github:"
   pushInsteadOf = "git://github.com/"
   pushInsteadOf = "https://github.com/"
+
 [url "git://github.com/"]
   insteadOf = "github:"
+
 [url "git@gist.github.com:"]
-  insteadOf = "gst:"
   pushInsteadOf = "gist:"
   pushInsteadOf = "git://gist.github.com/"
-  pushInsteadOf = "https://gist.github.com/"
+
+[url "git://gist.github.com/"]
+  insteadOf = "gist:"
 
 # use separate file for username / github token / etc
 [include]
