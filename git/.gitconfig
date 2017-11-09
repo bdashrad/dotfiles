@@ -1,8 +1,5 @@
 [alias]
   # shorten some commonly used commands
-  br = branch
-  ci = commit
-  co = checkout
   st = status
 
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
@@ -13,6 +10,7 @@
 
   # Show the diff between the latest commit and the current state
   d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+  df = diff --color --color-words --abbrev
 
 [color]
   ui = always
@@ -94,6 +92,9 @@
 # push easily. http://stackoverflow.com/a/23918418/89484
 [push]
   default = current
+
+[stash]
+  showPatch = true
 
 # rewrites
 [url "git@github.com:"]
