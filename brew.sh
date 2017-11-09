@@ -22,7 +22,6 @@ brew install bash
 # Install bash-completion
 brew tap homebrew/versions
 brew install bash-completion
-#brew install bash-completion2
 brew tap homebrew/completions
 brew install brew-cask-completion
 brew install vagrant-completion
