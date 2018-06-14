@@ -46,10 +46,13 @@ alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 
 ###
 # git stuff
-
 # Undo a `git push`
 alias undopush="git push -f origin HEAD^:master"
+
+# jump to repor root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
+
+# checkout master
 alias master="git checkout master"
 
 # Update fork from upstream repo
@@ -58,6 +61,7 @@ alias gitupstream='echo -n "rebase current repo with upstream repo? (CTRL+C to q
 # Recursively delete `.DS_Store` files
 alias cleanup_dsstore="find . -name '*.DS_Store' -type f -ls -delete"
 
+# pretty disk usage
 alias diskspace_report="df -P -kHl"
 
 # File size
