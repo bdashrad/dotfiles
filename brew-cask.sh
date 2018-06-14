@@ -9,6 +9,9 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew tap caskroom/cask
 brew tap caskroom/versions
 
+# add brew-cask-upgrade
+brew tap buo/cask-upgrade
+
 # always
 brew cask install alfred
 # brew cask install bettertouchtool
@@ -44,6 +47,7 @@ brew cask install sublime-text
 brew cask install vagrant
 brew cask install vagrant-manager
 brew cask install virtualbox
+brew cask install virtualbox-extension-pack
 brew cask install wireshark
 
 # multimedia
@@ -77,3 +81,4 @@ brew cask install tunnelblick
 brew cask install capsee
 brew cask install screenhero
 # brew cask install logitech-unifying
+brew cask install tripmode
