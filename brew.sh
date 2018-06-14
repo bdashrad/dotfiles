@@ -20,9 +20,7 @@ brew install gnu-sed --with-default-names
 brew install bash
 
 # Install bash-completion
-brew tap homebrew/versions
 brew install bash-completion
-brew tap homebrew/completions
 brew install brew-cask-completion
 brew install vagrant-completion
 
@@ -39,8 +37,8 @@ mkdir -p ~/Library/R/3.2/library
 
 # Install more recent versions of some OS X tools
 brew install vim --with-override-system-vi
-brew install homebrew/dupes/grep --default-names
-brew install homebrew/dupes/screen
+brew install grep --default-names
+brew install screen
 
 # run this script when this file changes guy.
 brew install entr
