@@ -15,7 +15,6 @@ brew tap buo/cask-upgrade
 # always
 brew cask install alfred
 # brew cask install bettertouchtool
-brew cask install caffeine
 brew cask install dropbox
 brew cask install evernote
 # brew cask install firefox
@@ -32,7 +31,7 @@ brew cask install xquartz
 
 # chat
 # brew cask install adium
-brew cask install google-hangouts
+# brew cask install google-hangouts
 # brew cask install mumble
 # brew cask install skype
 brew cask install slack
