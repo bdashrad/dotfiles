@@ -157,3 +157,23 @@ white-board-cleaner()
     -level 60%,91%,0.1 "${output}";
   echo "${output}"
 }
+
+multi-dig()
+{
+  local target dns options
+  dns=()
+  dns+=('8.8.8.8') # google
+  dns+=('9.9.9.9') # quadnine
+  dns+=('208.67.222.222') # opendns
+  dns+=('1.1.1.1') # cloudflare
+  dns+=('216.146.35.35') # dyn
+  dns+=('64.6.64.6') # verisign
+  dns+=('209.244.0.3') # level3
+  dns+=('209.244.0.3') # DNS.WATCH
+  target=$1
+  shift
+  options=( ${@} )
+  for dns in "${dns[@]}"; do
+    dig "@${dns}" "${target}" "${options[@]}"
+  done
+}
