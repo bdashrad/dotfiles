@@ -32,6 +32,7 @@
 		"SublimeLinter",
 		"SublimeLinter-contrib-puppet",
 		"SublimeLinter-contrib-puppet-lint",
+		"SublimeLinter-contrib-yamllint",
 		"SublimeLinter-pylint",
 		"SublimeLinter-rubocop",
 		"SublimeLinter-shellcheck",
