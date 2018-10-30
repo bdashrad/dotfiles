@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+gem 'aws-sdk'
+gem 'pry'
+gem 'rake'
+gem 'rspec'
+gem 'rubocop'
+gem 'rvm'
+gem 'terraform_landscape'
+gem 'terraforming'
