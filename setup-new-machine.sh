@@ -55,9 +55,6 @@ then
   brew doctor
 fi
 
-# install pip
-sudo easy_install pip
-
 # install brew apps
 echo "Installing brew apps..."
 ./brew.sh
@@ -67,6 +64,10 @@ BASHPATH=$(brew --prefix)/bin/bash
 echo "$BASHPATH" | sudo tee -a /etc/shells > /dev/null
 chsh -s "$BASHPATH" # will set for current user only.
 echo "$BASH_VERSION" # should be 4.x not the old 3.2.X
+
+# install pip and apps
+sudo easy_install pip
+./pip-applications.sh
 
 # install ruby gems
 gem install bundler
