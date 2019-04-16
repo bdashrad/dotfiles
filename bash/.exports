@@ -54,6 +54,9 @@ export PERL_MM_OPT="INSTALL_BASE=/Users/bradclark/perl5";
 # PATH="/usr/local/bin:$PATH"
 PATH="/usr/local/sbin:$PATH"
 
+# don't auto-cleanup homebrew
+HOMEBREW_NO_INSTALL_CLEANUP="true"
+
 # Add brew coreutils to $PATH
 PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
