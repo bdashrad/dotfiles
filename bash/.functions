@@ -12,17 +12,17 @@ function bin2ascii()
 
 function epoch2nsca()
 {
-  date -d @$1 "+%d/%b/%Y:%T"
+  date -d @"$1" "+%d/%b/%Y:%T"
 }
 
 function epoch2human()
 {
-  date -d @$1
+  date -d @"$1"
 }
 
 function epoch2iso8601()
 {
-  date -d @$1 -Iseconds
+  date -d @"$1" -Iseconds
 }
 
 function taskdate2epoch()
@@ -52,7 +52,7 @@ cdf() {  # short for cdfinder
 function whois() {
   local domain
   domain=$(echo "$1" | awk -F/ '{print $3}') # get domain from URL
-  if [ -z $domain ] ; then
+  if [ -z "$domain" ] ; then
     domain=$1
   fi
   echo "Getting whois record for: $domain …"
@@ -60,13 +60,13 @@ function whois() {
   # avoid recursion
           # this is the best whois server
                           # strip extra fluff
-  /usr/bin/whois -h whois.internic.net $domain | sed '/NOTICE:/q'
+  /usr/bin/whois -h whois.internic.net "$domain" | sed '/NOTICE:/q'
 }
 
 function localip(){
   function _localip(){ echo "📶  "$(ipconfig getifaddr "$1"); }
   export -f _localip
-  local purple="\x1B\[35m" reset="\x1B\[m"
+  local purple='\x1B\[35m' reset='\x1B\[m'
   networksetup -listallhardwareports | \
     sed -r "s/Hardware Port: (.*)/${purple}\1${reset}/g" | \
     sed -r "s/Device: (en.*)$/_localip \1/e" | \
@@ -88,11 +88,11 @@ function git_upstream_sync ()
 gifify() {
   if [[ -n "$1" ]]; then
   if [[ $2 == '--good' ]]; then
-    ffmpeg -i $1 -r 10 -vcodec png out-static-%05d.png
-    time convert -verbose +dither -layers Optimize -resize 900x900\> out-static*.png  GIF:- | gifsicle --colors 128 --delay=5 --loop --optimize=3 --multifile - > $1.gif
+    ffmpeg -i "$1" -r 10 -vcodec png out-static-%05d.png
+    time convert -verbose +dither -layers Optimize -resize 900x900\> out-static*.png  GIF:- | gifsicle --colors 128 --delay=5 --loop --optimize=3 --multifile - > "${1}.gif"
     rm out-static*.png
   else
-    ffmpeg -i $1 -s 600x400 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 > $1.gif
+    ffmpeg -i $"1" -s 600x400 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 > "${1}.gif"
   fi
   else
   echo "proper usage: gifify <input_movie.mov>. You DO need to include extension."
@@ -102,17 +102,17 @@ gifify() {
 # turn that video into webm.
 # brew reinstall ffmpeg --with-libvpx
 webmify(){
-  ffmpeg -i $1 -vcodec libvpx -acodec libvorbis -isync -copyts -aq 80 -threads 3 -qmax 30 -y $2 $1.webm
+  ffmpeg -i "$1" -vcodec libvpx -acodec libvorbis -isync -copyts -aq 80 -threads 3 -qmax 30 -y "$2" "${1}.webm"
 }
 
 # git commit browser. needs fzf
 log() {
   git log --graph --color=always \
-      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+    --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
   fzf --ansi --no-sort --reverse --tiebreak=index --toggle-sort=\` \
-      --bind "ctrl-m:execute:
-                echo '{}' | grep -o '[a-f0-9]\{7\}' | head -1 |
-                xargs -I % sh -c 'git show --color=always % | less -R'"
+    --bind "ctrl-m:execute:
+            echo '{}' | grep -o '[a-f0-9]\{7\}' | head -1 |
+            xargs -I % sh -c 'git show --color=always % | less -R'"
 }
 
 # shortcut for pywikid
@@ -126,25 +126,25 @@ function wikid ()
 # validate puppet erb
 validate_erb()
 {
-  erb -P -x -T '-' $1 | ruby -c
+  erb -P -x -T '-' "$1" | ruby -c
 }
 
 # ssh loop with 10s timeout
 retry_ssh()
 {
   local args l host sshargs
-  args=( $@ )
+  args=( "$@" )
   host=${args[${#args[@]}-1]}
   unset args[${#args[@]}-1]
-  local sshargs=${args[@]}
-  while true; do ssh ${sshargs} -o ConnectTimeout=5 "${host}" && break; sleep 5; done
+  local sshargs=${args[*]}
+  while true; do ssh "${sshargs}" -o ConnectTimeout=5 "${host}" && break; sleep 5; done
 }
 
 white-board-cleaner()
 {
   local path input input_no_ext output
-  path=$(dirname $1)
-  input=$(basename $1)
+  path=$(dirname "$1")
+  input=$(basename "$1")
   input_no_ext=${input%.*}
   output=${2:-$path/cleaned-$input_no_ext.png}
   echo "${output}"
@@ -171,7 +171,7 @@ multi-dig()
   dns+=('209.244.0.3') # level3
   target=$1
   shift
-  options=( ${@} )
+  options=( "${@}" )
   for dns in "${dns[@]}"; do
     dig "@${dns}" "${target}" "${options[@]}"
   done
