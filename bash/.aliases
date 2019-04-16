@@ -71,8 +71,36 @@ alias fs="stat -f \"%z bytes\""
 alias wifiscan='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport scan'
 
 # dns stuff
+dnshosts=()
+# cloudflare
+dnshosts+=('1.0.0.1')
+dnshosts+=('1.1.1.1')
+dnshostsv6+=('2606:4700:4007::1001')
+dnshostsv6+=('2606:4700:4700::1111')
+# quadnine dns
+dnshosts+=('9.9.9.9')
+dnshosts+=('149.112.112.112')
+dnshostsv6+=('2620:fe::fe')
+dnshostsv6+=('2620:fe::9')
+# opendns
+dnshosts+=('208.67.222.222')
+dnshosts+=('208.67.220.220')
+dnshostsv6+=('2620:119:35::35')
+dnshostsv6+=('2620:119:53::53')
+# opendns, no-filtering
+dnshostsv6+=('2620:0:ccc::2')
+dnshostsv6+=('2620:0:ccd::2')
+# google public dns
+dnshosts+=('8.8.8.8')
+dnshosts+=('8.8.4.4')
+dnshostsv6+=('2001:4860:4860::8888')
+dnshostsv6+=('2001:4860:4860::8844')
+# # dyn dns
+# dnshosts+=('216.146.35.35')
+# dnshosts+=('216.146.36.36') # i'm slow
+
 alias getdns="networksetup -getdnsservers Wi-Fi && scutil --dns"
-alias setdns="networksetup -setdnsservers Wi-Fi 2606:4700:4007::1001 2606:4700:4700::1111 2620:0:ccd::2 2620:0:ccc::2 2001:4860:4860::8844 2001:4860:4860::8888 2620:fe::fe 1.0.0.1 1.1.1.1 208.67.220.220 208.67.222.222 8.8.4.4 8.8.8.8 149.112.112.112 9.9.9.9"
+alias setdns="networksetup -setdnsservers Wi-Fi ${dnshosts[*]} ${dnshostsv6[*]}"
 
 # homebrew
 alias brewall='brew -v update && brew -v upgrade && brew cu -a --cleanup'
