@@ -81,6 +81,7 @@ brew install vault
 # Install everything else
 brew install aws-elasticbeanstalk
 brew install awscli
+brew install fullscreen/tap/aws-rotate-key
 # brew install ffmpeg --with-libvpx
 brew install graphviz
 brew install htop
