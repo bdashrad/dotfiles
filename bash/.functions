@@ -115,14 +115,6 @@ log() {
             xargs -I % sh -c 'git show --color=always % | less -R'"
 }
 
-# shortcut for pywikid
-function wikid ()
-{
-  pushd ~/bin/pywikid/ > /dev/null
-  ./pywikid.py $WIKIDSITE
-  popd > /dev/null
-}
-
 # validate puppet erb
 validate_erb()
 {
