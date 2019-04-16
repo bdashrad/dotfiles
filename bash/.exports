@@ -66,6 +66,9 @@ PATH="$PATH:/usr/local/heroku/bin"
 # CPAN
 PATH="$PATH:/Users/bradclark/perl5/bin"
 
+# kubectl krew
+[[ -d "${KREW_ROOT:-$HOME/.krew}/bin" ]] && PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 # set PATH so it includes user's private bin if it exists
 [[ -d "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
 
