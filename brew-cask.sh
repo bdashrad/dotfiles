@@ -14,15 +14,11 @@ brew tap buo/cask-upgrade
 
 # always
 brew cask install alfred
-# brew cask install bettertouchtool
 brew cask install dropbox
 brew cask install evernote
-# brew cask install firefox
-brew cask install flux
+brew cask install firefox
 brew cask install google-chrome
 brew cask install google-drive
-brew cask install karabiner
-brew cask install rescuetime
 brew cask install spectacle
 brew cask install stay
 brew cask install the-unarchiver
@@ -30,24 +26,19 @@ brew cask install transmission
 brew cask install xquartz
 
 # chat
-# brew cask install adium
-# brew cask install google-hangouts
-# brew cask install mumble
-# brew cask install skype
 brew cask install slack
 
 # development
-brew cask install atom
 brew cask install iterm2
 # brew cask install menumeters
-brew cask install kdiff3
+# brew cask install kdiff3
 brew cask install p4merge
 brew cask install sublime-text
-brew cask install vagrant
-brew cask install vagrant-manager
-brew cask install virtualbox
-brew cask install virtualbox-extension-pack
-brew cask install wireshark
+# brew cask install vagrant
+# brew cask install vagrant-manager
+# brew cask install virtualbox
+# brew cask install virtualbox-extension-pack
+# brew cask install wireshark
 
 # multimedia
 # brew cask install exiftool
@@ -68,16 +59,10 @@ brew cask install quicklook-json
 brew cask install suspicious-package
 
 # security
-# brew cask install keepassx0
 brew cask install 1password
 brew cask install keybase
 brew cask install lastpass
-brew cask install torbrowser
 brew cask install tunnelblick
 
 # utilities
-# brew cask install amethyst
-brew cask install capsee
-brew cask install screenhero
-# brew cask install logitech-unifying
 brew cask install tripmode
