@@ -107,5 +107,10 @@ brew install xz
 # Install some linters
 brew install shellcheck
 
+# Install kubernetes stuff
+brew install kubernetes-cli
+brew install kubernetes-helm
+brew install kube-ps1
+
 # Remove outdated versions from the cellar
 brew cleanup
