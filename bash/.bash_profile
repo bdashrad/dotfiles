@@ -120,4 +120,4 @@ complete -W "NSGlobalDomain" defaults
 [ -f ~/.travis/travis.sh ] && . ~/.travis/travis.sh
 
 # source nvm
-[[ -s "/usr/local/opt/nvm/nvm.sh" ]] && . "/usr/local/opt/nvm/nvm.sh"
+# [[ -s "/usr/local/opt/nvm/nvm.sh" ]] && . "/usr/local/opt/nvm/nvm.sh"
