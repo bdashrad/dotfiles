@@ -122,7 +122,6 @@ set_prompts() {
     . "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
     export KUBE_PS1_NS_ENABLE=false
   fi
-  return
 
   # ------------------------------------------------------------------
   # | Prompt string                                                  |
