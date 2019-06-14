@@ -112,6 +112,9 @@ fi
 # enable hugo completion
 [[ -f "$HOME/.hugo/hugo.sh" ]] && . "$HOME/.hugo/hugo.sh"
 
+# enable vault completion
+[[ -f "/usr/local/bin/vault" ]] && complete -C /usr/local/bin/vault vault
+
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
