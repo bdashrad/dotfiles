@@ -1,37 +1,31 @@
 #!/usr/bin/env bash
 
-function ascii2bin()
-{
+function ascii2bin() {
   perl -lpe '$_=unpack"B*"';
 }
 
-function bin2ascii()
-{
+function bin2ascii() {
   perl -lpe '$_=pack"B*",$_';
 }
 
-function epoch2nsca()
-{
+function epoch2nsca() {
   date -d @"$1" "+%d/%b/%Y:%T"
 }
 
-function epoch2human()
-{
+function epoch2human() {
   date -d @"$1"
 }
 
-function epoch2iso8601()
-{
+function epoch2iso8601() {
   date -d @"$1" -Iseconds
 }
 
-function taskdate2epoch()
-{
+function taskdate2epoch() {
   date -d "$1" +%s
 }
 
 # List all files, long format, colorized, permissions in octal
-function la(){
+function la() {
   ls -l  "$@" | awk '
     {
       k=0;
@@ -63,7 +57,7 @@ function whois() {
   /usr/bin/whois -h whois.internic.net "$domain" | sed '/NOTICE:/q'
 }
 
-function localip(){
+function localip() {
   function _localip(){ echo "📶  "$(ipconfig getifaddr "$1"); }
   export -f _localip
   local purple='\x1B\[35m' reset='\x1B\[m'
@@ -75,8 +69,7 @@ function localip(){
 }
 
 # update git repo with upstream
-function git_upstream_sync ()
-{
+function git_upstream_sync() {
   git fetch upstream
   git fetch upstream --tags
   git merge upstream/master
@@ -85,7 +78,7 @@ function git_upstream_sync ()
 
 # animated gifs from any video
 # from alex sexton   gist.github.com/SlexAxton/4989674
-gifify() {
+function gifify() {
   if [[ -n "$1" ]]; then
   if [[ $2 == '--good' ]]; then
     ffmpeg -i "$1" -r 10 -vcodec png out-static-%05d.png
@@ -101,12 +94,12 @@ gifify() {
 
 # turn that video into webm.
 # brew reinstall ffmpeg --with-libvpx
-webmify(){
+function webmify() {
   ffmpeg -i "$1" -vcodec libvpx -acodec libvorbis -isync -copyts -aq 80 -threads 3 -qmax 30 -y "$2" "${1}.webm"
 }
 
 # git commit browser. needs fzf
-log() {
+function log() {
   git log --graph --color=always \
     --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
   fzf --ansi --no-sort --reverse --tiebreak=index --toggle-sort=\` \
@@ -116,14 +109,12 @@ log() {
 }
 
 # validate puppet erb
-validate_erb()
-{
+function validate_erb() {
   erb -P -x -T '-' "$1" | ruby -c
 }
 
 # ssh loop with 10s timeout
-retry_ssh()
-{
+retry_ssh() {
   local args l host sshargs
   args=( "$@" )
   host=${args[${#args[@]}-1]}
@@ -132,8 +123,7 @@ retry_ssh()
   while true; do ssh "${sshargs}" -o ConnectTimeout=5 "${host}" && break; sleep 5; done
 }
 
-white-board-cleaner()
-{
+white-board-cleaner() {
   local path input input_no_ext output
   path=$(dirname "$1")
   input=$(basename "$1")
@@ -150,8 +140,7 @@ white-board-cleaner()
   echo "${output}"
 }
 
-multi-dig()
-{
+multi-dig() {
   local target dns options
   dns=()
   dns+=('1.1.1.1') # cloudflare
