@@ -110,6 +110,7 @@ brew install shellcheck
 brew install kubernetes-cli
 brew install kubernetes-helm
 brew install kube-ps1
+brew install kubectx
 
 # Remove outdated versions from the cellar
 brew cleanup
