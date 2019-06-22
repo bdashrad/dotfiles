@@ -66,8 +66,7 @@ brew install jq
 brew install openssl@1.1
 
 # install heroku-cli
-brew tap heroku/brew
-brew install heroku
+brew install heroku/brew/heroku
 
 # network stuff
 brew install grepcidr
