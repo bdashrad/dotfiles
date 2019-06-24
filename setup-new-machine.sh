@@ -65,6 +65,9 @@ echo "$BASHPATH" | sudo tee -a /etc/shells > /dev/null
 chsh -s "$BASHPATH" # will set for current user only.
 echo "$BASH_VERSION" # should be 4.x not the old 3.2.X
 
+# install fzf keybindings
+$(brew --prefix fzf)/install --keybindings --completion --no-update-rc
+
 # install pip and apps
 sudo easy_install pip
 ./pip-applications.sh
