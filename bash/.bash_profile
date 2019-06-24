@@ -10,7 +10,7 @@ unset file
 
 # to help sublimelinter etc with finding my PATHS
 case $- in
-  *i*) source ~/.extra
+  *i*) [[ -f "~/.extra" ]] && source ~/.extra
 esac
 
 BREWPATH=$(brew --prefix)
