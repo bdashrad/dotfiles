@@ -68,6 +68,9 @@ echo "$BASH_VERSION" # should be 4.x not the old 3.2.X
 # install fzf keybindings
 $(brew --prefix fzf)/install --keybindings --completion --no-update-rc
 
+# create bin directory
+mkdir -p ~/bin
+
 # install pip and apps
 sudo easy_install pip
 ./pip-applications.sh
