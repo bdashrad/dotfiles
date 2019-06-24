@@ -60,6 +60,15 @@ HOMEBREW_NO_INSTALL_CLEANUP="true"
 # Add brew coreutils to $PATH
 PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
+# brew grep
+PATH="$(brew --prefix grep)/libexec/gnubin:$PATH"
+
+# brew gnu sed
+PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"
+
+# brew findutils
+PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
+
 # Heroku Toolbelt
 PATH="$PATH:/usr/local/heroku/bin"
 
