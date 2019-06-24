@@ -39,9 +39,9 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
 * [ ] Documents folder
 * [ ] /etc/hosts
 * [ ] run LastPass installer `open "/opt/hombrew-cask/Caskroom/lastpass/latest/LastPass Installer.app"`
-* [ ] kubectl krew
-  * access-matrix
-  * nginx-ingress
+* [ ] [kubectl krew](https://github.com/kubernetes-sigs/krew)
+  * [access-matrix](https://github.com/corneliusweig/rakkess)
+  * [nginx-ingress](https://kubernetes.github.io/ingress-nginx/kubectl-plugin/)
 
 ## Thanks to...
 Lots of this content taken from various people, but particularly

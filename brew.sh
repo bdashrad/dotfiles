@@ -22,6 +22,7 @@ brew install grep
 brew install bash
 
 # Install/Upgrade some languages
+brew install coffeescript
 brew install go
 brew install node
 brew install python
@@ -83,6 +84,9 @@ brew install graphviz
 brew install htop
 brew install imagemagick
 brew install ncdu
+brew install optipng
+brew install pngcrush
+brew install pngquant
 brew install pv
 brew install rename
 brew install swig
