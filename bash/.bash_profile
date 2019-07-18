@@ -41,7 +41,7 @@ bind Space:magic-space
 #export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 # Load the default .profile
-[ -s "$HOME/.profile" ] && . "$HOME/.profile"
+# [ -s "$HOME/.profile" ] && . "$HOME/.profile"
 
 # Load RVM into a shell session *as a function*
 [ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm"
