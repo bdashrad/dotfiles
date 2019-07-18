@@ -49,7 +49,7 @@ brew cask install spotify
 brew cask install vlc
 
 # quicklook plugins
-brew cask install betterzipql
+# brew cask install betterzipql
 brew cask install qlcolorcode
 brew cask install qlmarkdown
 brew cask install qlprettypatch
