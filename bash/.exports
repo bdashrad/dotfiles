@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # prefer vim
-EDITOR=$(which vim)
+EDITOR=$(command -v vim)
 export EDITOR
 
 # Environment
@@ -36,7 +36,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export AWS_CONFIG_FILE="$HOME/.aws/config"
 
 # use homebrew coreutils manpages
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export MANPATH="${BREWPATH}/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
@@ -47,39 +47,39 @@ export PERL_LOCAL_LIB_ROOT="/Users/bradclark/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL
 export PERL_MB_OPT='--install_base "/Users/bradclark/perl5"';
 export PERL_MM_OPT="INSTALL_BASE=/Users/bradclark/perl5";
 
+# don't auto-cleanup homebrew
+export HOMEBREW_NO_INSTALL_CLEANUP="true"
+
 ###
 # PATH
 
 # homebrew applications
-# PATH="/usr/local/bin:$PATH"
-PATH="/usr/local/sbin:$PATH"
-
-# don't auto-cleanup homebrew
-HOMEBREW_NO_INSTALL_CLEANUP="true"
+# PATH="${BREWPATH}/bin:$PATH"
+PATH="${BREWPATH}/sbin:$PATH"
 
 # Add brew coreutils to $PATH
-PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+PATH="${BREWPATH}/opt/coreutils/libexec/gnubin:$PATH"
 
 # brew grep
-PATH="$(brew --prefix grep)/libexec/gnubin:$PATH"
+PATH="${BREWPATH}/opt/grep/libexec/gnubin:$PATH"
 
 # brew gnu sed
-PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"
+PATH="${BREWPATH}/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # brew findutils
-PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
+PATH="${BREWPATH}/opt/findutils/libexec/gnubin:$PATH"
 
 # Heroku Toolbelt
-PATH="$PATH:/usr/local/heroku/bin"
+PATH="$PATH:${BREWPATH}/heroku/bin"
 
 # CPAN
 PATH="$PATH:/Users/bradclark/perl5/bin"
 
 # kubectl krew
-[[ -d "${KREW_ROOT:-$HOME/.krew}/bin" ]] && PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+[ -d "${KREW_ROOT:-$HOME/.krew}/bin" ] && PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # set PATH so it includes user's private bin if it exists
-[[ -d "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
+[ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
 
 # Add RVM to PATH for scripting
 PATH="$HOME/.rvm/bin:$PATH"
