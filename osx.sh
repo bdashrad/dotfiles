@@ -109,9 +109,10 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 # defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
 # # Trackpad: swipe between pages with three fingers
-# defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool true
-# defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerHorizSwipeGesture -int 1
-# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 1
+defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool true
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerHorizSwipeGesture -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 1
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerHorizSwipeGesture -int 1
 
 # # Disable “natural” (Lion-style) scrolling
 # defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
@@ -135,6 +136,7 @@ sudo chmod 444 /private/var/db/.AccessibilityAPIEnabled
 #sudo osascript -e 'tell application "System Events" to set UI elements enabled to true'
 
 # Use scroll gesture with the Ctrl (^) modifier key to zoom
+# might not work anymore
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 # Follow the keyboard focus while zoomed in
