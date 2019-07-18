@@ -108,3 +108,10 @@ if confirm "Are you signed into iCloud? [y/N] "; then
 else
   echo "After you sign into iCloud you can manually create the symlink to \`$HOME/Library/Mobile Documents/com~apple~CloudDocs/\`"
 fi
+
+if confirm "Install work applications? [y/N] "; then
+  ./brew-work.sh
+  ./asdf.sh
+else
+  echo "Not installing, review \`./brew-work.sh\` and \`asdf.sh\` to see if there is anything you want from there."
+fi
