@@ -32,7 +32,7 @@ brew cask install slack
 brew cask install iterm2
 # brew cask install menumeters
 # brew cask install kdiff3
-brew cask install p4merge
+brew cask install p4v # p4merge
 brew cask install sublime-text
 # brew cask install vagrant
 # brew cask install vagrant-manager
