@@ -107,4 +107,4 @@ alias brewall='brew -v update && brew -v upgrade && brew cu -a --cleanup'
 alias brewcleanup='brew -v cleanup && brew -v cask cleanup'
 
 # terraform
-alias tf='$(command terraform)'
+[ -e "$(command -v terraform)" ] && alias tf='$(command terraform)'
