@@ -22,10 +22,10 @@ brew install grep
 brew install bash
 
 # Install/Upgrade some languages
-brew install coffeescript
+brew install python
 brew install go
 brew install node
-brew install python
+brew install coffeescript
 
 # stow is used to manage these dotfiles
 brew install stow
