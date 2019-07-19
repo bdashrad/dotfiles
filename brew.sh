@@ -95,7 +95,6 @@ brew install terminal-notifier
 
 # Install pgp stuff
 brew install gpg
-brew install gnupg
 brew install pinentry-mac
 
 # Install compression stuff
