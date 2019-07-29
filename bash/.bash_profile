@@ -5,7 +5,7 @@ export BREWPATH=$(brew --prefix)
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ${HOME}/.{path,exports,aliases,functions,bash_prompt}; do
+for file in ${HOME}/.{extra,path,exports,aliases,functions,bash_prompt}; do
   [ -f "$file" ] && [ -r "$file" ] && . "$file"
 done
 unset file
