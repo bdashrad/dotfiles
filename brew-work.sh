@@ -14,12 +14,17 @@ brew install packer
 # brew install terraform
 brew install terraform-docs
 brew install terraform_landscape
+
+# install vault and safe cli tool
 brew install vault
+brew tap starkandwayne/cf
+brew install starkandwayne/cf/safe
 
 # Install kubernetes stuff
 # brew install kubernetes-cli
 # brew install kubernetes-helm
 # brew install kops
+brew install aws-iam-authenticator
 brew install kube-ps1
 brew install kubectx
 
