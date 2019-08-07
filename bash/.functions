@@ -158,6 +158,11 @@ function multi-dig() {
   done
 }
 
+function k8scomplete() {
+  . <(kubectl completion bash)
+  . <(helm completion bash)
+}
+
 # function confirm() {
 #   read -r -p "${1:-Are you sure? [y/N]} " response
 #   response=${response,,}    # tolower
