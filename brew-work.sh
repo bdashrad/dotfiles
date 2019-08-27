@@ -17,8 +17,10 @@ brew install terraform_landscape
 
 # install vault and safe cli tool
 brew install vault
-brew tap starkandwayne/cf
 brew install starkandwayne/cf/safe
+
+# install lazydocker
+brew install jesseduffield/lazydocker/lazydocker
 
 # Install kubernetes stuff
 # brew install kubernetes-cli
