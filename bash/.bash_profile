@@ -120,5 +120,9 @@ complete -W "NSGlobalDomain" defaults
 # asdf
 [ -f "${BREWPATH}/opt/asdf/asdf.sh" ] && source "${BREWPATH}/opt/asdf/asdf.sh"
 
+
+# travis-cli
+[ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
+
 # source extra last for overrides
 [ -f "${HOME}/.extra" ] && [ -r "${HOME}/.extra" ] && . "${HOME}/.extra"

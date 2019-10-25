@@ -91,6 +91,7 @@ brew install pngquant
 brew install pv
 brew install rename
 brew install swig
+brew install travis
 brew install tree
 brew install terminal-notifier
 
