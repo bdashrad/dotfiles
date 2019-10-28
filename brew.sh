@@ -78,6 +78,7 @@ brew install speedtest_cli
 # Install everything else
 brew install aws-elasticbeanstalk
 brew install awscli
+brew install direnv
 brew install fullscreen/tap/aws-rotate-key
 # brew install ffmpeg --with-libvpx
 brew install graphviz
@@ -90,6 +91,7 @@ brew install pngquant
 brew install pv
 brew install rename
 brew install swig
+brew install travis
 brew install tree
 brew install terminal-notifier
 
