@@ -3,6 +3,7 @@
 	"font_size": 14,
 	"ignored_packages":
 	[
+		"Markdown",
 		"Vintage"
 	],
 	"paths":
