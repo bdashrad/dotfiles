@@ -204,9 +204,6 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # Finder: show status bar
 defaults write com.apple.finder ShowStatusBar -bool true
 
-# Finder: allow text selection in Quick Look
-defaults write com.apple.finder QLEnableTextSelection -bool true
-
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
