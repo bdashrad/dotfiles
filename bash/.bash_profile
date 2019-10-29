@@ -84,7 +84,7 @@ else
 fi
 
 ##
-## Competion
+## Completion
 ##
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
@@ -111,18 +111,14 @@ fi
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
 
-# travis completion
-[ -f ~/.travis/travis.sh ] && . ~/.travis/travis.sh
+# travis-cli
+[ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
 
 # source nvm
 # [ -s "${BREWPATH}/opt/nvm/nvm.sh" ] && . "${BREWPATH}/opt/nvm/nvm.sh"
 
 # asdf
 [ -f "${BREWPATH}/opt/asdf/asdf.sh" ] && source "${BREWPATH}/opt/asdf/asdf.sh"
-
-
-# travis-cli
-[ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
 
 # source extra last for overrides
 [ -f "${HOME}/.extra" ] && [ -r "${HOME}/.extra" ] && . "${HOME}/.extra"
