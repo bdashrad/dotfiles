@@ -29,6 +29,10 @@ set visualbell
 set undofile " Persistent Undo.
 set backspace=indent,eol,start
 
+" disable modelines to avoid CVE-2019-12735
+set modelines=0 " Disable modelines a security precaution
+set nomodeline
+
 " command tab completion
 set wildmenu
 set wildmode=list:longest
