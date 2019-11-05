@@ -19,6 +19,8 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
 5. Enjoy!
 
 ## Manual Migrations
+* [ ] keybase.io device
+* [ ] gpg keys
 * [ ] .app's I really want and aren't in my caskfile.
 * [ ] read `brew list` and `brew cask list` to see whats worth reinstalling
 * [ ] read `npm list -g --depth=0` to see global npm packages
