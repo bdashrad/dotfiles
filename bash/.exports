@@ -47,9 +47,6 @@ export PERL_LOCAL_LIB_ROOT="/Users/bradclark/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL
 export PERL_MB_OPT='--install_base "/Users/bradclark/perl5"';
 export PERL_MM_OPT="INSTALL_BASE=/Users/bradclark/perl5";
 
-# don't auto-cleanup homebrew
-export HOMEBREW_NO_INSTALL_CLEANUP="true"
-
 ###
 # PATH
 
@@ -65,7 +62,6 @@ PATH="${BREWPATH}/opt/grep/libexec/gnubin:$PATH"
 
 # brew gnu sed
 PATH="${BREWPATH}/opt/gnu-sed/libexec/gnubin:$PATH"
-
 # brew findutils
 PATH="${BREWPATH}/opt/findutils/libexec/gnubin:$PATH"
 
