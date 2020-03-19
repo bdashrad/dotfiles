@@ -10,7 +10,7 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
 3. `setup-new-machine.sh`
 4. use [stow](https://www.gnu.org/software/stow/) to install various config files:
   * standards
-    * `stow {bash,fzf,git,hugo,ruby,screen,ssh,tmux,vagrant,vim}`
+    * `stow {bash,fzf,git,hugo,ruby,screen,tmux,vagrant,vim}`
   * ~/home/bin
     * `mkdir -p ~/bin`
     * `stow -t ~/bin/ bin`
@@ -19,6 +19,8 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
 5. Enjoy!
 
 ## Manual Migrations
+* [ ] keybase.io device
+* [ ] gpg keys
 * [ ] .app's I really want and aren't in my caskfile.
 * [ ] read `brew list` and `brew cask list` to see whats worth reinstalling
 * [ ] read `npm list -g --depth=0` to see global npm packages
@@ -39,9 +41,9 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
 * [ ] Documents folder
 * [ ] /etc/hosts
 * [ ] run LastPass installer `open "/opt/hombrew-cask/Caskroom/lastpass/latest/LastPass Installer.app"`
-* [ ] kubectl krew
-  * access-matrix
-  * nginx-ingress
+* [ ] [kubectl krew](https://github.com/kubernetes-sigs/krew)
+  * [access-matrix](https://github.com/corneliusweig/rakkess)
+  * [nginx-ingress](https://kubernetes.github.io/ingress-nginx/kubectl-plugin/)
 
 ## Thanks to...
 Lots of this content taken from various people, but particularly

@@ -18,7 +18,7 @@ brew cask install dropbox
 brew cask install evernote
 brew cask install firefox
 brew cask install google-chrome
-brew cask install google-drive
+# brew cask install google-drive
 brew cask install spectacle
 brew cask install stay
 brew cask install the-unarchiver
@@ -32,7 +32,7 @@ brew cask install slack
 brew cask install iterm2
 # brew cask install menumeters
 # brew cask install kdiff3
-brew cask install p4merge
+brew cask install p4v # p4merge
 brew cask install sublime-text
 # brew cask install vagrant
 # brew cask install vagrant-manager
@@ -49,7 +49,7 @@ brew cask install spotify
 brew cask install vlc
 
 # quicklook plugins
-brew cask install betterzipql
+# brew cask install betterzipql
 brew cask install qlcolorcode
 brew cask install qlmarkdown
 brew cask install qlprettypatch
@@ -65,4 +65,5 @@ brew cask install lastpass
 brew cask install tunnelblick
 
 # utilities
+brew cask install oversight
 brew cask install tripmode

@@ -105,3 +105,6 @@ alias setdns="networksetup -setdnsservers Wi-Fi ${dnshosts[*]} ${dnshostsv6[*]}"
 # homebrew
 alias brewall='brew -v update && brew -v upgrade && brew cu -a --cleanup'
 alias brewcleanup='brew -v cleanup && brew -v cask cleanup'
+
+# terraform
+alias tf="command terraform"

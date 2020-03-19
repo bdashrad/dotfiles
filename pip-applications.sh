@@ -4,16 +4,23 @@
 
 # upgrade pip
 pip install --upgrade pip
-pip3 install --upgrade pip
 
 # development
-pip install ansible-lint
 pip install botocore
-pip3 install boto
 pip install pygithub
-pip install requests
 pip install virtualenv
+
+# python3 stuff
+pip3 install --upgrade pip
+
+# dev
+pip3 install ansible
+pip3 install ansible-lint
+pip3 install boto
+pip3 install botocore
+pip3 install requests
 pip3 install yamllint
+pip3 install virtualenv
 
 # fun
-pip install doge
+pip3 install doge

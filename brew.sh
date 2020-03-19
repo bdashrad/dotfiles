@@ -22,9 +22,10 @@ brew install grep
 brew install bash
 
 # Install/Upgrade some languages
+brew install python
 brew install go
 brew install node
-brew install python
+brew install coffeescript
 
 # stow is used to manage these dotfiles
 brew install stow
@@ -77,21 +78,25 @@ brew install speedtest_cli
 # Install everything else
 brew install aws-elasticbeanstalk
 brew install awscli
+brew install direnv
 brew install fullscreen/tap/aws-rotate-key
 # brew install ffmpeg --with-libvpx
 brew install graphviz
 brew install htop
 brew install imagemagick
 brew install ncdu
+brew install optipng
+brew install pngcrush
+brew install pngquant
 brew install pv
 brew install rename
 brew install swig
+brew install travis
 brew install tree
 brew install terminal-notifier
 
 # Install pgp stuff
 brew install gpg
-brew install gpg-agent
 brew install pinentry-mac
 
 # Install compression stuff

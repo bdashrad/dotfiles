@@ -38,7 +38,7 @@ function la() {
 }
 
 # cd into whatever is the forefront Finder window.
-cdf() {  # short for cdfinder
+function cdf() {  # short for cdfinder
   cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
 }
 
@@ -114,7 +114,7 @@ function validate_erb() {
 }
 
 # ssh loop with 10s timeout
-retry_ssh() {
+function retry_ssh() {
   local args l host sshargs
   args=( "$@" )
   host=${args[${#args[@]}-1]}
@@ -123,7 +123,7 @@ retry_ssh() {
   while true; do ssh "${sshargs}" -o ConnectTimeout=5 "${host}" && break; sleep 5; done
 }
 
-white-board-cleaner() {
+function white-board-cleaner() {
   local path input input_no_ext output
   path=$(dirname "$1")
   input=$(basename "$1")
@@ -140,7 +140,7 @@ white-board-cleaner() {
   echo "${output}"
 }
 
-multi-dig() {
+function multi-dig() {
   local target dns options
   dns=()
   dns+=('1.1.1.1') # cloudflare
@@ -158,12 +158,17 @@ multi-dig() {
   done
 }
 
-function confirm() {
-  read -r -p "${1:-Are you sure? [y/N]} " response
-  response=${response,,}    # tolower
-  if [[ "$response" =~ ^(yes|y)$ ]]; then
-    true
-  else
-    false
-  fi
+function k8scomplete() {
+  . <(kubectl completion bash)
+  . <(helm completion bash)
 }
+
+# function confirm() {
+#   read -r -p "${1:-Are you sure? [y/N]} " response
+#   response=${response,,}    # tolower
+#   if [[ "$response" =~ ^(yes|y)$ ]]; then
+#     true
+#   else
+#     false
+#   fi
+# }
