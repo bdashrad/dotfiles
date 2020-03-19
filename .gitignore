@@ -8,5 +8,8 @@
 # ssh config
 ssh/.ssh/config
 
+# sublime
+"sublime/User/Package Control.merged-ca-bundle"
+
 # vim things
 vim/.vim/.netrwhist
