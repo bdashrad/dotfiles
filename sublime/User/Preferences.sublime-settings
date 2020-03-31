@@ -4,6 +4,7 @@
 	"ignored_packages":
 	[
 		"Markdown",
+		"MarkdownEditing",
 		"Vintage"
 	],
 	"paths":
