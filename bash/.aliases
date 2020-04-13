@@ -103,7 +103,7 @@ alias getdns="networksetup -getdnsservers Wi-Fi && scutil --dns"
 alias setdns="networksetup -setdnsservers Wi-Fi ${dnshosts[*]} ${dnshostsv6[*]}"
 
 # reset audio devices
-alias restartaudio="sudo killall coreaudiod"
+alias audioreset="sudo killall coreaudiod"
 
 # homebrew
 alias brewall='brew -v update && brew -v upgrade && brew cu -a --cleanup'
