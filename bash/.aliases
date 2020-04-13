@@ -102,6 +102,9 @@ dnshostsv6+=('2001:4860:4860::8844')
 alias getdns="networksetup -getdnsservers Wi-Fi && scutil --dns"
 alias setdns="networksetup -setdnsservers Wi-Fi ${dnshosts[*]} ${dnshostsv6[*]}"
 
+# reset audio devices
+alias restartaudio="sudo killall coreaudiod"
+
 # homebrew
 alias brewall='brew -v update && brew -v upgrade && brew cu -a --cleanup'
 alias brewcleanup='brew -v cleanup && brew -v cask cleanup'
