@@ -15,5 +15,5 @@ sublime/User/Package Control.merged-ca-bundle
 sublime/User/oscrypto-ca-bundle.crt
 
 # vim things
-vim/.vim/plugged/**
-vim/.vim/.netrwhist
+/vim/.vim/plugged/**
+/vim/.vim/.netrwhist
