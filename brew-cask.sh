@@ -62,6 +62,7 @@ brew cask install suspicious-package
 brew cask install 1password
 brew cask install keybase
 brew cask install lastpass
+brew cask install secretive
 brew cask install tunnelblick
 
 # utilities
