@@ -9,8 +9,6 @@
 ssh/.ssh/config
 
 # sublime
-"sublime/User/Package Control.merged-ca-bundle"
-"sublime/User/oscrypto-ca-bundle.crt"
 sublime/User/Package Control.merged-ca-bundle
 sublime/User/oscrypto-ca-bundle.crt
 
