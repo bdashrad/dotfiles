@@ -66,5 +66,6 @@ brew cask install secretive
 brew cask install tunnelblick
 
 # utilities
+brew cask install krisp
 brew cask install oversight
 brew cask install tripmode
