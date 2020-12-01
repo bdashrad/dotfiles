@@ -35,6 +35,9 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # aws-cli config file
 export AWS_CONFIG_FILE="$HOME/.aws/config"
 
+# go path
+export GOPATH="$HOME/go"
+
 # use homebrew coreutils manpages
 export MANPATH="${BREWPATH}/opt/coreutils/libexec/gnuman:$MANPATH"
 
@@ -46,9 +49,6 @@ export PERL5LIB="/Users/bradclark/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}";
 export PERL_LOCAL_LIB_ROOT="/Users/bradclark/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}";
 export PERL_MB_OPT='--install_base "/Users/bradclark/perl5"';
 export PERL_MM_OPT="INSTALL_BASE=/Users/bradclark/perl5";
-
-# don't auto-cleanup homebrew
-export HOMEBREW_NO_INSTALL_CLEANUP="true"
 
 ###
 # PATH
@@ -65,7 +65,6 @@ PATH="${BREWPATH}/opt/grep/libexec/gnubin:$PATH"
 
 # brew gnu sed
 PATH="${BREWPATH}/opt/gnu-sed/libexec/gnubin:$PATH"
-
 # brew findutils
 PATH="${BREWPATH}/opt/findutils/libexec/gnubin:$PATH"
 
@@ -75,14 +74,17 @@ PATH="$PATH:${BREWPATH}/heroku/bin"
 # CPAN
 PATH="$PATH:/Users/bradclark/perl5/bin"
 
+# GO
+PATH=$PATH:${GOPATH}/bin
+
+# Add RVM to PATH for scripting
+PATH="$HOME/.rvm/bin:$PATH"
+
 # kubectl krew
 [ -d "${KREW_ROOT:-$HOME/.krew}/bin" ] && PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # set PATH so it includes user's private bin if it exists
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
-
-# Add RVM to PATH for scripting
-PATH="$HOME/.rvm/bin:$PATH"
 
 export PATH
 ###

@@ -62,9 +62,11 @@ brew cask install suspicious-package
 brew cask install 1password
 brew cask install keybase
 brew cask install lastpass
+brew cask install secretive
 brew cask install tunnelblick
 
 # utilities
 brew cask install filebot
+brew cask install krisp
 brew cask install oversight
 brew cask install tripmode

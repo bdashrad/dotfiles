@@ -6,7 +6,13 @@
 .gitconfig.local
 
 # ssh config
-ssh/.ssh/config
+/ssh/.ssh/config
+/ssh/.ssh/known_hosts
+
+# sublime
+sublime/User/Package Control.merged-ca-bundle
+sublime/User/oscrypto-ca-bundle.crt
 
 # vim things
-vim/.vim/.netrwhist
+/vim/.vim/plugged/**
+/vim/.vim/.netrwhist
