@@ -65,5 +65,6 @@ brew cask install lastpass
 brew cask install tunnelblick
 
 # utilities
+brew cask install filebot
 brew cask install oversight
 brew cask install tripmode
