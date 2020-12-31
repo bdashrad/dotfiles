@@ -119,3 +119,5 @@
 # use separate file for username / github token / etc
 [include]
   path = ~/.gitconfig.local
+[gpg]
+	program = gpg
