@@ -38,6 +38,9 @@ export AWS_CONFIG_FILE="$HOME/.aws/config"
 # go path
 export GOPATH="$HOME/go"
 
+# gpg tty
+export GPG_TTY=$(tty)
+
 # use homebrew coreutils manpages
 export MANPATH="${BREWPATH}/opt/coreutils/libexec/gnuman:$MANPATH"
 
