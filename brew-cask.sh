@@ -13,60 +13,61 @@ brew tap caskroom/versions
 brew tap buo/cask-upgrade
 
 # always
-brew cask install alfred
-brew cask install dropbox
-brew cask install evernote
-brew cask install firefox
-brew cask install google-chrome
-# brew cask install google-drive
-brew cask install spectacle
-brew cask install stay
-brew cask install the-unarchiver
-brew cask install transmission
-brew cask install xquartz
+brew install --cask alfred
+brew install --cask dropbox
+brew install --cask evernote
+brew install --cask firefox
+brew install --cask google-chrome
+# brew install --cask google-drive
+brew install --cask spectacle
+brew install --cask stay
+brew install --cask the-unarchiver
+brew install --cask transmission
+brew install --cask xquartz
 
 # chat
-brew cask install slack
+brew install --cask slack
 
 # development
-brew cask install iterm2
-# brew cask install menumeters
-# brew cask install kdiff3
-brew cask install p4v # p4merge
-brew cask install sublime-text
-# brew cask install vagrant
-# brew cask install vagrant-manager
-# brew cask install virtualbox
-# brew cask install virtualbox-extension-pack
-# brew cask install wireshark
+brew install --cask iterm2
+# brew install --cask menumeters
+# brew install --cask kdiff3
+brew install --cask p4v # p4merge
+brew install --cask sublime-text
+# brew install --cask vagrant
+# brew install --cask vagrant-manager
+# brew install --cask virtualbox
+# brew install --cask virtualbox-extension-pack
+brew install --cask visual-studio-code
+# brew install --cask wireshark
 
 # multimedia
-# brew cask install exiftool
-brew cask install gyazo
-# brew cask install lastfm
-brew cask install skitch
-brew cask install spotify
-brew cask install vlc
+# brew install --cask exiftool
+brew install --cask gyazo
+# brew install --cask lastfm
+brew install --cask skitch
+brew install --cask spotify
+brew install --cask vlc
 
 # quicklook plugins
-# brew cask install betterzipql
-brew cask install qlcolorcode
-brew cask install qlmarkdown
-brew cask install qlprettypatch
-brew cask install qlstephen
-brew cask install quicklook-csv
-brew cask install quicklook-json
-brew cask install suspicious-package
+# brew install --cask betterzipql
+brew install --cask qlcolorcode
+brew install --cask qlmarkdown
+brew install --cask qlprettypatch
+brew install --cask qlstephen
+brew install --cask quicklook-csv
+brew install --cask quicklook-json
+brew install --cask suspicious-package
 
 # security
-brew cask install 1password
-brew cask install keybase
-brew cask install lastpass
-brew cask install secretive
-brew cask install tunnelblick
+brew install --cask 1password
+brew install --cask keybase
+brew install --cask lastpass
+brew install --cask secretive
+brew install --cask tunnelblick
 
 # utilities
-brew cask install filebot
-brew cask install krisp
-brew cask install oversight
-brew cask install tripmode
+brew install --cask filebot
+brew install --cask krisp
+brew install --cask oversight
+brew install --cask tripmode
