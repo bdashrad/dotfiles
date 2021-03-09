@@ -44,7 +44,7 @@ bind Space:magic-space
 # [ -s "$HOME/.profile" ] && . "$HOME/.profile"
 
 # Load RVM into a shell session *as a function*
-[ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm"
+# [ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm"
 
 # z beats cd most of the time.
 #  github.com/rupa/z
@@ -70,8 +70,8 @@ fi
 # set up fzf keybindings
 [ -f ~/.fzf.bash ] && . "$HOME/.fzf.bash"
 
-# use local folder for CPAN instead of homebrew cellar
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+# # use local folder for CPAN instead of homebrew cellar
+# eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 
 # Start GPG agent
 if [[ -f ~/.gnupg/.gpg-agent-info && -n "$(pgrep gpg-agent)" ]]; then
@@ -88,7 +88,8 @@ fi
 ##
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[ -s "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
+[ -s "$HOME/.ssh/config" ] && \
+  complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
 # system bash completion
 [ -f "/etc/bash_completion" ] && . /etc/bash_completion
@@ -102,7 +103,7 @@ fi
 [ -f "${BREWPATH}/bin/aws_completer" ] && complete -C aws_completer aws
 
 # enable hugo completion
-[ -f "$HOME/.hugo/hugo.sh" ] && . "$HOME/.hugo/hugo.sh"
+# [ -f "$HOME/.hugo/hugo.sh" ] && . "$HOME/.hugo/hugo.sh"
 
 # enable vault completion
 [ -f "${BREWPATH}/bin/vault" ] && complete -C "${BREWPATH}/bin/vault" vault
@@ -112,13 +113,13 @@ fi
 complete -W "NSGlobalDomain" defaults
 
 # travis-cli
-[ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
+[ -f "$HOME/.travis/travis.sh" ] && . "$HOME/.travis/travis.sh"
 
 # source nvm
 # [ -s "${BREWPATH}/opt/nvm/nvm.sh" ] && . "${BREWPATH}/opt/nvm/nvm.sh"
 
 # asdf
-[ -f "${BREWPATH}/opt/asdf/asdf.sh" ] && source "${BREWPATH}/opt/asdf/asdf.sh"
+[ -f "${BREWPATH}/opt/asdf/asdf.sh" ] && . "${BREWPATH}/opt/asdf/asdf.sh"
 
 # source override last for overrides
 [ -f "${HOME}/.override" ] && . "${HOME}/.override"
