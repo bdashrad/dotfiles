@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-export BREWPATH=$(brew --prefix)
-
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ${HOME}/.{extra,path,exports,aliases,functions,bash_prompt}; do
+for file in ${HOME}/.{bash_prompt,path,exports,aliases,functions,extra}; do
   [ -f "$file" ] && [ -r "$file" ] && . "$file"
 done
 unset file
+
+export BREWPATH=$(brew --prefix)
 
 # to help sublimelinter etc with finding my PATHS
 case $- in
