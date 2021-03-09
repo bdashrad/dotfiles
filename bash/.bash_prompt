@@ -7,12 +7,27 @@ default_username=${USERNAME:-bradclark}
 # Automatically trim long paths in the prompt (requires Bash 4.x)
 PROMPT_DIRTRIM=2
 
+# ------------------------------------------------------------------
+# | Debug prompt string  (when using `set -x`)                     |
+# ------------------------------------------------------------------
+
+# When debugging a shell script via `set -x` this tricked-out prompt is used.
+
+# The first character (+) is used and repeated for stack depth
+# Then, we log the current time, filename and line number, followed by function name, followed by actual source line
+
+# FWIW, I have spent hours attempting to get time-per-command in here, but it's not possible. ~paul
+PS4='+ \011\e[1;30m${EPOCHREALTIME}\011\e[1;34m${BASH_SOURCE}\e[0m:\e[1;36m${LINENO}\e[0m \011 ${FUNCNAME[0]:+\e[0;35m${FUNCNAME[0]}\e[1;30m()\e[0m:\011\011 }'
+
+export PS4
+
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
     export TERM=gnome-256color
 elif infocmp xterm-256color >/dev/null 2>&1; then
     export TERM=xterm-256color
+elif [[ $TERM = screen ]]; then
+    export TERM=xterm-256color
 fi
-
 
 set_prompts() {
   local black="" blue="" bold="" cyan="" green="" orange="" \
@@ -149,20 +164,6 @@ set_prompts() {
   PS2="⚡ "
 
   export PS2
-
-  # ------------------------------------------------------------------
-  # | Debug prompt string  (when using `set -x`)                     |
-  # ------------------------------------------------------------------
-
-  # When debugging a shell script via `set -x` this tricked-out prompt is used.
-
-  # The first character (+) is used and repeated for stack depth
-  # Then, we log the current time, filename and line number, followed by function name, followed by actual source line
-
-  # FWIW, I have spent hours attempting to get time-per-command in here, but it's not possible. ~paul
-  PS4='+ \011\e[1;30m\t\011\e[1;34m${BASH_SOURCE}\e[0m:\e[1;36m${LINENO}\e[0m \011 ${FUNCNAME[0]:+\e[0;35m${FUNCNAME[0]}\e[1;30m()\e[0m:\011\011 }'
-
-  export PS4
 
 }
 

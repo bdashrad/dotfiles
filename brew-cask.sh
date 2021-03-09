@@ -25,8 +25,9 @@ brew install --cask the-unarchiver
 brew install --cask transmission
 brew install --cask xquartz
 
-# chat
+# communication
 brew install --cask slack
+brew install --cask zoom
 
 # development
 brew install --cask iterm2
@@ -51,13 +52,13 @@ brew install --cask vlc
 
 # quicklook plugins
 # brew install --cask betterzipql
-brew install --cask qlcolorcode
-brew install --cask qlmarkdown
-brew install --cask qlprettypatch
-brew install --cask qlstephen
-brew install --cask quicklook-csv
-brew install --cask quicklook-json
-brew install --cask suspicious-package
+# brew install --cask qlcolorcode
+# brew install --cask qlmarkdown
+# brew install --cask qlprettypatch
+# brew install --cask qlstephen
+# brew install --cask quicklook-csv
+# brew install --cask quicklook-json
+# brew install --cask suspicious-package
 
 # security
 brew install --cask 1password

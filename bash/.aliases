@@ -111,3 +111,15 @@ alias brewcleanup='brew -v cleanup && brew -v cask cleanup'
 
 # terraform
 alias tf="command terraform"
+
+# rvm
+alias load-rvm='. "$HOME/.rvm/scripts/rvm"'
+
+# perl
+alias load-perl='eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"'
+
+# kubernetes completion
+alias kube-complete='. <(kubectl completion bash) && . <(helm completion bash)'
+
+# hugo completions
+alias hugo-complete='. "$HOME/.hugo/hugo.sh"'
