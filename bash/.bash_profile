@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# exec 5> /tmp/profile-tracing.log
+# BASH_XTRACEFD="5"
+# set -x
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -123,3 +127,5 @@ complete -W "NSGlobalDomain" defaults
 
 # source override last for overrides
 [ -f "${HOME}/.override" ] && . "${HOME}/.override"
+
+# set +x
