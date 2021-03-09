@@ -120,5 +120,5 @@ complete -W "NSGlobalDomain" defaults
 # asdf
 [ -f "${BREWPATH}/opt/asdf/asdf.sh" ] && source "${BREWPATH}/opt/asdf/asdf.sh"
 
-# source extra last for overrides
-[ -f "${HOME}/.extra" ] && [ -r "${HOME}/.extra" ] && . "${HOME}/.extra"
+# source override last for overrides
+[ -f "${HOME}/.override" ] && . "${HOME}/.override"
