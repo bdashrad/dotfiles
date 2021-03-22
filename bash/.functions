@@ -172,3 +172,11 @@ function k8scomplete() {
 #     false
 #   fi
 # }
+
+function garfield() {
+  echo $@ | sed -e 's/\([A-Za-z0-9]\)/:garfield_\1:/g'
+}
+
+function scrabble() {
+  echo $@ | sed -e 's/\([A-Za-z0-9]\)/:scrabble_\1:/g'
+}
