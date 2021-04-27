@@ -113,7 +113,7 @@ alias brewcleanup='brew -v cleanup && brew -v cask cleanup'
 alias tf="command terraform"
 
 # rvm
-alias load-rvm='. "$HOME/.rvm/scripts/rvm"'
+alias load-rvm='. "$HOME/.rvm/scripts/rvm" && . $(rvm env --path)'
 
 # perl
 alias load-perl='eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"'
