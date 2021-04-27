@@ -125,3 +125,7 @@
 
 [pull]
 	ff = only
+[credential]
+	helper = store
+[url "https://x-access-token@github.com"]
+	insteadOf = ssh://git@github.com
