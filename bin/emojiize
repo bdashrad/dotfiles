@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+emoji_type, phrase = ARGV
+
+def emojiize(utterance, emoji_base_name)
+  utterance.split('').map { |e| e.match?(/\w/) ? ":#{emoji_base_name}_#{e}:" : e }.join ''
+end
+
+output = emojiize phrase.to_s, emoji_type
+
+puts output
