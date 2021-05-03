@@ -33,7 +33,7 @@ if type shopt &> /dev/null; then
   shopt -s cdspell
 
   # Autocorrect on directory names to match a glob.
-  shopt -s dirspell
+  # shopt -s dirspell
 fi
 
 # Enable history expansion with space
