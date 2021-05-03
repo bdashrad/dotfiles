@@ -33,7 +33,7 @@ if type shopt &> /dev/null; then
   shopt -s cdspell
 
   # Autocorrect on directory names to match a glob.
-  shopt -s dirspell
+  # shopt -s dirspell
 fi
 
 # Enable history expansion with space
@@ -77,15 +77,15 @@ fi
 # # use local folder for CPAN instead of homebrew cellar
 # eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 
-# Start GPG agent
-if [[ -f ~/.gnupg/.gpg-agent-info && -n "$(pgrep gpg-agent)" ]]; then
-  . "$HOME/.gnupg/.gpg-agent-info"
-  export GPG_AGENT_INFO
-  GPG_TTY=$(tty)
-  export GPG_TTY
-else
-  eval $(gpg-agent --daemon)
-fi
+# # Start GPG agent
+# if [[ -f ~/.gnupg/.gpg-agent-info && -n "$(pgrep gpg-agent)" ]]; then
+#   . "$HOME/.gnupg/.gpg-agent-info"
+#   export GPG_AGENT_INFO
+#   GPG_TTY=$(tty)
+#   export GPG_TTY
+# else
+#   eval $(gpg-agent --daemon)
+# fi
 
 ##
 ## Completion

@@ -6,8 +6,8 @@
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # brew install caskroom/cask/brew-cask
-brew tap caskroom/cask
-brew tap caskroom/versions
+# brew tap caskroom/cask
+# brew tap caskroom/versions
 
 # add brew-cask-upgrade
 brew tap buo/cask-upgrade
@@ -15,7 +15,7 @@ brew tap buo/cask-upgrade
 # always
 brew install --cask alfred
 brew install --cask barrier
-brew install --cask dropbox
+# brew install --cask dropbox
 brew install --cask evernote
 brew install --cask firefox
 brew install --cask google-chrome
@@ -64,12 +64,12 @@ brew install --cask vlc
 # security
 brew install --cask 1password
 brew install --cask keybase
-brew install --cask lastpass
+# brew install --cask lastpass
 brew install --cask secretive
 brew install --cask tunnelblick
 
 # utilities
 brew install --cask filebot
-brew install --cask krisp
+# brew install --cask krisp
 brew install --cask oversight
 brew install --cask tripmode

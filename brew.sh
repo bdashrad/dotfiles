@@ -58,6 +58,7 @@ brew install the_silver_searcher
 brew install z
 
 # dev stuff
+brew install asdf
 brew install autoconf
 brew install automake
 # brew install bfg
@@ -79,7 +80,7 @@ brew install speedtest_cli
 brew install aws-elasticbeanstalk
 brew install awscli
 brew install direnv
-brew install fullscreen/tap/aws-rotate-key
+# brew install fullscreen/tap/aws-rotate-key
 # brew install ffmpeg --with-libvpx
 brew install graphviz
 brew install htop
@@ -101,7 +102,6 @@ brew install pinentry-mac
 
 # Install compression stuff
 brew install p7zip
-brew install unrar
 brew install xz
 
 # Install some linters
