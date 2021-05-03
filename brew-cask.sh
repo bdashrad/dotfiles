@@ -14,6 +14,7 @@ brew tap buo/cask-upgrade
 
 # always
 brew install --cask alfred
+brew install --cask barrier
 # brew install --cask dropbox
 brew install --cask evernote
 brew install --cask firefox
