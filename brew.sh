@@ -66,6 +66,7 @@ brew install gist
 brew install git
 brew install jq
 brew install openssl@1.1
+brew install yq
 
 # install heroku-cli
 brew install heroku/brew/heroku
