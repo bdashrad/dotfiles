@@ -20,6 +20,7 @@ brew install --cask evernote
 brew install --cask firefox
 brew install --cask google-chrome
 # brew install --cask google-drive
+brew install homebrew/cask-drivers/qmk-toolbox
 brew install --cask spectacle
 brew install --cask stay
 brew install --cask the-unarchiver
