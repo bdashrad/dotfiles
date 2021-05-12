@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 ASDF_PLUGINS=(
-  "helm 2.7.0"
-  "helm 2.13.1"
-  "kubectl 1.10.5"
-  "kubectl 1.12.9"
-  "kops 1.9.1"
-  "terraform 0.11.11"
+  "helm 3.5.4"
+  "kubectl 1.17.17"
+  "kubectl 1.18.18"
+  "kubectl 1.19.10"
+  "terraform 0.15.3"
+  "pluto 4.1.2"
 )
 
 if [[ ! $(command -v brew) ]]; then
