@@ -129,4 +129,8 @@ complete -W "NSGlobalDomain" defaults
 # source override last for overrides
 [ -f "${HOME}/.override" ] && . "${HOME}/.override"
 
-# set +x
+# start with kube-ps1 off
+export KUBE_PS1_ENABLED=off
+
+set +x
+unset BASH_XTRACEFD
