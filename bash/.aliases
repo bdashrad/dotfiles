@@ -7,7 +7,8 @@
 hash gls >/dev/null 2>&1 || alias gls="ls"
 
 # always use color, even when piping (to awk,grep,etc)
-if gls --color > /dev/null 2>&1; then colorflag="--color"; else colorflag="-G"; fi;
+# if gls --color > /dev/null 2>&1; then colorflag="--color"; else colorflag="-G"; fi;
+colorflag="--color"
 export CLICOLOR_FORCE=1
 
 # ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
