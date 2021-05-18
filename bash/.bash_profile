@@ -48,9 +48,6 @@ bind Space:magic-space
 # Load the default .profile
 # [ -s "$HOME/.profile" ] && . "$HOME/.profile"
 
-# Load RVM into a shell session *as a function*
-# [ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm"
-
 # z beats cd most of the time.
 #  github.com/rupa/z
 # [ -s "${BREWPATH}/etc/profile.d/z.sh" ] && . "${BREWPATH}/etc/profile.d/z.sh"
