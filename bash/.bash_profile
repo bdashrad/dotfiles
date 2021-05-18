@@ -12,9 +12,6 @@ for file in ${HOME}/.{extra,bash_prompt,path,exports,aliases,functions}; do
 done
 unset file
 
-# export BREWPATH=$(brew --prefix)
-export BREWPATH=/usr/local
-
 # to help sublimelinter etc with finding my PATHS
 case $- in
   *i*) [ -f "~/.extra" ] && source ~/.extra
