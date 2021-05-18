@@ -2,7 +2,6 @@
 
 ASDF_PLUGINS=(
   "helm 3.5.4"
-  "kubectl 1.17.17"
   "kubectl 1.18.18"
   "kubectl 1.19.10"
   "terraform 0.15.3"
