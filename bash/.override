@@ -2,7 +2,3 @@
 
 # command -v kubectl > /dev/null 2>&1 && . <(kubectl completion bash)
 # command -v helm > /dev/null 2>&1 && . <(helm completion bash)
-
-if command -v terraform > /dev/null; then
-  complete -C $HOME/.asdf/installs/terraform/$(terraform version | head -n1 | cut -d "v" -f2)/bin/terraform terraform
-fi
