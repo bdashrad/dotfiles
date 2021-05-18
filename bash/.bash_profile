@@ -94,7 +94,7 @@ fi
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -s "$HOME/.ssh/config" ] && \
-  complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
+  complete -o "default" -o "nospace" -W "$(awk '{if ($1=="Host" && $2!="*") print $2}' ~/.ssh/config)" scp sftp ssh
 
 # system bash completion
 [ -f "/etc/bash_completion" ] && . /etc/bash_completion
