@@ -94,10 +94,10 @@ fi
   complete -o "default" -o "nospace" -W "$(awk '{if ($1=="Host" && $2!="*") print $2}' ~/.ssh/config)" scp sftp ssh
 
 # system bash completion
-[ -f "/etc/bash_completion" ] && . /etc/bash_completion
+# [ -f "/etc/bash_completion" ] && . /etc/bash_completion\\s
 
 # enable homebrew bash_completion
-[ -f "${BREWPATH}/etc/bash_completion" ] && . "${BREWPATH}/etc/bash_completion"
+# [ -f "${BREWPATH}/etc/bash_completion" ] && . "${BREWPATH}/etc/bash_completion"
 [ -r "${BREWPATH}/etc/profile.d/bash_completion.sh" ] && . "${BREWPATH}/etc/profile.d/bash_completion.sh"
 #[ -e "${BREWPATH}/share/bash-completion/bash_completion" ] && . "${BREWPATH}/share/bash-completion/bash_completion"
 

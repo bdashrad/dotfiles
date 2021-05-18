@@ -31,7 +31,7 @@ brew install coffeescript
 brew install stow
 
 # Install bash-completion
-brew install bash-completion
+brew install bash-completion@2
 brew install brew-cask-completion
 
 # generic colouriser  http://kassiopeia.juls.savba.sk/~garabik/software/grc/
