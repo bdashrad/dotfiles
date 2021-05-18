@@ -117,9 +117,6 @@ complete -W "NSGlobalDomain" defaults
 # travis-cli
 [ -f "$HOME/.travis/travis.sh" ] && . "$HOME/.travis/travis.sh"
 
-# source nvm
-# [ -s "${BREWPATH}/opt/nvm/nvm.sh" ] && . "${BREWPATH}/opt/nvm/nvm.sh"
-
 # asdf
 [ -f "${BREWPATH}/opt/asdf/asdf.sh" ] && . "${BREWPATH}/opt/asdf/asdf.sh"
 
