@@ -52,7 +52,7 @@ bind Space:magic-space
 
 # z beats cd most of the time.
 #  github.com/rupa/z
-[ -s "${BREWPATH}/etc/profile.d/z.sh" ] && . "${BREWPATH}/etc/profile.d/z.sh"
+# [ -s "${BREWPATH}/etc/profile.d/z.sh" ] && . "${BREWPATH}/etc/profile.d/z.sh"
 
 # grc colorizing
 [ -e "${BREWPATH}/etc/grc.bashrc" ] && . "${BREWPATH}/etc/grc.bashrc"
