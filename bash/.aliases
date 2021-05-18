@@ -124,3 +124,6 @@ alias kube-complete='. <(kubectl completion bash) && . <(helm completion bash)'
 
 # hugo completions
 alias hugo-complete='. "$HOME/.hugo/hugo.sh"'
+
+# terraform completion
+alias terraform-complete='complete -C $(which terraform) terraform tf'
