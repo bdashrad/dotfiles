@@ -117,6 +117,9 @@ complete -W "NSGlobalDomain" defaults
 # asdf
 [ -f "${BREWPATH}/opt/asdf/asdf.sh" ] && . "${BREWPATH}/opt/asdf/asdf.sh"
 
+# terraform complete
+command -v terraform >/dev/null 2>&1 && complete -C $(which terraform) terraform tf
+
 # source override last for overrides
 [ -f "${HOME}/.override" ] && . "${HOME}/.override"
 
