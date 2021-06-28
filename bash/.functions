@@ -163,6 +163,15 @@ function k8scomplete() {
   . <(helm completion bash)
 }
 
+function curl-head() {
+  local target verb
+  target=$1; shift
+  verb=${1:-GET}; shift
+  options=$@
+
+  curl -s -I -X "$verb" $@ "$target"
+}
+
 # function confirm() {
 #   read -r -p "${1:-Are you sure? [y/N]} " response
 #   response=${response,,}    # tolower
