@@ -103,3 +103,6 @@ eval "$(gdircolors -b ~/.dircolors)"
 
 # disable zsh reminder
 export BASH_SILENCE_DEPRECATION_WARNING="1"
+
+# set default kube config path
+export KUBE_CONFIG_PATH=$HOME/.kube/config
