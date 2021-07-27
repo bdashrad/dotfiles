@@ -172,6 +172,12 @@ function curl-head() {
   curl -s -I -X "$verb" $@ "$target"
 }
 
+function main() {
+  local default_branch
+  default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+  git checkout "$default_branch"
+}
+
 # function confirm() {
 #   read -r -p "${1:-Are you sure? [y/N]} " response
 #   response=${response,,}    # tolower
