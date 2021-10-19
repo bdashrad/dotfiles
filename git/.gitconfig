@@ -12,6 +12,9 @@
   d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
   df = diff --color --color-words --abbrev
 
+  # add a command to squash work in progress that hasn't been pushed
+  wip = rebase -i @{u}
+
 [color]
   ui = always
 
@@ -131,3 +134,5 @@
 	insteadOf = ssh://git@github.com
 [tag]
 	forceSignAnnotated = true
+[init]
+	defaultBranch = main
