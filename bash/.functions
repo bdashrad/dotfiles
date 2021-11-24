@@ -194,3 +194,13 @@ function garfield() {
 function scrabble() {
   echo $@ | sed -e 's/\([A-Za-z0-9]\)/:scrabble_\1:/g'
 }
+
+function letterme() {
+  if [[ -n "$2" ]]; then
+    PREFIX=$1; shift
+  else
+    PREFIX="garfield_"
+  fi
+
+  echo $@ | sed -e "s/\([A-Za-z0-9]\)/:$PREFIX\1:/g"
+}
