@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-branches_to_die=$(git branch --no-color --merged origin/master | grep -v '^[\* ] master')
+default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@');
+
+branches_to_die=$(git branch --no-color --merged origin/${default_branch} | grep -v '^[\* ] ${default_branch}')
 echo "Branches to be deleted:"
 echo $branches_to_die
 echo ""
