@@ -164,12 +164,11 @@ function k8scomplete() {
 }
 
 function curl-head() {
-  local target verb
+  local options target
   target=$1; shift
-  verb=${1:-GET}; shift
   options=$@
 
-  curl -s -I -X "$verb" $@ "$target"
+  curl -s -I -X GET ${options[@]} "$target"
 }
 
 function main() {
