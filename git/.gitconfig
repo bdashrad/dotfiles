@@ -15,6 +15,11 @@
   # add a command to squash work in progress that hasn't been pushed
   wip = rebase -i @{u}
 
+  # Head branches
+  cdef = "!git checkout $(git originhead)"
+  default = "!git checkout $(git originhead)"
+  originhead = "!git remote show origin | awk '$0 ~ \"HEAD branch\" {print $NF}'"
+
 [color]
   ui = always
 
