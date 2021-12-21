@@ -116,6 +116,9 @@ alias tf="command terraform"
 # rvm
 alias load-rvm='. "$HOME/.rvm/scripts/rvm" && . $(rvm env --path)'
 
+# node
+alias load-node='export PATH=$PATH:$(npm bin -g)'
+
 # perl
 alias load-perl='eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"'
 
