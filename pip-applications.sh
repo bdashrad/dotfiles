@@ -18,6 +18,7 @@ pip3 install ansible
 pip3 install ansible-lint
 pip3 install boto
 pip3 install botocore
+pip3 git-delete-merged-branches
 pip3 install requests
 pip3 install yamllint
 pip3 install virtualenv
