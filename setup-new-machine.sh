@@ -101,7 +101,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
   fi
 
   # install fzf keybindings
-  "$(brew --prefix fzf)/install" --keybindings --completion --no-update-rc
+  "$(brew --prefix fzf)/install" --key-bindings --completion --no-update-rc
 
   # add symlink to iCloud drive
   if confirm "Are you signed into iCloud? [y/N] "; then
@@ -117,6 +117,10 @@ if [[ "$(uname)" == "Darwin" ]]; then
     echo "Not installing, review \`./work.Brewfile\` and \`asdf.sh\` to see if there is anything you want from there."
   fi
 
+  title "Use Touch ID for sudo."
+  sudo ./scripts/touchid_sudo.sh || echo "Configuring sudo failed!"
+
+  title "Configuring macOS defaults."
   ./osx.sh
 
   # zoom

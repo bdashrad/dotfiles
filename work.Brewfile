@@ -11,7 +11,7 @@
 # brew "ansible"
 # brew "ansible-lint"
 brew "argocd"
-brew "google-cloud-sdk"
+cask "google-cloud-sdk"
 brew "mockery"
 brew "postgresql"
 # brew "packer"
