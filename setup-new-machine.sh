@@ -9,72 +9,105 @@ function confirm() {
   fi
 }
 
+
+
 # Ask for the administrator password upfront
 sudo -v
 
-# update osx
-sudo softwareupdate -i -a
+if [[ "$(uname)" == "Darwin" ]]; then
+  title "Setting initial path."
+  if [[ "$(arch)" == "arm64" ]]; then
+    export HOMEBREW_PREFIX="/opt/homebrew"
+  else
+    export HOMEBREW_PREFIX="/usr/local"
+  fi
 
-### XCode Command Line Tools
-#      thx https://github.com/alrra/dotfiles/blob/ff123ca9b9b/os/os_x/installs/install_xcode.sh
+  export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar";
+  export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew";
+  export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:${PATH}}";
+  export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:${MANPATH}}";
+  export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}";
 
-if ! xcode-select --print-path &> /dev/null; then
+  # update osx
+  sudo softwareupdate -i -a
 
-    # Prompt user to install the XCode Command Line Tools
-    xcode-select --install &> /dev/null
+  ### XCode Command Line Tools
+  #      thx https://github.com/alrra/dotfiles/blob/ff123ca9b9b/os/os_x/installs/install_xcode.sh
 
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  if ! xcode-select --print-path &> /dev/null; then
 
-    # Wait until the XCode Command Line Tools are installed
-    until xcode-select --print-path &> /dev/null; do
-        sleep 5
-    done
+      # Prompt user to install the XCode Command Line Tools
+      xcode-select --install &> /dev/null
 
-    print_result $? 'Install XCode Command Line Tools'
+      # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      # Wait until the XCode Command Line Tools are installed
+      until xcode-select --print-path &> /dev/null; do
+          sleep 5
+      done
 
-    # Point the `xcode-select` developer directory to
-    # the appropriate directory from within `Xcode.app`
-    # https://github.com/alrra/dotfiles/issues/13
+      print_result $? 'Install XCode Command Line Tools'
 
-    sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
-    print_result $? 'Make "xcode-select" developer directory point to Xcode'
+      # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      # Point the `xcode-select` developer directory to
+      # the appropriate directory from within `Xcode.app`
+      # https://github.com/alrra/dotfiles/issues/13
 
-    # Prompt user to agree to the terms of the Xcode license
-    # https://github.com/alrra/dotfiles/issues/10
+      sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
+      print_result $? 'Make "xcode-select" developer directory point to Xcode'
 
-    # sudo xcodebuild -license
-    # print_result $? 'Agree with the XCode Command Line Tools licence'
+      # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+      # Prompt user to agree to the terms of the Xcode license
+      # https://github.com/alrra/dotfiles/issues/10
+
+      # sudo xcodebuild -license
+      # print_result $? 'Agree with the XCode Command Line Tools licence'
+
+  fi
+  ###
+
+  # install homebrew
+  if test ! $(which brew)
+  then
+    echo "  Installing Homebrew for you."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    brew doctor
+  fi
+
+  # install brew apps
+  echo "Installing brew apps..."
+  brew bundle
+
+  # change to bash 4 (installed by homebrew)
+  BASHPATH=$(brew --prefix)/bin/bash
+  echo "$BASHPATH" | sudo tee -a /etc/shells > /dev/null
+  chsh -s "$BASHPATH" # will set for current user only.
+  echo "$BASH_VERSION" # should be 4.x not the old 3.2.X
+
+  # install fzf keybindings
+  "$(brew --prefix fzf)/install" --keybindings --completion --no-update-rc
+
+  # add symlink to iCloud drive
+  if confirm "Are you signed into iCloud? [y/N] "; then
+    ln -s "$HOME/Library/Mobile Documents/com~apple~CloudDocs/" "$HOME/icloud"
+  else
+    echo "After you sign into iCloud you can manually create the symlink to \`$HOME/Library/Mobile Documents/com~apple~CloudDocs/\`"
+  fi
+
+  if confirm "Install work applications? [y/N] "; then
+    brew bundle --
+    ./asdf.sh
+  else
+    echo "Not installing, review \`./brew-work.sh\` and \`asdf.sh\` to see if there is anything you want from there."
+  fi
+
+  # zoom
+  pkill "ZoomOpener"; rm -rf ~/.zoomus; touch ~/.zoomus && chmod 000 ~/.zoomus;
+  defaults write ~/Library/Preferences/us.zoom.config.plist ZDisableVideo 1
+  sudo defaults write /Library/Preferences/us.zoom.config.plist ZDisableVideo 1
 fi
-###
-
-# install homebrew
-if test ! $(which brew)
-then
-  echo "  Installing Homebrew for you."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-  brew doctor
-fi
-
-# install brew apps
-echo "Installing brew apps..."
-./brew.sh
-
-# change to bash 4 (installed by homebrew)
-BASHPATH=$(brew --prefix)/bin/bash
-echo "$BASHPATH" | sudo tee -a /etc/shells > /dev/null
-chsh -s "$BASHPATH" # will set for current user only.
-echo "$BASH_VERSION" # should be 4.x not the old 3.2.X
-
-# install fzf keybindings
-"$(brew --prefix fzf)/install" --keybindings --completion --no-update-rc
-
-# create bin directory
-mkdir -p ~/bin
 
 # install rvm stable
 echo "Installing rvm..."
@@ -92,26 +125,12 @@ else
   bundle install
 fi
 
+# create bin directory
+mkdir -p ~/bin
+
 # install pip and apps
 # sudo easy_install pip
 ./pip-applications.sh
 
 # setup cpan
 sudo cpan local::lib
-
-# install cask applications
-./brew-cask.sh
-
-# add symlink to iCloud drive
-if confirm "Are you signed into iCloud? [y/N] "; then
-  ln -s "$HOME/Library/Mobile Documents/com~apple~CloudDocs/" "$HOME/icloud"
-else
-  echo "After you sign into iCloud you can manually create the symlink to \`$HOME/Library/Mobile Documents/com~apple~CloudDocs/\`"
-fi
-
-if confirm "Install work applications? [y/N] "; then
-  ./brew-work.sh
-  ./asdf.sh
-else
-  echo "Not installing, review \`./brew-work.sh\` and \`asdf.sh\` to see if there is anything you want from there."
-fi
