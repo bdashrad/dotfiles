@@ -6,7 +6,7 @@
 pip install --upgrade pip
 
 # development
-pip install botocore
+# pip install botocore
 pip install pygithub
 pip install virtualenv
 
@@ -14,14 +14,18 @@ pip install virtualenv
 pip3 install --upgrade pip
 
 # dev
-pip3 install ansible
-pip3 install ansible-lint
-pip3 install boto
-pip3 install botocore
+# pip3 install ansible
+# pip3 install ansible-lint
+# pip3 install boto
+# pip3 install botocore
 pip3 git-delete-merged-branches
-pip3 install requests
+pip3 install iStats
+# pip3 install requests
+pip3 install yamlfix
 pip3 install yamllint
 pip3 install virtualenv
+pip3 install yamale
+# pip3 install yq
 
 # fun
 pip3 install doge
