@@ -9,9 +9,17 @@ function confirm() {
   fi
 }
 
+bold=$(tput bold)
+green=$(tput setaf 2)
+normal=$(tput sgr0)
 
+title() {
+  echo "${bold}==> $1${normal}"
+  echo
+}
 
 # Ask for the administrator password upfront
+title "Ask for sudo access at start"
 sudo -v
 
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -80,11 +88,17 @@ if [[ "$(uname)" == "Darwin" ]]; then
   echo "Installing brew apps..."
   brew bundle
 
-  # change to bash 4 (installed by homebrew)
-  BASHPATH=$(brew --prefix)/bin/bash
-  echo "$BASHPATH" | sudo tee -a /etc/shells > /dev/null
-  chsh -s "$BASHPATH" # will set for current user only.
-  echo "$BASH_VERSION" # should be 4.x not the old 3.2.X
+  # Ensure Brew Bash is a valid shell option
+  if ! grep -q "${HOMEBREW_PREFIX}/bin/bash" /etc/shells ; then
+    title "Adding Homebrew Bash to list of allowed shells."
+    BASHPATH=$(brew --prefix)/bin/bash
+    echo "${BASHPATH}" | sudo tee -a /etc/shells > /dev/null
+
+    # change to bash 4 (installed by homebrew)
+    title "Changing"
+    chsh -s "${BASHPATH}" # will set for current user only.
+    echo "${BASH_VERSION}" # should be 4.x not the old 3.2.X
+  fi
 
   # install fzf keybindings
   "$(brew --prefix fzf)/install" --keybindings --completion --no-update-rc
@@ -97,10 +111,10 @@ if [[ "$(uname)" == "Darwin" ]]; then
   fi
 
   if confirm "Install work applications? [y/N] "; then
-    brew bundle --
+    brew bundle install --file work.Brewfile
     ./asdf.sh
   else
-    echo "Not installing, review \`./brew-work.sh\` and \`asdf.sh\` to see if there is anything you want from there."
+    echo "Not installing, review \`./work.Brewfile\` and \`asdf.sh\` to see if there is anything you want from there."
   fi
 
   # zoom
@@ -108,6 +122,8 @@ if [[ "$(uname)" == "Darwin" ]]; then
   defaults write ~/Library/Preferences/us.zoom.config.plist ZDisableVideo 1
   sudo defaults write /Library/Preferences/us.zoom.config.plist ZDisableVideo 1
 fi
+
+stow {bash,fzf,git,hugo,ruby,screen,tmux,vagrant,vim}
 
 # install rvm stable
 echo "Installing rvm..."
