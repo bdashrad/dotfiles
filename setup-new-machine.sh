@@ -117,6 +117,8 @@ if [[ "$(uname)" == "Darwin" ]]; then
     echo "Not installing, review \`./work.Brewfile\` and \`asdf.sh\` to see if there is anything you want from there."
   fi
 
+  ./osx.sh
+
   # zoom
   pkill "ZoomOpener"; rm -rf ~/.zoomus; touch ~/.zoomus && chmod 000 ~/.zoomus;
   defaults write ~/Library/Preferences/us.zoom.config.plist ZDisableVideo 1
