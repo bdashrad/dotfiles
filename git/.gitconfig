@@ -20,6 +20,9 @@
   default = "!git checkout $(git originhead)"
   originhead = "!git remote show origin | awk '$0 ~ \"HEAD branch\" {print $NF}'"
 
+  # Diff tools
+  vimdiff = difftool --tool=vimdiff
+
 [color]
   ui = always
 
@@ -68,6 +71,9 @@
 
 [difftool "p4merge"]
   cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$LOCAL" "$REMOTE"
+
+[difftool "vimdiff"]
+  cmd = /usr/bin/vimdiff "$LOCAL" "$REMOTE"
 
 [filter "media"]
 	required = true
