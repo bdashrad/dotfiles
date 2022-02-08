@@ -144,8 +144,10 @@ if [[ "$(uname)" == "Darwin" ]]; then
 fi
 
 # ssh stuff
+title "Set up .ssh directory"
 mkdir -p /.ssh/control/
-[ -e ~/.ssh/authorized_keys ] &&
+stow -t ~/.ssh ssh
+[ -n ~/.ssh/authorized_keys ] && curl -o ~/.ssh/authorized_keys https://github.com/bdashrad.keys
 
 stow {bash,git,hugo,ruby,screen,tmux,vagrant,vim}
 mkdir -p ~/bin
