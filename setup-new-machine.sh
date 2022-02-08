@@ -123,13 +123,24 @@ if [[ "$(uname)" == "Darwin" ]]; then
   title "Configuring macOS defaults."
   ./osx.sh
 
+  # gpg
+  title "Configuring and restarting gpg-agent."
+  "${HOMEBREW_PREFIX}/bin/gsed" "s@HOMEBREW_PREFIX@${HOMEBREW_PREFIX}@g" gnupg/gpg-agent.conf > ~/.gnupg/gpg-agent.conf
+  gpgconf --kill gpg-agent
+
   # zoom
   pkill "ZoomOpener"; rm -rf ~/.zoomus; touch ~/.zoomus && chmod 000 ~/.zoomus;
   defaults write ~/Library/Preferences/us.zoom.config.plist ZDisableVideo 1
   sudo defaults write /Library/Preferences/us.zoom.config.plist ZDisableVideo 1
 fi
 
-stow {bash,fzf,git,hugo,ruby,screen,tmux,vagrant,vim}
+# ssh stuff
+mkdir -p /.ssh/control/
+[ -e ~/.ssh/authorized_keys ] &&
+
+stow {bash,git,hugo,ruby,screen,tmux,vagrant,vim}
+mkdir -p ~/bin
+stow -t ~/bin/ bin
 
 # install rvm stable
 echo "Installing rvm..."
