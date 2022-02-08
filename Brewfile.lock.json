@@ -2420,7 +2420,7 @@
         }
       },
       "firefox": {
-        "version": "96.0.3",
+        "version": "97.0",
         "options": {
           "full_name": "firefox"
         }
@@ -2594,7 +2594,7 @@
       "monterey": {
         "HOMEBREW_VERSION": "3.3.14",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "3c2e154adf53262c16c671d2201eecf5991c9c8a",
+        "Homebrew/homebrew-core": "270eb691a58cce264b193ea2a8d6e97cef07249a",
         "CLT": "13.2.0.0.1.1638488800",
         "Xcode": "13.2.1",
         "macOS": "12.2"
