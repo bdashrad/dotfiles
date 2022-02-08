@@ -37,11 +37,13 @@ if [[ "$(uname)" == "Darwin" ]]; then
   export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}";
 
   # update osx
+  title "Run softwareupdate."
   sudo softwareupdate -i -a
 
   ### XCode Command Line Tools
   #      thx https://github.com/alrra/dotfiles/blob/ff123ca9b9b/os/os_x/installs/install_xcode.sh
 
+  title "Check for XCode command line tools"
   if ! xcode-select --print-path &> /dev/null; then
 
       # Prompt user to install the XCode Command Line Tools
@@ -77,6 +79,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
   ###
 
   # install homebrew
+  title "Install Hombrew"
   if test ! $(which brew)
   then
     echo "  Installing Homebrew for you."
@@ -85,25 +88,29 @@ if [[ "$(uname)" == "Darwin" ]]; then
   fi
 
   # install brew apps
-  echo "Installing brew apps..."
+  title "Installing brew apps..."
   brew bundle
 
   # Ensure Brew Bash is a valid shell option
   if ! grep -q "${HOMEBREW_PREFIX}/bin/bash" /etc/shells ; then
     title "Adding Homebrew Bash to list of allowed shells."
-    BASHPATH=$(brew --prefix)/bin/bash
+    BASHPATH="${HOMEBREW_PREFIX}/bin/bash"
     echo "${BASHPATH}" | sudo tee -a /etc/shells > /dev/null
+  fi
 
+  if grep -q "${HOMEBREW_PREFIX}/bin/bash" /etc/shells ; then
     # change to bash 4 (installed by homebrew)
-    title "Changing"
+    title "Changing to homebrew bash"
     chsh -s "${BASHPATH}" # will set for current user only.
     echo "${BASH_VERSION}" # should be 4.x not the old 3.2.X
   fi
 
   # install fzf keybindings
+  title "Install fzf keybindings"
   "$(brew --prefix fzf)/install" --key-bindings --completion --no-update-rc
 
   # add symlink to iCloud drive
+  title "Add symlink ~/icloud for iCloud drive"
   if confirm "Are you signed into iCloud? [y/N] "; then
     ln -s "$HOME/Library/Mobile Documents/com~apple~CloudDocs/" "$HOME/icloud"
   else
@@ -111,7 +118,9 @@ if [[ "$(uname)" == "Darwin" ]]; then
   fi
 
   if confirm "Install work applications? [y/N] "; then
+    title "Install brew work.Bundlefile"
     brew bundle install --file work.Brewfile
+    title "Install asdf plugins."
     ./asdf.sh
   else
     echo "Not installing, review \`./work.Brewfile\` and \`asdf.sh\` to see if there is anything you want from there."
