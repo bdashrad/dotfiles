@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
 
 # export BREWPATH=$(brew --prefix)
-export BREWPATH=/usr/local
+if [[ "$(uname)" == "Darwin" ]]; then
+  if [[ "$(arch)" == "arm64" ]]; then
+    export HOMEBREW_PREFIX="/opt/homebrew"
+  else
+    export HOMEBREW_PREFIX="/usr/local"
+  fi
+fi
+
+export BREWPATH="${HOMEBREW_PREFIX}"
 
 # prefer vim
 EDITOR=$(command -v vim)
@@ -61,6 +69,7 @@ export PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5";
 
 # homebrew applications
 # PATH="${BREWPATH}/bin:$PATH"
+[ -d "${BREWPATH}/bin" ] && PATH="${BREWPATH}/bin:$PATH"
 [ -d "${BREWPATH}/sbin" ] && PATH="${BREWPATH}/sbin:$PATH"
 
 # Add brew coreutils to $PATH
