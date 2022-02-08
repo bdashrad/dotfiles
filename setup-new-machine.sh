@@ -112,9 +112,9 @@ if [[ "$(uname)" == "Darwin" ]]; then
   # add symlink to iCloud drive
   title "Add symlink ~/icloud for iCloud drive"
   if confirm "Are you signed into iCloud? [y/N] "; then
-    ln -s "$HOME/Library/Mobile Documents/com~apple~CloudDocs/" "$HOME/icloud"
+    ln -s "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/" "${HOME}/icloud"
   else
-    echo "After you sign into iCloud you can manually create the symlink to \`$HOME/Library/Mobile Documents/com~apple~CloudDocs/\`"
+    echo "After you sign into iCloud you can manually create the symlink to \`${HOME}/Library/Mobile Documents/com~apple~CloudDocs/\`"
   fi
 
   if confirm "Install work applications? [y/N] "; then
@@ -137,25 +137,33 @@ if [[ "$(uname)" == "Darwin" ]]; then
   "${HOMEBREW_PREFIX}/bin/gsed" "s@HOMEBREW_PREFIX@${HOMEBREW_PREFIX}@g" gnupg/gpg-agent.conf > ~/.gnupg/gpg-agent.conf
   gpgconf --kill gpg-agent
 
+  # iterm2
+  title "Configuring iterm2."
+
+  # Iterm: Configure to use preferences in dotfiles directory
+  defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+  defaults write com.googlecode.iterm2 PrefsCustomFolder -string "${HOME}/prefs"
+
   # zoom
-  pkill "ZoomOpener"; rm -rf ~/.zoomus; touch ~/.zoomus && chmod 000 ~/.zoomus;
-  defaults write ~/Library/Preferences/us.zoom.config.plist ZDisableVideo 1
-  sudo defaults write /Library/Preferences/us.zoom.config.plist ZDisableVideo 1
+  pkill "ZoomOpener"; rm -rf "${HOME}/.zoomus"; touch "${HOME}/.zoomus" && chmod 000 "${HOME}/.zoomus";
+  defaults write us.zoom.config ZDisableVideo 1
+  sudo defaults -currentHost write us.zoom.config ZDisableVideo 1
 fi
 
 # ssh stuff
 title "Set up .ssh directory"
 mkdir -p /.ssh/control/
-stow -t ~/.ssh ssh
-[ -n ~/.ssh/authorized_keys ] && curl -o ~/.ssh/authorized_keys https://github.com/bdashrad.keys
+stow -t ${HOME}/.ssh ssh
+[ -n "${HOME}/.ssh/authorized_keys" ] && \
+  curl -o "${HOME}/.ssh/authorized_keys" https://github.com/bdashrad.keys
 
 stow {bash,git,hugo,ruby,screen,tmux,vagrant,vim}
-mkdir -p ~/bin
-stow -t ~/bin/ bin
+mkdir -p "${HOME}/bin"
+stow -t "${HOME}/bin/" bin
 
 # install rvm stable
-echo "Installing rvm..."
-gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+title "Installing rvm stable"
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 if confirm "Have you disabled your anti-virus? [y/N] "; then
   echo "Anti-virus must be disabled to compile ruby. Only installing RVM."
   \curl -sSL https://get.rvm.io | bash -s stable --ignore-dotfiles
@@ -168,9 +176,6 @@ else
   gem install bundler
   bundle install
 fi
-
-# create bin directory
-mkdir -p ~/bin
 
 # install pip and apps
 # sudo easy_install pip
