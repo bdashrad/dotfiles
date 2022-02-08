@@ -121,7 +121,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
     title "Install brew work.Bundlefile"
     brew bundle install --file work.Brewfile
     title "Install asdf plugins."
-    ./asdf.sh
+    ./scripts/asdf.sh
   else
     echo "Not installing, review \`./work.Brewfile\` and \`asdf.sh\` to see if there is anything you want from there."
   fi
@@ -130,7 +130,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
   sudo ./scripts/touchid_sudo.sh || echo "Configuring sudo failed!"
 
   title "Configuring macOS defaults."
-  ./osx.sh
+  ./scripts/osx.sh
 
   # gpg
   title "Configuring and restarting gpg-agent."
