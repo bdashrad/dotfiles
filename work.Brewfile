@@ -38,5 +38,3 @@ brew "tflint"
 brew "kubectx"
 brew "kube-ps1"
 brew "krew"
-
-cask "zoomus"
