@@ -1,10 +1,9 @@
-brad's dotfiles
-===============
+# brad's dotfiles
 
 Manage dotfiles, configs, etc using bash, gnu stow, and more.
 
-
 ## How to use
+
 1. Clone repo: `git clone git@github.com:bdashrad/dotfiles.git ~/dotfiles`
 2. `cd ~/dotfiles`
 3. `setup-new-machine.sh`
@@ -19,6 +18,7 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
 5. Enjoy!
 
 ## Manual Migrations
+
 * [ ] keybase.io device
 * [ ] gpg keys
 * [ ] .app's I really want and aren't in my caskfile.
@@ -29,18 +29,16 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
 * [ ] bash history?
 * [ ] Install Package Control for Sublime Text 3 from `sublime/`
 * [ ] Wifi Settings and passwords
-  *  `/Volumes/MacintoshHD/Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist`
+  * `/Volumes/MacintoshHD/Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist`
 * [ ] `.extra`
 * [ ] `.gitconfig.local`
 * [ ] extra `.ssh`
 * [ ] `.gnupg`
 * [ ] Tunnelblick Profiles
-* [ ] Adium Settings
 * [ ] Automator scripts
   * `~/Library/Services`
 * [ ] Documents folder
 * [ ] /etc/hosts
-* [ ] run LastPass installer `open "/opt/hombrew-cask/Caskroom/lastpass/latest/LastPass Installer.app"`
 * [ ] [kubectl krew](https://github.com/kubernetes-sigs/krew)
   * [access-matrix](https://github.com/corneliusweig/rakkess)
   * [nginx-ingress](https://kubernetes.github.io/ingress-nginx/kubectl-plugin/)
