@@ -34,6 +34,7 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
 * [ ] `.gitconfig.local`
 * [ ] extra `.ssh`
 * [ ] `.gnupg`
+* [ ] `~/.config/`
 * [ ] Tunnelblick Profiles
 * [ ] Automator scripts
   * `~/Library/Services`
