@@ -19,7 +19,7 @@ pip3 install --upgrade pip
 # pip3 install boto
 # pip3 install botocore
 pip3 git-delete-merged-branches
-pip3 install iStats
+pip install pygithub
 # pip3 install requests
 pip3 install yamlfix
 pip3 install yamllint
