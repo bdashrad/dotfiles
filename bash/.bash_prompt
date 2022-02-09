@@ -136,13 +136,13 @@ set_prompts() {
   }
 
   # kube PS1
-  if [ -f "/usr/local/opt/kube-ps1/share/kube-ps1.sh" ]; then
-    . "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+  if [ -f "${BREWPATH}/opt/kube-ps1/share/kube-ps1.sh" ]; then
+    . "${BREWPATH}/opt/kube-ps1/share/kube-ps1.sh"
     export KUBE_PS1_NS_ENABLE=false
   fi
 
   function prompt_kube() {
-    [ -f "/usr/local/opt/kube-ps1/share/kube-ps1.sh" ] && kube_ps1
+    [ -f "${BREWPATH}/opt/kube-ps1/share/kube-ps1.sh" ] && kube_ps1
   }
 
   # ------------------------------------------------------------------

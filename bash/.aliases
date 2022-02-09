@@ -124,6 +124,7 @@ alias load-perl='eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 
 # kubernetes completion
 alias kube-complete='. <(kubectl completion bash) && . <(helm completion bash)'
+alias k8scomplete=kube-complete
 
 # hugo completions
 alias hugo-complete='. "$HOME/.hugo/hugo.sh"'

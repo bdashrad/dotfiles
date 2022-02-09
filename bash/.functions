@@ -158,11 +158,6 @@ function multi-dig() {
   done
 }
 
-function k8scomplete() {
-  . <(kubectl completion bash)
-  . <(helm completion bash)
-}
-
 function curl-head() {
   local options target
   target=$1; shift
