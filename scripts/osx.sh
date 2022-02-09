@@ -141,7 +141,7 @@ defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerHorizSwipeGe
 # # Disable “natural” (Lion-style) scrolling
 # defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
-# Increase sound quality for Bluetooth headphones/headsets
+# Increase sound quality for Bluetooth headphones/headsets using SBC
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Max (editable)" -int 80
 sudo defaults write bluetoothaudiod "Enable AAC codec" -bool true
@@ -164,10 +164,10 @@ sudo chmod 444 /private/var/db/.AccessibilityAPIEnabled
 
 # Use scroll gesture with the Ctrl (^) modifier key to zoom
 # might not work anymore
-defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
-defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+# defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
+# defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 # Follow the keyboard focus while zoomed in
-defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool false
+# defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool false
 
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
@@ -295,7 +295,7 @@ defaults write com.apple.finder EmptyTrashSecurely -bool true
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
 # Show the ~/Library folder
-chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
+chflags nohidden ~/Library
 
 # Finder: show the /Volumes folder
 sudo chflags nohidden /Volumes
