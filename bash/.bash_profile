@@ -4,6 +4,14 @@
 # BASH_XTRACEFD="5"
 # set -x
 
+if [[ "$(uname)" == "Darwin" ]]; then
+  if [[ "$(arch)" == "arm64" ]]; then
+    export HOMEBREW_PREFIX="/opt/homebrew"
+  else
+    export HOMEBREW_PREFIX="/usr/local"
+  fi
+fi
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.

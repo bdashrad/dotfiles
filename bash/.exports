@@ -9,7 +9,13 @@ if [[ "$(uname)" == "Darwin" ]]; then
   fi
 fi
 
-export BREWPATH="${HOMEBREW_PREFIX}"
+# brew is slow sometimes so let's just export them ourselves
+# eval "$("${HOMEBREW_PREFIX}/bin/brew" shellenv)"
+export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar";
+export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}";
+export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}";
+export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}";
+export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}";
 
 # prefer vim
 EDITOR=$(command -v vim)
@@ -69,8 +75,8 @@ export PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5";
 
 # homebrew applications
 # PATH="${BREWPATH}/bin:$PATH"
-[ -d "${BREWPATH}/bin" ] && PATH="${BREWPATH}/bin:$PATH"
-[ -d "${BREWPATH}/sbin" ] && PATH="${BREWPATH}/sbin:$PATH"
+# [ -d "${BREWPATH}/bin" ] && PATH="${BREWPATH}/bin:$PATH"
+# [ -d "${BREWPATH}/sbin" ] && PATH="${BREWPATH}/sbin:$PATH"
 
 # Add brew coreutils to $PATH
 [ -d "${BREWPATH}/opt/coreutils/libexec/gnubin" ] && PATH="${BREWPATH}/opt/coreutils/libexec/gnubin:$PATH"
