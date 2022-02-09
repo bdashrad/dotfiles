@@ -166,6 +166,7 @@ function curl-head() {
   curl -s -I -X GET ${options[@]} "$target"
 }
 
+# checkout default branch
 function main() {
   local default_branch
   default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
