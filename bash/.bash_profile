@@ -120,6 +120,9 @@ complete -W "NSGlobalDomain" defaults
 # terraform complete
 command -v terraform >/dev/null 2>&1 && complete -C $(which terraform) terraform tf
 
+# gcloud completion
+[ -f "${BREWPATH}/bin/gcloud" ] && . "${BREWPATH}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
+
 # source override last for overrides
 [ -f "${HOME}/.override" ] && . "${HOME}/.override"
 
