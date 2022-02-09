@@ -157,9 +157,13 @@ stow -t ${HOME}/.ssh ssh
 [ -n "${HOME}/.ssh/authorized_keys" ] && \
   curl -o "${HOME}/.ssh/authorized_keys" https://github.com/bdashrad.keys
 
+title "Stow dotfiles"
 stow {bash,git,hugo,ruby,screen,tmux,vagrant,vim}
 mkdir -p "${HOME}/bin"
 stow -t "${HOME}/bin/" bin
+
+title "Create code folder"
+mkdir -p "${HOME}/code"
 
 # install rvm stable
 title "Installing rvm stable"
