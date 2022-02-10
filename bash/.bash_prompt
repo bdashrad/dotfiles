@@ -136,13 +136,13 @@ set_prompts() {
   }
 
   # kube PS1
-  if [ -f "${BREWPATH}/opt/kube-ps1/share/kube-ps1.sh" ]; then
-    . "${BREWPATH}/opt/kube-ps1/share/kube-ps1.sh"
+  if [ -f "${HOMEBREW_PREFIX}/opt/kube-ps1/share/kube-ps1.sh" ]; then
+    . "${HOMEBREW_PREFIX}/opt/kube-ps1/share/kube-ps1.sh"
     export KUBE_PS1_NS_ENABLE=false
   fi
 
   function prompt_kube() {
-    [ -f "${BREWPATH}/opt/kube-ps1/share/kube-ps1.sh" ] && kube_ps1
+    [ -f "${HOMEBREW_PREFIX}/opt/kube-ps1/share/kube-ps1.sh" ] && kube_ps1
   }
 
   # ------------------------------------------------------------------

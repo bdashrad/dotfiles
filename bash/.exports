@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# export BREWPATH=$(brew --prefix)
+# export HOMEBREW_PREFIX=$(brew --prefix)
 if [[ "$(uname)" == "Darwin" ]]; then
   if [[ "$(arch)" == "arm64" ]]; then
     export HOMEBREW_PREFIX="/opt/homebrew"
@@ -59,7 +59,7 @@ export GOPATH="$HOME/go"
 export GPG_TTY=$(tty)
 
 # use homebrew coreutils manpages
-export MANPATH="${BREWPATH}/opt/coreutils/libexec/gnuman:$MANPATH"
+export MANPATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
@@ -74,21 +74,21 @@ export PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5";
 # PATH
 
 # homebrew applications
-# PATH="${BREWPATH}/bin:$PATH"
-# [ -d "${BREWPATH}/bin" ] && PATH="${BREWPATH}/bin:$PATH"
-# [ -d "${BREWPATH}/sbin" ] && PATH="${BREWPATH}/sbin:$PATH"
+# PATH="${HOMEBREW_PREFIX}/bin:$PATH"
+# [ -d "${HOMEBREW_PREFIX}/bin" ] && PATH="${HOMEBREW_PREFIX}/bin:$PATH"
+# [ -d "${HOMEBREW_PREFIX}/sbin" ] && PATH="${HOMEBREW_PREFIX}/sbin:$PATH"
 
 # Add brew coreutils to $PATH
-[ -d "${BREWPATH}/opt/coreutils/libexec/gnubin" ] && PATH="${BREWPATH}/opt/coreutils/libexec/gnubin:$PATH"
+[ -d "${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin" ] && PATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:$PATH"
 
 # brew grep
-[ -d "${BREWPATH}/opt/grep/libexec/gnubin" ] && PATH="${BREWPATH}/opt/grep/libexec/gnubin:$PATH"
+[ -d "${HOMEBREW_PREFIX}/opt/grep/libexec/gnubin" ] && PATH="${HOMEBREW_PREFIX}/opt/grep/libexec/gnubin:$PATH"
 
 # brew gnu sed
-[ -d "${BREWPATH}/opt/gnu-sed/libexec/gnubin" ] && PATH="${BREWPATH}/opt/gnu-sed/libexec/gnubin:$PATH"
+[ -d "${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin" ] && PATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # brew findutils
-[ -d "${BREWPATH}/opt/findutils/libexec/gnubin" ] && PATH="${BREWPATH}/opt/findutils/libexec/gnubin:$PATH"
+[ -d "${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin" ] && PATH="${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin:$PATH"
 
 # CPAN
 [ -d "${HOME}/perl5/bin" ] && PATH="$PATH:${HOME}/perl5/bin"

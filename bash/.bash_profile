@@ -55,10 +55,10 @@ bind Space:magic-space
 
 # z beats cd most of the time.
 #  github.com/rupa/z
-[ -s "${BREWPATH}/etc/profile.d/z.sh" ] && . "${BREWPATH}/etc/profile.d/z.sh"
+[ -s "${HOMEBREW_PREFIX}/etc/profile.d/z.sh" ] && . "${HOMEBREW_PREFIX}/etc/profile.d/z.sh"
 
 # grc colorizing
-[ -e "${BREWPATH}/etc/grc.bashrc" ] && . "${BREWPATH}/etc/grc.bashrc"
+[ -e "${HOMEBREW_PREFIX}/etc/grc.bashrc" ] && . "${HOMEBREW_PREFIX}/etc/grc.bashrc"
 
 # generic colouriser
 GRC=$(command -v grc)
@@ -71,11 +71,14 @@ if [ "$TERM" != dumb ] && [ -n "$GRC" ]
   done
 fi
 
-# include .bashrc if it exists
-#[ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
-
 # set up fzf keybindings
 [ -f ~/.fzf.bash ] && . "$HOME/.fzf.bash"
+
+# travis-cli
+[ -f "$HOME/.travis/travis.sh" ] && . "$HOME/.travis/travis.sh"
+
+# asdf
+[ -f "${HOMEBREW_PREFIX}/opt/asdf/asdf.sh" ] && . "${HOMEBREW_PREFIX}/opt/asdf/asdf.sh"
 
 # # use local folder for CPAN instead of homebrew cellar
 # eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
@@ -102,34 +105,28 @@ fi
 # [ -f "/etc/bash_completion" ] && . /etc/bash_completion\\s
 
 # enable homebrew bash_completion
-# [ -f "${BREWPATH}/etc/bash_completion" ] && . "${BREWPATH}/etc/bash_completion"
-[ -r "${BREWPATH}/etc/profile.d/bash_completion.sh" ] && . "${BREWPATH}/etc/profile.d/bash_completion.sh"
-#[ -e "${BREWPATH}/share/bash-completion/bash_completion" ] && . "${BREWPATH}/share/bash-completion/bash_completion"
+# [ -f "${HOMEBREW_PREFIX}/etc/bash_completion" ] && . "${HOMEBREW_PREFIX}/etc/bash_completion"
+[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ] && . "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+#[ -e "${HOMEBREW_PREFIX}/share/bash-completion/bash_completion" ] && . "${HOMEBREW_PREFIX}/share/bash-completion/bash_completion"
 
 # enable aws-cli completion
-[ -f "${BREWPATH}/bin/aws_completer" ] && complete -C aws_completer aws
+[ -f "${HOMEBREW_PREFIX}/bin/aws_completer" ] && complete -C aws_completer aws
 
 # enable hugo completion
 # [ -f "$HOME/.hugo/hugo.sh" ] && . "$HOME/.hugo/hugo.sh"
 
 # enable vault completion
-[ -f "${BREWPATH}/bin/vault" ] && complete -C "${BREWPATH}/bin/vault" vault
+[ -f "${HOMEBREW_PREFIX}/bin/vault" ] && complete -C "${HOMEBREW_PREFIX}/bin/vault" vault
 
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
 
-# travis-cli
-[ -f "$HOME/.travis/travis.sh" ] && . "$HOME/.travis/travis.sh"
-
-# asdf
-[ -f "${BREWPATH}/opt/asdf/asdf.sh" ] && . "${BREWPATH}/opt/asdf/asdf.sh"
-
 # terraform complete
 command -v terraform >/dev/null 2>&1 && complete -C $(which terraform) terraform tf
 
 # gcloud completion
-[ -f "${BREWPATH}/bin/gcloud" ] && . "${BREWPATH}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
+[ -f "${HOMEBREW_PREFIX}/bin/gcloud" ] && . "${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
 
 # source override last for overrides
 [ -f "${HOME}/.override" ] && . "${HOME}/.override"
