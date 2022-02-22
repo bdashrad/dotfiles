@@ -96,9 +96,6 @@ export PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5";
 # GO
 [ -d "${GOPATH}/bin" ] && PATH=$PATH:${GOPATH}/bin
 
-# Add RVM to PATH for scripting
-[ -d "$HOME/.rvm/bin" ] && PATH="$PATH:$HOME/.rvm/bin"
-
 # kubectl krew
 [ -d "${KREW_ROOT:-$HOME/.krew}/bin" ] && PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 

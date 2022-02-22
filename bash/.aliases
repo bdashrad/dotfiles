@@ -110,9 +110,6 @@ alias brewcleanup='brew -v cleanup && brew -v cask cleanup'
 # terraform
 alias tf="command terraform"
 
-# rvm
-alias load-rvm='. "$HOME/.rvm/scripts/rvm" && . $(rvm env --path)'
-
 # node
 alias load-node='export PATH=$PATH:$(npm bin -g)'
 

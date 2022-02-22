@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
+# shellcheck disable=SC3030
 ASDF_PLUGINS=(
   "helm 3.7.1"
   "kubectl 1.21.7"
   "nodejs 16.3.0"
   "pluto 5.0.1"
+  "python 3.10.2"
+  "ruby 3.1.1"
   "terraform 1.0.11"
 )
 
