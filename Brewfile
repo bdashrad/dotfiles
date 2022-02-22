@@ -19,7 +19,6 @@ brew "bash"
 # Install/Upgrade some languages
 brew "python"
 brew "go"
-brew "node"
 brew "coffeescript"
 
 # stow is used to manage these dotfiles
@@ -74,6 +73,7 @@ brew "yq"
 # network stuff
 brew "grepcidr"
 brew "mtr"
+brew "mosh"
 brew "nmap"
 brew "speedtest-cli"
 
@@ -93,6 +93,7 @@ brew "optipng"
 brew "pngcrush"
 brew "pngquant"
 brew "pv"
+brew "qemu"
 brew "rename"
 brew "swig"
 # brew "travis"
@@ -126,7 +127,8 @@ brew "shellcheck"
 tap "buo/cask-upgrade"
 
 # always
-cask "1password"
+# cask "1password"
+cask "1password-beta"
 cask "alfred"
 cask "barrier"
 # cask "docker"
@@ -149,6 +151,7 @@ cask "transmission"
 # cask "xquartz"
 
 # communication
+cask "discord"
 cask "slack"
 cask "zoom"
 
@@ -192,6 +195,7 @@ cask "filebot"
 cask "krisp"
 cask "oversight"
 cask "tripmode"
+cask "utm"
 cask "yubico-yubikey-manager"
 
 mas 'Wireguard', id: 1451685025
