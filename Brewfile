@@ -13,7 +13,7 @@ brew "gnu-sed"
 # Don't forget to add `$(brew --prefix grep)/libexec/gnubin` to `$PATH`.
 brew "grep"
 
-# Install Bash 4
+# Install Bash 5
 brew "bash"
 
 # Install/Upgrade some languages
@@ -93,7 +93,7 @@ brew "optipng"
 brew "pngcrush"
 brew "pngquant"
 brew "pv"
-brew "qemu"
+# brew "qemu"
 brew "rename"
 brew "swig"
 # brew "travis"
@@ -195,7 +195,7 @@ cask "filebot"
 cask "krisp"
 cask "oversight"
 cask "tripmode"
-cask "utm"
+# cask "utm"
 cask "yubico-yubikey-manager"
 
 mas 'Wireguard', id: 1451685025
