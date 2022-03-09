@@ -169,9 +169,11 @@ cask "visual-studio-code"
 # cask "wireshark"
 
 # multimedia
+cask "ears"
 # cask "exiftool"
 cask "gyazo"
 # cask "lastfm"
+cask "notunes"
 cask "skitch"
 cask "spotify"
 # cask "vlc"
