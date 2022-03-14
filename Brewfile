@@ -166,6 +166,8 @@ cask "sublime-text"
 # cask "virtualbox-extension-pack"
 cask "visual-studio-code"
 # cask "wireshark"
+tap "get-woke/tap"
+brew "woke"
 
 # multimedia
 cask "ears"

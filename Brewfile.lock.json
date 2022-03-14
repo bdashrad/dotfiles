@@ -2448,6 +2448,10 @@
             }
           }
         }
+      },
+      "woke": {
+        "version": "0.17.1",
+        "bottle": false
       }
     },
     "tap": {
@@ -2459,6 +2463,9 @@
       },
       "homebrew/cask-drivers": {
         "revision": "eedbc6d0b044ba3ce1c23a23e9d82edf158f9e63"
+      },
+      "get-woke/tap": {
+        "revision": "e2b987e24a552ce95cbf050b86ebe0bb21580bde"
       }
     },
     "cask": {
@@ -2695,9 +2702,9 @@
   "system": {
     "macos": {
       "monterey": {
-        "HOMEBREW_VERSION": "3.4.1-37-gd2857e0",
+        "HOMEBREW_VERSION": "3.4.1-42-g6b9fc22",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "c58c9a941d6e603640b047636dbf01b66a032c6b",
+        "Homebrew/homebrew-core": "64a184b5d9150cfc649df7af26e1704257ee14e2",
         "CLT": "13.2.0.0.1.1638488800",
         "Xcode": "13.2.1",
         "macOS": "12.2"
