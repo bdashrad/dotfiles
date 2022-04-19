@@ -53,10 +53,12 @@
 [core]
   excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
+  pager = delta
 
 # git diff
 [diff]
   tool = p4merge
+  colorMoved = default
 
 [difftool]
   prompt = false
@@ -83,9 +85,13 @@
 [help]
   autocorrect = 50
 
+[interactive]
+  diffFilter = delta --color-only
+
 [merge]
   tool = p4merge
   prompt = false
+  conflictstyle = diff3
 
 [mergetool]
   keepTemporaries = false
@@ -135,7 +141,10 @@
   path = ~/.gitconfig.local
 
 [gpg]
-	program = gpg
+  program = gpg
+
+[delta]
+  navigate = true
 
 [pull]
 	ff = only
