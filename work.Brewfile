@@ -11,6 +11,7 @@
 # brew "ansible"
 # brew "ansible-lint"
 brew "argocd"
+brew "atlantis"
 tap "cloudflare/cloudflare"
 brew "cloudflared"
 cask "google-cloud-sdk"
@@ -42,3 +43,6 @@ brew "kubectx"
 brew "kube-ps1"
 brew "kubie"
 brew "krew"
+
+# Linting tools
+brew "woke"

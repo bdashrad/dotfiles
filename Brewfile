@@ -17,7 +17,6 @@ brew "grep"
 brew "bash"
 
 # Install/Upgrade some languages
-brew "python"
 brew "go"
 brew "coffeescript"
 
@@ -61,6 +60,7 @@ brew "gist"
 brew "git"
 tap "git-chglog/git-chglog"
 brew "git-chglog"
+brew "git-delta"
 brew "jq"
 brew "openssl@1.1"
 brew "yamllint"
@@ -151,6 +151,7 @@ cask "transmission"
 
 # communication
 cask "discord"
+cask "discord-canary"
 cask "slack"
 cask "zoom"
 
@@ -158,6 +159,7 @@ cask "zoom"
 cask "iterm2"
 # cask "menumeters"
 # cask "kdiff3"
+cask "ngrok"
 cask "p4v" # p4merge
 cask "sublime-text"
 # cask "vagrant"
@@ -201,7 +203,8 @@ cask "tripmode"
 # cask "utm"
 cask "yubico-yubikey-manager"
 
-mas 'Wireguard', id: 1451685025
-mas 'Microsoft Remote Desktop', id: 1295203466
-mas 'Clocker', id: 1056643111
-mas 'amphetamine', id: 937984704
+mas "Clocker", id: 1056643111
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "Wireguard", id: 1451685025
+mas "Amphetamine", id: 937984704
+mas "Display Menu", id: 549083868
