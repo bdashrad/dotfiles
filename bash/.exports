@@ -100,7 +100,7 @@ export PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5";
 [ -d "${KREW_ROOT:-${HOME}/.krew}/bin" ] && PATH="${KREW_ROOT:-${HOME}/.krew}/bin:${PATH}"
 
 # rancher-desktop
-[ -d "~/.rd/bin/" ] && PATH="${PATH}:${HOME}/.rd/bin"
+[ -d "${HOME}/.rd/bin/" ] && PATH="${PATH}:${HOME}/.rd/bin"
 
 # gcloud components install doesn't always link everything
 [ -d "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin/" ] && PATH="${PATH}:/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
