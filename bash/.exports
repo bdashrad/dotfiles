@@ -99,8 +99,8 @@ export PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5";
 # kubectl krew
 [ -d "${KREW_ROOT:-${HOME}/.krew}/bin" ] && PATH="${KREW_ROOT:-${HOME}/.krew}/bin:${PATH}"
 
-# until rancher-desktop get's their act together
-[ -d "/Applications/Rancher Desktop.app" ] && PATH="${PATH}:/Applications/Rancher Desktop.app/Contents/Resources/resources/darwin/bin"
+# rancher-desktop
+[ -d "~/.rd/bin/" ] && PATH="${PATH}:${HOME}/.rd/bin"
 
 # gcloud components install doesn't always link everything
 [ -d "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin/" ] && PATH="${PATH}:/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
