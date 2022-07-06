@@ -124,3 +124,6 @@ export BASH_SILENCE_DEPRECATION_WARNING="1"
 
 # set default kube config path
 export KUBE_CONFIG_PATH=$HOME/.kube/config
+
+# use new gcloud auth plugin
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
