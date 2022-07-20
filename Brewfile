@@ -201,6 +201,7 @@ cask "secretive"
 cask "tunnelblick"
 
 # utilities
+cask "bartender"
 cask "filebot"
 cask "krisp"
 cask "oversight"
