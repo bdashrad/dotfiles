@@ -15,14 +15,19 @@ fi
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
+# shellcheck disable=SC1090
 for file in ${HOME}/.{extra,bash_prompt,path,exports,aliases,functions}; do
-  [ -f "$file" ] && [ -r "$file" ] && . "$file"
+  [[ -f "${file}" ]] && [[ -r "${file}" ]] && . "${file}"
 done
 unset file
 
 # to help sublimelinter etc with finding my PATHS
 case $- in
-  *i*) [ -f "~/.extra" ] && source ~/.extra
+  *i*) [[ -f "${HOME}/.extra" ]] && source "${HOME}/.extra"
+  ;;
+
+  *)
+  ;;
 esac
 
 if type shopt &> /dev/null; then
@@ -55,14 +60,16 @@ bind Space:magic-space
 
 # z beats cd most of the time.
 #  github.com/rupa/z
-[ -s "${HOMEBREW_PREFIX}/etc/profile.d/z.sh" ] && . "${HOMEBREW_PREFIX}/etc/profile.d/z.sh"
+# shellcheck disable=SC1091
+[[ -s "${HOMEBREW_PREFIX}/etc/profile.d/z.sh" ]] && . "${HOMEBREW_PREFIX}/etc/profile.d/z.sh"
 
 # grc colorizing
-[ -e "${HOMEBREW_PREFIX}/etc/grc.bashrc" ] && . "${HOMEBREW_PREFIX}/etc/grc.bashrc"
+# shellcheck disable=SC1091
+[[ -e "${HOMEBREW_PREFIX}/etc/grc.bashrc" ]] && . "${HOMEBREW_PREFIX}/etc/grc.bashrc"
 
 # generic colouriser
 GRC=$(command -v grc)
-if [ "$TERM" != dumb ] && [ -n "$GRC" ]
+if [[ "${TERM}" != dumb ]] && [[ -n "${GRC}" ]]
   then
     alias colourify="$GRC -es --colour=auto"
     alias configure='colourify ./configure'
@@ -72,13 +79,16 @@ if [ "$TERM" != dumb ] && [ -n "$GRC" ]
 fi
 
 # set up fzf keybindings
-[ -f ~/.fzf.bash ] && . "$HOME/.fzf.bash"
+# shellcheck disable=SC1091
+[[ -f ~/.fzf.bash ]] && . "${HOME}/.fzf.bash"
 
 # travis-cli
-[ -f "$HOME/.travis/travis.sh" ] && . "$HOME/.travis/travis.sh"
+# shellcheck disable=SC1091
+[[ -f "$HOME/.travis/travis.sh" ]] && . "${HOME}/.travis/travis.sh"
 
 # asdf
-[ -f "${HOMEBREW_PREFIX}/opt/asdf/asdf.sh" ] && . "${HOMEBREW_PREFIX}/opt/asdf/asdf.sh"
+# shellcheck disable=SC1091
+[[ -f "${HOMEBREW_PREFIX}/opt/asdf/asdf.sh" ]] && . "${HOMEBREW_PREFIX}/opt/asdf/asdf.sh"
 
 # # use local folder for CPAN instead of homebrew cellar
 # eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
@@ -98,38 +108,40 @@ fi
 ##
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[ -s "$HOME/.ssh/config" ] && \
+[[ -s "$HOME/.ssh/config" ]] && \
   complete -o "default" -o "nospace" -W "$(awk '{if ($1=="Host" && $2!="*") print $2}' ~/.ssh/config)" scp sftp ssh
 
 # system bash completion
-# [ -f "/etc/bash_completion" ] && . /etc/bash_completion\\s
+# [[ -f "/etc/bash_completion" ]] && . /etc/bash_completion\\s
 
 # enable homebrew bash_completion
-# [ -f "${HOMEBREW_PREFIX}/etc/bash_completion" ] && . "${HOMEBREW_PREFIX}/etc/bash_completion"
-[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ] && . "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
-#[ -e "${HOMEBREW_PREFIX}/share/bash-completion/bash_completion" ] && . "${HOMEBREW_PREFIX}/share/bash-completion/bash_completion"
+# [[ -f "${HOMEBREW_PREFIX}/etc/bash_completion" ]] && . "${HOMEBREW_PREFIX}/etc/bash_completion"
+[[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]] && . "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+#[[ -e "${HOMEBREW_PREFIX}/share/bash-completion/bash_completion" ]] && . "${HOMEBREW_PREFIX}/share/bash-completion/bash_completion"
 
 # enable aws-cli completion
-[ -f "${HOMEBREW_PREFIX}/bin/aws_completer" ] && complete -C aws_completer aws
+[[ -f "${HOMEBREW_PREFIX}/bin/aws_completer" ]] && complete -C aws_completer aws
 
 # enable hugo completion
-# [ -f "$HOME/.hugo/hugo.sh" ] && . "$HOME/.hugo/hugo.sh"
+# [[ -f "$HOME/.hugo/hugo.sh" ]] && . "$HOME/.hugo/hugo.sh"
 
 # enable vault completion
-[ -f "${HOMEBREW_PREFIX}/bin/vault" ] && complete -C "${HOMEBREW_PREFIX}/bin/vault" vault
+[[ -f "${HOMEBREW_PREFIX}/bin/vault" ]] && complete -C "${HOMEBREW_PREFIX}/bin/vault" vault
 
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
 
 # terraform complete
-command -v terraform >/dev/null 2>&1 && complete -C $(which terraform) terraform tf
+command -v terraform >/dev/null 2>&1 && complete -C "$(which terraform)" terraform tf
 
 # gcloud completion
-[ -f "${HOMEBREW_PREFIX}/bin/gcloud" ] && . "${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
+# shellcheck disable=SC1091
+[[ -f "${HOMEBREW_PREFIX}/bin/gcloud" ]] && . "${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
 
 # source override last for overrides
-[ -f "${HOME}/.override" ] && . "${HOME}/.override"
+# shellcheck disable=SC1091
+[[ -f "${HOME}/.override" ]] && . "${HOME}/.override"
 
 # start with kube-ps1 off
 export KUBE_PS1_ENABLED=off

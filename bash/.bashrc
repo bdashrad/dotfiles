@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-[ -n "$PS1" ] && source ~/.bash_profile
+# shellcheck disable=SC1090
+[[ -n "${PS1}" ]] && source ~/.bash_profile
