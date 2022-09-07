@@ -134,8 +134,8 @@ cask "1password-beta"
 cask "alfred"
 cask "barrier"
 cask "cron"
-# cask "docker"
-cask "rancher"
+cask "docker"
+# cask "rancher"
 # cask "dropbox"
 cask "evernote"
 cask "firefox"
@@ -209,7 +209,7 @@ cask "tripmode"
 # cask "utm"
 cask "yubico-yubikey-manager"
 
-mas "Clocker", id: 1056643111
+# mas "Clocker", id: 1056643111
 mas "Microsoft Remote Desktop", id: 1295203466
 mas "Wireguard", id: 1451685025
 mas "Amphetamine", id: 937984704
