@@ -117,6 +117,9 @@
   default = current
   autoSetupRemote = true
 
+[pull]
+  ff = only
+
 [stash]
   showPatch = true
 
@@ -127,14 +130,15 @@
   pushInsteadOf = "git://github.com/"
   pushInsteadOf = "https://github.com/"
 
-[url "git://github.com/"]
+[url "https://github.com/"]
+	insteadOf = git://github.com/
   insteadOf = "github:"
 
 [url "git@gist.github.com:"]
   pushInsteadOf = "gist:"
   pushInsteadOf = "git://gist.github.com/"
 
-[url "git://gist.github.com/"]
+[url "https://gist.github.com/"]
   insteadOf = "gist:"
 
 # use separate file for username / github token / etc
@@ -147,13 +151,15 @@
 [delta]
   navigate = true
 
-[pull]
-	ff = only
 [credential]
-	helper = store
+  helper = store
+
+# gh tool auth
 [url "https://x-access-token@github.com"]
-	insteadOf = ssh://git@github.com
+  insteadOf = ssh://git@github.com
+
 [tag]
-	forceSignAnnotated = true
+  forceSignAnnotated = true
+
 [init]
-	defaultBranch = main
+  defaultBranch = main
