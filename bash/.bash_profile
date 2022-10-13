@@ -128,6 +128,9 @@ fi
 # enable vault completion
 [[ -f "${HOMEBREW_PREFIX}/bin/vault" ]] && complete -C "${HOMEBREW_PREFIX}/bin/vault" vault
 
+# enable git completion
+[[ -f "${HOMEBREW_PREFIX}/etc/bash_completion.d/git-completion.bash" ]] && . "${HOMEBREW_PREFIX}/etc/bash_completion.d/git-completion.bash"
+
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
