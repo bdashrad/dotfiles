@@ -222,6 +222,12 @@ function k8s_get_secrets_plaintext() {
 {{range $k,$v := .data}}{{printf "%s: " $k}}{{if not $v}}{{$v}}{{else}}{{$v | base64decode}}{{end}}{{"\n"}}{{end}}'
 }
 
+kalias() {
+  source <(kubectl completion bash)
+  alias k=kubectl
+  eval "$(complete -p kubectl | awk '{$NF="k"; print}')"
+}
+
 # run in rosetta2
 function x86() {
   arch -x86_64 "$@"
