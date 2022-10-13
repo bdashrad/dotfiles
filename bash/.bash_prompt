@@ -24,12 +24,12 @@ export PS4
 # Automatically trim long paths in the prompt (requires Bash 4.x)
 PROMPT_DIRTRIM=2
 
-if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
-    export TERM=gnome-256color
+if [[ ${COLORTERM} = gnome-* && ${TERM} = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
+  export TERM=gnome-256color
 elif infocmp xterm-256color >/dev/null 2>&1; then
-    export TERM=xterm-256color
-elif [[ $TERM = screen ]]; then
-    export TERM=xterm-256color
+  export TERM=xterm-256color
+elif [[ ${TERM} = screen ]]; then
+  export TERM=xterm-256color
 fi
 
 set_prompts() {
@@ -38,7 +38,7 @@ set_prompts() {
 
   local dateCmd=""
 
-  if [ -x /usr/bin/tput ] && tput setaf 1 &> /dev/null; then
+  if [[ -x /usr/bin/tput ]] && tput setaf 1 &> /dev/null; then
 
     tput sgr0 # Reset colors
 
@@ -90,10 +90,10 @@ set_prompts() {
     userhost=""
     userhost+="\[${userStyle}\]$USER "
     userhost+="\[${white}\]at "
-    userhost+="\[${orange}\]$HOSTNAME "
+    userhost+="\[${orange}\]${HOSTNAME} "
     userhost+="\[${white}\]in"
 
-    if [[ $USER -ne "$default_username" ]] || [[ -n $SSH_CLIENT ]]; then echo $userhost ""; fi
+    if [[ ${USER} -ne "${default_username}" ]] || [[ -n ${SSH_CLIENT} ]]; then echo ${userhost} ""; fi
   }
 
   function prompt_git() {
@@ -115,7 +115,7 @@ set_prompts() {
     ## early exit for Chromium & Blink repo, as the dirty check takes ~5s
     ## also recommended (via goo.gl/wAVZLa ) : sudo sysctl kern.maxvnodes=$((512*1024))
     repoUrl=$(git config --get remote.origin.url)
-    if grep -q chromium.googlesource.com <<<$repoUrl; then
+    if grep -q chromium.googlesource.com <<<"${repoUrl}"; then
 
       dirty=" ⁂"
 
@@ -129,20 +129,22 @@ set_prompts() {
       #    github.com/mathiasbynens/dotfiles/blob/a8bd0d4300/.bash_prompt#L30-L43
     fi
 
-    [ -n "${s}" ] && s=" [${s}]";
-    echo -e "${1}${branchName}${2}$dirty";
+    [[ -n "${s}" ]] && s=" [${s}]";
+    echo -e "${1}${branchName}${2}${dirty}";
 
     return
   }
 
   # kube PS1
-  if [ -f "${HOMEBREW_PREFIX}/opt/kube-ps1/share/kube-ps1.sh" ]; then
+  # shellcheck disable=SC2154
+  if [[ -f "${HOMEBREW_PREFIX}/opt/kube-ps1/share/kube-ps1.sh" ]]; then
+    # shellcheck disable=SC1091
     . "${HOMEBREW_PREFIX}/opt/kube-ps1/share/kube-ps1.sh"
     export KUBE_PS1_NS_ENABLE=false
   fi
 
   function prompt_kube() {
-    [ -f "${HOMEBREW_PREFIX}/opt/kube-ps1/share/kube-ps1.sh" ] && kube_ps1
+    [[ -f "${HOMEBREW_PREFIX}/opt/kube-ps1/share/kube-ps1.sh" ]] && kube_ps1
   }
 
   # ------------------------------------------------------------------
@@ -184,8 +186,8 @@ set_prompts() {
     #set "?"
   }
 
-  if [ "$TERM" != "linux" ] && [ -f "$HOMEBREW_PREFIX/bin/powerline-go" ]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+  if [[ "${TERM}" != "linux" ]] && [[ -f "${HOMEBREW_PREFIX}/bin/powerline-go" ]]; then
+    PROMPT_COMMAND="_update_ps1; ${PROMPT_COMMAND}"
   fi
 
   # ------------------------------------------------------------------
