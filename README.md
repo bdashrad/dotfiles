@@ -21,6 +21,9 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
 
 ## Manual Migrations
 
+* [ ] python
+  * [ ] install from `requirements.txt`
+  * [ ] updates in `requirements.in` and generated with `pip-compile` see [pip-tools](https://github.com/jazzband/pip-tools)
 * [ ] keybase.io device
 * [ ] gpg keys
 * [ ] .app's I really want and aren't in my caskfile.
