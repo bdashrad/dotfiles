@@ -147,7 +147,7 @@ command -v terraform >/dev/null 2>&1 && complete -C "$(which terraform)" terrafo
 [[ -f "${HOME}/.override" ]] && . "${HOME}/.override"
 
 # start with kube-ps1 off
-export KUBE_PS1_ENABLED=off
+# export KUBE_PS1_ENABLED=off
 
 # enable kube completion
 k8scomplete

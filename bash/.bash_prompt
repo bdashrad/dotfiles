@@ -173,7 +173,7 @@ set_prompts() {
         -hostname-only-if-ssh \
         -cwd-max-depth 3 \
         -git-mode simple \
-        -modules "host,ssh,cwd,perms,terraform-workspace,git,kube,jobs,exit,newline,root" \
+        -modules "host,ssh,kube,cwd,perms,terraform-workspace,git,jobs,exit,newline,root" \
         -path-aliases "~/code/eleanor=@ELE,$HOME/code/eleanor=@ELE"
     )"
 
