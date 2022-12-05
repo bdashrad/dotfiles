@@ -222,6 +222,13 @@ function k8s_get_secrets_plaintext() {
 {{range $k,$v := .data}}{{printf "%s: " $k}}{{if not $v}}{{$v}}{{else}}{{$v | base64decode}}{{end}}{{"\n"}}{{end}}'
 }
 
+function k8s_get_secrets_json() {
+  local secret="$1"
+  local namespace="${2:-default}"
+  secret_json=$(kubectl get secret "${secret}" -n "${namespace}" -o json)
+  jq -r '.data[] |= @base64d | .data' <<< "${secret_json}"
+}
+
 kalias() {
   source <(kubectl completion bash)
   alias k=kubectl
