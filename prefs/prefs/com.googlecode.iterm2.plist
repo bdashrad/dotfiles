@@ -101,6 +101,8 @@
 	<true/>
 	<key>IRMemory</key>
 	<integer>4</integer>
+	<key>KillJobsInServersOnQuit</key>
+	<false/>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2158,7 +2160,7 @@
 		</dict>
 	</array>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
