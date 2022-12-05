@@ -85,7 +85,7 @@ brew "speedtest-cli"
 
 # Install everything else
 # brew "aws-elasticbeanstalk"
-brew "awscli"
+# brew "awscli"
 brew "direnv"
 # tap "fullscreen/tap"
 # brew "aws-rotate-key"
