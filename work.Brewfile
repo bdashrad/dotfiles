@@ -35,6 +35,7 @@ tap "goodwithtech/r"
 brew "dockle"
 tap "aquasecurity/trivy"
 brew "trivy"
+brew "dive"
 
 # install vault and safe cli tool
 # brew "vault"
@@ -52,7 +53,7 @@ brew "trivy"
 # brew "aws-iam-authenticator"
 brew "k9s"
 # brew "kubectx"
-brew "kube-ps1"
+# brew "kube-ps1"
 brew "kubie"
 brew "krew"
 
