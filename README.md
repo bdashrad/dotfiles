@@ -5,18 +5,18 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
 ## How to use
 
 1. Download dotfiles
-  * Clone repo: `git clone git@github.com:bdashrad/dotfiles.git ~/dotfiles`
-  * Install without git: `mkdir -p ~/.dotfiles; curl -#L https://github.com/bdashrad/dotfiles/tarball/main | tar -xzv --strip-components=1 -C ~/.dotfiles/`
+    * Clone repo: `git clone git@github.com:bdashrad/dotfiles.git ~/dotfiles`
+    * Install without git: `mkdir -p ~/.dotfiles; curl -#L https://github.com/bdashrad/dotfiles/tarball/main | tar -xzv --strip-components=1 -C ~/.dotfiles/`
 2. `cd ~/dotfiles`
 3. `setup-new-machine.sh`
 4. use [stow](https://www.gnu.org/software/stow/) to install various config files:
-  * standards
-    * `stow {bash,fzf,git,hugo,ruby,screen,tmux,vagrant,vim}`
-  * ~/home/bin
-    * `mkdir -p ~/bin`
-    * `stow -t ~/bin/ bin`
-  * sublime text 3
-    * `stow -t ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/ sublime/`
+    * standards
+      * `stow {bash,fzf,git,hugo,ruby,screen,tmux,vagrant,vim}`
+    * ~/home/bin
+      * `mkdir -p ~/bin`
+      * `stow -t ~/bin/ bin`
+    * sublime text 3
+      * `stow -t ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/ sublime/`
 5. Enjoy!
 
 ## Manual Migrations
@@ -49,7 +49,8 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
   * [access-matrix](https://github.com/corneliusweig/rakkess)
   * [nginx-ingress](https://kubernetes.github.io/ingress-nginx/kubectl-plugin/)
 
-## Thanks to...
+## Thanks to
+
 Lots of this content taken from various people, but particularly
 
 [paulirish](https://github.com/paulirish/dotfiles/)
