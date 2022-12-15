@@ -503,11 +503,11 @@
         "bottle": false
       },
       "grype": {
-        "version": "0.53.1",
+        "version": "0.54.0",
         "bottle": false
       },
       "syft": {
-        "version": "0.62.3",
+        "version": "0.63.0",
         "bottle": false
       },
       "dockle": {
@@ -616,6 +616,20 @@
             }
           }
         }
+      },
+      "adr-tools": {
+        "version": "3.0.0",
+        "bottle": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "all": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/adr-tools/blobs/sha256:d485a50e9f6fb41e81d634818d96a37836816ac09d4dcd436a5ac5e43da98131",
+              "sha256": "d485a50e9f6fb41e81d634818d96a37836816ac09d4dcd436a5ac5e43da98131"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -634,10 +648,10 @@
         "revision": "642f176b4beafc90dbf4f982724038d641bc4380"
       },
       "anchore/grype": {
-        "revision": "a7c272d5db289985331f67831c34a18e3c7af766"
+        "revision": "bf21e2ae8ce8d354782ee093d0db5eaf67e311ca"
       },
       "anchore/syft": {
-        "revision": "8ca8f557abdd93b8ba30beab8b6786aca0efde0a"
+        "revision": "e4fa383e2e22554fe528e640c558712b57fa4b3c"
       },
       "goodwithtech/r": {
         "revision": "b1f55d43c7398451429e87e82a9c82fe97c21327"
@@ -650,9 +664,9 @@
   "system": {
     "macos": {
       "monterey": {
-        "HOMEBREW_VERSION": "3.6.14-6-gb8a505d",
+        "HOMEBREW_VERSION": "3.6.15-23-ged3789a",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "6ad441c0ca75fecc3546d4a35d75631588090dbc",
+        "Homebrew/homebrew-core": "1fdce20960fedc5cd7dbcde09c27e029a7dcac22",
         "CLT": "13.4.0.0.1.1651278267",
         "Xcode": "13.4.1",
         "macOS": "12.3.1"

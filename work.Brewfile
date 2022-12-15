@@ -2,6 +2,8 @@
 
 # work stuff
 
+brew "adr-tools"
+
 # log parsing things
 # brew "logstalgia"
 # brew "lnav"
