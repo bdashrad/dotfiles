@@ -137,7 +137,7 @@ ASDF_DIR="${HOMEBREW_PREFIX}/opt/asdf/libexec"
 complete -W "NSGlobalDomain" defaults
 
 # terraform complete
-command -v terraform >/dev/null 2>&1 && complete -C "$(which terraform)" terraform tf
+command -v terraform >/dev/null 2>&1 && complete -C "$(command -v terraform)" terraform tf
 
 # gcloud completion
 # shellcheck disable=SC1091
