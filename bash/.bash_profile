@@ -88,7 +88,8 @@ fi
 
 # asdf
 # shellcheck disable=SC1091
-[[ -f "${HOMEBREW_PREFIX}/opt/asdf/asdf.sh" ]] && . "${HOMEBREW_PREFIX}/opt/asdf/asdf.sh"
+ASDF_DIR="${HOMEBREW_PREFIX}/opt/asdf/libexec"
+[[ -f "${ASDF_DIR}/asdf.sh" ]] && . "${ASDF_DIR}/asdf.sh"
 
 # # use local folder for CPAN instead of homebrew cellar
 # eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"

@@ -22,6 +22,7 @@
 
   # Diff tools
   vimdiff = difftool --tool=vimdiff
+  vsdiff = difftool --tool=vscode
 
 [color]
   ui = always
@@ -65,7 +66,7 @@
 
 [difftool "kdiff3"]
   path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
-  trustExitCode = false]
+  trustExitCode = false
 
 [difftool "opendiff"]
   path = /usr/bin/opendiff
@@ -74,8 +75,8 @@
 [difftool "p4merge"]
   cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$LOCAL" "$REMOTE"
 
-[difftool "vimdiff"]
-  cmd = /usr/bin/vimdiff "$LOCAL" "$REMOTE"
+[difftool "vscode"]
+  path = code --wait --diff "$LOCAL" "$REMOTE"
 
 [filter "media"]
 	required = true
@@ -90,7 +91,7 @@
 
 [merge]
   tool = p4merge
-  prompt = false
+  prompt = true
   conflictstyle = diff3
 
 [mergetool]
@@ -107,6 +108,11 @@
 
 [mergetool "p4merge"]
   cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+  trustExitCode = false
+
+[mergetool "vscode"]
+  conflictstyle = diff3
+  cmd = code --wait"$MERGED"
   trustExitCode = false
 
 [protocol]
