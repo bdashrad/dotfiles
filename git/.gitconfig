@@ -51,10 +51,18 @@
   changed = green
   untracked = cyan
 
+[commit]
+  gpgsign = true
+
 [core]
   excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
-  pager = delta
+
+[credential]
+  helper = store
+
+[delta]
+  navigate = true
 
 # git diff
 [diff]
@@ -76,15 +84,26 @@
   cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$LOCAL" "$REMOTE"
 
 [difftool "vscode"]
-  path = code --wait --diff "$LOCAL" "$REMOTE"
+  cmd = code --diff $LOCAL $REMOTE
 
 [filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
+
+[gpg]
+  program = gpg
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+  allowedsignersfile = ~/.ssh/allowed_signers
 
 [help]
   autocorrect = 50
+
+[init]
+  defaultBranch = main
 
 [interactive]
   diffFilter = delta --color-only
@@ -129,6 +148,9 @@
 [stash]
   showPatch = true
 
+[tag]
+  forceSignAnnotated = true
+
 # rewrites
 [url "git@github.com:"]
   insteadOf = "https://github.com/"
@@ -137,7 +159,7 @@
   pushInsteadOf = "https://github.com/"
 
 [url "https://github.com/"]
-	insteadOf = git://github.com/
+  insteadOf = git://github.com/
   insteadOf = "github:"
 
 [url "git@gist.github.com:"]
@@ -147,25 +169,10 @@
 [url "https://gist.github.com/"]
   insteadOf = "gist:"
 
-# use separate file for username / github token / etc
-[include]
-  path = ~/.gitconfig.local
-
-[gpg]
-  program = gpg
-
-[delta]
-  navigate = true
-
-[credential]
-  helper = store
-
 # gh tool auth
 [url "https://x-access-token@github.com"]
   insteadOf = ssh://git@github.com
 
-[tag]
-  forceSignAnnotated = true
-
-[init]
-  defaultBranch = main
+# use separate file for username / github token / etc
+[include]
+  path = ~/.gitconfig.local
