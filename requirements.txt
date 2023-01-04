@@ -24,6 +24,8 @@ idna==3.4
     # via requests
 pathspec==0.10.2
     # via yamllint
+petname==2.6
+    # via -r requirements.in
 platformdirs==2.5.4
     # via virtualenv
 pycparser==2.21
