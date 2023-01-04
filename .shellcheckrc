@@ -1,1 +1,2 @@
 disable=SC2112,SC3010,SC3043
+external-sources=true
