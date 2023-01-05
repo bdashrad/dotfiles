@@ -109,8 +109,15 @@ ASDF_DIR="${HOMEBREW_PREFIX}/opt/asdf/libexec"
 ##
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[[ -s "$HOME/.ssh/config" ]] && \
-  complete -o "default" -o "nospace" -W "$(awk '{if ($1=="Host" && $2!="*") print $2}' ~/.ssh/config)" scp sftp ssh
+# [[ -s "$HOME/.ssh/config" ]] && \
+#   complete -o "default" -o "nospace" -W "$(awk '$1=="Host" {if ($2!="*"); for (i=2; i<=NF;i++){print $i}}' ~/.ssh/config)" scp sftp ssh
+for file in "${HOME}/.ssh/config" "${HOME}"/.ssh/config.d/*; do
+  if [[ -s "${file}" ]]; then
+    hosts="$(awk '$1=="Host" {if ($2!="*"); for (i=2; i<=NF;i++){print $i}}' "${file}")"
+    complete -o "default" -o "nospace" -W "${hosts}" scp sftp ssh
+  fi
+done
+unset file
 
 # system bash completion
 # [[ -f "/etc/bash_completion" ]] && . /etc/bash_completion\\s
