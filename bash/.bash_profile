@@ -150,6 +150,10 @@ command -v terraform >/dev/null 2>&1 && complete -C "$(command -v terraform)" te
 # shellcheck disable=SC1091
 [[ -f "${HOMEBREW_PREFIX}/bin/gcloud" ]] && . "${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
 
+# 1password completion
+# shellcheck disable=SC1090,SC2015
+command -v op >/dev/null 2>&1 && . <(op completion bash) || true
+
 # source override last for overrides
 # shellcheck disable=SC1091
 [[ -f "${HOME}/.override" ]] && . "${HOME}/.override"
