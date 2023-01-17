@@ -162,6 +162,8 @@ command -v op >/dev/null 2>&1 && . <(op completion bash) || true
 # export KUBE_PS1_ENABLED=off
 
 # enable kube completion
+command -v helm >/dev/null 2>&1 && . <(helm completion bash)
+command -v kustomize >/dev/null 2>&1 && . <(kustomize completion bash)
 k8scomplete
 
 set +x
