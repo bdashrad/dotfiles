@@ -6,7 +6,6 @@
 .gitconfig.local
 
 # ssh config
-/ssh/.ssh/config
 /ssh/.ssh/known_hosts
 
 # sublime
