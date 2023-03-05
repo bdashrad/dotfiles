@@ -161,13 +161,14 @@ cask "transmission"
 # cask "xquartz"
 
 # communication
+cask "coscreen"
 cask "discord"
 cask "discord-canary"
 cask "slack"
 cask "zoom"
 
 # development
-cask "fig"
+# cask "fig"
 cask "iterm2"
 # cask "menumeters"
 # cask "kdiff3"
@@ -205,17 +206,16 @@ cask "spotify"
 # cask "suspicious-package"
 
 # security
-cask "secretive"
 cask "tunnelblick"
+# cask "yubico-yubikey-manager"
 
 # utilities
 cask "bartender"
 cask "filebot"
 cask "krisp"
-cask "oversight"
+# cask "oversight"
 cask "tripmode"
 # cask "utm"
-cask "yubico-yubikey-manager"
 
 # mas "Clocker", id: 1056643111
 mas "Microsoft Remote Desktop", id: 1295203466
