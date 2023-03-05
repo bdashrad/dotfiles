@@ -229,12 +229,6 @@ function k8s_get_secrets_json() {
   jq -r '.data[] |= @base64d | .data' <<< "${secret_json}"
 }
 
-kalias() {
-  source <(kubectl completion bash)
-  alias k=kubectl
-  eval "$(complete -p kubectl | awk '{$NF="k"; print}')"
-}
-
 # run in rosetta2
 function x86() {
   arch -x86_64 "$@"

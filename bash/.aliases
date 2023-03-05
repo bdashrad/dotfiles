@@ -111,18 +111,25 @@ alias brewcleanup='brew -v cleanup && brew -v cask cleanup'
 alias tf="command terraform"
 
 # node
-alias load-node='export PATH=$PATH:$(npm bin -g)'
+alias load_node='export PATH=$PATH:$(npm bin -g)'
 
 # perl
-alias load-perl='eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"'
+alias load_perl='eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"'
 
 # kubernetes completion
-alias kube-complete='kalias && . <(helm completion bash)'
-alias k8scomplete=kube-complete
-alias k8s_redis_cli="kubectl run "redis-cli-${USER}" -i --tty --image=redis:latest --restart=Never --rm -- bash"
+if command -v kubectl >/dev/null 2>&1; then
+  alias k8s_complete='. <(kubectl completion bash)'
+  alias helm_complete='. <(helm completion bash)'
+  alias k=kubectl
+  alias k8s_redis_cli='kubectl run "redis-cli-${USER}" -i --tty --image=redis:latest --restart=Never --rm -- bash'
+fi
+
+if command -v kubectl >/dev/null 2>&1; then
+alias k8scomplete='k8s_complete && helm_complete && k_complete'
+fi
 
 # hugo completions
-alias hugo-complete='. "$HOME/.hugo/hugo.sh"'
+alias hugo_complete='. "$HOME/.hugo/hugo.sh"'
 
 # terraform completion
-alias terraform-complete='complete -C $(which terraform) terraform tf'
+alias terraform_complete='complete -C $(which terraform) terraform tf'

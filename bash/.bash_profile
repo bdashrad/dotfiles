@@ -162,9 +162,12 @@ command -v op >/dev/null 2>&1 && . <(op completion bash) || true
 # export KUBE_PS1_ENABLED=off
 
 # enable kube completion
-command -v helm >/dev/null 2>&1 && . <(helm completion bash)
-command -v kustomize >/dev/null 2>&1 && . <(kustomize completion bash)
-k8scomplete
+if command -v kubectl >/dev/null 2>&1; then
+  k8s_complete
+  eval "$(complete -p kubectl | awk '{$NF="k"; print}')"
+  command -v helm >/dev/null 2>&1 && helm_complete
+  command -v kustomize >/dev/null 2>&1 && . <(kustomize completion bash)
+fi
 
 set +x
 unset BASH_XTRACEFD
