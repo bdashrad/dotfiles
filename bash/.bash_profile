@@ -49,7 +49,7 @@ fi
 
 # Enable history expansion with space
 # E.g. typing !!<space> will replace the !! with your last command
-bind Space:magic-space
+# bind Space:magic-space
 
 # Save and reload the history after each command finishes
 # ^ the only downside with this is [up] on the readline will go over all history not just this bash session.
