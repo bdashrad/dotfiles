@@ -2,13 +2,20 @@
 
 # shellcheck disable=SC3030
 ASDF_PLUGINS=(
-  "helm 3.7.1"
-  "kubectl 1.21.7"
-  "nodejs 16.3.0"
-  "pluto 5.0.1"
-  "python 3.10.2"
-  "ruby 3.1.1"
-  "terraform 1.0.11"
+  "colima latest"
+  "golang latest"
+  "helm latest"
+  "kubectl latest"
+  "kustomize latest"
+  "minikube latest"
+  "nodejs latest"
+  "nova latest"
+  "pluto latest"
+  "polaris latest"
+  "python latest"
+  "ruby latest"
+  "terraform latest"
+  "yarn latest"
 )
 
 if [[ ! $(command -v brew) ]]; then
@@ -17,13 +24,13 @@ if [[ ! $(command -v brew) ]]; then
 fi
 
 # install asdf
-if [[ ! -f "$(brew --prefix asdf)/asdf.sh" ]]; then
+if [[ ! $(command -v asdf) ]]; then
   echo "Installing asdf..."
   brew install asdf
 fi
 
 # source asdf
-[[ -f "$(brew --prefix asdf)/asdf.sh" ]] && . "$(brew --prefix asdf)/asdf.sh"
+[[ -f "$(brew --prefix asdf)/libexec/asdf.sh" ]] && . "$(brew --prefix asdf)/libexec/asdf.sh"
 
 # install asdf plugins
 while read -r -a plugin; do
@@ -33,4 +40,5 @@ done < <(printf '%s\n' "${ASDF_PLUGINS[@]}"| sort -u -k1,1)
 
 while read -r plugin; do
   asdf install $plugin;
+  asdf global $plugin;
 done < <(printf '%s\n' "${ASDF_PLUGINS[@]}")

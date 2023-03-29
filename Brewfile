@@ -142,7 +142,6 @@ cask "1password-beta"
 cask "alfred"
 cask "barrier"
 cask "cron"
-cask "docker"
 # cask "rancher"
 # cask "dropbox"
 cask "evernote"
@@ -215,7 +214,13 @@ cask "filebot"
 cask "krisp"
 # cask "oversight"
 cask "tripmode"
-# cask "utm"
+
+# virtualization and containerization
+cask "docker"
+brew "docker"
+brew "docker-compose"
+brew "lima"
+cask "utm"
 
 # mas "Clocker", id: 1056643111
 mas "Microsoft Remote Desktop", id: 1295203466
