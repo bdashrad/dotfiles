@@ -11,7 +11,7 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
 3. `setup-new-machine.sh`
 4. use [stow](https://www.gnu.org/software/stow/) to install various config files:
     * standards
-      * `stow {bash,fzf,git,hugo,ruby,screen,tmux,vagrant,vim}`
+      * `stow {bash,colima,fzf,git,hugo,ruby,screen,tmux,vagrant,vim}`
     * ~/home/bin
       * `mkdir -p ~/bin`
       * `stow -t ~/bin/ bin`

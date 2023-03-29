@@ -1,0 +1,26 @@
+---
+cpu: 4
+disk: 60
+memory: 8
+arch: host
+runtime: docker
+kubernetes:
+  enabled: false
+autoActivate: true
+network:
+  address: false
+  dns: []
+  dnsHosts:
+    host.docker.internal: host.lima.internal
+forwardAgent: false
+docker: {}
+vmType: vz
+rosetta: true
+mountType: virtiofs
+mountInotify: false
+cpuType: host
+layer: false
+provision: []
+sshConfig: true
+mounts: []
+env: {}
