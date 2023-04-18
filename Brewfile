@@ -216,11 +216,14 @@ cask "krisp"
 cask "tripmode"
 
 # virtualization and containerization
-cask "docker"
+# cask "docker"
 brew "docker"
 brew "docker-compose"
+brew "docker-buildx"
 brew "lima"
-cask "utm"
+tap "snyk/tap"
+brew "snyk"
+# cask "utm"
 
 # mas "Clocker", id: 1056643111
 mas "Microsoft Remote Desktop", id: 1295203466
