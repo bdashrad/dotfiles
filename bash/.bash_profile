@@ -123,9 +123,17 @@ unset file
 # [[ -f "/etc/bash_completion" ]] && . /etc/bash_completion\\s
 
 # enable homebrew bash_completion
-# [[ -f "${HOMEBREW_PREFIX}/etc/bash_completion" ]] && . "${HOMEBREW_PREFIX}/etc/bash_completion"
-[[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]] && . "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
-#[[ -e "${HOMEBREW_PREFIX}/share/bash-completion/bash_completion" ]] && . "${HOMEBREW_PREFIX}/share/bash-completion/bash_completion"
+if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+  # shellcheck disable=SC1091
+  source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+else
+  # shellcheck disable=SC2312
+  find "${HOMEBREW_PREFIX}/etc/bash_completion.d/" -not -type d -print0 \
+  | while read -r -d $'\0' COMPLETION; do
+    # shellcheck disable=SC1090
+    [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
+    done
+fi
 
 # enable aws-cli completion
 [[ -f "${HOMEBREW_PREFIX}/bin/aws_completer" ]] && complete -C aws_completer aws
