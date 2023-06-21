@@ -177,5 +177,8 @@ if command -v kubectl >/dev/null 2>&1; then
   command -v kustomize >/dev/null 2>&1 && . <(kustomize completion bash)
 fi
 
+# 1password plugins
+[[ -f "${HOME}/.config/op/plugins.sh" ]] && . "${HOME}/.config/op/plugins.sh"
+
 set +x
 unset BASH_XTRACEFD
