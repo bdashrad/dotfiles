@@ -2401,7 +2401,7 @@
 		</dict>
 	</array>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
@@ -2411,7 +2411,7 @@
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
 	<key>findMode_iTerm</key>
-	<integer>4</integer>
+	<integer>0</integer>
 	<key>findRegex_iTerm</key>
 	<true/>
 	<key>kCPKSelectionViewPreferredModeKey</key>
