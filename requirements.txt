@@ -4,7 +4,7 @@
 #
 #    pip-compile --allow-unsafe
 #
-certifi==2022.9.24
+certifi==2023.5.7
     # via requests
 cffi==1.15.1
     # via pynacl
@@ -42,7 +42,7 @@ pyyaml==6.0
     # via
     #   yamale
     #   yamllint
-requests==2.28.1
+requests==2.31.0
     # via
     #   -r requirements.in
     #   pygithub
