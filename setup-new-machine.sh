@@ -154,7 +154,7 @@ fi
 title "Set up .ssh directory"
 mkdir -p /.ssh/control/
 stow -t ${HOME}/.ssh ssh
-[ -n "${HOME}/.ssh/authorized_keys" ] && \
+[[ ! -f "${HOME}/.ssh/authorized_keys" ]] && \
   curl -o "${HOME}/.ssh/authorized_keys" https://github.com/bdashrad.keys
 
 title "Stow dotfiles"
