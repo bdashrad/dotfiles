@@ -32,7 +32,7 @@ pycparser==2.21
     # via cffi
 pygithub==1.57
     # via -r requirements.in
-pygments==2.13.0
+pygments==2.15.0
     # via -r requirements.in
 pyjwt==2.6.0
     # via pygithub
