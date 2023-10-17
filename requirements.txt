@@ -48,7 +48,7 @@ requests==2.31.0
     #   pygithub
 ruyaml==0.91.0
     # via yamlfix
-urllib3==1.26.13
+urllib3==1.26.18
     # via requests
 virtualenv==20.17.0
     # via -r requirements.in
