@@ -162,9 +162,9 @@ command -v terraform >/dev/null 2>&1 && complete -C "$(command -v terraform)" te
 # shellcheck disable=SC1090,SC2015
 command -v op >/dev/null 2>&1 && . <(op completion bash) || true
 
-# source override last for overrides
+# dbt completion
 # shellcheck disable=SC1091
-[[ -f "${HOME}/.override" ]] && . "${HOME}/.override"
+[[ -f "${HOME}/.dbt-completion.bash" ]] && source "${HOME}/.dbt-completion.bash"
 
 # start with kube-ps1 off
 # export KUBE_PS1_ENABLED=off
@@ -180,5 +180,11 @@ fi
 # 1password plugins
 [[ -f "${HOME}/.config/op/plugins.sh" ]] && . "${HOME}/.config/op/plugins.sh"
 
+# Created by `pipx` on 2023-08-03 01:59:10
+export PATH="$PATH:/Users/bradclark/.local/bin"
+
+# source override last for overrides
+# shellcheck disable=SC1091
+[[ -f "${HOME}/.override" ]] && . "${HOME}/.override"
 set +x
 unset BASH_XTRACEFD
