@@ -66,11 +66,18 @@ brew "git-delta"
 tap "norwoodj/tap"
 brew "helm-docs"
 brew "hub"
+brew "jd"
 brew "jq"
+tap "noahgorstein/tap"
+brew "noahgorstein/tap/jqp"
+brew "openssh"
 brew "openssl@1.1"
 brew "tmate"
 brew "yamllint"
 brew "yq"
+
+# python things
+# cask "miniconda"
 
 # install heroku-cli
 # tap "heroku/brew"
@@ -160,6 +167,7 @@ cask "rectangle"
 cask "soundsource"
 cask "stay"
 cask "the-unarchiver"
+cask "todoist"
 cask "transmission"
 # cask "xquartz"
 
