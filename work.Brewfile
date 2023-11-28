@@ -28,6 +28,14 @@ brew "sqlfluff"
 # brew "terraform_landscape"
 brew "tflint"
 
+# development
+brew "devcontainer"
+
+# file transfer
+brew "lftp"
+cask "cyberduck"
+cask "mountain-duck"
+
 # Container scanning
 tap "anchore/grype"
 brew "grype"
@@ -61,3 +69,9 @@ brew "krew"
 
 # Linting tools
 brew "woke"
+
+# Other
+brew "dos2unix"
+
+# communication
+# cask "microsoft-teams"

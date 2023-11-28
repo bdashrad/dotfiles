@@ -45,6 +45,8 @@ crashtest==0.4.1
     # via
     #   cleo
     #   poetry
+crcmod==1.7
+    # via -r requirements.in
 deprecated==1.2.13
     # via pygithub
 distlib==0.3.6
