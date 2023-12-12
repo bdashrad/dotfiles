@@ -2,9 +2,11 @@
 
 # shellcheck disable=SC3030
 ASDF_PLUGINS=(
+  "argo latest"
   "colima latest"
   "golang latest"
   "helm latest"
+  "kubeconform latest"
   "kubectl latest"
   "kustomize latest"
   "minikube latest"

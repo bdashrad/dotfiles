@@ -175,6 +175,7 @@ cask "transmission"
 cask "coscreen"
 cask "discord"
 cask "discord-canary"
+cask "pop"
 cask "slack"
 cask "zoom"
 
