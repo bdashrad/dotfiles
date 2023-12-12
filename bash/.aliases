@@ -125,7 +125,15 @@ if command -v kubectl >/dev/null 2>&1; then
 fi
 
 if command -v kubectl >/dev/null 2>&1; then
-alias k8scomplete='k8s_complete && helm_complete && k_complete'
+  alias k8scomplete='k8s_complete && helm_complete && k_complete'
+fi
+
+if command -v kubeconform >/dev/null 2>&1; then
+  alias kcf="kubeconform \
+    -strict \
+    -schema-location default \
+    -schema-location \
+      'https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/{{.Group}}/{{.ResourceKind}}_{{.ResourceAPIVersion}}.json'"
 fi
 
 # hugo completions
