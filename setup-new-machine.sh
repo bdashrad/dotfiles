@@ -170,24 +170,28 @@ title "Create code folder"
 mkdir -p "${HOME}/code"
 
 # install rvm stable
-title "Installing rvm stable"
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-if confirm "Have you disabled your anti-virus? [y/N] "; then
-  echo "Anti-virus must be disabled to compile ruby. Only installing RVM."
-  \curl -sSL https://get.rvm.io | bash -s stable --ignore-dotfiles
-  echo "After manually installing an RVM ruby, please install bundler and the Gemfile."
+if confirm "Install rvm and ruby bundles?"; then
+  title "Installing rvm stable"
+  gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+  if confirm "Have you disabled your anti-virus? [y/N] "; then
+    echo "Anti-virus must be disabled to compile ruby. Only installing RVM."
+    \curl -sSL https://get.rvm.io | bash -s stable --ignore-dotfiles
+    echo "After manually installing an RVM ruby, please install bundler and the Gemfile."
+  else
+    echo "Installing RVM and ruby."
+    \curl -sSL https://get.rvm.io | bash -s stable --ruby --ignore-dotfiles
+  
+    # install ruby gems
+    gem install bundler
+    bundle install
+  fi
 else
-  echo "Installing RVM and ruby."
-  \curl -sSL https://get.rvm.io | bash -s stable --ruby --ignore-dotfiles
-
-  # install ruby gems
-  gem install bundler
-  bundle install
+  echo "Review \`Gemfile\` for uninstalled ruby gems."
 fi
 
 # install pip and apps
 # sudo easy_install pip
-./pip-applications.sh
+# ./pip-applications.sh
 
 # setup cpan
 sudo cpan local::lib
