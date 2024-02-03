@@ -87,6 +87,9 @@ if [[ "$(uname)" == "Darwin" ]]; then
     brew doctor
   fi
 
+  title "Use Touch ID for sudo."
+  sudo ./scripts/touchid_sudo.sh || echo "Configuring sudo failed!"
+
   # install brew apps
   title "Installing brew apps..."
   brew bundle
@@ -126,11 +129,12 @@ if [[ "$(uname)" == "Darwin" ]]; then
     echo "Not installing, review \`./work.Brewfile\` and \`asdf.sh\` to see if there is anything you want from there."
   fi
 
-  title "Use Touch ID for sudo."
-  sudo ./scripts/touchid_sudo.sh || echo "Configuring sudo failed!"
-
-  title "Configuring macOS defaults."
-  ./scripts/osx.sh
+  if confirm "Configure macOS defaults? [y/N] "; then
+    title "Configuring macOS defaults."
+    ./scripts/osx.sh
+  else
+    echo "Not configuring defaults, review \`./scripts/osx.sh\` for any settings you want to configure"
+  fi
 
   # gpg
   title "Configuring and restarting gpg-agent."
