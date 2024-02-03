@@ -79,3 +79,4 @@ brew "dos2unix"
 # cask "microsoft-teams"
 
 # mas "Microsoft Remote Desktop", id: 1295203466
+# mas "Clocker", id: 1056643111

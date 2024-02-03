@@ -148,35 +148,65 @@ brew "shellcheck"
 # add brew-cask-upgrade
 tap "buo/cask-upgrade"
 
-# always
-# cask "1password"
-# brew "1password-cli"
-cask "1password-beta"
-brew "1password-cli-beta"
-cask "alfred"
-cask "anylist"
+# security
+cask "1password"
+brew "1password-cli"
 cask "authy"
-cask "barrier"
-cask "brave-browser"
-cask "cron"
-# cask "rancher"
-# cask "dropbox"
-cask "evernote"
-cask "firefox"
 cask "keybase"
-cask "google-chrome"
-# cask "google-drive"
+cask "private-internet-access"
+cask "tripmode"
+# cask "tunnelblick" # OpenVPN client
+# cask "wireshark"
+mas "NextDNS", id: 1464122853
+mas "Tailscale", id: 1475387142
+mas "Wireguard", id: 1451685025
+# cask "yubico-yubikey-manager"
+
+# utilities
+cask "alfred"
+mas "Amphetamine", id: 937984704
+# cask "barrier"
+cask "bartender"
+mas "Display Menu", id: 549083868
+cask "ears"
+# cask "exiftool"
+cask "gyazo"
+cask "iterm2"
+# cask "menumeters"
 cask "MonitorControl"
-# qmk toolbox is in cask-drivers
-tap "homebrew/cask-drivers"
+cask "notunes"
+# cask "oversight"
 cask "qmk-toolbox"
 cask "rectangle"
 cask "soundsource"
 cask "stay"
 cask "the-unarchiver"
+cask "skitch"
+# cask "xquartz"
+
+# apps
+cask "anylist"
+cask "cron"
+# cask "dropbox"
+cask "evernote"
+# cask "google-drive"
+mas "GarageBand", id: 682658836
+mas "Home Assistant", id: 1099568401
+mas "iMovie", id: 408981434
+mas "Ivory", id: 6444602274
+mas "Keynote", id: 409183694
+# cask "lastfm"
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+cask "spotify"
 cask "todoist"
 cask "transmission"
-# cask "xquartz"
+# cask "vlc"
+
+# Browsers
+cask "brave-browser"
+cask "firefox"
+cask "google-chrome"
 
 # communication
 cask "coscreen"
@@ -185,13 +215,12 @@ cask "discord-canary"
 cask "krisp"
 cask "pop"
 cask "slack"
-# cask "zoom"
+cask "zoom"
 
 # development
 # cask "fig"
-cask "iterm2"
-# cask "menumeters"
 # cask "kdiff3"
+cask "ngrok"
 cask "p4v" # p4merge
 # cask "sublime-text"
 # cask "vagrant"
@@ -203,15 +232,25 @@ cask "visual-studio-code"
 tap "get-woke/tap"
 brew "woke"
 
-# networking
-cask "ngrok"
-cask "private-internet-access"
-cask "tripmode"
-# cask "tunnelblick" # OpenVPN client
-# cask "wireshark"
-mas "NextDNS", id: 1464122853
-mas "Tailscale", id: 1475387142
-mas "Wireguard", id: 1451685025
+# virtualization and containerization
+# cask "docker"
+brew "docker"
+brew "docker-compose"
+brew "docker-buildx"
+brew "lima"
+# cask "rancher"
+tap "snyk/tap"
+brew "snyk"
+# cask "utm"
+
+# safari extensions
+mas "1Password for Safari", id: 1569813296
+mas "Archive Page Extension", id: 6446372766
+mas "Baking Soda", id: 1601151613
+mas "Consent-O-Matic", id: 1606897889
+mas "Evernote Web Clipper", id: 1481669779
+mas "Hush", id: 1544743900
+mas "Keepa - Price Tracker", id: 1533805339
 
 # fonts
 # https://www.nerdfonts.com/font-downloads
@@ -220,15 +259,6 @@ cask "font-b612"
 cask "font-b612-mono"
 cask "font-hack-nerd-font"
 cask "font-monaspace"
-
-# multimedia
-cask "ears"
-# cask "exiftool"
-cask "gyazo"
-# cask "lastfm"
-cask "skitch"
-cask "spotify"
-# cask "vlc"
 
 # quicklook plugins
 # cask "betterzipql"
@@ -239,44 +269,4 @@ cask "spotify"
 # cask "quicklook-csv"
 # cask "quicklook-json"
 # cask "suspicious-package"
-
-# security
-# cask "yubico-yubikey-manager"
-
-# utilities
-cask "bartender"
-cask "notunes"
-# cask "oversight"
-mas "Amphetamine", id: 937984704
-# mas "Clocker", id: 1056643111
-mas "Display Menu", id: 549083868
-
-# virtualization and containerization
-# cask "docker"
-brew "docker"
-brew "docker-compose"
-brew "docker-buildx"
-brew "lima"
-tap "snyk/tap"
-brew "snyk"
-# cask "utm"
-
-mas "Home Assistant", id: 1099568401
-mas "Ivory", id: 6444602274
-mas "SongBook", id: 447755419
-
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-
-# safari extensions
-mas "1Password for Safari", id: 1569813296
-mas "Archive Page Extension", id: 6446372766
-mas "Baking Soda", id: 1601151613
-mas "Consent-O-Matic", id: 1606897889
-mas "Evernote Web Clipper", id: 1481669779
-mas "Hush", id: 1544743900
-mas "Keepa - Price Tracker", id: 1533805339
 
