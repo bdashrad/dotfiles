@@ -150,7 +150,7 @@ tap "buo/cask-upgrade"
 
 # security
 cask "1password"
-brew "1password-cli"
+cask "1password-cli"
 cask "authy"
 cask "keybase"
 cask "private-internet-access"
