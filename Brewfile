@@ -1,3 +1,8 @@
+# Brewfile for things I want on all of my Macs
+
+# add cask-versions to install alternate versions of Casks
+tap "homebrew/cask-versions"
+
 # Install GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew "coreutils"
@@ -17,8 +22,7 @@ brew "grep"
 brew "bash"
 
 # Install/Upgrade some languages
-brew "go"
-brew "coffeescript"
+# brew "coffeescript"  # still need for legacy hubot scripts
 
 # stow is used to manage these dotfiles
 brew "stow"
@@ -30,16 +34,14 @@ brew "brew-cask-completion"
 # generic colouriser  http://kassiopeia.juls.savba.sk/~garabik/software/grc/
 brew "grc"
 
-# Install wget with IRI support
-brew "wget"
-
 # Install r
 # brew r
 # mkdir -p ~/Library/R/3.2/library
 
-# Install more recent versions of some OS X tools
-brew "vim"
+# Install more recent versions of some tools
 brew "screen"
+brew "vim"
+brew "wget"  # Install wget with IRI support
 
 # run this script when this file changes guy.
 brew "entr"
@@ -48,7 +50,7 @@ brew "entr"
 brew "ack"
 brew "fzf"
 brew "the_silver_searcher"
-brew "z"
+brew "z"  # jump around paths by frecency
 
 # dev stuff
 brew "asdf"
@@ -66,8 +68,10 @@ brew "git-delta"
 tap "norwoodj/tap"
 brew "helm-docs"
 brew "hub"
+brew "jc"
 brew "jd"
 brew "jq"
+brew "ijq"
 tap "noahgorstein/tap"
 brew "noahgorstein/tap/jqp"
 brew "openssh"
@@ -100,6 +104,7 @@ brew "direnv"
 brew "graphviz"
 brew "htop"
 brew "imagemagick"
+brew "markdownlint-cli"
 brew "mas"
 brew "ncdu"
 brew "optipng"
@@ -145,7 +150,9 @@ tap "buo/cask-upgrade"
 
 # always
 # cask "1password"
+# brew "1password-cli"
 cask "1password-beta"
+brew "1password-cli-beta"
 cask "alfred"
 cask "anylist"
 cask "authy"
@@ -173,36 +180,52 @@ cask "transmission"
 
 # communication
 cask "coscreen"
-cask "discord"
+# cask "discord"
 cask "discord-canary"
+cask "krisp"
 cask "pop"
 cask "slack"
-cask "zoom"
+# cask "zoom"
 
 # development
 # cask "fig"
 cask "iterm2"
 # cask "menumeters"
 # cask "kdiff3"
-cask "ngrok"
 cask "p4v" # p4merge
-cask "sublime-text"
+# cask "sublime-text"
 # cask "vagrant"
 # cask "vagrant-manager"
 # cask "virtualbox"
 # cask "virtualbox-extension-pack"
 cask "visual-studio-code"
 # cask "warp"
-# cask "wireshark"
 tap "get-woke/tap"
 brew "woke"
+
+# networking
+cask "ngrok"
+cask "private-internet-access"
+cask "tripmode"
+# cask "tunnelblick" # OpenVPN client
+# cask "wireshark"
+mas "NextDNS", id: 1464122853
+mas "Tailscale", id: 1475387142
+mas "Wireguard", id: 1451685025
+
+# fonts
+# https://www.nerdfonts.com/font-downloads
+tap "homebrew/cask-fonts"
+cask "font-b612"
+cask "font-b612-mono"
+cask "font-hack-nerd-font"
+cask "font-monaspace"
 
 # multimedia
 cask "ears"
 # cask "exiftool"
 cask "gyazo"
 # cask "lastfm"
-cask "notunes"
 cask "skitch"
 cask "spotify"
 # cask "vlc"
@@ -218,15 +241,15 @@ cask "spotify"
 # cask "suspicious-package"
 
 # security
-cask "tunnelblick"
 # cask "yubico-yubikey-manager"
 
 # utilities
 cask "bartender"
-cask "filebot"
-cask "krisp"
+cask "notunes"
 # cask "oversight"
-cask "tripmode"
+mas "Amphetamine", id: 937984704
+# mas "Clocker", id: 1056643111
+mas "Display Menu", id: 549083868
 
 # virtualization and containerization
 # cask "docker"
@@ -238,8 +261,22 @@ tap "snyk/tap"
 brew "snyk"
 # cask "utm"
 
-# mas "Clocker", id: 1056643111
-mas "Microsoft Remote Desktop", id: 1295203466
-mas "Wireguard", id: 1451685025
-mas "Amphetamine", id: 937984704
-mas "Display Menu", id: 549083868
+mas "Home Assistant", id: 1099568401
+mas "Ivory", id: 6444602274
+mas "SongBook", id: 447755419
+
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+
+# safari extensions
+mas "1Password for Safari", id: 1569813296
+mas "Archive Page Extension", id: 6446372766
+mas "Baking Soda", id: 1601151613
+mas "Consent-O-Matic", id: 1606897889
+mas "Evernote Web Clipper", id: 1481669779
+mas "Hush", id: 1544743900
+mas "Keepa - Price Tracker", id: 1533805339
+

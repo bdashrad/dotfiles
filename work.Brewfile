@@ -28,6 +28,7 @@ brew "sqlfluff"
 # brew "terraform-docs"
 # brew "terraform_landscape"
 brew "tflint"
+brew "hcl2json"
 
 # development
 brew "devcontainer"
@@ -76,3 +77,5 @@ brew "dos2unix"
 
 # communication
 # cask "microsoft-teams"
+
+# mas "Microsoft Remote Desktop", id: 1295203466
