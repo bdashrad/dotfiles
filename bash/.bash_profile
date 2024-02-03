@@ -154,9 +154,12 @@ complete -W "NSGlobalDomain" defaults
 # terraform complete
 command -v terraform >/dev/null 2>&1 && complete -C "$(command -v terraform)" terraform tf
 
-# gcloud completion
-# shellcheck disable=SC1091
-[[ -f "${HOMEBREW_PREFIX}/bin/gcloud" ]] && . "${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
+# gcloud
+# shellcheck disable=SC1091,2154
+if [[ -f ${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc ]]; then
+  . "${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc"
+  . "${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
+fi
 
 # 1password completion
 # shellcheck disable=SC1090,SC2015
