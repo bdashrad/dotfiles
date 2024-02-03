@@ -186,7 +186,6 @@ cask "skitch"
 
 # apps
 cask "anylist"
-cask "cron"
 # cask "dropbox"
 cask "evernote"
 # cask "google-drive"
@@ -196,6 +195,8 @@ mas "Home Assistant", id: 1099568401
 mas "Ivory", id: 6444602274
 mas "Keynote", id: 409183694
 # cask "lastfm"
+cask "notion"
+cask "notion-calendar"
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 cask "spotify"
