@@ -4,42 +4,48 @@
 #
 #    pip-compile --allow-unsafe
 #
-attrs==23.1.0
-    # via
-    #   jsonschema
-    #   referencing
-blinker==1.6.3
+annotated-types==0.6.0
+    # via pydantic
+blinker==1.7.0
     # via pdm
-build==0.10.0
+build==1.0.3
     # via
     #   pip-tools
     #   poetry
-cachecontrol[filecache]==0.12.14
-    # via poetry
-cacheyou[filecache]==23.3
-    # via pdm
-certifi==2023.5.7
+cachecontrol[filecache]==0.13.1
+    # via
+    #   pdm
+    #   poetry
+cachetools==5.3.2
+    # via tox
+certifi==2024.2.2
     # via
     #   pdm
     #   pipenv
     #   requests
-cffi==1.15.1
+cffi==1.16.0
     # via
+    #   cryptography
     #   pynacl
     #   xattr
-cfgv==3.3.1
+cfgv==3.4.0
     # via pre-commit
-charset-normalizer==2.1.1
+chardet==5.2.0
+    # via tox
+charset-normalizer==3.3.2
     # via requests
-cleo==2.0.1
+cleo==2.1.0
     # via poetry
-click==8.1.3
+click==8.1.7
     # via
+    #   maison
     #   pip-tools
     #   yamlfix
 colorama==0.4.6
-    # via git-delete-merged-branches
-configupdater==3.1.1
+    # via
+    #   git-delete-merged-branches
+    #   tox
+configupdater==3.2
     # via pyscaffold
 crashtest==0.4.1
     # via
@@ -47,31 +53,34 @@ crashtest==0.4.1
     #   poetry
 crcmod==1.7
     # via -r requirements.in
-deprecated==1.2.13
+cryptography==42.0.2
+    # via pyjwt
+dep-logic==0.0.4
+    # via pdm
+deprecated==1.2.14
     # via pygithub
-distlib==0.3.6
+distlib==0.3.8
     # via virtualenv
-distro==1.8.0
+distro==1.9.0
     # via ruyaml
-dulwich==0.21.6
+dulwich==0.21.7
     # via poetry
-filelock==3.8.0
+fastjsonschema==2.19.1
+    # via poetry
+filelock==3.13.1
     # via
-    #   cacheyou
-    #   poetry
+    #   cachecontrol
     #   tox
     #   virtualenv
-findpython==0.4.0
+findpython==0.4.1
     # via pdm
 git-delete-merged-branches==7.4.0
     # via -r requirements.in
-html5lib==1.1
-    # via poetry
-identify==2.5.26
+identify==2.5.33
     # via pre-commit
-idna==3.4
+idna==3.6
     # via requests
-importlib-metadata==6.8.0
+importlib-metadata==7.0.1
     # via keyring
 installer==0.7.0
     # via
@@ -79,94 +88,93 @@ installer==0.7.0
     #   poetry
 jaraco-classes==3.3.0
     # via keyring
-jsonschema==4.19.1
+keyring==24.3.0
     # via poetry
-jsonschema-specifications==2023.7.1
-    # via jsonschema
-keyring==23.13.1
-    # via poetry
-lockfile==0.12.2
-    # via
-    #   cachecontrol
-    #   poetry
+maison==1.4.3
+    # via yamlfix
 markdown-it-py==3.0.0
     # via rich
 mdurl==0.1.2
     # via markdown-it-py
-more-itertools==10.1.0
+more-itertools==10.2.0
     # via jaraco-classes
 msgpack==1.0.7
-    # via
-    #   cachecontrol
-    #   cacheyou
+    # via cachecontrol
 nodeenv==1.8.0
     # via pre-commit
-numpy==1.26.1
+numpy==1.26.3
     # via pandas
-packaging==23.1
+packaging==23.2
     # via
     #   build
+    #   dep-logic
     #   findpython
     #   pdm
     #   poetry
+    #   pyproject-api
     #   pyscaffold
     #   setuptools-scm
     #   tox
     #   unearth
-pandas==2.1.1
+pandas==2.2.0
     # via -r requirements.in
-pathspec==0.10.2
+pathspec==0.12.1
     # via yamllint
-pdm==2.7.0
+pdm==2.12.3
     # via -r requirements.in
 petname==2.6
     # via -r requirements.in
-pexpect==4.8.0
+pexpect==4.9.0
     # via poetry
-pip-tools==7.2.0
+pip-tools==7.3.0
     # via -r requirements.in
-pipenv==2023.2.4
+pipenv==2023.12.0
     # via -r requirements.in
 pkginfo==1.9.6
     # via poetry
-platformdirs==2.5.4
+platformdirs==3.11.0
     # via
     #   pdm
     #   poetry
     #   pyscaffold
+    #   tox
     #   virtualenv
-pluggy==1.2.0
+pluggy==1.4.0
     # via tox
-poetry==1.4.2
+poetry==1.7.1
     # via
     #   -r requirements.in
     #   poetry-plugin-export
-poetry-core==1.5.2
+poetry-core==1.8.1
     # via
     #   poetry
     #   poetry-plugin-export
-poetry-plugin-export==1.3.1
+poetry-plugin-export==1.6.0
     # via poetry
-pre-commit==3.3.3
+pre-commit==3.6.0
     # via -r requirements.in
-prompt-toolkit==3.0.39
+prompt-toolkit==3.0.43
     # via git-delete-merged-branches
 ptyprocess==0.7.0
     # via pexpect
-py==1.11.0
-    # via tox
 pycparser==2.21
     # via cffi
-pygithub==1.57
+pydantic==2.6.0
+    # via maison
+pydantic-core==2.16.1
+    # via pydantic
+pygithub==2.2.0
     # via -r requirements.in
-pygments==2.13.0
+pygments==2.17.2
     # via
     #   -r requirements.in
     #   rich
-pyjwt==2.6.0
+pyjwt[crypto]==2.8.0
     # via pygithub
 pynacl==1.5.0
     # via pygithub
+pyproject-api==1.6.1
+    # via tox
 pyproject-hooks==1.0.0
     # via
     #   build
@@ -176,85 +184,82 @@ pyscaffold==4.5
     # via -r requirements.in
 python-dateutil==2.8.2
     # via pandas
-python-dotenv==1.0.0
+python-dotenv==1.0.1
     # via pdm
-pytz==2023.3.post1
+pytz==2024.1
     # via pandas
-pyyaml==6.0
+pyyaml==6.0.1
     # via
     #   pre-commit
     #   yamale
     #   yamllint
-rapidfuzz==2.15.2
+rapidfuzz==3.6.1
     # via cleo
-referencing==0.30.2
-    # via
-    #   jsonschema
-    #   jsonschema-specifications
 requests==2.31.0
     # via
     #   -r requirements.in
     #   cachecontrol
-    #   cacheyou
     #   poetry
     #   pygithub
     #   requests-toolbelt
     #   unearth
-requests-toolbelt==0.10.1
+requests-toolbelt==1.0.0
     # via
     #   pdm
     #   poetry
 resolvelib==1.0.1
     # via pdm
-rich==13.6.0
+rich==13.7.0
     # via pdm
-rpds-py==0.10.6
-    # via
-    #   jsonschema
-    #   referencing
 ruyaml==0.91.0
     # via yamlfix
-setuptools-scm==7.1.0
+setuptools-scm==8.0.4
     # via pyscaffold
 shellingham==1.5.4
     # via
     #   pdm
     #   poetry
 six==1.16.0
-    # via
-    #   html5lib
-    #   python-dateutil
-    #   tox
+    # via python-dateutil
+toml==0.10.2
+    # via maison
 tomli==2.0.1
     # via
     #   build
     #   pdm
     #   pip-tools
     #   poetry
+    #   pyproject-api
     #   pyproject-hooks
     #   setuptools-scm
     #   tox
-tomlkit==0.12.1
+tomlkit==0.12.3
     # via
     #   pdm
     #   poetry
     #   pyscaffold
-tox==3.28.0
+tox==4.11.4
     # via -r requirements.in
-trove-classifiers==2023.10.18
+trove-classifiers==2024.1.31
     # via poetry
-typing-extensions==4.7.1
-    # via setuptools-scm
-tzdata==2023.3
-    # via pandas
-unearth==0.12.1
+truststore==0.8.0
     # via pdm
-urllib3==1.26.13
+typing-extensions==4.9.0
+    # via
+    #   pydantic
+    #   pydantic-core
+    #   pygithub
+    #   setuptools-scm
+tzdata==2023.4
+    # via pandas
+unearth==0.14.0
+    # via pdm
+urllib3==2.2.0
     # via
     #   dulwich
-    #   poetry
+    #   pygithub
     #   requests
-virtualenv==20.17.0
+virtualenv==20.25.0
     # via
     #   -r requirements.in
     #   pdm
@@ -262,31 +267,27 @@ virtualenv==20.17.0
     #   poetry
     #   pre-commit
     #   tox
-virtualenv-clone==0.5.7
-    # via pipenv
-wcwidth==0.2.6
+wcwidth==0.2.13
     # via prompt-toolkit
-webencodings==0.5.1
-    # via html5lib
-wheel==0.41.0
+wheel==0.42.0
     # via pip-tools
-wrapt==1.14.1
+wrapt==1.16.0
     # via deprecated
 xattr==0.10.1
     # via poetry
 yamale==4.0.4
     # via -r requirements.in
-yamlfix==1.1.1
+yamlfix==1.16.0
     # via -r requirements.in
-yamllint==1.28.0
+yamllint==1.33.0
     # via -r requirements.in
 zipp==3.17.0
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-pip==23.2.1
+pip==24.0
     # via pip-tools
-setuptools==65.6.3
+setuptools==69.0.3
     # via
     #   -r requirements.in
     #   nodeenv
@@ -295,4 +296,3 @@ setuptools==65.6.3
     #   pyscaffold
     #   ruyaml
     #   setuptools-scm
-    #   yamllint
