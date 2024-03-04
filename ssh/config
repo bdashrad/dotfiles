@@ -1,4 +1,9 @@
+# vim: set ft=sshconfig:
+# ~/.ssh/config
+
 Include /Users/bradclark/.colima/ssh_config
+Include ~/.ssh/config.d/work.sshconfig
+Include ~/.ssh/config.d/personal.sshconfig
 
 ###################
 # Personal configs
