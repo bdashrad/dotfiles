@@ -65,8 +65,6 @@ brew "git"
 tap "git-chglog/git-chglog"
 brew "git-chglog"
 brew "git-delta"
-tap "norwoodj/tap"
-brew "helm-docs"
 brew "hub"
 brew "jc"
 brew "jd"
@@ -79,6 +77,12 @@ brew "openssl@1.1"
 brew "tmate"
 brew "yamllint"
 brew "yq"
+
+# kubernetes
+
+## helm-docs
+tap "norwoodj/tap"
+brew "helm-docs"
 
 # python things
 # cask "miniconda"
@@ -153,6 +157,7 @@ cask "1password"
 cask "1password-cli"
 cask "authy"
 cask "keybase"
+cask "lulu"
 cask "private-internet-access"
 cask "tripmode"
 # cask "tunnelblick" # OpenVPN client
@@ -165,13 +170,16 @@ mas "Wireguard", id: 1451685025
 # utilities
 cask "alfred"
 mas "Amphetamine", id: 937984704
+cask "backblaze"
 # cask "barrier"
 cask "bartender"
+cask "choosy"
 mas "Display Menu", id: 549083868
 cask "ears"
 # cask "exiftool"
 cask "gyazo"
 cask "iterm2"
+cask "logitech-camera-settings"
 # cask "menumeters"
 cask "MonitorControl"
 cask "notunes"
@@ -199,12 +207,14 @@ cask "notion"
 cask "notion-calendar"
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+cask "signal"
 cask "spotify"
 cask "todoist"
-cask "transmission"
+# cask "transmission"
 # cask "vlc"
 
 # Browsers
+cask "arc"
 cask "brave-browser"
 cask "firefox"
 cask "google-chrome"
