@@ -56,7 +56,8 @@ export AWS_CONFIG_FILE="${HOME}/.aws/config"
 export GOPATH="${HOME}/go"
 
 # gpg tty
-export GPG_TTY=$(tty)
+GPG_TTY=$(tty)
+export GPG_TTY
 
 # use homebrew coreutils manpages
 export MANPATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnuman:${MANPATH}"
@@ -67,47 +68,49 @@ export NVM_DIR="${HOME}/.nvm"
 # CPAN Stuff
 export PERL5LIB="${HOME}/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}";
 export PERL_LOCAL_LIB_ROOT="${HOME}/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}";
+# shellcheck disable=SC2016
 export PERL_MB_OPT='--install_base "${HOME}/perl5"';
 export PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5";
 
 ###
 # PATH
 
-# homebrew applications
-# PATH="${HOMEBREW_PREFIX}/bin:$PATH"
-# [ -d "${HOMEBREW_PREFIX}/bin" ] && PATH="${HOMEBREW_PREFIX}/bin:$PATH"
-# [ -d "${HOMEBREW_PREFIX}/sbin" ] && PATH="${HOMEBREW_PREFIX}/sbin:$PATH"
-
 # Add brew coreutils to $PATH
-[ -d "${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin" ] && PATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:${PATH}"
+[[ -d "${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin" ]] && PATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:${PATH}"
 
 # brew grep
-[ -d "${HOMEBREW_PREFIX}/opt/grep/libexec/gnubin" ] && PATH="${HOMEBREW_PREFIX}/opt/grep/libexec/gnubin:${PATH}"
+[[ -d "${HOMEBREW_PREFIX}/opt/grep/libexec/gnubin" ]] && PATH="${HOMEBREW_PREFIX}/opt/grep/libexec/gnubin:${PATH}"
 
 # brew gnu sed
-[ -d "${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin" ] && PATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:${PATH}"
+[[ -d "${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin" ]] && PATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:${PATH}"
 
 # brew findutils
-[ -d "${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin" ] && PATH="${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin:${PATH}"
+[[ -d "${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin" ]] && PATH="${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin:${PATH}"
 
 # CPAN
-[ -d "${HOME}/perl5/bin" ] && PATH="${PATH}:${HOME}/perl5/bin"
+[[ -d "${HOME}/perl5/bin" ]] && PATH="${PATH}:${HOME}/perl5/bin"
 
 # GO
-[ -d "${GOPATH}/bin" ] && PATH=$PATH:${GOPATH}/bin
+[[ -d "${GOPATH}/bin" ]] && PATH="${PATH}:${GOPATH}/bin"
+# shellcheck disable=SC1091
+# [[ -d "${HOME}/go/bin" ]] && PATH="${HOME}/go/bin:${PATH}"
 
 # kubectl krew
-[ -d "${KREW_ROOT:-${HOME}/.krew}/bin" ] && PATH="${KREW_ROOT:-${HOME}/.krew}/bin:${PATH}"
+[[ -d "${KREW_ROOT:-${HOME}/.krew}/bin" ]] && PATH="${KREW_ROOT:-${HOME}/.krew}/bin:${PATH}"
 
 # rancher-desktop or docker desktop
-[ -d "${HOME}/.rd/bin/" ] && PATH="${PATH}:${HOME}/.rd/bin"
-[ -d "/Applications/Docker.app/Contents/Resources/bin/" ] && PATH="${PATH}:/Applications/Docker.app/Contents/Resources/bin"
+[[ -d "${HOME}/.rd/bin/" ]] && PATH="${PATH}:${HOME}/.rd/bin"
+[[ -d "/Applications/Docker.app/Contents/Resources/bin/" ]] && PATH="${PATH}:/Applications/Docker.app/Contents/Resources/bin"
 
 # gcloud components install doesn't always link everything
-[ -d "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin/" ] && PATH="${PATH}:/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
+[[ -d "${HOMEBREW_PREFIX}/google-cloud-sdk/latest/google-cloud-sdk/bin/" ]] && PATH="${PATH}:${HOMEBREW_PREFIX}/google-cloud-sdk/latest/google-cloud-sdk/bin"
+
+# pipx
+# shellcheck disable=SC1091
+export PATH="${PATH}:/Users/bradclark/.local/bin"
 
 # set PATH so it includes user's private bin if it exists
-[ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
+[[ -d "${HOME}/bin" ]] && PATH="${HOME}/bin:${PATH}"
 
 export PATH
 ###
