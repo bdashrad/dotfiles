@@ -30,6 +30,7 @@ brew "hcl2json"
 
 # development
 brew "devcontainer"
+cask "postman"
 
 # file transfer
 brew "lftp"

@@ -14,15 +14,14 @@ brew "moreutils"
 # Install GNU `sed`, overwriting the built-in `sed`
 # Don't forget to add `$(brew --prefix gnu-sed)/libexec/gnubin` to `$PATH`.
 brew "gnu-sed"
+# Install gnu-awk
+brew "gawk"
 # Install GNU `grep`
 # Don't forget to add `$(brew --prefix grep)/libexec/gnubin` to `$PATH`.
 brew "grep"
 
 # Install Bash 5
 brew "bash"
-
-# Install/Upgrade some languages
-# brew "coffeescript"  # still need for legacy hubot scripts
 
 # stow is used to manage these dotfiles
 brew "stow"
@@ -42,6 +41,7 @@ brew "grc"
 brew "screen"
 brew "vim"
 brew "wget"  # Install wget with IRI support
+brew "curl"
 
 # run this script when this file changes guy.
 brew "entr"
@@ -228,7 +228,7 @@ cask "discord-canary"
 cask "krisp"
 cask "pop"
 cask "slack"
-cask "zoom"
+# cask "zoom"
 
 # development
 # cask "fig"
