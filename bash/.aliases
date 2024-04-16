@@ -100,6 +100,8 @@ dnshostsv6+=('2001:4860:4860::8844')
 alias getdns="networksetup -getdnsservers Wi-Fi && scutil --dns"
 alias setdns="networksetup -setdnsservers Wi-Fi ${dnshosts[*]} ${dnshostsv6[*]}"
 
+alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+
 # reset audio devices
 alias audioreset="sudo killall coreaudiod"
 
