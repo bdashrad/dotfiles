@@ -151,23 +151,23 @@
 [tag]
   forceSignAnnotated = true
 
-# rewrites
-[url "git@github.com:"]
-  insteadOf = "https://github.com/"
-  pushInsteadOf = "github:"
-  pushInsteadOf = "git://github.com/"
-  pushInsteadOf = "https://github.com/"
+# # rewrites
+# [url "git@github.com:"]
+#   insteadOf = "https://github.com/"
+#   pushInsteadOf = "github:"
+#   pushInsteadOf = "git://github.com/"
+#   pushInsteadOf = "https://github.com/"
 
-[url "https://github.com/"]
-  insteadOf = git://github.com/
-  insteadOf = "github:"
+# [url "https://github.com/"]
+#   insteadOf = git://github.com/
+#   insteadOf = "github:"
 
-[url "git@gist.github.com:"]
-  pushInsteadOf = "gist:"
-  pushInsteadOf = "git://gist.github.com/"
+# [url "git@gist.github.com:"]
+#   pushInsteadOf = "gist:"
+#   pushInsteadOf = "git://gist.github.com/"
 
-[url "https://gist.github.com/"]
-  insteadOf = "gist:"
+# [url "https://gist.github.com/"]
+#   insteadOf = "gist:"
 
 # gh tool auth
 [url "https://x-access-token@github.com"]
