@@ -79,3 +79,7 @@ brew "dos2unix"
 
 # mas "Microsoft Remote Desktop", id: 1295203466
 # mas "Clocker", id: 1056643111
+
+# Lokalise CLI
+tap "lokalise/cli-2"
+brew "lokalise2"
