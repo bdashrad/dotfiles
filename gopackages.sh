@@ -14,3 +14,6 @@ go install github.com/lucasepe/modgv/modgv@latest
 
 # https://github.com/patcable/onair
 # go install github.com/patcable/onair
+
+# plistwatch
+go install github.com/catilac/plistwatch@latest
