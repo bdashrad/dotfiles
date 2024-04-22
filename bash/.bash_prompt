@@ -174,7 +174,7 @@ set_prompts() {
         -cwd-max-depth 3 \
         -git-mode simple \
         -modules "host,ssh,kube,cwd,perms,terraform-workspace,git,jobs,exit,newline,root" \
-        -path-aliases "~/code/author=@AH"
+        -path-aliases ${WORKCODE}=@WORK
     )"
 
     # Uncomment the following line to automatically clear errors after showing
