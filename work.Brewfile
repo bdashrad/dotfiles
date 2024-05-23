@@ -13,7 +13,7 @@ brew "adr-tools"
 # brew "ansible"
 # brew "ansible-lint"
 # brew "argocd"
-brew "atlantis"
+# brew "atlantis"
 brew "csvq"
 tap "dopplerhq/cli"
 brew "doppler"
@@ -29,6 +29,7 @@ brew "tflint"
 brew "hcl2json"
 
 # development
+brew "bfg"
 brew "devcontainer"
 cask "postman"
 
@@ -82,4 +83,4 @@ brew "dos2unix"
 
 # Lokalise CLI
 tap "lokalise/cli-2"
-brew "lokalise2"
+brew "lokalise/cli-2/lokalise2"

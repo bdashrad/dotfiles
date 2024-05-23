@@ -7,9 +7,9 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
 1. Download dotfiles
     * Clone repo: `git clone git@github.com:bdashrad/dotfiles.git ~/dotfiles`
     * Install without git: `mkdir -p ~/.dotfiles; curl -#L https://github.com/bdashrad/dotfiles/tarball/main | tar -xzv --strip-components=1 -C ~/.dotfiles/`
-2. `cd ~/dotfiles`
-3. `setup-new-machine.sh`
-4. use [stow](https://www.gnu.org/software/stow/) to install various config files:
+1. `cd ~/dotfiles`
+1. `setup-new-machine.sh`
+1. use [stow](https://www.gnu.org/software/stow/) to install various config files:
     * standards
       * `stow {bash,colima,fzf,git,hugo,ruby,screen,tmux,vagrant,vim}`
     * ~/home/bin
@@ -17,7 +17,13 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
       * `stow -t ~/bin/ bin`
     * sublime text 3
       * `stow -t ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/ sublime/`
-5. Enjoy!
+1. Configure anything you don't want committed in `~/.extra`, e.g. your work code path
+
+    ```bash
+    export WORKCODE='~/code/work'
+    ```
+
+1. Enjoy!
 
 ## Manual Migrations
 
