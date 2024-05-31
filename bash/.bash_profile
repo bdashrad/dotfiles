@@ -181,10 +181,8 @@ if command -v kubectl >/dev/null 2>&1; then
 fi
 
 # 1password plugins
+# shellcheck disable=SC1091
 [[ -f "${HOME}/.config/op/plugins.sh" ]] && . "${HOME}/.config/op/plugins.sh"
-
-# Created by `pipx` on 2023-08-03 01:59:10
-export PATH="$PATH:/Users/bradclark/.local/bin"
 
 # source override last for overrides
 # shellcheck disable=SC1091
