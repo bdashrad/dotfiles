@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# ble.sh
+# shellcheck disable=2244
+[[ ${BLE_VERSION-} ]] && ble-attach

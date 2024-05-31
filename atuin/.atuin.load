@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# atuin
+# shellcheck disable=2312
+[[ -f "/opt/homebrew/bin/atuin" ]] && eval "$(atuin init bash --disable-up-arrow)"
