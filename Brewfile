@@ -30,6 +30,9 @@ brew "stow"
 brew "bash-completion@2"
 brew "brew-cask-completion"
 
+# Atuin puts your shell history in sqlite
+brew "atuin"
+
 # generic colouriser  http://kassiopeia.juls.savba.sk/~garabik/software/grc/
 brew "grc"
 

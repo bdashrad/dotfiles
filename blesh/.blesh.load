@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# ble.sh
+# shellcheck disable=SC1091
+[[ $- == *i* ]] &&
+  [[ -f "${HOME}/.local/share/blesh/ble.sh" ]] &&
+  . "${HOME}/.local/share/blesh/ble.sh" --noattach

@@ -12,6 +12,10 @@ if [[ "$(uname)" == "Darwin" ]]; then
   fi
 fi
 
+# ble.sh
+# shellcheck disable=SC1091
+[[ -f ${HOME}/.blesh.load ]] && source "${HOME}/.blesh.load"
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -183,6 +187,15 @@ fi
 # 1password plugins
 # shellcheck disable=SC1091
 [[ -f "${HOME}/.config/op/plugins.sh" ]] && . "${HOME}/.config/op/plugins.sh"
+
+# ble.sh
+# shellcheck disable=SC1091
+[[ -f "${HOME}/.blesh.start" ]] && source "${HOME}/.blesh.start"
+
+# atuin
+# atuin requires ble.sh above
+# shellcheck disable=SC1091
+[[ -f "${HOME}/.atuin.load" ]] && source "${HOME}/.atuin.load"
 
 # source override last for overrides
 # shellcheck disable=SC1091

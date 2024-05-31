@@ -17,6 +17,8 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
       * `stow -t ~/bin/ bin`
     * sublime text 3
       * `stow -t ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/ sublime/`
+    * [atuin](https://atuin.sh/) and [ble.sh](https://github.com/akinomyoga/ble.sh)
+      * `stow {blesh,atuin}`
 1. Configure anything you don't want committed in `~/.extra`, e.g. your work code path
 
     ```bash
