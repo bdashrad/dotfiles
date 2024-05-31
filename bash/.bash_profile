@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# shellcheck shell=bash
+
+# uncomment to enable tracing output of your bash_profile to find loading issues
 # exec 5> /tmp/profile-tracing.log
 # BASH_XTRACEFD="5"
 # set -x
@@ -200,5 +203,7 @@ fi
 # source override last for overrides
 # shellcheck disable=SC1091
 [[ -f "${HOME}/.override" ]] && . "${HOME}/.override"
-set +x
-unset BASH_XTRACEFD
+
+# uncomment to enable tracing output of your bash_profile to find loading issues
+# set +x
+# unset BASH_XTRACEFD
