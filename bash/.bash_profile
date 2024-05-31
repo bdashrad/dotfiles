@@ -188,15 +188,14 @@ fi
 # shellcheck disable=SC1091
 [[ -f "${HOME}/.config/op/plugins.sh" ]] && . "${HOME}/.config/op/plugins.sh"
 
-
 # ble.sh
 # shellcheck disable=SC1091
 [[ -f "${HOME}/.blesh.start" ]] && source "${HOME}/.blesh.start"
 
 # atuin
+# atuin requires ble.sh above
 # shellcheck disable=SC1091
 [[ -f "${HOME}/.atuin.load" ]] && source "${HOME}/.atuin.load"
-
 
 # source override last for overrides
 # shellcheck disable=SC1091
