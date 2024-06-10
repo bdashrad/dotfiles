@@ -17,3 +17,6 @@ go install github.com/lucasepe/modgv/modgv@latest
 
 # plistwatch
 go install github.com/catilac/plistwatch@latest
+
+# exponential backoff tool
+go install github.com/blackducksoftware/exponential-backoff-tool@latest

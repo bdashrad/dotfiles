@@ -47,7 +47,7 @@ alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 
 ###
 # git stuff
-# Undo a `git push`
+# Undo a git push
 alias undopush="git push -f origin HEAD^:master"
 
 # jump to repor root
@@ -143,3 +143,7 @@ alias hugo_complete='. "$HOME/.hugo/hugo.sh"'
 
 # terraform completion
 alias terraform_complete='complete -C $(which terraform) terraform tf'
+
+# exponential backoff tool
+# shellcheck disable=SC2154
+[[ -s "${GOPATH}/bin/exponential-backoff-tool" ]] && alias eb='${GOPATH}/bin/exponential-backoff-tool'
