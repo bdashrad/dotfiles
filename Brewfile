@@ -52,6 +52,7 @@ brew "entr"
 # find stuff
 brew "ack"
 brew "fzf"
+brew "ripgrep"
 brew "the_silver_searcher"
 brew "z"  # jump around paths by frecency
 
