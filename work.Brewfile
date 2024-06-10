@@ -2,6 +2,7 @@
 
 # work stuff
 
+# documentation
 brew "adr-tools"
 
 # log parsing things
@@ -80,6 +81,9 @@ brew "dos2unix"
 
 # mas "Microsoft Remote Desktop", id: 1295203466
 # mas "Clocker", id: 1056643111
+
+# Image manipulation
+brew "imagemagick"
 
 # Lokalise CLI
 tap "lokalise/cli-2"
