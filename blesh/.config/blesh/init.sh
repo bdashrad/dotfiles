@@ -11,9 +11,12 @@
 # auto-complete delay (milliseconds)
 bleopt complete_auto_delay=500
 
-# tab selects auto-complete candidate
-ble-bind -m auto_complete -f C-i auto_complete/insert
-ble-bind -m auto_complete -f TAB auto_complete/insert
+## If you want to accept the suggestion by auto-complete using TAB, please use
+## the following keybindings.  By default, <right> key can be used to accept
+## the suggestion, and <TAB> is assigned to the normal TAB completion which is
+## independent of auto-complete.
+# ble-bind -m auto_complete -f C-i auto_complete/insert
+# ble-bind -m auto_complete -f TAB auto_complete/insert
 
 ## With the following settings, M-backspace (whose actual key sequence
 ## depends on your terminal) will kill the backward word as in the default
