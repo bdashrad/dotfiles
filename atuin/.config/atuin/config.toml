@@ -168,7 +168,7 @@ common_subcommands = [
   "composer",
   "dnf",
   "docker",
-  "git",
+  # "git",
   "go",
   "ip",
   "kubectl",

@@ -135,3 +135,6 @@ export KUBE_CONFIG_PATH=$HOME/.kube/config
 
 # use new gcloud auth plugin
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
+# use colima for docker
+export DOCKER_HOST=unix://$HOME/.colima/docker.sock

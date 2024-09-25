@@ -233,3 +233,41 @@ function k8s_get_secrets_json() {
 function x86() {
   arch -x86_64 "$@"
 }
+
+# fuzzy jq
+# use fzf to filter with jq
+function fjq() {
+  [[ -z "${1}" ]] && echo "usage: fjq <json_target>" && return 1
+
+  local json_target="${1}"
+
+  jq_cmd=$(command -v jq) || (echo "jq not found" && return 1)
+  fzf_cmd=$(command -v fzf-tmux) || (echo "fzf not found" && return 1)
+  jq_cmd="${jq_cmd}"
+
+  json_content=$(mktemp -t fjq-XXXXX.json)
+
+  if [[ -f ${json_target} ]]; then
+    # echo "file: ${json_target}"
+    # cat "${json_target}" > "${json_content}"
+    json_content=${json_target}
+  elif [[ $1 != http?(s)://*.jpg ]]; then
+    # echo "url: ${json_target}"
+    # trap 'rm -f "$input"' EXIT
+    curl -sS -o "${json_content}" "${json_target}"
+    echo "temp file: ${json_content}"
+  fi
+
+  filter=$(echo -e '' | \
+    ${fzf_cmd} \
+      --disabled \
+      --print-query \
+      --preview-window='up:90%' \
+      --query='.' \
+      --preview \
+        "${jq_cmd} \
+          --color-output \
+          {q} \
+          ${json_content}")
+  echo "jq command: \`${jq_cmd} '${filter}' ${json_content}\`"
+}
