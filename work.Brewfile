@@ -2,9 +2,6 @@
 
 # work stuff
 
-# documentation
-brew "adr-tools"
-
 # log parsing things
 # brew "logstalgia"
 # brew "lnav"
@@ -15,29 +12,23 @@ brew "adr-tools"
 # brew "ansible-lint"
 # brew "argocd"
 # brew "atlantis"
-brew "csvq"
-tap "dopplerhq/cli"
-brew "doppler"
-cask "google-cloud-sdk"
-brew "mockery"
-brew "postgresql@15"
+# tap "dopplerhq/cli"
+# brew "doppler"
 # brew "packer"
-brew "sqlfluff"
+
 # brew "terraform"
-# brew "terraform-docs"
+brew "terraform-docs"
 # brew "terraform_landscape"
 brew "tflint"
 brew "hcl2json"
 
 # development
-brew "bfg"
-brew "devcontainer"
-cask "postman"
+# cask "postman"
 
 # file transfer
 brew "lftp"
-cask "cyberduck"
-cask "mountain-duck"
+# cask "cyberduck"
+# cask "mountain-duck"
 
 # Container scanning
 tap "anchore/grype"
@@ -70,11 +61,11 @@ brew "k9s"
 brew "kubie"
 brew "krew"
 
-# Linting tools
-brew "woke"
-
-# Other
+# data things
+brew "csvq"
 brew "dos2unix"
+# brew r
+# mkdir -p ~/Library/R/3.2/library
 
 # communication
 # cask "microsoft-teams"
@@ -85,6 +76,22 @@ brew "dos2unix"
 # Image manipulation
 brew "imagemagick"
 
-# Lokalise CLI
+# aws
+# brew "aws-elasticbeanstalk"
+brew "awscli"
+# tap "fullscreen/tap"
+# brew "aws-rotate-key"
+
+# gcp
+cask "google-cloud-sdk"
+brew "cloud-sql-proxy"
+
+# work stuff
 tap "lokalise/cli-2"
 brew "lokalise/cli-2/lokalise2"
+brew "mockery"
+brew "postgresql@15", link: true, restart_service: false, conflicts_with: ["postgresql", "postgresql@14"]
+
+# Node Corepack
+# https://nodejs.org/api/corepack.html
+brew "corepack"

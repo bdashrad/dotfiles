@@ -36,15 +36,14 @@ brew "atuin"
 # generic colouriser  http://kassiopeia.juls.savba.sk/~garabik/software/grc/
 brew "grc"
 
-# Install r
-# brew r
-# mkdir -p ~/Library/R/3.2/library
-
 # Install more recent versions of some tools
 brew "screen"
+brew "tmux"
 brew "vim"
 brew "wget"  # Install wget with IRI support
 brew "curl"
+brew "openssh"
+# brew "openssl@1.1" # deprecated
 
 # run this script when this file changes guy.
 brew "entr"
@@ -57,37 +56,47 @@ brew "the_silver_searcher"
 brew "z"  # jump around paths by frecency
 
 # dev stuff
-brew "asdf"
 brew "autoconf"
 brew "automake"
-brew "bat"
 brew "bats-core"
-# brew "bfg"
-brew "gh"
-brew "gist"
-brew "git"
-tap "git-chglog/git-chglog"
-brew "git-chglog"
-brew "git-delta"
-brew "hub"
+brew "devcontainer"
+brew "direnv"
 brew "jc"
-brew "jd"
+brew "tmate"
+
+# json
 brew "jq"
 brew "ijq"
+brew "jd"
 tap "noahgorstein/tap"
 brew "noahgorstein/tap/jqp"
-brew "openssh"
-brew "openssl@1.1"
-brew "tlrc" # tldr in rust
-brew "tmate"
+
+# yaml
 brew "yamllint"
 brew "yq"
 
-# kubernetes
+# use your version manager to
+# install more version managers
+brew "asdf"
+brew "mas"
+cask "macupdater"
+brew "whalebrew"
 
-## helm-docs
+# git things
+brew "bfg"
+brew "gh"
+brew "gist"
+brew "git"
+brew "git-delta"
+# brew "hub"
+
+# doc things
+brew "adr-tools"
 tap "norwoodj/tap"
 brew "helm-docs"
+tap "git-chglog/git-chglog"
+brew "git-chglog"
+brew "tlrc" # tldr in rust
 
 # python things
 # cask "miniconda"
@@ -103,32 +112,36 @@ brew "mosh"
 brew "nmap"
 brew "speedtest-cli"
 
-# Install everything else
-# brew "aws-elasticbeanstalk"
-# brew "awscli"
+# system monitoring
+brew "asitop"
 brew "btop"
-brew "direnv"
-# tap "fullscreen/tap"
-# brew "aws-rotate-key"
+brew "htop"
+brew "mactop"
+brew "pstree"
+
+# Media stuff
+cask "ears"
+cask "eqmac"
 # brew "ffmpeg" --with-libvpx
 brew "graphviz"
-brew "htop"
 brew "imagemagick"
-brew "markdownlint-cli"
-brew "mas"
-brew "ncdu"
+cask "notunes"
 brew "optipng"
 brew "pngcrush"
 brew "pngquant"
+cask "soundsource"
+cask "spotify"
+
+# Install everything else
+brew "bat"
+brew "ncdu"
 brew "pv"
 # brew "qemu"
 brew "rename"
 brew "swig"
-# brew "travis"
 brew "tree"
 brew "terminal-notifier"
 brew "watch"
-brew "whalebrew"
 
 # prompt
 brew "powerline-go"
@@ -144,7 +157,12 @@ brew "p7zip"
 brew "xz"
 
 # Install some linters
+brew "markdownlint-cli"
+brew "markdownlint-cli2"
 brew "shellcheck"
+brew "sqlfluff"
+tap "get-woke/tap"
+brew "woke"
 
 ################################
 # Casks
@@ -178,52 +196,45 @@ mas "Wireguard", id: 1451685025
 # utilities
 cask "alfred"
 mas "Amphetamine", id: 937984704
-cask "backblaze"
 # cask "barrier"
-cask "bartender"
-cask "choosy"
 mas "Display Menu", id: 549083868
-cask "ears"
 # cask "exiftool"
 cask "gyazo"
 cask "iterm2"
 cask "logitech-camera-settings"
 # cask "menumeters"
 cask "MonitorControl"
-cask "notunes"
 # cask "oversight"
 cask "qmk-toolbox"
-cask "rectangle"
-cask "soundsource"
-cask "stay"
+brew "showkey"
 cask "the-unarchiver"
 cask "skitch"
 # cask "xquartz"
 
+# window management
+cask "rectangle"
+cask "stay"
+
+# menu bar
+cask "bartender"
+cask "jordanbaird-ice" # open source bartender alternative
+
 # apps
-cask "anylist"
 # cask "dropbox"
 cask "evernote"
 # cask "google-drive"
-# mas "GarageBand", id: 682658836
-mas "Home Assistant", id: 1099568401
-# mas "iMovie", id: 408981434
-mas "Ivory", id: 6444602274
 mas "Keynote", id: 409183694
-# cask "lastfm"
-cask "notion"
-cask "notion-calendar"
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-cask "signal"
-cask "spotify"
+cask "notion"
+cask "notion-calendar"
 cask "todoist"
 # cask "transmission"
 # cask "vlc"
 
 # Browsers
 cask "arc"
-cask "brave-browser"
+cask "choosy"
 cask "firefox"
 cask "google-chrome"
 
@@ -242,16 +253,10 @@ cask "slack"
 cask "ngrok"
 cask "p4v" # p4merge
 # cask "sublime-text"
-# cask "vagrant"
-# cask "vagrant-manager"
-# cask "virtualbox"
-# cask "virtualbox-extension-pack"
 cask "visual-studio-code"
 # cask "warp"
-tap "get-woke/tap"
-brew "woke"
 
-# virtualization and containerization
+# containerization
 # cask "docker"
 brew "docker"
 brew "docker-compose"
@@ -260,16 +265,20 @@ brew "lima"
 # cask "rancher"
 tap "snyk/tap"
 brew "snyk"
+
+# virtualization
+# cask "virtualbox"
+# cask "virtualbox-extension-pack"
 # cask "utm"
+# cask "vagrant"
+# cask "vagrant-manager"
 
 # safari extensions
 mas "1Password for Safari", id: 1569813296
 mas "Archive Page Extension", id: 6446372766
-mas "Baking Soda", id: 1601151613
 mas "Consent-O-Matic", id: 1606897889
 mas "Evernote Web Clipper", id: 1481669779
 mas "Hush", id: 1544743900
-mas "Keepa - Price Tracker", id: 1533805339
 
 # fonts
 # https://www.nerdfonts.com/font-downloads
