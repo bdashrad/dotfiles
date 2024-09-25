@@ -1,0 +1,4 @@
+# markdownlint config yaml
+# https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml
+
+extends: markdownlint/style/relaxed
