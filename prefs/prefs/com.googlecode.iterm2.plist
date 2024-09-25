@@ -965,6 +965,29 @@
 			<string>xterm-256color</string>
 			<key>Transparency</key>
 			<real>0.0</real>
+			<key>Triggers</key>
+			<array>
+				<dict>
+					<key>action</key>
+					<string>PasswordTrigger</string>
+					<key>parameter</key>
+					<string>Brad's Author Health M3 Macbook Pro 14 — bradclark</string>
+					<key>partial</key>
+					<true/>
+					<key>regex</key>
+					<string>^(\[sudo\]|(P|p)assword)</string>
+				</dict>
+				<dict>
+					<key>action</key>
+					<string>PasswordTrigger</string>
+					<key>parameter</key>
+					<string></string>
+					<key>partial</key>
+					<true/>
+					<key>regex</key>
+					<string>^Connecting to database with SQL user \[.*\].Password</string>
+				</dict>
+			</array>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -1541,6 +1564,8 @@
 				<key>Red Component</key>
 				<real>0.0</real>
 			</dict>
+			<key>Load Shell Integration Automatically</key>
+			<false/>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -2358,6 +2383,8 @@
 	<false/>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>TimeBetweenTips</key>
+	<real>604800</real>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WordCharacters</key>
