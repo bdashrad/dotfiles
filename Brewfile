@@ -184,8 +184,6 @@ cask "tripmode"
 # cask "tunnelblick" # OpenVPN client
 # cask "wireshark"
 mas "NextDNS", id: 1464122853
-mas "Tailscale", id: 1475387142
-mas "Wireguard", id: 1451685025
 # cask "yubico-yubikey-manager"
 
 # utilities
@@ -194,7 +192,6 @@ mas "Amphetamine", id: 937984704
 # cask "barrier"
 mas "Display Menu", id: 549083868
 # cask "exiftool"
-cask "gyazo"
 cask "iterm2"
 cask "logitech-camera-settings"
 # cask "menumeters"
@@ -235,8 +232,6 @@ cask "google-chrome"
 
 # communication
 cask "coscreen"
-# cask "discord"
-cask "discord-canary"
 cask "krisp"
 cask "pop"
 cask "slack"
