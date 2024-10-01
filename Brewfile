@@ -1,8 +1,5 @@
 # Brewfile for things I want on all of my Macs
 
-# add cask-versions to install alternate versions of Casks
-tap "homebrew/cask-versions"
-
 # Install GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew "coreutils"
