@@ -1,5 +1,11 @@
 # Brewfile for things I want on all of my Macs
 
+# install mas-cli so we can install apps from the Mac App Store
+brew "mas"
+
+# install whalebrew so we can install dockerized apps
+brew "whalebrew"
+
 # Install GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew "coreutils"
@@ -75,9 +81,7 @@ brew "yq"
 # use your version manager to
 # install more version managers
 brew "asdf"
-brew "mas"
 cask "macupdater"
-brew "whalebrew"
 
 # git things
 brew "bfg"
