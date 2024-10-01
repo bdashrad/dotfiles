@@ -142,7 +142,6 @@ brew "watch"
 
 # prompt
 brew "powerline-go"
-cask "homebrew/cask-fonts/font-powerline-symbols"
 
 # Install pgp stuff
 brew "gpg"
@@ -279,11 +278,11 @@ mas "Hush", id: 1544743900
 
 # fonts
 # https://www.nerdfonts.com/font-downloads
-tap "homebrew/cask-fonts"
-cask "font-b612"
 cask "font-b612-mono"
+cask "font-b612"
 cask "font-hack-nerd-font"
 cask "font-monaspace"
+cask "font-powerline-symbols"
 
 # quicklook plugins
 # cask "betterzipql"
