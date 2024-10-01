@@ -157,8 +157,7 @@ brew "markdownlint-cli"
 brew "markdownlint-cli2"
 brew "shellcheck"
 brew "sqlfluff"
-tap "get-woke/tap"
-brew "woke"
+brew "get-woke/tap/woke"
 
 ################################
 # Casks
