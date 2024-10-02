@@ -1,5 +1,11 @@
 # Brewfile for things I want on all of my Macs
 
+# install mas-cli so we can install apps from the Mac App Store
+brew "mas"
+
+# install whalebrew so we can install dockerized apps
+brew "whalebrew"
+
 # Install GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew "coreutils"
@@ -75,9 +81,7 @@ brew "yq"
 # use your version manager to
 # install more version managers
 brew "asdf"
-brew "mas"
 cask "macupdater"
-brew "whalebrew"
 
 # git things
 brew "bfg"
@@ -142,7 +146,6 @@ brew "watch"
 
 # prompt
 brew "powerline-go"
-cask "homebrew/cask-fonts/font-powerline-symbols"
 
 # Install pgp stuff
 brew "gpg"
@@ -158,8 +161,7 @@ brew "markdownlint-cli"
 brew "markdownlint-cli2"
 brew "shellcheck"
 brew "sqlfluff"
-tap "get-woke/tap"
-brew "woke"
+brew "get-woke/tap/woke"
 
 ################################
 # Casks
@@ -186,8 +188,6 @@ cask "tripmode"
 # cask "tunnelblick" # OpenVPN client
 # cask "wireshark"
 mas "NextDNS", id: 1464122853
-mas "Tailscale", id: 1475387142
-mas "Wireguard", id: 1451685025
 # cask "yubico-yubikey-manager"
 
 # utilities
@@ -196,13 +196,13 @@ mas "Amphetamine", id: 937984704
 # cask "barrier"
 mas "Display Menu", id: 549083868
 # cask "exiftool"
-cask "gyazo"
 cask "iterm2"
 cask "logitech-camera-settings"
 # cask "menumeters"
 cask "MonitorControl"
 # cask "oversight"
 cask "qmk-toolbox"
+brew "rclone"
 brew "showkey"
 cask "the-unarchiver"
 cask "skitch"
@@ -237,8 +237,6 @@ cask "google-chrome"
 
 # communication
 cask "coscreen"
-# cask "discord"
-cask "discord-canary"
 cask "krisp"
 cask "pop"
 cask "slack"
@@ -279,11 +277,11 @@ mas "Hush", id: 1544743900
 
 # fonts
 # https://www.nerdfonts.com/font-downloads
-tap "homebrew/cask-fonts"
-cask "font-b612"
 cask "font-b612-mono"
+cask "font-b612"
 cask "font-hack-nerd-font"
 cask "font-monaspace"
+cask "font-powerline-symbols"
 
 # quicklook plugins
 # cask "betterzipql"

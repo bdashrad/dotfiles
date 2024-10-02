@@ -7,15 +7,22 @@ cask "brave-browser"
 cask "backblaze"
 
 # media
-# cask "lastfm"
 mas "GarageBand", id: 682658836
+cask "gyazo"
 mas "iMovie", id: 408981434
+# cask "lastfm"
+
+# network
+mas "Tailscale", id: 1475387142
+mas "Wireguard", id: 1451685025
 
 # home
 cask "anylist"
 mas "Home Assistant", id: 1099568401
 
 # social
+# cask "discord"
+cask "discord-canary"
 mas "Ivory", id: 6444602274
 cask "signal"
 
