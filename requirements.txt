@@ -27,7 +27,6 @@ cffi==1.16.0
     # via
     #   cryptography
     #   pynacl
-    #   xattr
 cfgv==3.4.0
     # via pre-commit
 chardet==5.2.0
@@ -54,7 +53,9 @@ crashtest==0.4.1
 crcmod==1.7
     # via -r requirements.in
 cryptography==42.0.5
-    # via pyjwt
+    # via
+    #   pyjwt
+    #   secretstorage
 dep-logic==0.0.4
     # via pdm
 deprecated==1.2.14
@@ -86,6 +87,10 @@ installer==0.7.0
     #   poetry
 jaraco-classes==3.3.0
     # via keyring
+jeepney==0.8.0
+    # via
+    #   keyring
+    #   secretstorage
 keyring==24.3.0
     # via poetry
 maison==1.4.3
@@ -211,6 +216,8 @@ rich==13.7.0
     # via pdm
 ruyaml==0.91.0
     # via yamlfix
+secretstorage==3.3.3
+    # via keyring
 setuptools-scm==8.0.4
     # via pyscaffold
 shellingham==1.5.4
@@ -242,7 +249,7 @@ tzdata==2023.4
     # via pandas
 unearth==0.14.0
     # via pdm
-urllib3==2.2.0
+urllib3==2.2.2
     # via
     #   dulwich
     #   pygithub
@@ -261,8 +268,6 @@ wheel==0.42.0
     # via pip-tools
 wrapt==1.16.0
     # via deprecated
-xattr==0.10.1
-    # via poetry
 yamale==4.0.4
     # via -r requirements.in
 yamlfix==1.16.0
