@@ -29,6 +29,11 @@ brew "bash"
 # stow is used to manage these dotfiles
 brew "stow"
 
+# duti is used to manage default applications
+brew "duti"
+tap "tsonglew/dutis", "https://github.com/tsonglew/dutis"
+brew "dutis"
+
 # Install bash-completion
 brew "bash-completion@2"
 brew "brew-cask-completion"
@@ -108,6 +113,7 @@ brew "tlrc" # tldr in rust
 
 # network stuff
 brew "grepcidr"
+brew "ipcalc"
 brew "mtr"
 brew "mosh"
 brew "nmap"
@@ -184,6 +190,7 @@ brew "cloudflared"
 cask "keybase"
 cask "lulu"
 cask "private-internet-access"
+mas "Tailscale", id: 1475387142
 cask "tripmode"
 # cask "tunnelblick" # OpenVPN client
 # cask "wireshark"
@@ -214,7 +221,8 @@ cask "stay"
 
 # menu bar
 cask "bartender"
-cask "jordanbaird-ice" # open source bartender alternative
+# cask "jordanbaird-ice" # open source bartender alternative
+# cask "vanilla" # bartender alternative
 
 # apps
 # cask "dropbox"
@@ -226,8 +234,7 @@ mas "Pages", id: 409201541
 cask "notion"
 cask "notion-calendar"
 cask "todoist"
-# cask "transmission"
-# cask "vlc"
+mas "Toggl Track", id: 1291898086
 
 # Browsers
 cask "arc"
@@ -270,6 +277,7 @@ brew "snyk"
 
 # safari extensions
 mas "1Password for Safari", id: 1569813296
+mas "Archive Page Extension", id: 6446372766
 mas "Consent-O-Matic", id: 1606897889
 mas "Hush", id: 1544743900
 
@@ -290,4 +298,3 @@ cask "font-powerline-symbols"
 # cask "quicklook-csv"
 # cask "quicklook-json"
 # cask "suspicious-package"
-

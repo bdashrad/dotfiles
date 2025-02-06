@@ -9,12 +9,14 @@ mas "Archive Page Extension", id: 6446372766
 
 # utilities
 cask "backblaze"
+cask "transmission"
 
 # media
 mas "GarageBand", id: 682658836
 cask "gyazo"
 mas "iMovie", id: 408981434
 # cask "lastfm"
+cask "vlc"
 
 # network
 mas "Tailscale", id: 1475387142

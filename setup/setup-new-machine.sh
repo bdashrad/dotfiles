@@ -1,22 +1,16 @@
 #!/usr/bin/env bash
 
-function confirm() {
-  read -r -p "${1:-Are you sure? [y/N]} " response
-  if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]; then
-    true
-  else
-    false
-  fi
-}
+# Get the absolute path of the current script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+echo "SCRIPT_DIR: ${SCRIPT_DIR}"
 
-bold=$(tput bold)
-green=$(tput setaf 2)
-normal=$(tput sgr0)
-
-title() {
-  echo "${bold}==> $1${normal}"
-  echo
-}
+if [[ -f "${SCRIPT_DIR}/../bash/.utils.sh" ]]; then
+  echo "found .utils.sh"
+  source "${SCRIPT_DIR}/../bash/.utils.sh"
+else
+  echo "Could not find .utils.sh in ${SCRIPT_DIR}/../bash/.utils.sh"
+  exit 1
+fi
 
 # Ask for the administrator password upfront
 title "Ask for sudo access at start"
@@ -180,7 +174,7 @@ if confirm "Install rvm and ruby bundles?"; then
   else
     echo "Installing RVM and ruby."
     \curl -sSL https://get.rvm.io | bash -s stable --ruby --ignore-dotfiles
-  
+
     # install ruby gems
     gem install bundler
     bundle install

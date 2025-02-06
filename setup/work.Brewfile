@@ -40,6 +40,9 @@ tap "aquasecurity/trivy"
 brew "trivy"
 brew "dive"
 
+# golang
+brew "ko"
+
 # install vault and safe cli tool
 # brew "vault"
 # tap "starkandwayne/cf"
@@ -55,6 +58,8 @@ brew "dive"
 # brew "kops"
 # brew "aws-iam-authenticator"
 brew "k9s"
+# tap "GoogleContainerTools/kpt", "https://github.com/GoogleContainerTools/kpt.git"
+# brew "GoogleContainerTools/kpt/kpt"
 # brew "kubectx"
 # brew "kube-ps1"
 brew "kubie"
@@ -71,9 +76,6 @@ brew "dos2unix"
 
 # mas "Microsoft Remote Desktop", id: 1295203466
 # mas "Clocker", id: 1056643111
-
-# Image manipulation
-brew "imagemagick"
 
 # aws
 # brew "aws-elasticbeanstalk"
@@ -93,4 +95,4 @@ brew "postgresql@15", link: true, restart_service: false, conflicts_with: ["post
 
 # Node Corepack
 # https://nodejs.org/api/corepack.html
-brew "corepack"
+brew "node"
