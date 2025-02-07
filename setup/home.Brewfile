@@ -10,15 +10,18 @@ mas "Archive Page Extension", id: 6446372766
 # utilities
 cask "backblaze"
 cask "transmission"
+cask "unraid-usb-creator-next"
 
 # media
 mas "GarageBand", id: 682658836
 cask "gyazo"
-mas "iMovie", id: 408981434
+# mas "iMovie", id: 408981434
 # cask "lastfm"
 cask "vlc"
 
 # network
+brew "blueutil"
+cask "bluetility"
 mas "Tailscale", id: 1475387142
 mas "Wireguard", id: 1451685025
 
@@ -28,7 +31,7 @@ mas "Home Assistant", id: 1099568401
 
 # social
 # cask "discord"
-cask "discord-canary"
+cask "discord@canary"
 mas "Ivory", id: 6444602274
 cask "signal"
 

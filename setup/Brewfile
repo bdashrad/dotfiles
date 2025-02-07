@@ -31,8 +31,9 @@ brew "stow"
 
 # duti is used to manage default applications
 brew "duti"
-tap "tsonglew/dutis", "https://github.com/tsonglew/dutis"
-brew "dutis"
+# dutis install currently broken
+# tap "tsonglew/dutis", "https://github.com/tsonglew/dutis"
+# brew "tsonglew/dutis/dutis"
 
 # Install bash-completion
 brew "bash-completion@2"
@@ -184,7 +185,6 @@ tap "buo/cask-upgrade"
 # security
 cask "1password"
 cask "1password-cli"
-cask "authy"
 tap "cloudflare/cloudflare"
 brew "cloudflared"
 cask "keybase"
@@ -212,7 +212,6 @@ cask "qmk-toolbox"
 brew "rclone"
 brew "showkey"
 cask "the-unarchiver"
-cask "skitch"
 # cask "xquartz"
 
 # window management
