@@ -13,7 +13,7 @@ cask "backblaze"
 # media
 mas "GarageBand", id: 682658836
 cask "gyazo"
-mas "iMovie", id: 408981434
+# mas "iMovie", id: 408981434
 # cask "lastfm"
 
 # network
