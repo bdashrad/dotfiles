@@ -14,8 +14,8 @@ export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}";
 
 # asdf
 # shellcheck disable=SC1091
-[[ -d "${HOME}/.asdf/" ]] && ASDF_DATA_DIR=${HOME}/.asdf/
-[[ -d "${ASDF_DATA_DIR}/shims/" ]] && PATH="${ASDF_DATA_DIR}/shims:${PATH}"
+[[ -d "${HOME}/.asdf" ]] && ASDF_DATA_DIR=${HOME}/.asdf
+[[ -d "${ASDF_DATA_DIR}/shims" ]] && PATH="${ASDF_DATA_DIR}/shims:${PATH}"
 export ASDF_DATA_DIR
 
 # Add brew coreutils to $PATH

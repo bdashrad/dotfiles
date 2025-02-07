@@ -2,9 +2,11 @@
 
 # go path
 GOPATH="${HOME}/go"
+GOBIN="${GOPATH}/bin"
 
 # GO
-[[ -d "${GOPATH}/bin" ]] && PATH="${PATH}:${GOPATH}/bin"
+PATH="${PATH}:${GOBIN}"
 
 export GOPATH
+export GOBIN
 export PATH
