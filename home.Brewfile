@@ -19,6 +19,8 @@ cask "gyazo"
 cask "vlc"
 
 # network
+brew "blueutil"
+cask "bluetility"
 mas "Tailscale", id: 1475387142
 mas "Wireguard", id: 1451685025
 
