@@ -175,11 +175,12 @@ function curl-head() {
 }
 
 # checkout default branch
-function main() {
-  local default_branch
-  default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
-  git checkout "$default_branch"
-}
+# replaced by `git cdef`: see git/.gitconfig
+# function main() {
+#   local default_branch
+#   default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+#   git checkout "$default_branch"
+# }
 
 # function confirm() {
 #   read -r -p "${1:-Are you sure? [y/N]} " response
