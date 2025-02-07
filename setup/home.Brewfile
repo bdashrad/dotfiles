@@ -14,11 +14,13 @@ cask "transmission"
 # media
 mas "GarageBand", id: 682658836
 cask "gyazo"
-mas "iMovie", id: 408981434
+# mas "iMovie", id: 408981434
 # cask "lastfm"
 cask "vlc"
 
 # network
+brew "blueutil"
+cask "bluetility"
 mas "Tailscale", id: 1475387142
 mas "Wireguard", id: 1451685025
 
