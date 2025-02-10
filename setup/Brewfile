@@ -239,14 +239,14 @@ mas "Toggl Track", id: 1291898086
 cask "arc"
 cask "choosy"
 cask "firefox"
-cask "google-chrome"
+cask "google-chrome", args: { adopt: true }
 
 # communication
 cask "coscreen"
 cask "krisp"
 cask "pop"
-cask "slack"
-# cask "zoom"
+cask "slack", args: { adopt: true }
+# cask "zoom", args: { adopt: true }
 
 # development
 # cask "fig"
