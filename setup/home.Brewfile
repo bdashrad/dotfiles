@@ -10,6 +10,7 @@ mas "Archive Page Extension", id: 6446372766
 # utilities
 cask "backblaze"
 cask "transmission"
+cask "unraid-usb-creator-next"
 
 # media
 mas "GarageBand", id: 682658836
@@ -30,7 +31,7 @@ mas "Home Assistant", id: 1099568401
 
 # social
 # cask "discord"
-cask "discord-canary"
+cask "discord@canary"
 mas "Ivory", id: 6444602274
 cask "signal"
 

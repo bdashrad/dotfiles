@@ -1,0 +1,27 @@
+# python essentials
+pdm
+pip
+pip-tools
+pipenv
+poetry
+pyscaffold
+setuptools
+tox
+virtualenv
+
+# cli-tools
+crcmod
+git-delete-merged-branches
+petname
+pre-commit
+Pygments
+yamale
+yamlfix
+yamllint
+
+# python libraries
+PyGithub
+requests
+
+# data engineering
+pandas

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# go path
+GOPATH="${HOME}/go"
+GOBIN="${GOPATH}/bin"
+
+# GO
+PATH="${PATH}:${GOBIN}"
+
+export GOPATH
+export GOBIN
+export PATH

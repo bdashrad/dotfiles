@@ -194,7 +194,7 @@ title "Screen"
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-# Save screenshots to the desktop 
+# Save screenshots to the desktop
 mkdir -p "${HOME}/Desktop/Screenshots"
 defaults write com.apple.screencapture location -string "${HOME}/Desktop/Screenshots"
 
@@ -645,21 +645,26 @@ defaults write com.google.Chrome AppleEnableMouseSwipeNavigateWithScrolls -bool 
 # defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
 ###############################################################################
-# Transmission.app                                                            #
+# Control Center and Menu Bar
 ###############################################################################
 
-title "Transmission.app"
+title "Control Center and Menu Bar"
 
-# Don’t prompt for confirmation before downloading
-defaults write org.m0k.transmission DownloadAsk -bool false
+# Hide Wifi Icon on Menu Bar
+defaults write "com.apple.controlcenter" "NSStatusItem Visible WiFi" '0'
 
-# Trash original torrent files
-defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
+# Hide Bluetooth Icon on Menu Bar
+defaults write "com.apple.controlcenter" "NSStatusItem Visible Bluetooth" '0'
 
-# Hide the donate message
-defaults write org.m0k.transmission WarningDonate -bool false
-# Hide the legal disclaimer
-defaults write org.m0k.transmission WarningLegal -bool false
+# Hide Focus on the Menu Bar
+defaults write "com.apple.controlcenter" "NSStatusItem Visible FocusModes" '0'
+
+# Hide Battery on the Menu Bar
+defaults write "com.apple.controlcenter" "NSStatusItem Visible Battery" '0'
+
+# Hide Spotlight on the Menu Bar
+defaults delete "com.apple.Spotlight" "NSStatusItem Preferred Position Item-0"
+defaults delete "com.apple.Spotlight" "NSStatusItem Visible Item-0"
 
 ###############################################################################
 # Kill affected applications                                                  #
