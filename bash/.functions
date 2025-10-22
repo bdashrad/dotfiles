@@ -272,3 +272,14 @@ function fjq() {
           ${json_content}")
   echo "jq command: \`${jq_cmd} '${filter}' ${json_content}\`"
 }
+
+# summarize jq output (top level keys)
+jq_summarize() {
+  jq '[path(..)|map(if type=="number" then "[]" else tostring end)|join(".")|split(".[]")|join("[]")]|unique|map("."+.)|.[]'
+}
+
+# return the first element of each array in a JSON object
+# useful for summarizing arrays in JSON
+jq_sample() {
+  jq 'walk(if type == "array" then (if length > 0 then [.[0]] else . end) else . end)'
+}
