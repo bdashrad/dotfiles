@@ -49,7 +49,7 @@
 ## in any directory within a git repository tree (default: false).
 ##
 ## To use workspace mode by default when available, set this to true and
-## set filter_mode to "workspace" or leave it unspecified and 
+## set filter_mode to "workspace" or leave it unspecified and
 ## set search.filters to include "workspace" before other filter modes.
 # workspaces = false
 worksapces = true
@@ -230,14 +230,15 @@ common_subcommands = [
 #   "ls",
 #   "vi"
 # ]
-ignored_commands = [
-  "cd",
-  "ls"
-]
+ignored_commands = ["cd", "ls"]
 
 [keys]
 # Defaults to true. If disabled, using the up/down key won't exit the TUI when scrolled past the first/last entry.
-# scroll_exits = false
+# scroll_exits = true
+# Defaults to true. The left arrow key will exit the TUI when scrolling before the first character
+exit_past_line_start = false
+# Defaults to true. The right arrow key performs the same functionality as Tab and copies the selected line to the command line to be modified.
+# accept_past_line_end = true
 
 [sync]
 # Enable sync v2 by default
@@ -255,7 +256,7 @@ records = true
 
 [daemon]
 ## Enables using the daemon to sync. Requires the daemon to be running in the background. Start it with `atuin daemon`
-# enabled = false
+enabled = true
 
 ## How often the daemon should sync in seconds
 # sync_frequency = 300
