@@ -1,0 +1,45 @@
+# asdf-plugin-manager
+## https://github.com/asdf-community/asdf-plugin-manager
+asdf-plugin-manager 1.4.0
+
+# languages
+## go
+golang latest
+
+## python
+python latest
+python 3.10.15
+
+## ruby
+ruby latest
+
+## javascript
+nodejs latest
+pnpm latest
+yarn latest
+
+# k8s
+## https://kubernetes.io/docs/reference/kubectl/kubectl/
+kubectl latest
+## https://github.com/helm/helm
+helm latest
+## https://github.com/yannh/kubeconform
+kubeconform latest
+## https://kustomize.io/
+kustomize latest
+## https://minikube.sigs.k8s.io/docs/
+minikube latest
+## https://github.com/FairwindsOps/Nova
+nova latest
+## https://github.com/FairwindsOps/pluto
+pluto latest
+## https://github.com/FairwindsOps/polaris
+polaris latest
+
+# docker
+## https://github.com/abiosoft/colima
+colima latest
+
+# other tools
+gcloud latest
+terraform latest

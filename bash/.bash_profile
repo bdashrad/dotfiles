@@ -87,16 +87,7 @@ fi
 
 # set up fzf keybindings
 # shellcheck disable=SC1091
-[[ -f ~/.fzf.bash ]] && . "${HOME}/.fzf.bash"
-
-# travis-cli
-# shellcheck disable=SC1091
-[[ -f "$HOME/.travis/travis.sh" ]] && . "${HOME}/.travis/travis.sh"
-
-# asdf
-# shellcheck disable=SC1091
-ASDF_DIR="${HOMEBREW_PREFIX}/opt/asdf/libexec"
-[[ -f "${ASDF_DIR}/asdf.sh" ]] && . "${ASDF_DIR}/asdf.sh"
+[[ -f "${HOME}/.fzf.bash" ]] && . "${HOME}/.fzf.bash"
 
 # # use local folder for CPAN instead of homebrew cellar
 # eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"

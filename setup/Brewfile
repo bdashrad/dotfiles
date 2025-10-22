@@ -29,6 +29,11 @@ brew "bash"
 # stow is used to manage these dotfiles
 brew "stow"
 
+# duti is used to manage default applications
+brew "duti"
+tap "tsonglew/dutis", "https://github.com/tsonglew/dutis"
+brew "dutis"
+
 # Install bash-completion
 brew "bash-completion@2"
 brew "brew-cask-completion"
@@ -108,6 +113,7 @@ brew "tlrc" # tldr in rust
 
 # network stuff
 brew "grepcidr"
+brew "ipcalc"
 brew "mtr"
 brew "mosh"
 brew "nmap"
@@ -178,12 +184,12 @@ tap "buo/cask-upgrade"
 # security
 cask "1password"
 cask "1password-cli"
-cask "authy"
 tap "cloudflare/cloudflare"
 brew "cloudflared"
 cask "keybase"
 cask "lulu"
 cask "private-internet-access"
+mas "Tailscale", id: 1475387142
 cask "tripmode"
 # cask "tunnelblick" # OpenVPN client
 # cask "wireshark"
@@ -205,7 +211,6 @@ cask "qmk-toolbox"
 brew "rclone"
 brew "showkey"
 cask "the-unarchiver"
-cask "skitch"
 # cask "xquartz"
 
 # window management
@@ -214,7 +219,8 @@ cask "stay"
 
 # menu bar
 cask "bartender"
-cask "jordanbaird-ice" # open source bartender alternative
+# cask "jordanbaird-ice" # open source bartender alternative
+# cask "vanilla" # bartender alternative
 
 # apps
 # cask "dropbox"
@@ -225,24 +231,26 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 cask "notion"
 cask "notion-calendar"
-cask "todoist"
-# cask "transmission"
-# cask "vlc"
+cask "todoist-app"
+mas "Toggl Track", id: 1291898086
 
 # Browsers
 cask "arc"
 cask "choosy"
 cask "firefox"
-cask "google-chrome"
+cask "google-chrome", args: { adopt: true }
 
 # communication
-cask "coscreen"
 cask "krisp"
-cask "pop"
-cask "slack"
-# cask "zoom"
+cask "slack", args: { adopt: true }
+# cask "zoom", args: { adopt: true }
+
+# screen sharing
+# cask "coscreen"
+# cask "pop-app"
 
 # development
+cask "cursor"
 # cask "fig"
 # cask "kdiff3"
 cask "ngrok"
@@ -256,7 +264,9 @@ cask "visual-studio-code"
 brew "docker"
 brew "docker-compose"
 brew "docker-buildx"
-brew "lima"
+# brew "lima"
+brew "colima"
+# cask "orbstack"
 # cask "rancher"
 tap "snyk/tap"
 brew "snyk"
@@ -270,6 +280,7 @@ brew "snyk"
 
 # safari extensions
 mas "1Password for Safari", id: 1569813296
+mas "Archive Page Extension", id: 6446372766
 mas "Consent-O-Matic", id: 1606897889
 mas "Hush", id: 1544743900
 
@@ -290,4 +301,3 @@ cask "font-powerline-symbols"
 # cask "quicklook-csv"
 # cask "quicklook-json"
 # cask "suspicious-package"
-

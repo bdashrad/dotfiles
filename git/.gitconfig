@@ -20,6 +20,12 @@
   default = "!git checkout $(git originhead)"
   originhead = "!git remote show origin | awk '$0 ~ \"HEAD branch\" {print $NF}'"
 
+  # sha
+  sha-short = rev-parse --short HEAD
+  sha = rev-parse HEAD
+  remote-sha-short = rev-parse --short @{u}
+  remote-sha = rev-parse @{u}
+
   # Diff tools
   vimdiff = difftool --tool=vimdiff
   vsdiff = difftool --tool=vscode

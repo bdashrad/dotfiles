@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+
+# set homebrew prefix
+if [[ "$(uname)" == "Darwin" ]]; then
+  if [[ "$(arch)" == "arm64" ]]; then
+    export HOMEBREW_PREFIX="/opt/homebrew"
+  else
+    export HOMEBREW_PREFIX="/usr/local"
+  fi
+fi
+
+# homebrew path
+export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}";
+
+# asdf
+# shellcheck disable=SC1091
+[[ -d "${HOME}/.asdf" ]] && ASDF_DATA_DIR=${HOME}/.asdf
+[[ -d "${ASDF_DATA_DIR}/shims" ]] && PATH="${ASDF_DATA_DIR}/shims:${PATH}"
+export ASDF_DATA_DIR
+
+# Add brew coreutils to $PATH
+[[ -d "${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin" ]] && PATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:${PATH}"
+
+# brew grep
+[[ -d "${HOMEBREW_PREFIX}/opt/grep/libexec/gnubin" ]] && PATH="${HOMEBREW_PREFIX}/opt/grep/libexec/gnubin:${PATH}"
+
+# brew gnu sed
+[[ -d "${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin" ]] && PATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:${PATH}"
+
+# brew findutils
+[[ -d "${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin" ]] && PATH="${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin:${PATH}"
+
+# CPAN
+[[ -d "${HOME}/perl5/bin" ]] && PATH="${PATH}:${HOME}/perl5/bin"
+
+# go setup
+# shellcheck disable=SC1091
+[[ -f "${HOME}/.golang" ]] && . "${HOME}/.golang"
+
+# kubectl krew
+[[ -d "${KREW_ROOT:-${HOME}/.krew}/bin" ]] && PATH="${KREW_ROOT:-${HOME}/.krew}/bin:${PATH}"
+
+# rancher-desktop or docker desktop
+[[ -d "${HOME}/.rd/bin/" ]] && PATH="${PATH}:${HOME}/.rd/bin"
+[[ -d "/Applications/Docker.app/Contents/Resources/bin/" ]] && PATH="${PATH}:/Applications/Docker.app/Contents/Resources/bin"
+
+# gcloud components install doesn't always link everything
+[[ -d "${HOMEBREW_PREFIX}/google-cloud-sdk/latest/google-cloud-sdk/bin/" ]] && PATH="${PATH}:${HOMEBREW_PREFIX}/google-cloud-sdk/latest/google-cloud-sdk/bin"
+
+# pipx
+# shellcheck disable=SC1091
+export PATH="${PATH}:${HOME}/.local/bin"
+
+# set PATH so it includes user's private bin if it exists
+[[ -d "${HOME}/bin" ]] && PATH="${HOME}/bin:${PATH}"
+
+export PATH

@@ -56,6 +56,12 @@ alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup 
 # Update fork from upstream repo
 alias gitupstream='echo -n "rebase current repo with upstream repo? (CTRL+C to quit): "; read doit; git fetch upstream; git rebase upstream/master;'
 
+# check out default branch
+alias main='git cdef'
+
+# end git
+###
+
 # Recursively delete `.DS_Store` files
 alias cleanup_dsstore="find . -name '*.DS_Store' -type f -ls -delete"
 
