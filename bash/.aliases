@@ -133,7 +133,7 @@ if command -v kubectl >/dev/null 2>&1; then
 fi
 
 if command -v kubectl >/dev/null 2>&1; then
-  alias k8scomplete='k8s_complete && helm_complete && k_complete'
+  alias k8scomplete='k8s_complete && helm_complete'
 fi
 
 if command -v kubeconform >/dev/null 2>&1; then
@@ -153,3 +153,7 @@ alias terraform_complete='complete -C $(which terraform) terraform tf'
 # exponential backoff tool
 # shellcheck disable=SC2154
 [[ -s "${GOPATH}/bin/exponential-backoff-tool" ]] && alias eb='${GOPATH}/bin/exponential-backoff-tool'
+
+# gcloud auth if needed
+alias gauth='if ! gcloud auth list --filter=status:ACTIVE --format="value(account)" | grep . >/dev/null 2>&1; then gcloud auth login --update-adc; fi;'
+# alias gauth='if [[ "$(gcloud auth print-identity-token 2>/dev/null)" == "" ]]; then gcloud auth login --update-adc; fi;'
