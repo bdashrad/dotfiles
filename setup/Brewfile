@@ -31,9 +31,8 @@ brew "stow"
 
 # duti is used to manage default applications
 brew "duti"
-# dutis install currently broken
-# tap "tsonglew/dutis", "https://github.com/tsonglew/dutis"
-# brew "tsonglew/dutis/dutis"
+tap "tsonglew/dutis", "https://github.com/tsonglew/dutis"
+brew "dutis"
 
 # Install bash-completion
 brew "bash-completion@2"
@@ -232,7 +231,7 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 cask "notion"
 cask "notion-calendar"
-cask "todoist"
+cask "todoist-app"
 mas "Toggl Track", id: 1291898086
 
 # Browsers
@@ -242,13 +241,16 @@ cask "firefox"
 cask "google-chrome"
 
 # communication
-cask "coscreen"
 cask "krisp"
-cask "pop"
 cask "slack"
 # cask "zoom"
 
+# screen sharing
+# cask "coscreen"
+# cask "pop-app"
+
 # development
+cask "cursor"
 # cask "fig"
 # cask "kdiff3"
 cask "ngrok"
@@ -262,7 +264,9 @@ cask "visual-studio-code"
 brew "docker"
 brew "docker-compose"
 brew "docker-buildx"
-brew "lima"
+# brew "lima"
+brew "colima"
+# cask "orbstack"
 # cask "rancher"
 tap "snyk/tap"
 brew "snyk"

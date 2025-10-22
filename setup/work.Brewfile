@@ -30,18 +30,19 @@ brew "lftp"
 # cask "cyberduck"
 # cask "mountain-duck"
 
-# Container scanning
+# Container tools
 tap "anchore/grype"
-brew "grype"
+brew "grype" # vulnerability scanner for container images and filesystems
 tap "anchore/syft"
-brew "syft"
-brew "goodwithtech/r/dockle"
+brew "syft" # generates SBOMs from container images and filesystems
+brew "goodwithtech/r/dockle" # container image linter for security best practices
 tap "aquasecurity/trivy"
-brew "trivy"
-brew "dive"
+brew "trivy" # container vulnerability/misconfiguration scanner
+brew "dive" # explore a docker image, layer contents, and discover ways to shrink your Docker image size
 
 # golang
-brew "ko"
+brew "golangci-lint"
+brew "ko" # Build and deploy Go applications on Kubernetes without a Dockerfile
 
 # install vault and safe cli tool
 # brew "vault"
@@ -52,18 +53,18 @@ brew "ko"
 # tap "jesseduffield/lazydocker"
 # brew "lazydocker"
 
-# Install kubernetes stuff
-# brew "kubernetes-cli"
-# brew "kubernetes-helm"
+# kubernetes tooling
+# brew "kubernetes-cli" # done via asdf
+# brew "kubernetes-helm" # done via asdf
 # brew "kops"
 # brew "aws-iam-authenticator"
-brew "k9s"
+brew "k9s" # kubernetes TUI
 # tap "GoogleContainerTools/kpt", "https://github.com/GoogleContainerTools/kpt.git"
 # brew "GoogleContainerTools/kpt/kpt"
 # brew "kubectx"
-# brew "kube-ps1"
-brew "kubie"
-brew "krew"
+# brew "kube-ps1" # prefer powerline for now
+brew "kubie" # manage multiple kubernetes clusters and namespaces
+brew "krew" # kubectl plugin manager
 
 # data things
 brew "csvq"
@@ -84,8 +85,9 @@ brew "awscli"
 # brew "aws-rotate-key"
 
 # gcp
-cask "google-cloud-sdk"
+cask "gcloud-cli"
 brew "cloud-sql-proxy"
+brew "gemini-cli"
 
 # work stuff
 tap "lokalise/cli-2"
