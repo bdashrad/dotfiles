@@ -21,6 +21,9 @@ brew "terraform-docs"
 # brew "terraform_landscape"
 brew "tflint"
 brew "hcl2json"
+brew "tfupdate"
+tap "minamijoyo/hcledit"
+brew "hcledit"
 
 # development
 # cask "postman"
@@ -30,14 +33,22 @@ brew "lftp"
 # cask "cyberduck"
 # cask "mountain-duck"
 
+# development
+brew "pre-commit"
+
+# security tools
+tap "aquasecurity/trivy"
+brew "trivy" # container vulnerability/misconfiguration scanner
+brew "checkov"
+brew "terrascan"
+brew "infracost"
+
 # Container tools
 tap "anchore/grype"
 brew "grype" # vulnerability scanner for container images and filesystems
 tap "anchore/syft"
 brew "syft" # generates SBOMs from container images and filesystems
 brew "goodwithtech/r/dockle" # container image linter for security best practices
-tap "aquasecurity/trivy"
-brew "trivy" # container vulnerability/misconfiguration scanner
 brew "dive" # explore a docker image, layer contents, and discover ways to shrink your Docker image size
 
 # golang
