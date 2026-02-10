@@ -76,11 +76,16 @@ command -v op >/dev/null 2>&1 && . <(op completion bash) || true
 # enable kube completion
 if command -v kubectl >/dev/null 2>&1; then
   k8s_complete
-  eval "$(complete -p kubectl | awk '{$NF="k"; print}')"
-  eval "$(complete -p kubectl | awk '{$NF="kp"; print}')"
+  eval "$(complete -p kubectl | awk '{$NF="k"; print}')" || true
+  eval "$(complete -p kubectl | awk '{$NF="kp"; print}')" || true
   command -v helm >/dev/null 2>&1 && helm_complete
   command -v kustomize >/dev/null 2>&1 && . <(kustomize completion bash)
 fi
+
+# ngrok
+  if command -v ngrok >/dev/null 2>&1; then
+    eval "$(ngrok completion)" || true
+  fi
 
 # uncomment to enable tracing output of your bash_profile to find loading issues
 # set +x

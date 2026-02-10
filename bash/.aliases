@@ -155,5 +155,5 @@ alias terraform_complete='complete -C $(which terraform) terraform tf'
 [[ -s "${GOPATH}/bin/exponential-backoff-tool" ]] && alias eb='${GOPATH}/bin/exponential-backoff-tool'
 
 # gcloud auth if needed
-alias gauth='if ! gcloud auth list --filter=status:ACTIVE --format="value(account)" | grep . >/dev/null 2>&1; then gcloud auth login --update-adc; fi;'
-# alias gauth='if [[ "$(gcloud auth print-identity-token 2>/dev/null)" == "" ]]; then gcloud auth login --update-adc; fi;'
+# alias gauth='if ! gcloud auth list --filter=status:ACTIVE --format="value(account)" | grep . >/dev/null 2>&1; then gcloud auth login --update-adc; fi;'
+alias gauth='if [[ "$(gcloud auth print-identity-token 2>/dev/null)" == "" ]]; then echo "gcloud needs to reauthenticate."; gcloud auth login --update-adc; else echo "gcloud is authenticated."; fi;'
