@@ -1,3 +1,13 @@
+# gitconfig
+# see the following pages for inspiration
+# - https://motlin.medium.com/git-config-3d20c4c079ba
+# - https://blog.gitbutler.com/git-tips-and-tricks
+# - https://blog.gitbutler.com/how-git-core-devs-configure-git
+# - https://git-scm.com/book/en/v2
+# - https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
+# - https://scottchacon.com/2010/03/08/rerere
+
+
 [alias]
   # shorten some commonly used commands
   st = status
@@ -7,6 +17,25 @@
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
   ld = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
   ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+
+  l = log \
+        --graph \
+        --decorate \
+        --date=short \
+        --format=format:'%C(auto)%(decorate:prefix=👇 ,suffix=%n,tag=,separator= )%C(reset)%C(brightyellow)%h%C(reset) %C(normal)%<|(-50,trunc)%s%C(reset) %C(brightmagenta)%<(15,trunc)%an%C(reset) %C(brightblue)%ad%C(reset) %C(brightcyan)%ar%C(reset)'
+
+  laa = l --all
+
+  la = l \
+        --exclude=refs/prefetch/* \
+        --exclude=refs/remotes/origin/pr/* \
+        --exclude=refs/remotes/upstream/pr/* \
+        --exclude=refs/remotes/origin/dependabot/* \
+        --exclude=refs/notes/tests/* \
+        --exclude=refs/stash \
+        --all
+
+  decorate = la --simplify-by-decoration
 
   # Show the diff between the latest commit and the current state
   d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
@@ -29,6 +58,10 @@
   # Diff tools
   vimdiff = difftool --tool=vimdiff
   vsdiff = difftool --tool=vscode
+
+[branch]
+  sort = -committerdate
+  autoSetupRebase = always
 
 [color]
   ui = always
@@ -57,6 +90,9 @@
   changed = green
   untracked = cyan
 
+[column]
+  ui = auto
+
 [commit]
   gpgsign = true
 
@@ -68,12 +104,18 @@
   helper = store
 
 [delta]
-  navigate = true
+  dark = true
+  navigate = true   # use n and N to move between diff sections
+  hyperlinks = true # create hyperlinks to files and commits
+  hyperlinks-file-link-format = "vscode://file/{path}:{line}"
 
 # git diff
 [diff]
   tool = p4merge
-  colorMoved = default
+  colorMoved = zebra
+  algorithm = histogram
+  mnemonicPrefix = true
+  renames = copies
 
 [difftool]
   prompt = false
@@ -92,6 +134,14 @@
 [difftool "vscode"]
   cmd = code --diff $LOCAL $REMOTE
 
+[feature]
+  experimental = true
+
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
+
 [filter "media"]
   required = true
   clean = git media clean %f
@@ -105,7 +155,11 @@
   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
   allowedsignersfile = ~/.ssh/allowed_signers
 
+[grep]
+  patternType = perl
+
 [help]
+  # autocorrect = prompt
   autocorrect = 50
 
 [init]
@@ -117,7 +171,8 @@
 [merge]
   tool = p4merge
   prompt = true
-  conflictstyle = diff3
+  conflictstyle = zdiff3
+  # autostash = true
 
 [mergetool]
   keepTemporaries = false
@@ -136,9 +191,14 @@
   trustExitCode = false
 
 [mergetool "vscode"]
-  conflictstyle = diff3
+  conflictstyle = zdiff3
   cmd = code --wait"$MERGED"
   trustExitCode = false
+
+[pager]
+  log = delta
+  diff = delta
+  show = delta
 
 [protocol]
   version = 2
@@ -147,15 +207,27 @@
 [push]
   default = current
   autoSetupRemote = true
+  # followTags = true
 
 [pull]
   ff = only
+	twohead = ort
+
+[rebase]
+  autoStash = true
+  autoSquash = true
+  updateRefs = true
+
+[rerere]
+	enabled = true
+  autoupdate = true
 
 [stash]
   showPatch = true
 
 [tag]
   forceSignAnnotated = true
+  sort = version:refname
 
 # # rewrites
 # [url "git@github.com:"]
@@ -179,12 +251,18 @@
 [url "https://x-access-token@github.com"]
   insteadOf = ssh://git@github.com
 
+[user]
+  # https://blog.github.com/2016-03-28-git-2-8-has-been-released/#dont-guess-my-identity
+  useConfigOnly = true
+
 # use separate file for username / github token / etc
 [include]
   path = ~/.gitconfig.local
+
 [credential "https://github.com"]
 	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
+
 [credential "https://gist.github.com"]
 	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
