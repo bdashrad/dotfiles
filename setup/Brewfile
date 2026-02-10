@@ -31,8 +31,8 @@ brew "stow"
 
 # duti is used to manage default applications
 brew "duti"
-tap "tsonglew/dutis", "https://github.com/tsonglew/dutis"
-brew "dutis"
+# tap "tsonglew/dutis", "https://github.com/tsonglew/dutis"
+brew "tsonglew/dutis/dutis"
 
 # Install bash-completion
 brew "bash-completion@2"
@@ -184,11 +184,10 @@ tap "buo/cask-upgrade"
 # security
 cask "1password"
 cask "1password-cli"
-tap "cloudflare/cloudflare"
-brew "cloudflared"
+# tap "cloudflare/cloudflare"
+# brew "cloudflared"
 cask "keybase"
 cask "lulu"
-cask "private-internet-access"
 mas "Tailscale", id: 1475387142
 cask "tripmode"
 # cask "tunnelblick" # OpenVPN client
@@ -218,7 +217,7 @@ cask "rectangle"
 cask "stay"
 
 # menu bar
-cask "bartender"
+# cask "bartender"
 # cask "jordanbaird-ice" # open source bartender alternative
 # cask "vanilla" # bartender alternative
 
@@ -241,9 +240,8 @@ cask "firefox"
 cask "google-chrome", args: { adopt: true }
 
 # communication
-cask "krisp"
 cask "slack", args: { adopt: true }
-# cask "zoom", args: { adopt: true }
+cask "zoom", args: { adopt: true }
 
 # screen sharing
 # cask "coscreen"

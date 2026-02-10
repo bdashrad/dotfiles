@@ -12,6 +12,9 @@ cask "backblaze"
 cask "transmission"
 cask "unraid-usb-creator-next"
 
+# communication
+cask "krisp"
+
 # media
 mas "GarageBand", id: 682658836
 cask "gyazo"
@@ -22,6 +25,7 @@ cask "vlc"
 # network
 brew "blueutil"
 cask "bluetility"
+cask "private-internet-access"
 mas "Tailscale", id: 1475387142
 mas "Wireguard", id: 1451685025
 
@@ -30,8 +34,8 @@ cask "anylist"
 mas "Home Assistant", id: 1099568401
 
 # social
-# cask "discord"
-cask "discord@canary"
+cask "discord"
+# cask "discord@canary"
 mas "Ivory", id: 6444602274
 cask "signal"
 
