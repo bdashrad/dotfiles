@@ -64,9 +64,9 @@ TFCOMMAND=$(command -v terraform) && complete -C "${TFCOMMAND}" terraform tf
 
 # gcloud
 # shellcheck disable=SC1091,2154
-if [[ -f ${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc ]]; then
-  . "${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc"
-  . "${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
+if [[ -f ${HOMEBREW_PREFIX}/share/google-cloud-sdk/completion.bash.inc ]]; then
+  . "${HOMEBREW_PREFIX}/share/google-cloud-sdk/completion.bash.inc"
+  . "${HOMEBREW_PREFIX}/share/google-cloud-sdk/path.bash.inc"
 fi
 
 # 1password completion
