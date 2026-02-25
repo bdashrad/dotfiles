@@ -97,6 +97,7 @@
   gpgsign = true
 
 [core]
+  # pager = delta
   excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
 
