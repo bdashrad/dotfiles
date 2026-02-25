@@ -9,6 +9,7 @@ mas "Archive Page Extension", id: 6446372766
 
 # utilities
 cask "backblaze"
+cask "qmk-toolbox"
 cask "transmission"
 cask "unraid-usb-creator-next"
 
