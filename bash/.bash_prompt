@@ -168,13 +168,13 @@ set_prompts() {
     PS1+="$(
       "${HOMEBREW_PREFIX}/bin/powerline-go" \
         -error $? \
-        -theme "solarized-dark16" \
+        -theme "gruvbox" \
         -jobs "$(jobs -p | wc -l)" \
         -hostname-only-if-ssh \
         -cwd-max-depth 3 \
         -git-mode simple \
         -modules "host,ssh,kube,cwd,perms,terraform-workspace,git,jobs,exit,newline,root" \
-        -path-aliases ${WORKCODE}=@WORK
+        -path-aliases "${PLGO_PATH_ALIAS}"
     )"
 
     # Uncomment the following line to automatically clear errors after showing
