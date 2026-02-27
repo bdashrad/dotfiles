@@ -168,13 +168,7 @@ set_prompts() {
     PS1+="$(
       "${HOMEBREW_PREFIX}/bin/powerline-go" \
         -error $? \
-        -theme "gruvbox" \
         -jobs "$(jobs -p | wc -l)" \
-        -hostname-only-if-ssh \
-        -cwd-max-depth 3 \
-        -git-mode simple \
-        -modules "host,ssh,kube,cwd,perms,terraform-workspace,git,jobs,exit,newline,root" \
-        -shorten-gke-names -shorten-eks-names \
         -path-aliases "${PLGO_PATH_ALIAS}"
     )"
 

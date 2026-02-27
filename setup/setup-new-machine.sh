@@ -156,7 +156,7 @@ stow -t ${HOME}/.ssh ssh
   curl -o "${HOME}/.ssh/authorized_keys" https://github.com/bdashrad.keys
 
 title "Stow dotfiles"
-stow {atuin,bash,blesh,colima,docker,git,linters,prefs,ruby,screen,terraform,tmux,vim}
+stow {atuin,bash,blesh,colima,docker,git,linters,powerline-go,prefs,ruby,screen,terraform,tmux,vim}
 mkdir -p "${HOME}/bin"
 stow -t "${HOME}/bin/" bin
 

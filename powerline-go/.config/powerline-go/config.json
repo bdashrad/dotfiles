@@ -1,0 +1,20 @@
+{
+  "cwd-max-depth": 3,
+  "hostname-only-if-ssh": true,
+  "shorten-gke-names": true,
+  "shorten-eks-names": true,
+  "git-mode": "compact",
+  "theme": "gruvbox",
+  "modules": [
+    "host",
+    "ssh",
+    "cwd",
+    "perms",
+    "terraform-workspace",
+    "git",
+    "jobs",
+    "exit",
+    "newline",
+    "root"
+  ]
+}
