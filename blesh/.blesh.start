@@ -2,4 +2,4 @@
 
 # ble.sh
 # shellcheck disable=2244
-[[ ${BLE_VERSION-} ]] && ble-attach
+[[ ! ${BLE_VERSION-} ]] || ble-attach

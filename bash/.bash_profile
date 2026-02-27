@@ -7,6 +7,11 @@
 # BASH_XTRACEFD="5"
 # set -x
 
+# ble.sh
+# shellcheck disable=SC1091
+[[ -f ${HOME}/.blesh.load ]] && source "${HOME}/.blesh.load"
+
+
 if [[ "$(uname)" == "Darwin" ]]; then
   if [[ "$(arch)" == "arm64" ]]; then
     export HOMEBREW_PREFIX="/opt/homebrew"
@@ -14,11 +19,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
     export HOMEBREW_PREFIX="/usr/local"
   fi
 fi
-
-# ble.sh
-# shellcheck disable=SC1091
-[[ -f ${HOME}/.blesh.load ]] && source "${HOME}/.blesh.load"
-
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -78,16 +78,14 @@ fi
 GRC=$(command -v grc)
 if [[ "${TERM}" != dumb ]] && [[ -n "${GRC}" ]]
   then
-    alias colourify="$GRC -es --colour=auto"
+    # shellcheck disable=SC2139
+    alias colourify="${GRC} -es --colour=auto"
     alias configure='colourify ./configure'
     for app in {diff,make,gcc,g++,ping,traceroute}; do
-      alias "$app"='colourify '$app
+      # shellcheck disable=SC2139
+      alias "${app}"='colourify '${app}
   done
 fi
-
-# set up fzf keybindings
-# shellcheck disable=SC1091
-[[ -f "${HOME}/.fzf.bash" ]] && . "${HOME}/.fzf.bash"
 
 # # use local folder for CPAN instead of homebrew cellar
 # eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
@@ -109,22 +107,27 @@ fi
 # shellcheck disable=SC1091
 [[ -f "${HOME}/.config/op/plugins.sh" ]] && . "${HOME}/.config/op/plugins.sh"
 
-# ble.sh
+# shell completion
 # shellcheck disable=SC1091
-[[ -f "${HOME}/.blesh.start" ]] && source "${HOME}/.blesh.start"
+[[ -f "${HOME}/.completion" ]] && . "${HOME}/.completion"
+
+# # set up fzf keybindings
+# # shellcheck disable=SC1091
+# [[ -f "${HOME}/.fzf.bash" ]] && . "${HOME}/.fzf.bash"
 
 # atuin
 # atuin requires ble.sh above
 # shellcheck disable=SC1091
 [[ -f "${HOME}/.atuin.load" ]] && source "${HOME}/.atuin.load"
 
-# shell completion
-# shellcheck disable=SC1091
-[[ -f "${HOME}/.completion" ]] && . "${HOME}/.completion"
-
 # source override last for overrides
 # shellcheck disable=SC1091
 [[ -f "${HOME}/.override" ]] && . "${HOME}/.override"
+
+# ble.sh
+# shellcheck disable=SC1091
+[[ -f "${HOME}/.blesh.start" ]] && source "${HOME}/.blesh.start"
+
 
 # uncomment to enable tracing output of your bash_profile to find loading issues
 # set +x
