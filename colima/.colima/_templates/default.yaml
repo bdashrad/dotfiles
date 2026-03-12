@@ -2,7 +2,7 @@
 # Default: 2
 cpu: 2
 
-# Size of the disk in GiB to be allocated to the virtual machine.
+# Size of the disk in GiB to be allocated to the virtual machine for container data.
 # NOTE: value can only be increased after virtual machine has been created.
 #
 # Default: 100
@@ -153,9 +153,17 @@ docker: {}
 # Default: qemu
 vmType: vz
 
+# Port forwarder for the virtual machine (ssh, grpc, none).
+# ssh is more stable but supports only TCP.
+# grpc supports both TCP and UDP, but is experimental.
+# none disables port forwarding.
+#
+# Default: ssh
+portForwarder: ssh
+
 # Utilise rosetta for amd64 emulation (requires m1 mac and vmType `vz`)
 # Default: false
-rosetta: true
+rosetta: false
 
 # Enable foreign architecture emulation via binfmt (e.g. amd64 on arm64, arm64 on amd64)
 # Default: true
@@ -220,7 +228,7 @@ provision: []
 # Modify ~/.ssh/config automatically to include a SSH config for the virtual machine.
 # SSH config will still be generated in $COLIMA_HOME/ssh_config regardless.
 # Default: true
-sshConfig: true
+sshConfig: false
 
 # The port number for the SSH server for the virtual machine.
 # When set to 0, a random available port is used.
@@ -249,7 +257,7 @@ mounts: []
 # The file path to a custom disk image can be specified to override the behaviour.
 #
 # Default: ""
-diskImage: ""
+diskImage: ''
 
 # Size of the disk in GiB for the root filesystem of the virtual machine.
 # This value is ignored if no runtime is in use. i.e. `none` runtime.
