@@ -238,7 +238,7 @@ ignored_commands = ["cd", "ls"]
 # Defaults to true. The left arrow key will exit the TUI when scrolling before the first character
 exit_past_line_start = false
 # Defaults to true. The right arrow key performs the same functionality as Tab and copies the selected line to the command line to be modified.
-# accept_past_line_end = true
+accept_past_line_end = false
 
 [sync]
 # Enable sync v2 by default
