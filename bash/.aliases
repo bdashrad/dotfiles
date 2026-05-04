@@ -157,3 +157,9 @@ alias terraform_complete='complete -C $(which terraform) terraform tf'
 # gcloud auth if needed
 # alias gauth='if ! gcloud auth list --filter=status:ACTIVE --format="value(account)" | grep . >/dev/null 2>&1; then gcloud auth login --update-adc; fi;'
 alias gauth='if [[ "$(gcloud auth print-identity-token 2>/dev/null)" == "" ]]; then echo "gcloud needs to reauthenticate."; gcloud auth login --update-adc; else echo "gcloud is authenticated."; fi;'
+
+# run kpt (https://kpt.dev/) from docker
+alias kpt='docker run --rm -v "$PWD":/workdir -w /workdir ghcr.io/kptdev/kpt:v1.0.0-beta.62.1'
+
+# run conftest from docker
+alias conftest='docker run --rm -v "$PWD":/project -w /project openpolicyagent/conftest'

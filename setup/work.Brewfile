@@ -42,6 +42,7 @@ brew "trivy" # container vulnerability/misconfiguration scanner
 brew "checkov"
 brew "terrascan"
 brew "infracost"
+brew "zizmor"
 
 # Container tools
 tap "anchore/grype"
@@ -99,6 +100,10 @@ brew "awscli"
 cask "gcloud-cli"
 brew "cloud-sql-proxy"
 brew "gemini-cli"
+
+# policy management
+brew "conftest"
+brew "googlecontainertools/kpt/kpt"
 
 # work stuff
 tap "lokalise/cli-2"
