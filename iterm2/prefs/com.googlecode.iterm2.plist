@@ -23,11 +23,13 @@
 	<key>AiMaxTokens</key>
 	<integer>400000</integer>
 	<key>AiModel</key>
-	<string>gpt-5.1</string>
+	<string>gpt-5.2</string>
 	<key>AiResponseMaxTokens</key>
 	<integer>128000</integer>
 	<key>AitermURL</key>
 	<string>https://api.openai.com/v1/responses</string>
+	<key>AllowClipboardAccess</key>
+	<true/>
 	<key>AutoHideTmuxClientSession</key>
 	<true/>
 	<key>Custom Color Presets</key>
@@ -5388,7 +5390,7 @@
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
 	<key>findMode_iTerm</key>
-	<integer>0</integer>
+	<integer>3</integer>
 	<key>findRegex_iTerm</key>
 	<true/>
 	<key>kCPKSelectionViewPreferredModeKey</key>
