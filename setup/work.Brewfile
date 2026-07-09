@@ -22,8 +22,7 @@ brew "terraform-docs"
 brew "tflint"
 brew "hcl2json"
 brew "tfupdate"
-tap "minamijoyo/hcledit"
-brew "hcledit"
+brew "minamijoyo/hcledit/hcledit", trusted: true
 
 # development
 # cask "postman"
@@ -37,7 +36,6 @@ brew "lftp"
 brew "pre-commit"
 
 # security tools
-tap "aquasecurity/trivy"
 brew "trivy" # container vulnerability/misconfiguration scanner
 brew "checkov"
 brew "terrascan"
@@ -45,38 +43,17 @@ brew "infracost"
 brew "zizmor"
 
 # Container tools
-tap "anchore/grype"
-brew "grype" # vulnerability scanner for container images and filesystems
-tap "anchore/syft"
-brew "syft" # generates SBOMs from container images and filesystems
-brew "goodwithtech/r/dockle" # container image linter for security best practices
+brew "anchore/grype/grype", trusted: true # vulnerability scanner for container images and filesystems
+brew "anchore/syft/syft", trusted: true  # generates SBOMs from container images and filesystems
+brew "goodwithtech/r/dockle", trusted: true # container image linter for security best practices
 brew "dive" # explore a docker image, layer contents, and discover ways to shrink your Docker image size
 
 # golang
 brew "golangci-lint"
 brew "ko" # Build and deploy Go applications on Kubernetes without a Dockerfile
 
-# install vault and safe cli tool
-# brew "vault"
-# tap "starkandwayne/cf"
-# brew "safe"
-
 # install lazydocker
-# tap "jesseduffield/lazydocker"
-# brew "lazydocker"
-
-# kubernetes tooling
-# brew "kubernetes-cli" # done via asdf
-# brew "kubernetes-helm" # done via asdf
-# brew "kops"
-# brew "aws-iam-authenticator"
-brew "k9s" # kubernetes TUI
-# tap "GoogleContainerTools/kpt", "https://github.com/GoogleContainerTools/kpt.git"
-# brew "GoogleContainerTools/kpt/kpt"
-# brew "kubectx"
-# brew "kube-ps1" # prefer powerline for now
-brew "kubie" # manage multiple kubernetes clusters and namespaces
-brew "krew" # kubectl plugin manager
+# brew "jesseduffield/lazydocker/lazydocker" # TUI for docker and docker-compose
 
 # data things
 brew "csvq"
@@ -103,14 +80,12 @@ brew "gemini-cli"
 
 # policy management
 brew "conftest"
-brew "googlecontainertools/kpt/kpt"
-
-# work stuff
-tap "lokalise/cli-2"
-brew "lokalise/cli-2/lokalise2"
-brew "mockery"
-brew "postgresql@15", link: true, restart_service: false, conflicts_with: ["postgresql", "postgresql@14"]
 
 # Node Corepack
 # https://nodejs.org/api/corepack.html
 brew "node"
+
+# work stuff
+brew "lokalise/cli-2/lokalise2", trusted: true
+brew "mockery"
+brew "postgresql@15", link: true, restart_service: false, conflicts_with: ["postgresql", "postgresql@14"]

@@ -23,6 +23,10 @@ cask "gyazo"
 # cask "lastfm"
 cask "vlc"
 
+# sound management
+cask "eqmac"
+cask "soundsource"
+
 # network
 brew "blueutil"
 cask "bluetility"

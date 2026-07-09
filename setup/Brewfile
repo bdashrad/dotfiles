@@ -32,7 +32,7 @@ brew "stow"
 # duti is used to manage default applications
 brew "duti"
 # tap "tsonglew/dutis", "https://github.com/tsonglew/dutis"
-brew "tsonglew/dutis/dutis"
+brew "tsonglew/dutis/dutis", trusted: true
 
 # Install bash-completion
 brew "bash-completion@2"
@@ -76,8 +76,7 @@ brew "tmate"
 brew "jq"
 brew "ijq"
 brew "jd"
-tap "noahgorstein/tap"
-brew "noahgorstein/tap/jqp"
+brew "noahgorstein/tap/jqp", trusted: true
 
 # yaml
 brew "yamllint"
@@ -86,7 +85,7 @@ brew "yq"
 # use your version manager to
 # install more version managers
 brew "asdf"
-cask "macupdater"
+# cask "macupdater"
 
 # git things
 brew "bfg"
@@ -98,10 +97,7 @@ brew "git-delta"
 
 # doc things
 brew "adr-tools"
-tap "norwoodj/tap"
-brew "helm-docs"
-tap "git-chglog/git-chglog"
-brew "git-chglog"
+brew "git-cliff" # changelog generator taht supports conventional commits
 brew "tlrc" # tldr in rust
 
 # python things
@@ -128,15 +124,13 @@ brew "pstree"
 
 # Media stuff
 cask "ears"
-cask "eqmac"
 # brew "ffmpeg" --with-libvpx
 brew "graphviz"
-brew "imagemagick"
+brew "imagemagick-full" # need full for font support
 cask "notunes"
 brew "optipng"
 brew "pngcrush"
 brew "pngquant"
-cask "soundsource"
 cask "spotify"
 
 # Install everything else
@@ -167,7 +161,7 @@ brew "markdownlint-cli"
 brew "markdownlint-cli2"
 brew "shellcheck"
 brew "sqlfluff"
-brew "get-woke/tap/woke"
+brew "get-woke/tap/woke", trusted: true
 
 ################################
 # Casks
@@ -179,7 +173,9 @@ brew "get-woke/tap/woke"
 # export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # add brew-cask-upgrade
-tap "buo/cask-upgrade"
+tap "buo/cask-upgrade", trusted: {
+  command: "cu"
+}
 
 # security
 cask "1password"
@@ -208,6 +204,7 @@ cask "MonitorControl"
 # cask "oversight"
 brew "rclone"
 brew "showkey"
+brew "homeport/tap/termshot"
 cask "the-unarchiver"
 # cask "xquartz"
 
@@ -257,17 +254,19 @@ cask "visual-studio-code"
 # cask "warp"
 
 # containerization
-# cask "docker"
-brew "docker"
+brew "container" # apple container tool
+# cask "docker" # docker desktop
+# brew "docker-engine" # open source docker engine
+brew "docker" # docker cli
 brew "docker-buildx"
 brew "docker-compose"
 brew "docker-credential-helper"
 # brew "lima"
+# brew "lima-additional-guestagents"
 brew "colima"
 # cask "orbstack"
 # cask "rancher"
-tap "snyk/tap"
-brew "snyk"
+brew "snyk/tap/snyk", trusted: true
 
 # virtualization
 # cask "virtualbox"
