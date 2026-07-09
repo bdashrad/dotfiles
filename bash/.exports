@@ -90,4 +90,4 @@ export KUBE_CONFIG_PATH=${HOME}/.kube/config
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # use colima for docker
-export DOCKER_HOST=unix://${HOME}/.colima/docker.sock
+export DOCKER_HOST=unix://${HOME}/.colima/default/docker.sock
