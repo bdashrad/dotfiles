@@ -1090,8 +1090,8 @@ bleopt filename_ls_colors="$LS_COLORS"
 ## the multiline mode.
 
 # # For emacs editing mode
-# ble-bind -m emacs -f 'C-m' 'accept-line'
-# ble-bind -m emacs -f 'RET' 'accept-line'
+ble-bind -m emacs -f 'C-m' 'accept-line'
+ble-bind -m emacs -f 'RET' 'accept-line'
 
 # # For vim editing mode
 # ble-bind -m vi_imap -f 'C-m' 'accept-line'
