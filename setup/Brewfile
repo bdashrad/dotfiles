@@ -60,7 +60,7 @@ brew "entr"
 brew "ack"
 brew "fzf"
 brew "ripgrep"
-brew "the_silver_searcher"
+# brew "the_silver_searcher"
 brew "z"  # jump around paths by frecency
 
 # dev stuff
@@ -88,7 +88,7 @@ brew "asdf"
 # cask "macupdater"
 
 # git things
-brew "bfg"
+# brew "bfg" # install if needed
 brew "gh"
 brew "gist"
 brew "git"
@@ -151,6 +151,7 @@ brew "powerline-go"
 brew "gpg"
 brew "gnupg"
 brew "pinentry-mac"
+cask "keybase"
 
 # Install compression stuff
 brew "p7zip"
@@ -182,9 +183,9 @@ cask "1password"
 cask "1password-cli"
 # tap "cloudflare/cloudflare"
 # brew "cloudflared"
-cask "keybase"
 cask "lulu"
-mas "Tailscale", id: 1475387142
+# mas "Tailscale", id: 1475387142
+cask "tailscale"
 cask "tripmode"
 # cask "tunnelblick" # OpenVPN client
 # cask "wireshark"
@@ -194,7 +195,7 @@ mas "NextDNS", id: 1464122853
 # utilities
 cask "alfred"
 mas "Amphetamine", id: 937984704
-# cask "barrier"
+cask "deskflow/tap/deskflow", trusted: true # open source replacement for synergy/barrier
 mas "Display Menu", id: 549083868
 # cask "exiftool"
 cask "iterm2"
@@ -226,7 +227,7 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 cask "notion"
 cask "notion-calendar"
-cask "todoist-app"
+# cask "todoist-app"
 mas "Toggl Track", id: 1291898086
 
 # Browsers

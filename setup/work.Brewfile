@@ -17,9 +17,10 @@
 # brew "packer"
 
 # brew "terraform"
+brew "hashicorp/tap/terraform-ls", trusted: true
 brew "terraform-docs"
 # brew "terraform_landscape"
-brew "tflint"
+cask "terraform-linters/tap/tflint", trusted: true
 brew "hcl2json"
 brew "tfupdate"
 brew "minamijoyo/hcledit/hcledit", trusted: true
@@ -58,6 +59,7 @@ brew "ko" # Build and deploy Go applications on Kubernetes without a Dockerfile
 # data things
 brew "csvq"
 brew "dos2unix"
+brew "slingdata-io/sling/sling", trusted: true
 # brew r
 # mkdir -p ~/Library/R/3.2/library
 
