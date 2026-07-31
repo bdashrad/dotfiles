@@ -8,14 +8,6 @@
 # BASH_XTRACEFD="5"
 # set -x
 
-if [[ "$(uname)" == "Darwin" ]]; then
-  if [[ "$(arch)" == "arm64" ]]; then
-    export HOMEBREW_PREFIX="/opt/homebrew"
-  else
-    export HOMEBREW_PREFIX="/usr/local"
-  fi
-fi
-
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 # [[ -s "$HOME/.ssh/config" ]] && \
 #   complete -o "default" -o "nospace" -W "$(awk '$1=="Host" {if ($2!="*"); for (i=2; i<=NF;i++){print $i}}' ~/.ssh/config)" scp sftp ssh
@@ -31,29 +23,31 @@ unset file
 # [[ -f "/etc/bash_completion" ]] && . /etc/bash_completion
 
 # enable homebrew bash_completion
+# shellcheck disable=SC2154
 if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+  export BASH_COMPLETION_COMPAT_DIR=/dev/null
   # shellcheck disable=SC1091
   source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
-else
-  # shellcheck disable=SC2312
-  find "${HOMEBREW_PREFIX}/etc/bash_completion.d/" -not -type d -print0 \
-  | while read -r -d $'\0' COMPLETION; do
-    # shellcheck disable=SC1090
-    [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
-    done
+# else
+#   # shellcheck disable=SC2312
+#   find "${HOMEBREW_PREFIX}/etc/bash_completion.d/" -not -type d -print0 \
+#   | while read -r -d $'\0' COMPLETION; do
+#     # shellcheck disable=SC1090
+#     [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
+#     done
 fi
 
 # enable aws-cli completion
-[[ -f "${HOMEBREW_PREFIX}/bin/aws_completer" ]] && complete -C aws_completer aws
+# [[ -f "${HOMEBREW_PREFIX}/bin/aws_completer" ]] && complete -C aws_completer aws
 
 # enable hugo completion
 # [[ -f "$HOME/.hugo/hugo.sh" ]] && . "$HOME/.hugo/hugo.sh"
 
 # enable vault completion
-[[ -f "${HOMEBREW_PREFIX}/bin/vault" ]] && complete -C "${HOMEBREW_PREFIX}/bin/vault" vault
+# [[ -f "${HOMEBREW_PREFIX}/bin/vault" ]] && complete -C "${HOMEBREW_PREFIX}/bin/vault" vault
 
 # enable git completion
-[[ -f "${HOMEBREW_PREFIX}/etc/bash_completion.d/git-completion.bash" ]] && . "${HOMEBREW_PREFIX}/etc/bash_completion.d/git-completion.bash"
+# [[ -f "${HOMEBREW_PREFIX}/etc/bash_completion.d/git-completion.bash" ]] && . "${HOMEBREW_PREFIX}/etc/bash_completion.d/git-completion.bash"
 
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
@@ -66,26 +60,26 @@ TFCOMMAND=$(command -v terraform) && complete -C "${TFCOMMAND}" terraform tf
 # shellcheck disable=SC1091,2154
 if [[ -f ${HOMEBREW_PREFIX}/share/google-cloud-sdk/completion.bash.inc ]]; then
   . "${HOMEBREW_PREFIX}/share/google-cloud-sdk/completion.bash.inc"
-  . "${HOMEBREW_PREFIX}/share/google-cloud-sdk/path.bash.inc"
+  # . "${HOMEBREW_PREFIX}/share/google-cloud-sdk/path.bash.inc"
 fi
 
 # 1password completion
 # shellcheck disable=SC1090,SC2015
-command -v op >/dev/null 2>&1 && . <(op completion bash) || true
+# command -v op >/dev/null 2>&1 && . <(op completion bash) || true
 
 # enable kube completion
-if command -v kubectl >/dev/null 2>&1; then
-  k8s_complete
-  eval "$(complete -p kubectl | awk '{$NF="k"; print}')" || true
-  eval "$(complete -p kubectl | awk '{$NF="kp"; print}')" || true
-  command -v helm >/dev/null 2>&1 && helm_complete
-  command -v kustomize >/dev/null 2>&1 && . <(kustomize completion bash)
-fi
+# if command -v kubectl >/dev/null 2>&1; then
+#   k8s_complete
+#   eval "$(complete -p kubectl | awk '{$NF="k"; print}')" || true
+#   eval "$(complete -p kubectl | awk '{$NF="kp"; print}')" || true
+#   command -v helm >/dev/null 2>&1 && helm_complete
+#   command -v kustomize >/dev/null 2>&1 && . <(kustomize completion bash)
+# fi
 
-# ngrok
-  if command -v ngrok >/dev/null 2>&1; then
-    eval "$(ngrok completion)" || true
-  fi
+# # ngrok
+#   if command -v ngrok >/dev/null 2>&1; then
+#     eval "$(ngrok completion)" || true
+#   fi
 
 # uncomment to enable tracing output of your bash_profile to find loading issues
 # set +x

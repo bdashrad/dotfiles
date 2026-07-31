@@ -27,12 +27,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
     export HOMEBREW_PREFIX="/usr/local"
   fi
 
-  export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar";
-  export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew";
-  export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:${PATH}}";
-  export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:${MANPATH}}";
-  export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}";
-
   # update osx
   title "Run softwareupdate."
   sudo softwareupdate -i -a
@@ -83,6 +77,9 @@ if [[ "$(uname)" == "Darwin" ]]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     brew doctor
   fi
+
+  # source brew shell environment
+  eval "$("${HOMEBREW_PREFIX}/bin/brew" shellenv)"
 
   title "Use Touch ID for sudo."
   sudo ./scripts/touchid_sudo.sh || echo "Configuring sudo failed!"
@@ -153,10 +150,15 @@ fi
 
 # ssh stuff
 title "Set up .ssh directory"
-mkdir -p /.ssh/control/
-stow -t ${HOME}/.ssh ssh
+mkdir -p "${HOME}/.ssh/control/"
+stow -t "${HOME}/.ssh" ssh
 [[ ! -f "${HOME}/.ssh/authorized_keys" ]] && \
   curl -o "${HOME}/.ssh/authorized_keys" https://github.com/bdashrad.keys
+
+# setup lazy loading for homebrew bash completions
+mkdir -p "${HOME}/.local/share/bash-completion"
+ln -s "${HOMEBREW_PREFIX}/etc/bash_completion.d" "${HOME}/.local/share/bash-completion/completions"
+
 
 title "Stow dotfiles"
 stow {atuin,bash,blesh,colima,docker,git,linters,powerline-go,prefs,ruby,screen,terraform,tmux,vim}

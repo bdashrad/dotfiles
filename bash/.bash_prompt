@@ -135,17 +135,17 @@ set_prompts() {
     return
   }
 
-  # kube PS1
-  # shellcheck disable=SC2154
-  if [[ -f "${HOMEBREW_PREFIX}/opt/kube-ps1/share/kube-ps1.sh" ]]; then
-    # shellcheck disable=SC1091
-    . "${HOMEBREW_PREFIX}/opt/kube-ps1/share/kube-ps1.sh"
-    export KUBE_PS1_NS_ENABLE=false
-  fi
+  # # kube PS1
+  # # shellcheck disable=SC2154
+  # if [[ -f "${HOMEBREW_PREFIX}/opt/kube-ps1/share/kube-ps1.sh" ]]; then
+  #   # shellcheck disable=SC1091
+  #   . "${HOMEBREW_PREFIX}/opt/kube-ps1/share/kube-ps1.sh"
+  #   export KUBE_PS1_NS_ENABLE=false
+  # fi
 
-  function prompt_kube() {
-    [[ -f "${HOMEBREW_PREFIX}/opt/kube-ps1/share/kube-ps1.sh" ]] && kube_ps1
-  }
+  # function prompt_kube() {
+  #   [[ -f "${HOMEBREW_PREFIX}/opt/kube-ps1/share/kube-ps1.sh" ]] && kube_ps1
+  # }
 
   # ------------------------------------------------------------------
   # | Prompt string                                                  |
@@ -163,12 +163,13 @@ set_prompts() {
   # export PS1
 
   # powerline-go
+  # shellcheck disable=SC2154
   function _update_ps1() {
     PS1="\[\033]0;\w\007\]"
     PS1+="$(
       "${HOMEBREW_PREFIX}/bin/powerline-go" \
         -error $? \
-        -jobs "$(jobs -p | wc -l)" \
+        -jobs "$(jobs -p | wc -l || true)" \
         -path-aliases "${PLGO_PATH_ALIAS}"
     )"
 
