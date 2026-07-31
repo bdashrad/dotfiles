@@ -12,6 +12,9 @@ else
   exit 1
 fi
 
+# create XDG directories
+mkdir -p "${HOME}"/{.config,.cache,.local/{share,state}}
+
 # Ask for the administrator password upfront
 title "Ask for sudo access at start"
 sudo -v

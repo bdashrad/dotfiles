@@ -1,11 +1,28 @@
-# Folder view configuration files
-.DS_Store
-Desktop.ini
-
-# Thumbnail cache files
+# macOS
 ._*
-Thumbs.db
-
-# Files that might appear on external disks
+.AppleDouble
+.com.apple.timemachine.donotpresent
+.DocumentRevisions-V100
+.DS_Store
+.fseventsd
+.LSOverride
 .Spotlight-V100
+.TemporaryItems
 .Trashes
+.VolumeIcon.icns
+
+# Linux
+.directory
+.fuse_hidden*
+.nfs*
+.Trash-*
+*~
+
+# Windows
+[Dd]esktop.ini
+*.lnk
+$RECYCLE.BIN/
+ehthumbs_vista.db
+ehthumbs.db
+Thumbs.db
+Thumbs.db:encryptable
