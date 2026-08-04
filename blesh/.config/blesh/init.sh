@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # -*- mode: sh; mode: sh-bash -*-
 
 ## This is a template for "~/.blerc".

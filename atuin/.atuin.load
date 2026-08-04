@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 
 # atuin
+
 # shellcheck disable=2312
 # [[ -f "${HOMEBREW_PREFIX}/bin/atuin" ]] && eval "$(atuin init bash --disable-up-arrow)"
 
 # shellcheck disable=SC2154,SC2016
 if [[ -f "${HOMEBREW_PREFIX}/bin/atuin" ]] && [[ -n ${BLE_VERSION-} ]] 2>&1; then
   # echo "Loading atuin with ble.sh integration"
-  # eval "$(atuin init bash --disable-up-arrow)"
-  ble-import -C 'eval "$(atuin init bash --disable-up-arrow)"' integration/fzf-key-bindings
+  # Atuin (deferred until integration/fzf-key-bindings are loaded so that Atuin overwrites the fzf keybindings)
+  # ble-import -C 'eval "$(atuin init bash --disable-up-arrow)"' integration/fzf-key-bindings
+  ble-import -C 'eval "$(atuin init bash)"' integration/fzf-key-bindings
 elif [[ -f "${HOMEBREW_PREFIX}/bin/atuin" ]]; then
   # echo "Loading atuin without ble.sh integration"
   eval "$(atuin init bash --disable-up-arrow)"

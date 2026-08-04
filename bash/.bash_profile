@@ -7,6 +7,10 @@
 # BASH_XTRACEFD="5"
 # set -x
 
+# ble.sh
+# shellcheck disable=SC1091
+[[ -f ${HOME}/.blesh.load ]] && source "${HOME}/.blesh.load"
+
 
 if [[ "$(uname)" == "Darwin" ]]; then
   if [[ "$(arch)" == "arm64" ]]; then
@@ -27,10 +31,6 @@ eval "$(/usr/bin/env PATH_HELPER_ROOT="${HOMEBREW_PREFIX}" /usr/libexec/path_hel
 # export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}";
 # [[ -z "${MANPATH-}" ]] || export MANPATH=":${MANPATH#:}";
 export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}";
-
-# ble.sh
-# shellcheck disable=SC1091
-[[ -f ${HOME}/.blesh.load ]] && source "${HOME}/.blesh.load"
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
