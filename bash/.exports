@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
 # export XDG base directories
-# export XDG_CONFIG_HOME="${HOME}/.config"
-# export XDG_DATA_HOME="${HOME}/.local/share"
-# export XDG_CACHE_HOME="${HOME}/.cache"
-# export XDG_STATE_HOME="${HOME}/.local/state"
+export XDG_BIN_HOME="${HOME}/.local/bin"
+export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_RUNTIME_DIR="${TMPDIR}/runtime-${UID}"
+export XDG_STATE_HOME="${HOME}/.local/state"
 
 # Configure homebrew updates
 export HOMEBREW_NO_ENV_HINTS=1

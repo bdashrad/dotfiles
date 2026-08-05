@@ -25,6 +25,9 @@ unset file
 # enable homebrew bash_completion
 # shellcheck disable=SC2154
 if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+  # https://github.com/evanpurkhiser/dots-personal/commit/cba01c381db20bd1fa50ae22caf620996875e7f5
+  # https://github.com/orgs/Homebrew/discussions/4202#discussioncomment-8636880
+
   export BASH_COMPLETION_COMPAT_DIR=/dev/null
   # shellcheck disable=SC1091
   source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"

@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# inspired by
+# https://github.com/evanpurkhiser/dots-personal/commit/cba01c381db20bd1fa50ae22caf620996875e7f5
+# https://github.com/orgs/Homebrew/discussions/4202#discussioncomment-8636880
+
 eval "$("${HOMEBREW_PREFIX}/bin/brew" shellenv)"
 
 DATAHOME="${XDG_DATA_HOME:-${HOME}/.local/share}"
