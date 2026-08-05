@@ -1,16 +1,8 @@
 #!/usr/bin/env bash
 
-# set homebrew prefix
-if [[ "$(uname)" == "Darwin" ]]; then
-  if [[ "$(arch)" == "arm64" ]]; then
-    export HOMEBREW_PREFIX="/opt/homebrew"
-  else
-    export HOMEBREW_PREFIX="/usr/local"
-  fi
-fi
-
 # homebrew path
-export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}";
+# shellcheck disable=SC2154
+export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:${PATH}}";
 
 # asdf
 # shellcheck disable=SC1091
@@ -41,13 +33,13 @@ export ASDF_DATA_DIR
 [[ -d "${KREW_ROOT:-${HOME}/.krew}/bin" ]] && PATH="${KREW_ROOT:-${HOME}/.krew}/bin:${PATH}"
 
 # rancher-desktop or docker desktop
-[[ -d "${HOME}/.rd/bin/" ]] && PATH="${PATH}:${HOME}/.rd/bin"
-[[ -d "/Applications/Docker.app/Contents/Resources/bin/" ]] && PATH="${PATH}:/Applications/Docker.app/Contents/Resources/bin"
+# [[ -d "${HOME}/.rd/bin/" ]] && PATH="${PATH}:${HOME}/.rd/bin"
+# [[ -d "/Applications/Docker.app/Contents/Resources/bin/" ]] && PATH="${PATH}:/Applications/Docker.app/Contents/Resources/bin"
 
 # gcloud components install doesn't always link everything
 [[ -d "${HOMEBREW_PREFIX}/google-cloud-sdk/latest/google-cloud-sdk/bin/" ]] && PATH="${PATH}:${HOMEBREW_PREFIX}/google-cloud-sdk/latest/google-cloud-sdk/bin"
 
-# pipx
+# XDG_BIN_HOME
 # shellcheck disable=SC1091
 export PATH="${PATH}:${HOME}/.local/bin"
 
