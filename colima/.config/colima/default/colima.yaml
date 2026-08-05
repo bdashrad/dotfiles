@@ -16,13 +16,21 @@ memory: 6
 #
 # NOTE: value cannot be changed after virtual machine is created.
 # Default: host
-arch: host
+arch: aarch64
 
 # Container runtime to be used (docker, containerd).
 #
 # NOTE: value cannot be changed after virtual machine is created.
 # Default: docker
 runtime: docker
+
+# AI model runner (docker, ramalama).
+# Both require krunkit VM type for GPU access.
+# docker: Uses Docker Model Runner.
+# ramalama: Uses Ramalama.
+#
+# Default: docker
+modelRunner: ""
 
 # Set custom hostname for the virtual machine.
 # Default: colima
@@ -38,11 +46,12 @@ kubernetes:
   # Kubernetes version to use.
   # This needs to exactly match a k3s version https://github.com/k3s-io/k3s/releases
   # Default: latest stable release
-  version: v1.35.0+k3s1
+  version: v1.33.4+k3s1
 
   # Additional args to pass to k3s https://docs.k3s.io/cli/server
   # Default: traefik is disabled
-  k3sArgs: [--disable=traefik]
+  k3sArgs:
+    - --disable=traefik
 
   # Kubernetes port to listen on
   # A common port is 6443, though left unbound to ensure no port conflicts
@@ -96,8 +105,7 @@ network:
   # EXAMPLE
   # dnsHosts:
   #   example.com: 1.2.3.4
-  dnsHosts:
-    host.docker.internal: host.lima.internal
+  dnsHosts: {}
 
   # Replicate host IP addresses in the VM. This enables port forwarding to specific
   # host IP addresses.
@@ -114,7 +122,7 @@ network:
   # gatewayAddress: 192.168.10.2
   #
   # Default: 192.168.5.2
-  gatewayAddress: 192.168.5.2
+  gatewayAddress: null
 
 # ===================================================================== #
 # ADVANCED CONFIGURATION
@@ -163,7 +171,7 @@ portForwarder: ssh
 
 # Utilise rosetta for amd64 emulation (requires m1 mac and vmType `vz`)
 # Default: false
-rosetta: true
+rosetta: false
 
 # Enable foreign architecture emulation via binfmt (e.g. amd64 on arm64, arm64 on amd64)
 # Default: true
@@ -188,13 +196,13 @@ mountType: virtiofs
 
 # Propagate inotify file events to the VM.
 # NOTE: this is experimental.
-mountInotify: false
+mountInotify: true
 
 # The CPU type for the virtual machine (requires vmType `qemu`).
 # Options available for host emulation can be checked with: `qemu-system-$(arch) -cpu help`.
 # Instructions are also supported by appending to the cpu type e.g. "qemu64,+ssse3".
 # Default: host
-cpuType: host
+cpuType: ""
 
 # Custom provision scripts for the virtual machine.
 # Provisioning scripts are executed on startup and therefore needs to be idempotent.
@@ -257,7 +265,11 @@ mounts: []
 # The file path to a custom disk image can be specified to override the behaviour.
 #
 # Default: ""
-diskImage: ''
+diskImage: ""
+
+# Use the custom disk image even if it does NOT match a supported release image.
+# WARNING: This bypasses validating the image and is a completely unsupported!
+forceDiskImage: false
 
 # Size of the disk in GiB for the root filesystem of the virtual machine.
 # This value is ignored if no runtime is in use. i.e. `none` runtime.
