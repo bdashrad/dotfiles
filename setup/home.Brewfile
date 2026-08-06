@@ -3,10 +3,6 @@
 # browsers
 cask "brave-browser"
 
-# safari extensions
-mas "Evernote Web Clipper", id: 1481669779
-mas "Archive Page Extension", id: 6446372766
-
 # utilities
 cask "backblaze"
 cask "qmk-toolbox"

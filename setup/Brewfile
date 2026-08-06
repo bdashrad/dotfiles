@@ -236,6 +236,10 @@ cask "choosy"
 cask "firefox"
 cask "google-chrome", args: { adopt: true }
 
+# safari extensions
+mas "Evernote Web Clipper", id: 1481669779
+mas "Archive Page Extension", id: 6446372766
+
 # communication
 cask "slack", args: { adopt: true }
 cask "zoom", args: { adopt: true }
