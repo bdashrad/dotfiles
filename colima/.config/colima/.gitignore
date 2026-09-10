@@ -1,1 +1,5 @@
 ssh_config
+
+default/
+_lima/
+_store/
