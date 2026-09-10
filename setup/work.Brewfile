@@ -16,7 +16,7 @@
 # brew "doppler"
 # brew "packer"
 
-# brew "terraform"
+brew "hashicorp/tap/terraform", trusted: true
 brew "hashicorp/tap/terraform-ls", trusted: true
 brew "terraform-docs"
 # brew "terraform_landscape"
@@ -37,10 +37,11 @@ brew "lftp"
 brew "pre-commit"
 
 # security tools
-brew "trivy" # container vulnerability/misconfiguration scanner
 brew "checkov"
-brew "terrascan"
+brew "grype"
 brew "infracost"
+brew "terrascan"
+brew "trivy" # container vulnerability/misconfiguration scanner
 brew "zizmor"
 
 # Container tools

@@ -174,9 +174,7 @@ brew "get-woke/tap/woke", trusted: true
 # export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # add brew-cask-upgrade
-tap "buo/cask-upgrade", trusted: {
-  command: "cu"
-}
+tap "buo/cask-upgrade", trusted: true
 
 # security
 cask "1password"
@@ -185,7 +183,7 @@ cask "1password-cli"
 # brew "cloudflared"
 cask "lulu"
 # mas "Tailscale", id: 1475387142
-cask "tailscale"
+cask "tailscale-app"
 cask "tripmode"
 # cask "tunnelblick" # OpenVPN client
 # cask "wireshark"
@@ -205,8 +203,9 @@ cask "MonitorControl"
 # cask "oversight"
 brew "rclone"
 brew "showkey"
-brew "homeport/tap/termshot"
+# brew "homeport/tap/termshot"
 cask "the-unarchiver"
+cask "whatcable"
 # cask "xquartz"
 
 # window management
@@ -249,7 +248,6 @@ cask "zoom", args: { adopt: true }
 # cask "pop-app"
 
 # development
-cask "cursor"
 # cask "fig"
 # cask "kdiff3"
 cask "ngrok"

@@ -17,6 +17,7 @@ mas "GarageBand", id: 682658836
 cask "gyazo"
 # mas "iMovie", id: 408981434
 # cask "lastfm"
+brew "exiftool"
 cask "vlc"
 
 # sound management
