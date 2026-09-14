@@ -238,10 +238,6 @@ cask "choosy"
 cask "firefox"
 cask "google-chrome", args: { adopt: true }
 
-# safari extensions
-mas "Evernote Web Clipper", id: 1481669779
-mas "Archive Page Extension", id: 6446372766
-
 # communication
 cask "slack", args: { adopt: true }
 cask "zoom", args: { adopt: true }
@@ -280,12 +276,6 @@ brew "snyk/tap/snyk", trusted: true
 # cask "utm"
 # cask "vagrant"
 # cask "vagrant-manager"
-
-# safari extensions
-mas "1Password for Safari", id: 1569813296
-mas "Archive Page Extension", id: 6446372766
-mas "Consent-O-Matic", id: 1606897889
-mas "Hush", id: 1544743900
 
 # fonts
 # https://www.nerdfonts.com/font-downloads
