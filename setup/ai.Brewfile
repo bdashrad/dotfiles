@@ -5,10 +5,13 @@ cask "antigravity-cli"
 cask "antigravity-ide"
 # brew "ollama"
 # cask "ollama-app"
-brew "copilot-cli"
+cask "copilot-cli"
 brew "gemini-cli"
+
+# claude
+cask "claude"
 cask "claude-code"
 
 # mac native
 brew "apfel"
-brew "Arthur-Ficial/tap/apfel-chat"
+cask "Arthur-Ficial/tap/apfel-chat", trusted: true
