@@ -666,6 +666,9 @@ defaults write "com.apple.controlcenter" "NSStatusItem Visible Battery" '0'
 defaults delete "com.apple.Spotlight" "NSStatusItem Preferred Position Item-0"
 defaults delete "com.apple.Spotlight" "NSStatusItem Visible Item-0"
 
+# Disable menu icons
+defaults write -g NSMenuEnableActionImages -bool NO
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
