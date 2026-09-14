@@ -1,21 +1,21 @@
 # install some ai tools
 
-# Google
-# cask "antigravity"
-# cask "antigravity-cli"
-# cask "antigravity-ide"
-# brew "gemini-cli"
-
-# brew "ollama"
-# cask "ollama-app"
+# harnesses
+# cask "cursor"
 cask "copilot-cli"
 
-# Cursor
-# cask "cursor"
+## Google
+# brew "gemini-cli"
+# cask "antigravity"
 
-# claude
+## anthropic
 cask "claude"
 cask "claude-code"
+
+
+# local models and tooling
+# brew "ollama"
+# cask "ollama-app"
 
 # mac native
 brew "apfel"

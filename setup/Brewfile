@@ -208,6 +208,7 @@ brew "rclone"
 brew "showkey"
 # brew "homeport/tap/termshot"
 cask "the-unarchiver"
+cask "whatcable"
 # cask "xquartz"
 
 # window management
@@ -236,6 +237,10 @@ cask "arc"
 cask "choosy"
 cask "firefox"
 cask "google-chrome", args: { adopt: true }
+
+# safari extensions
+mas "Evernote Web Clipper", id: 1481669779
+mas "Archive Page Extension", id: 6446372766
 
 # communication
 cask "slack", args: { adopt: true }

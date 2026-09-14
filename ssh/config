@@ -2,8 +2,7 @@
 # ~/.ssh/config
 
 Include ~/.colima/ssh_config
-Include ~/.ssh/config.d/work.sshconfig
-Include ~/.ssh/config.d/personal.sshconfig
+Include config.d/
 
 ###################
 # Personal configs

@@ -24,10 +24,18 @@ arch: host
 # Default: docker
 runtime: docker
 
+# AI model runner (docker, ramalama).
+# Both require krunkit VM type for GPU access.
+# docker: Uses Docker Model Runner.
+# ramalama: Uses Ramalama.
+#
+# Default: docker
+modelRunner: docker
+
 # Set custom hostname for the virtual machine.
 # Default: colima
 #          colima-profile_name for other profiles
-hostname: null
+hostname: colima
 
 # Kubernetes configuration for the virtual machine.
 kubernetes:
@@ -38,7 +46,7 @@ kubernetes:
   # Kubernetes version to use.
   # This needs to exactly match a k3s version https://github.com/k3s-io/k3s/releases
   # Default: latest stable release
-  version: v1.35.0+k3s1
+  version: v1.36.4+k3s1
 
   # Additional args to pass to k3s https://docs.k3s.io/cli/server
   # Default: traefik is disabled
@@ -258,6 +266,10 @@ mounts: []
 #
 # Default: ""
 diskImage: ''
+
+# Use the custom disk image even if it does NOT match a supported release image.
+# WARNING: This bypasses validating the image and is a completely unsupported!
+forceDiskImage: false
 
 # Size of the disk in GiB for the root filesystem of the virtual machine.
 # This value is ignored if no runtime is in use. i.e. `none` runtime.
