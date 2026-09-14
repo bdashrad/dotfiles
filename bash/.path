@@ -37,11 +37,11 @@ export ASDF_DATA_DIR
 # [[ -d "/Applications/Docker.app/Contents/Resources/bin/" ]] && PATH="${PATH}:/Applications/Docker.app/Contents/Resources/bin"
 
 # gcloud components install doesn't always link everything
-[[ -d "${HOMEBREW_PREFIX}/google-cloud-sdk/latest/google-cloud-sdk/bin/" ]] && PATH="${PATH}:${HOMEBREW_PREFIX}/google-cloud-sdk/latest/google-cloud-sdk/bin"
+[[ -d "${HOMEBREW_PREFIX}/share/google-cloud-sdk/bin" ]] && PATH="${HOMEBREW_PREFIX}/share/google-cloud-sdk/bin:${PATH}"
 
 # XDG_BIN_HOME
 # shellcheck disable=SC1091
-export PATH="${PATH}:${HOME}/.local/bin"
+export PATH="${HOME}/.local/bin:${PATH}"
 
 # set PATH so it includes user's private bin if it exists
 [[ -d "${HOME}/bin" ]] && PATH="${HOME}/bin:${PATH}"
