@@ -5,7 +5,7 @@ export XDG_BIN_HOME="${HOME}/.local/bin"
 export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_DATA_HOME="${HOME}/.local/share"
-export XDG_RUNTIME_DIR="${TMPDIR}/runtime-${UID}"
+# export XDG_RUNTIME_DIR="${TMPDIR}/runtime-${UID}"
 export XDG_STATE_HOME="${HOME}/.local/state"
 
 # Configure homebrew updates
@@ -14,6 +14,9 @@ command -v bat >/dev/null 2>&1 && export HOMEBREW_BAT=1
 
 # Verify all brew packages
 export HOMEBREW_VERIFY_ATTESTATIONS=1
+
+# set homebrew user config home
+export HOMEBREW_USER_CONFIG_HOME="${HOME}/.homebrew"
 
 # prefer vim
 EDITOR=$(command -v vim)
