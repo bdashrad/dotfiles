@@ -1,12 +1,17 @@
 # install some ai tools
 
-cask "antigravity"
-cask "antigravity-cli"
-cask "antigravity-ide"
+# Google
+# cask "antigravity"
+# cask "antigravity-cli"
+# cask "antigravity-ide"
+# brew "gemini-cli"
+
 # brew "ollama"
 # cask "ollama-app"
 cask "copilot-cli"
-brew "gemini-cli"
+
+# Cursor
+# cask "cursor"
 
 # claude
 cask "claude"
