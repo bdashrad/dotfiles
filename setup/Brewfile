@@ -6,6 +6,9 @@ brew "mas"
 # install whalebrew so we can install dockerized apps
 brew "whalebrew"
 
+# install golang so we can install golang apps
+brew "go"
+
 # Install GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew "coreutils"
@@ -205,6 +208,7 @@ cask "logitune"
 # cask "menumeters"
 cask "MonitorControl"
 # cask "oversight"
+go "github.com/catilac/plistwatch"
 brew "poppler"
 brew "rclone"
 brew "showkey"
