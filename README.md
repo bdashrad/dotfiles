@@ -19,11 +19,13 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
       * `stow -t ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/ sublime/`
     * [atuin](https://atuin.sh/) and [ble.sh](https://github.com/akinomyoga/ble.sh)
       * `stow {blesh,atuin}`
-1. Configure anything you don't want committed in `~/.extra`, e.g. your work code path
+1. Configure anything you don't want committed in `~/.extra`
+    * Configure Powerline Go Path Alias
 
-    ```bash
-    export WORKCODE='~/code/work'
-    ```
+        ```bash
+        export PLGO_PATH_ALIAS='~/code/myccompany=@MC,~/code/google=@'
+        ```
+    * API Keys
 
 1. Enjoy!
 
