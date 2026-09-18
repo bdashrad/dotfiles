@@ -36,7 +36,7 @@ brew "tsonglew/dutis/dutis", trusted: true
 
 # Install bash-completion
 brew "bash-completion@2"
-brew "brew-cask-completion"
+# brew "brew-cask-completion" # deprecated
 
 # Atuin puts your shell history in sqlite
 brew "atuin"
@@ -70,7 +70,7 @@ brew "bats-core"
 brew "devcontainer"
 brew "direnv"
 brew "jc"
-brew "tmate"
+# brew "tmate" # deprecated
 
 # json
 brew "jq"
@@ -113,7 +113,7 @@ brew "ipcalc"
 brew "mtr"
 brew "mosh"
 brew "nmap"
-brew "speedtest-cli"
+brew "teamookla/speedtest/speedtest", trusted: true
 
 # system monitoring
 brew "asitop"
@@ -189,7 +189,8 @@ cask "tailscale-app"
 cask "tripmode"
 # cask "tunnelblick" # OpenVPN client
 # cask "wireshark"
-mas "NextDNS", id: 1464122853
+# mas "NextDNS", id: 1464122853 # missing from app store
+brew "nextdns/tap/nextdns", trusted: true
 # cask "yubico-yubikey-manager"
 
 # utilities
@@ -199,7 +200,8 @@ cask "deskflow/tap/deskflow", trusted: true # open source replacement for synerg
 mas "Display Menu", id: 549083868
 # cask "exiftool"
 cask "iterm2"
-cask "logitech-camera-settings"
+# cask "logitech-camera-settings"
+cask "logitune"
 # cask "menumeters"
 cask "MonitorControl"
 # cask "oversight"
@@ -224,9 +226,9 @@ cask "stay"
 # cask "dropbox"
 cask "evernote"
 # cask "google-drive"
-mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
+# mas "Keynote", id: 409183694 # Id has changed
+# mas "Numbers", id: 409203825 # Id has changed
+# mas "Pages", id: 409201541 # Id has changed
 cask "notion"
 cask "notion-calendar"
 # cask "todoist-app"

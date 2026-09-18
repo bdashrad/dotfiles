@@ -20,7 +20,8 @@ brew "hashicorp/tap/terraform", trusted: true
 brew "hashicorp/tap/terraform-ls", trusted: true
 brew "terraform-docs"
 # brew "terraform_landscape"
-cask "terraform-linters/tap/tflint", trusted: true
+# cask "terraform-linters/tap/tflint", trusted: true
+go "github.com/terraform-linters/tflint"
 brew "hcl2json"
 brew "tfupdate"
 brew "minamijoyo/hcledit/hcledit", trusted: true
@@ -89,6 +90,6 @@ brew "conftest"
 brew "node"
 
 # work stuff
-brew "lokalise/cli-2/lokalise2", trusted: true
+# brew "lokalise/cli-2/lokalise2", trusted: true
 brew "mockery"
-brew "postgresql@15", link: true, restart_service: false, conflicts_with: ["postgresql", "postgresql@14"]
+# brew "postgresql@15", link: true, restart_service: false, conflicts_with: ["postgresql", "postgresql@14"]

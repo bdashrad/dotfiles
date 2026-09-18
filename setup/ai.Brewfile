@@ -1,8 +1,11 @@
 # install some ai tools
 
+# monitoring
+cask "steipete/tap/codexbar"
+
 # harnesses
 # cask "cursor"
-cask "copilot-cli"
+# cask "copilot-cli"
 
 ## Google
 # brew "gemini-cli"
@@ -12,6 +15,8 @@ cask "copilot-cli"
 cask "claude"
 cask "claude-code"
 
+# openai
+cask "codex"
 
 # local models and tooling
 # brew "ollama"

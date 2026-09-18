@@ -86,7 +86,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 
   # install brew apps
   title "Installing brew apps..."
-  brew bundle
+  brew bundle --file "${SCRIPT_DIR}/setup/Brewfile"
 
   # Ensure Brew Bash is a valid shell option
   if ! grep -q "${HOMEBREW_PREFIX}/bin/bash" /etc/shells ; then
@@ -116,7 +116,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 
   if confirm "Install work applications? [y/N] "; then
     title "Install brew work.Bundlefile"
-    brew bundle install --file work.Brewfile
+    brew bundle install --file "${SCRIPT_DIR}/work.Brewfile"
     title "Install asdf plugins."
     ./scripts/asdf.sh
   else
@@ -161,7 +161,7 @@ ln -s "${HOMEBREW_PREFIX}/etc/bash_completion.d" "${HOME}/.local/share/bash-comp
 
 
 title "Stow dotfiles"
-stow {atuin,bash,blesh,colima,docker,git,linters,powerline-go,prefs,ruby,screen,terraform,tmux,vim}
+stow {atuin,bash,blesh,colima,docker,git,golang,linters,powerline-go,iterm2,rectangle,ruby,screen,terraform,tmux,vim}
 mkdir -p "${HOME}/bin"
 stow -t "${HOME}/bin/" bin
 
