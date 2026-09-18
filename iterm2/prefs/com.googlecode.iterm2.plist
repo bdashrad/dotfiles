@@ -4494,7 +4494,7 @@
 					<key>contentregex</key>
 					<string></string>
 					<key>disabled</key>
-					<integer>0</integer>
+					<integer>1</integer>
 					<key>matchType</key>
 					<integer>0</integer>
 					<key>name</key>
@@ -4512,7 +4512,7 @@
 					<key>contentregex</key>
 					<string></string>
 					<key>disabled</key>
-					<integer>0</integer>
+					<integer>1</integer>
 					<key>matchType</key>
 					<integer>0</integer>
 					<key>name</key>
