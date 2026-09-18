@@ -71,6 +71,7 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 # # Disable the “Are you sure you want to open this application?” dialog
 # defaults write com.apple.LaunchServices LSQuarantine -bool false
+defaults write "Apple Global Domain" "NSCloseAlwaysConfirmsChanges" -bool true
 
 # Display ASCII control characters using caret notation in standard text views
 # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
@@ -78,6 +79,7 @@ defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true
 
 # # Disable Resume system-wide
 # defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
+defaults write "Apple Global Domain" "NSQuitAlwaysKeepsWindows" -bool true
 
 # Enable automatic termination of inactive apps
 defaults write NSGlobalDomain NSDisableAutomaticTermination -bool false
@@ -96,6 +98,12 @@ defaults write com.apple.helpviewer DevMode -bool true
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+
+# Clock: Hide AM/PM
+defaults write "com.apple.menuextra.clock" "ShowAMPM" -bool false
+
+# Clock: Hide the day of the week
+defaults write "com.apple.menuextra.clock" "ShowDayOfWeek" -bool false
 
 # Restart automatically if the computer freezes
 # sudo systemsetup -setrestartfreeze on
@@ -210,6 +218,12 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
 # # Enable HiDPI display modes (requires restart)
 sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+
+# Disable Drag windows to menu bar to fill screen (aka "maximize" or "full screen")
+defaults write "com.apple.WindowManager" "EnableTopTilingByEdgeDrag" -bool false
+
+# Disable Drag windows to left/right side of screen to fill half the screen (aka "split screen")
+defaults write "com.apple.WindowManager" "EnableTilingByEdgeDrag" -bool false
 
 ###############################################################################
 # Finder                                                                      #
@@ -346,10 +360,10 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 # defaults write com.apple.dock dashboard-in-overlay -bool true
 
 # Dock: hide recent apps
-defaults write com.apple.dock show-recents -bool false
+defaults write "com.apple.dock" "show-recents" -bool false
 
 # Remove the auto-hiding Dock delay
-defaults write com.apple.Dock autohide-delay -float 0
+defaults write "com.apple.Dock" "autohide-delay" -float 0
 
 # # Remove the animation when hiding/showing the Dock
 # defaults write com.apple.dock autohide-time-modifier -float 0
@@ -358,10 +372,13 @@ defaults write com.apple.Dock autohide-delay -float 0
 # defaults write com.apple.dock no-glass -bool true
 
 # Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
+defaults write "com.apple.dock" "autohide" -bool true
 
 # Don’t automatically rearrange Spaces based on most recent use
-defaults write com.apple.dock mru-spaces -bool false
+defaults write "com.apple.dock" "mru-spaces" -bool false
+
+# Disable Drag windows to top of screen to enter Mission Control
+defaults write "com.apple.dock" "enterMissionControlByTopWindowDrag" -bool false
 
 # Don't make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool false
@@ -370,8 +387,8 @@ defaults write com.apple.dock showhidden -bool false
 # find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
 
 # Add iOS & Watch Simulator to Launchpad
-sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" "/Applications/Simulator.app"
-sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator (Watch).app" "/Applications/Simulator (Watch).app"
+# sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" "/Applications/Simulator.app"
+# sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator (Watch).app" "/Applications/Simulator (Watch).app"
 
 # Add a spacer to the left side of the Dock (where the applications are)
 #defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
@@ -390,15 +407,18 @@ sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator (
 # 10: Put display to sleep
 # 11: Launchpad
 # 12: Notification Center
-# Top left screen corner → Mission Control
-defaults write com.apple.dock wvous-tl-corner -int 2
+# Top left screen corner → Application Windows
+defaults write com.apple.dock wvous-tl-corner -int 3
 defaults write com.apple.dock wvous-tl-modifier -int 0
-# Top right screen corner → Desktop
-defaults write com.apple.dock wvous-tr-corner -int 4
+# Top right screen corner → Mission Control
+defaults write com.apple.dock wvous-tr-corner -int 2
 defaults write com.apple.dock wvous-tr-modifier -int 0
 # Bottom left screen corner → Start screen saver
-defaults write com.apple.dock wvous-bl-corner -int 5
-defaults write com.apple.dock wvous-bl-modifier -int 0
+# defaults write com.apple.dock wvous-bl-corner -int 5
+# defaults write com.apple.dock wvous-bl-modifier -int 0
+# Bottom right screen corner → Desktop
+defaults write com.apple.dock wvous-br-corner -int 4
+defaults write com.apple.dock wvous-br-modifier -int 0
 
 ###############################################################################
 # Safari & WebKit                                                             #
