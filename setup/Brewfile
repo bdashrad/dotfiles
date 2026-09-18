@@ -284,12 +284,16 @@ brew "snyk/tap/snyk", trusted: true
 # cask "vagrant-manager"
 
 # fonts
+## Nerd Fonts
 # https://www.nerdfonts.com/font-downloads
 cask "font-b612-mono"
 cask "font-b612"
 cask "font-hack-nerd-font"
 cask "font-monaspace"
 cask "font-powerline-symbols"
+
+## Other Fonts
+cask "font-manrope"
 
 # quicklook plugins
 # cask "betterzipql"
