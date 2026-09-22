@@ -54,6 +54,7 @@ brew "dive" # explore a docker image, layer contents, and discover ways to shrin
 # golang
 brew "golangci-lint"
 brew "ko" # Build and deploy Go applications on Kubernetes without a Dockerfile
+brew "mockery" # generate mock objects for testing in Go
 
 # install lazydocker
 # brew "jesseduffield/lazydocker/lazydocker" # TUI for docker and docker-compose
@@ -73,7 +74,7 @@ brew "slingdata-io/sling/sling", trusted: true
 
 # aws
 # brew "aws-elasticbeanstalk"
-brew "awscli"
+# brew "awscli"
 # tap "fullscreen/tap"
 # brew "aws-rotate-key"
 
@@ -91,5 +92,7 @@ brew "node"
 
 # work stuff
 # brew "lokalise/cli-2/lokalise2", trusted: true
-brew "mockery"
 # brew "postgresql@15", link: true, restart_service: false, conflicts_with: ["postgresql", "postgresql@14"]
+
+# project management
+cask "linear"
