@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-ASDF_PLUGIN_MANAGER_VERSION="1.4.0"
+ASDF_PLUGIN_MANAGER_VERSION="1.5.0"
+ASDF_PLUGIN_MANAGER_HASH="db4a5e6d46ea5b0df8476249536ac89deaddc08c"
 
 # shellcheck disable=SC3030
 ASDF_PLUGINS=(
@@ -39,10 +40,13 @@ fi
 
 # install asdf-plugin-manager plugin
 asdf plugin add asdf-plugin-manager https://github.com/asdf-community/asdf-plugin-manager.git
-asdf plugin update asdf-plugin-manager "tags/v${ASDF_PLUGIN_MANAGER_VERSION}"
+# asdf plugin update asdf-plugin-manager "v${ASDF_PLUGIN_MANAGER_VERSION}"
+asdf plugin update asdf-plugin-manager "${ASDF_PLUGIN_MANAGER_HASH}"
 
 # install asdf-plugin-manager cli
-asdf install asdf-plugin-manager ${ASDF_PLUGIN_MANAGER_VERSION}
+asdf install asdf-plugin-manager "${ASDF_PLUGIN_MANAGER_VERSION}"
+asdf set asdf-plugin-manager "${ASDF_PLUGIN_MANAGER_VERSION}"
+asdf-plugin-manager version
 
 # # install asdf plugins
 # while read -r -a plugin; do
