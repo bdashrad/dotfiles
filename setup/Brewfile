@@ -14,6 +14,9 @@ brew "go"
 # stow is used to manage these dotfiles
 brew "stow"
 
+# Install Bash 5
+brew "bash"
+
 # Install GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew "coreutils"
@@ -30,9 +33,6 @@ brew "gawk"
 # Install GNU `grep`
 # Don't forget to add `$(brew --prefix grep)/libexec/gnubin` to `$PATH`.
 brew "grep"
-
-# Install Bash 5
-brew "bash"
 
 # duti is used to manage default applications
 brew "duti"
