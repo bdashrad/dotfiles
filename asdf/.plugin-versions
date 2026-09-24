@@ -10,6 +10,7 @@ kustomize            https://github.com/Banno/asdf-kustomize.git                
 minikube             https://github.com/alvarobp/asdf-minikube.git              2324ba728afacf5986acbe7171ad27cd32e4bc17
 nodejs               https://github.com/asdf-vm/asdf-nodejs.git                 779c8dc84b3bdab38c2c80622d315c2c3267f74b
 nova                 https://github.com/elementalvoid/asdf-nova.git             f37626ea6505eb1f121dff1e3f497de984c9f30c
+opentofu             https://github.com/virtualroot/asdf-opentofu.git           7a69335b8e5c6a2700c273b757b794f4a252fc77
 pluto                https://github.com/FairwindsOps/asdf-pluto.git             1e24ad5801a02eecceb46d32d2622b9f54de4535
 pnpm                 https://github.com/jonathanmorley/asdf-pnpm.git            430ef985fa332a96595abe16119f4b657886cc7e
 polaris              https://github.com/particledecay/asdf-polaris.git          d1c618805859130a1363d075bd081d652baa4f60
