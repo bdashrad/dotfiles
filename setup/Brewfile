@@ -1,10 +1,12 @@
 # Brewfile for things I want on all of my Macs
 
+# use your version manager to
+# install more version managers
+brew "asdf" #
+# cask "macupdater"
+
 # install mas-cli so we can install apps from the Mac App Store
 brew "mas"
-
-# install whalebrew so we can install dockerized apps
-brew "whalebrew"
 
 # install golang so we can install golang apps
 brew "go"
@@ -82,13 +84,10 @@ brew "jd"
 brew "noahgorstein/tap/jqp", trusted: true
 
 # yaml
+brew "homeport/tap/dyff", trusted: true # yaml/json diff tool
+brew "homeport/tap/yft", trusted: true # yaml formatter
 brew "yamllint"
 brew "yq"
-
-# use your version manager to
-# install more version managers
-brew "asdf"
-# cask "macupdater"
 
 # git things
 # brew "bfg" # install if needed
@@ -212,7 +211,6 @@ go "github.com/catilac/plistwatch"
 brew "poppler"
 brew "rclone"
 brew "showkey"
-# brew "homeport/tap/termshot"
 cask "the-unarchiver"
 cask "whatcable"
 # cask "xquartz"
@@ -260,21 +258,10 @@ cask "p4v" # p4merge
 # cask "sublime-text"
 cask "visual-studio-code"
 # cask "warp"
+brew "pre-commit"
 
-# containerization
-brew "container" # apple container tool
-# cask "docker" # docker desktop
-# brew "docker-engine" # open source docker engine
-brew "docker" # docker cli
-brew "docker-buildx"
-brew "docker-compose"
-brew "docker-credential-helper"
-# brew "lima"
-# brew "lima-additional-guestagents"
-brew "colima"
-# cask "orbstack"
-# cask "rancher"
-brew "snyk/tap/snyk", trusted: true
+# documentation tooling
+brew "homeport/tap/termshot", trusted: true # create screenshots of a terminal
 
 # virtualization
 # cask "virtualbox"

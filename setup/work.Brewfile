@@ -34,22 +34,12 @@ brew "lftp"
 # cask "cyberduck"
 # cask "mountain-duck"
 
-# development
-brew "pre-commit"
-
 # security tools
 brew "checkov"
 brew "grype"
 brew "infracost"
 brew "terrascan"
-brew "trivy" # container vulnerability/misconfiguration scanner
 brew "zizmor"
-
-# Container tools
-brew "anchore/grype/grype", trusted: true # vulnerability scanner for container images and filesystems
-brew "anchore/syft/syft", trusted: true  # generates SBOMs from container images and filesystems
-brew "goodwithtech/r/dockle", trusted: true # container image linter for security best practices
-brew "dive" # explore a docker image, layer contents, and discover ways to shrink your Docker image size
 
 # golang
 brew "golangci-lint"
@@ -81,7 +71,6 @@ brew "slingdata-io/sling/sling", trusted: true
 # gcp
 cask "gcloud-cli"
 brew "cloud-sql-proxy"
-brew "gemini-cli"
 
 # policy management
 brew "conftest"
