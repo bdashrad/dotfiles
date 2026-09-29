@@ -11,6 +11,13 @@ brew "mas"
 # install golang so we can install golang apps
 brew "go"
 
+# Node (with Corepack)
+# https://nodejs.org/api/corepack.html
+brew "node"
+
+# Bun (needed to run claude/.claude/statusline/nekorush14.ts)
+brew "bun"
+
 # stow is used to manage these dotfiles
 brew "stow"
 
@@ -85,7 +92,7 @@ brew "noahgorstein/tap/jqp", trusted: true
 
 # yaml
 brew "homeport/tap/dyff", trusted: true # yaml/json diff tool
-brew "homeport/tap/yft", trusted: true # yaml formatter
+cask "homeport/tap/yft", trusted: true # yaml formatter
 brew "yamllint"
 brew "yq"
 
@@ -259,6 +266,7 @@ cask "p4v" # p4merge
 cask "visual-studio-code"
 # cask "warp"
 brew "pre-commit"
+brew "rura" # TUI for building shell pipelines
 
 # documentation tooling
 brew "homeport/tap/termshot", trusted: true # create screenshots of a terminal
