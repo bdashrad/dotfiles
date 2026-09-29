@@ -1,0 +1,5 @@
+.colima/ssh_config
+.colima/default
+.colima/_lima/
+.colima/_store/
+.colima/*.sock
