@@ -163,3 +163,6 @@ alias kpt='docker run --rm -v "$PWD":/workdir -w /workdir ghcr.io/kptdev/kpt:v1.
 
 # run conftest from docker
 alias conftest='docker run --rm -v "$PWD":/project -w /project openpolicyagent/conftest'
+
+# write history to disk and import to atuin
+alias atuin-recover="history -a && atuin import bash && atuin sync"
