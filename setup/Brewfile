@@ -215,7 +215,7 @@ cask "logitune"
 cask "MonitorControl"
 # cask "oversight"
 go "github.com/catilac/plistwatch"
-brew "poppler"
+brew "poppler" # pdf tool
 brew "rclone"
 brew "showkey"
 cask "the-unarchiver"
@@ -279,12 +279,16 @@ brew "homeport/tap/termshot", trusted: true # create screenshots of a terminal
 # cask "vagrant-manager"
 
 # fonts
+## Nerd Fonts
 # https://www.nerdfonts.com/font-downloads
 cask "font-b612-mono"
 cask "font-b612"
 cask "font-hack-nerd-font"
 cask "font-monaspace"
 cask "font-powerline-symbols"
+
+## Other Fonts
+cask "font-manrope"
 
 # quicklook plugins
 # cask "betterzipql"
@@ -295,3 +299,32 @@ cask "font-powerline-symbols"
 # cask "quicklook-csv"
 # cask "quicklook-json"
 # cask "suspicious-package"
+
+# install some ai tools
+## monitoring
+cask "steipete/tap/codexbar"
+
+## mac native
+brew "apfel"
+cask "Arthur-Ficial/tap/apfel-chat", trusted: true
+
+## harnesses
+# cask "cursor"
+
+### anthropic
+cask "claude"
+cask "claude-code"
+
+### Google
+# brew "gemini-cli"
+# cask "antigravity"
+
+### openai
+# cask "codex"
+
+### Github
+# cask "copilot-cli"
+
+## local models and tooling
+# brew "ollama"
+# cask "ollama-app"

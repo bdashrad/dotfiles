@@ -81,3 +81,7 @@ brew "conftest"
 
 # project management
 cask "linear"
+
+# install some ai tools
+# openai
+cask "codex"
