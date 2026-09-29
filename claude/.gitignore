@@ -1,0 +1,35 @@
+# Never version these
+.api_key
+credentials.json
+secrets/
+*.key
+*.pem
+auth.json
+*.token
+
+# Claude Code runtime / cache (machine-specific, not portable)
+cache/
+backups/
+file-history/
+history.jsonl
+paste-cache/
+plugins/
+projects/
+shell-snapshots/
+plans/
+session-env/
+transcripts/
+sessions/
+*.log
+clipboard/
+project_clones/
+.cache/
+
+# Always version these (explicit allowlist)
+!CLAUDE.md
+!settings.json
+!commands/
+!skills/
+!hooks/
+!agents/
+!rules/

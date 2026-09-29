@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/bradclark/.config/iterm2/cc-status"
+            "command": "$HOME/.config/iterm2/cc-status"
           }
         ]
       }
@@ -15,7 +15,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/bradclark/.config/iterm2/cc-status"
+            "command": "$HOME/.config/iterm2/cc-status"
           }
         ]
       }
@@ -25,7 +25,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/bradclark/.config/iterm2/cc-status"
+            "command": "$HOME/.config/iterm2/cc-status"
           }
         ]
       },
@@ -55,7 +55,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/bradclark/.config/iterm2/cc-status"
+            "command": "$HOME/.config/iterm2/cc-status"
           }
         ]
       },
@@ -74,7 +74,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/bradclark/.config/iterm2/cc-status"
+            "command": "$HOME/.config/iterm2/cc-status"
           }
         ]
       }
@@ -84,7 +84,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/bradclark/.config/iterm2/cc-status"
+            "command": "$HOME/.config/iterm2/cc-status"
           }
         ]
       }
@@ -94,7 +94,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/bradclark/.config/iterm2/cc-status"
+            "command": "$HOME/.config/iterm2/cc-status"
           }
         ]
       }
@@ -104,7 +104,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/bradclark/.config/iterm2/cc-status"
+            "command": "$HOME/.config/iterm2/cc-status"
           }
         ]
       }
@@ -114,7 +114,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/bradclark/.config/iterm2/cc-status"
+            "command": "$HOME/.config/iterm2/cc-status"
           }
         ]
       }
@@ -124,12 +124,24 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/bradclark/.config/iterm2/cc-status"
+            "command": "$HOME/.config/iterm2/cc-status"
           }
         ]
       }
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "node $HOME/.claude/statusline/hsablonniere.js"
+  },
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "terraform@claude-plugins-official": true
+  },
   "theme": "dark",
-  "model": "sonnet"
+  "editorMode": "normal",
+  "autoCompactEnabled": true,
+  "remoteControlAtStartup": true
 }
