@@ -75,10 +75,6 @@ brew "cloud-sql-proxy"
 # policy management
 brew "conftest"
 
-# Node Corepack
-# https://nodejs.org/api/corepack.html
-brew "node"
-
 # work stuff
 # brew "lokalise/cli-2/lokalise2", trusted: true
 # brew "postgresql@15", link: true, restart_service: false, conflicts_with: ["postgresql", "postgresql@14"]
