@@ -18,4 +18,6 @@ brew "krew" # kubectl plugin manager
 tap "kptdev/kpt", "https://github.com/kptdev/kpt.git"
 brew "kptdev/kpt/kpt", trusted: true
 
+brew "homeport/tap/havener", trusted: true # manage multiple resources at once in kubernetes
+
 # kubectl krew plugins

@@ -34,26 +34,17 @@ brew "lftp"
 # cask "cyberduck"
 # cask "mountain-duck"
 
-# development
-brew "pre-commit"
-
 # security tools
 brew "checkov"
 brew "grype"
 brew "infracost"
 brew "terrascan"
-brew "trivy" # container vulnerability/misconfiguration scanner
 brew "zizmor"
-
-# Container tools
-brew "anchore/grype/grype", trusted: true # vulnerability scanner for container images and filesystems
-brew "anchore/syft/syft", trusted: true  # generates SBOMs from container images and filesystems
-brew "goodwithtech/r/dockle", trusted: true # container image linter for security best practices
-brew "dive" # explore a docker image, layer contents, and discover ways to shrink your Docker image size
 
 # golang
 brew "golangci-lint"
 brew "ko" # Build and deploy Go applications on Kubernetes without a Dockerfile
+brew "mockery" # generate mock objects for testing in Go
 
 # install lazydocker
 # brew "jesseduffield/lazydocker/lazydocker" # TUI for docker and docker-compose
@@ -73,14 +64,13 @@ brew "slingdata-io/sling/sling", trusted: true
 
 # aws
 # brew "aws-elasticbeanstalk"
-brew "awscli"
+# brew "awscli"
 # tap "fullscreen/tap"
 # brew "aws-rotate-key"
 
 # gcp
 cask "gcloud-cli"
 brew "cloud-sql-proxy"
-brew "gemini-cli"
 
 # policy management
 brew "conftest"
@@ -91,5 +81,7 @@ brew "node"
 
 # work stuff
 # brew "lokalise/cli-2/lokalise2", trusted: true
-brew "mockery"
 # brew "postgresql@15", link: true, restart_service: false, conflicts_with: ["postgresql", "postgresql@14"]
+
+# project management
+cask "linear"
