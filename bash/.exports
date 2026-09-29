@@ -14,8 +14,6 @@ export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
 command -v bat >/dev/null 2>&1 && export HOMEBREW_BAT=1
 
 # Verify all brew packages
-HOMEBREW_GITHUB_API_TOKEN="$(gh auth token)"
-export HOMEBREW_GITHUB_API_TOKEN
 export HOMEBREW_VERIFY_ATTESTATIONS=1
 
 # set homebrew user config home
