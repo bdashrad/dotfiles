@@ -85,3 +85,7 @@ brew "node"
 
 # project management
 cask "linear"
+
+# install some ai tools
+# openai
+cask "codex"
