@@ -29,6 +29,14 @@ Settings for claude code and claude desktop.
 
 ### MCP Servers
 
+* Context7
+
+[Context7](https://context7.com/) live docs lookup.
+
+  ```shell
+  claude plugin install context7@claude-plugins-official
+  ```
+
 * GitHub
 
   With [gh cli plugin for auth](https://github.com/shuymn/gh-mcp)
