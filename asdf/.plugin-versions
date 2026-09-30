@@ -14,6 +14,7 @@ opentofu             https://github.com/virtualroot/asdf-opentofu.git           
 pluto                https://github.com/FairwindsOps/asdf-pluto.git             1e24ad5801a02eecceb46d32d2622b9f54de4535
 pnpm                 https://github.com/jonathanmorley/asdf-pnpm.git            430ef985fa332a96595abe16119f4b657886cc7e
 polaris              https://github.com/particledecay/asdf-polaris.git          d1c618805859130a1363d075bd081d652baa4f60
+pre-commit           https://github.com/jonathanmorley/asdf-pre-commit.git      26bfc420d6009f700514d6218cc28947d1c3aad9
 python               https://github.com/danhper/asdf-python.git                 abc2a03863e4d569b4f9de0d0efc1a88d96c2c12
 ruby                 https://github.com/asdf-vm/asdf-ruby.git                   8904117921fed2b703bcec3fd6aa21f5703a7a7c
 terraform            https://github.com/asdf-community/asdf-hashicorp.git       d2557f97752761eecb50f63cd31b64c236d23089
