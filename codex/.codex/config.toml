@@ -11,3 +11,7 @@ trusted_hash = "sha256:fc87dbee1cb8a9be4f78ba094c4fa8d5e2fd38cb800854e3717f9b6a5
 
 [hooks.state."/Users/bradclark/.codex/hooks.json:post_tool_use:0:0"]
 trusted_hash = "sha256:ac371f260e4b23ba1d1b7a4ad68a44a323a8470b61f38471a47aceac1b7a5a7c"
+
+[mcp_servers.terraform]
+command = "docker"
+args = ["run", "-i", "--rm", "hashicorp/terraform-mcp-server"]
