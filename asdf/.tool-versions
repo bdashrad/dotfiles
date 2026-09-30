@@ -6,7 +6,7 @@ kubeconform 0.6.4
 kubectl 1.29.2
 kustomize 5.3.0
 minikube 1.32.0
-nodejs 20.19.5
+nodejs 26.10.0
 nova 3.6.4
 pluto 5.19.0
 polaris 8.5.5
