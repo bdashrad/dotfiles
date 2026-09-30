@@ -18,6 +18,9 @@ brew "node"
 # Bun (needed to run claude/.claude/statusline/nekorush14.ts)
 brew "bun"
 
+# Extremely fast python package manager
+brew "uv"
+
 # stow is used to manage these dotfiles
 brew "stow"
 
