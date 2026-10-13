@@ -91,6 +91,7 @@ brew "jc"
 brew "jq"
 brew "ijq"
 brew "jd"
+brew "jid"
 brew "noahgorstein/tap/jqp", trusted: true
 
 # yaml

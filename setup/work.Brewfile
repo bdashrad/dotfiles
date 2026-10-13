@@ -16,15 +16,21 @@
 # brew "doppler"
 # brew "packer"
 
+## terraform
 brew "hashicorp/tap/terraform", trusted: true
 brew "hashicorp/tap/terraform-ls", trusted: true
-brew "terraform-docs"
 # brew "terraform_landscape"
+brew "hcl2json"
+
+## IAC scanners, linters, checks
+brew "checkov"
+brew "minamijoyo/hcledit/hcledit", trusted: true
+brew "minamijoyo/tfedit/tfedit", trusted: true
 # cask "terraform-linters/tap/tflint", trusted: true
 go "github.com/terraform-linters/tflint"
-brew "hcl2json"
 brew "tfupdate"
-brew "minamijoyo/hcledit/hcledit", trusted: true
+brew "terraform-docs"
+brew "fujiwara/tap/tfstate-lookup", trusted: true
 
 # development
 # cask "postman"
