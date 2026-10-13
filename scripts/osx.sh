@@ -5,7 +5,7 @@
 # e.g.    defaults find com.apple.ActivityMonitor
 
 if [ "$(uname)" != "Darwin" ]; then
-    echo "Refusing to run on a system that is not macOS."
+	echo "Refusing to run on a system that is not macOS."
 	exit 0
 fi
 
@@ -15,8 +15,8 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 title() {
-  echo "${bold}==> $1${normal}"
-  echo
+	echo "${bold}==> $1${normal}"
+	echo
 }
 
 # Close any open System Preferences panes, to prevent them from overriding
@@ -27,7 +27,11 @@ osascript -e 'tell application "System Preferences" to quit'
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do
+	sudo -n true
+	sleep 60
+	kill -0 "$$" || exit
+done 2>/dev/null &
 
 ###############################################################################
 # General UI/UX                                                               #
@@ -40,12 +44,12 @@ title "General UI/UX"
 
 # Menu bar: hide the Time Machine icon
 defaults write com.apple.systemuiserver menuExtras -array \
-  "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-  "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-  "/System/Library/CoreServices/Menu Extras/Volume.menu" \
-  "/System/Library/CoreServices/Menu Extras/Battery.menu" \
-  "/System/Library/CoreServices/Menu Extras/Clock.menu" \
-  "/System/Library/CoreServices/Menu Extras/User.menu"
+	"/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+	"/System/Library/CoreServices/Menu Extras/Volume.menu" \
+	"/System/Library/CoreServices/Menu Extras/Battery.menu" \
+	"/System/Library/CoreServices/Menu Extras/Clock.menu" \
+	"/System/Library/CoreServices/Menu Extras/User.menu"
 
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
@@ -165,7 +169,7 @@ sudo defaults write bluetoothaudiod "Enable AptX codec" -bool true
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Enable access for assistive devices
-echo -n 'a' | sudo tee /private/var/db/.AccessibilityAPIEnabled > /dev/null 2>&1
+echo -n 'a' | sudo tee /private/var/db/.AccessibilityAPIEnabled >/dev/null 2>&1
 sudo chmod 444 /private/var/db/.AccessibilityAPIEnabled
 # TODO: avoid GUI password prompt somehow (http://apple.stackexchange.com/q/60476/4408)
 #sudo osascript -e 'tell application "System Events" to set UI elements enabled to true'
@@ -204,13 +208,15 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Save screenshots to the desktop
 mkdir -p "${HOME}/Desktop/Screenshots"
-defaults write com.apple.screencapture location -string "${HOME}/Desktop/Screenshots"
+defaults write "com.apple.screencapture" "location" '"~/Desktop/Screenshots"'
+defaults write "com.apple.screencapture" "location-last" '"~/Desktop/Screenshots"'
+defaults write "com.apple.screencapture" "target" 'file'
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
-defaults write com.apple.screencapture type -string "png"
+defaults write "com.apple.screencapture" type -string "png"
 
 # Disable shadow in screenshots
-defaults write com.apple.screencapture disable-shadow -bool true
+defaults write "com.apple.screencapture" disable-shadow -bool true
 
 # Enable subpixel font rendering on non-Apple LCDs
 # Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
@@ -539,7 +545,6 @@ title "Terminal"
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
 
-
 # Enable “focus follows mouse” for Terminal.app and all X11 apps
 # i.e. hover over a window and start typing in it without clicking first
 #defaults write com.apple.terminal FocusFollowsMouse -bool true
@@ -694,8 +699,8 @@ defaults write -g NSMenuEnableActionImages -bool NO
 ###############################################################################
 
 for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" \
-  "Mail" "Safari" "SystemUIServer" "Transmission" \
-  "Activity Monitor" "iCal" "iTunes" "Google Chrome"; do
-  killall "$app" > /dev/null 2>&1
+	"Mail" "Safari" "SystemUIServer" "Transmission" \
+	"Activity Monitor" "iCal" "iTunes" "Google Chrome"; do
+	killall "$app" >/dev/null 2>&1
 done
 title "Done. Note that some of these changes require a logout/restart to take effect."
