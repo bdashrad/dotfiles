@@ -1,0 +1,26 @@
+# force bash
+# shell=bash
+
+# suggest adding a default case to switch statements
+enable=add-default-case
+
+# check extra masked returns
+enable=check-extra-masked-returns
+
+# notify when set -e is suppressed
+enable=check-set-e-suppressed
+
+# require braces around variable references
+# enable=require-variable-braces
+
+# require double brackets for tests
+enable=require-double-brackets
+
+# avoid negated conditions in if statements
+enable=avoid-negated-conditions
+
+# avoid nullary conditons
+enable=avoid-nullary-conditions
+
+# quote safe variables
+enable=quote-safe-variables
