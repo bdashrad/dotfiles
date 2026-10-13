@@ -71,7 +71,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 
   # install homebrew
   title "Install Hombrew"
-  if test ! $(which brew)
+  if test ! "$(which brew)"
   then
     echo "  Installing Homebrew for you."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -83,6 +83,15 @@ if [[ "$(uname)" == "Darwin" ]]; then
 
   title "Use Touch ID for sudo."
   sudo ./scripts/touchid_sudo.sh || echo "Configuring sudo failed!"
+
+  # set a stable hostname so it doesn't change with DHCP (used by atuin, etc.)
+  title "Set a stable hostname."
+  CURRENT_HOSTNAME="$(scutil --get HostName 2>/dev/null || hostname)"
+  echo "Current hostname: ${CURRENT_HOSTNAME}"
+  if confirm "Set a static hostname with scutil? [y/N] "; then
+    read -r -p "Hostname [${CURRENT_HOSTNAME}]: " NEW_HOSTNAME
+    sudo scutil --set HostName "${NEW_HOSTNAME:-${CURRENT_HOSTNAME}}"
+  fi
 
   # install brew apps
   title "Installing brew apps..."
