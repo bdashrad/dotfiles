@@ -1,9 +1,13 @@
-# plugin             # git url                                                  # git commit
+action-validator     https://github.com/mpalmer/action-validator.git            c994f427b7c42cd5ecb1bc9315cb91c3d7d72e3d
+actionlint           https://github.com/crazy-matt/asdf-actionlint.git          f8df3cfa05a1c875415b015808548bc8bac3b3a4
+adr-tools            https://gitlab.com/td7x/asdf/adr-tools.git                 e0f6e9e35a3644f370ab7df8d09e8cb20f65fabb
 asdf-plugin-manager  https://github.com/asdf-community/asdf-plugin-manager.git  f1cc7390168e10e2f7ebc044293957fe72009d5b
+checkov              https://github.com/bosmak/asdf-checkov.git                 c292d1f213564a6751b6d404f772565dfdbb3a19
 colima               https://github.com/CrouchingMuppet/asdf-colima.git         de48b10c5b5d804f8389aac1ebb680d006597c6a
 gcloud               https://github.com/jthegedus/asdf-gcloud.git               00cdf065aaf10f07ff3da8eba59746526e6a93c4
 golang               https://github.com/asdf-community/asdf-golang.git          a75b761963d8e6eda1a185c73476da8a75b8d300
 helm                 https://github.com/Antiarchitect/asdf-helm.git             3a6dcbba19ca2a7c4bd7c43eb0e2a35736e6bce7
+infracost            https://github.com/dex4er/asdf-infracost.git               9fe8a17ce3eac1ed3a41c07cf670c6e83bd2325d
 kubeconform          https://github.com/lirlia/asdf-kubeconform.git             24d773f4ca38f1db1126693d2a504ad198b003f5
 kubectl              https://github.com/asdf-community/asdf-kubectl.git         95b2e20e381b10dba52b4f66bea94fa2ee083f43
 kustomize            https://github.com/Banno/asdf-kustomize.git                a5ecf778e74cbd7d118455c14c2d479d83be88c8
@@ -17,5 +21,15 @@ polaris              https://github.com/particledecay/asdf-polaris.git          
 pre-commit           https://github.com/jonathanmorley/asdf-pre-commit.git      26bfc420d6009f700514d6218cc28947d1c3aad9
 python               https://github.com/danhper/asdf-python.git                 abc2a03863e4d569b4f9de0d0efc1a88d96c2c12
 ruby                 https://github.com/asdf-vm/asdf-ruby.git                   8904117921fed2b703bcec3fd6aa21f5703a7a7c
+shellcheck           https://github.com/luizm/asdf-shellcheck.git               8b954a95d44b8d8a6c6cd5a5a52ed643b7bb52e3
+shfmt                https://github.com/luizm/asdf-shfmt.git                    a42c5ffc85dacc5bde85a5ce5876ab4297ea8040
 terraform            https://github.com/asdf-community/asdf-hashicorp.git       d2557f97752761eecb50f63cd31b64c236d23089
+terraform-docs       https://github.com/looztra/asdf-terraform-docs.git         acfd01c50f93eeb7754d89e1fcd461bed22e3e23
+terraform-ls         https://github.com/asdf-community/asdf-hashicorp.git       d2557f97752761eecb50f63cd31b64c236d23089
+terrascan            https://github.com/hpdobrica/asdf-terrascan.git            aadf352ad2321e361aa9a2c8a6dab40d3d7bf1a2
+tf-summarize         https://github.com/adamcrews/asdf-tf-summarize.git         289ed08db652e9177c79564eb602196f58c38ac5
+tflint               https://github.com/skyzyx/asdf-tflint.git                  37e7eb9b758bbe77319ee312fc3764ef9d0944aa
+tfmigrate            https://github.com/dex4er/asdf-tfmigrate.git               a898d1ec67eb371b744be508c2356e5aed6848bd
+tfstate-lookup       https://github.com/carnei-ro/asdf-tfstate-lookup.git       327403f62a0879cdb6745f57ac6b37812fbf28ff
+tfupdate             https://github.com/yuokada/asdf-tfupdate.git               6760f32828358b86d1ab915343757a265785ae65
 yarn                 https://github.com/twuni/asdf-yarn.git                     376c5407ef22c82fa56e4bd9f6a9108354063acb
