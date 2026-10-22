@@ -5,8 +5,8 @@
 # e.g.    defaults find com.apple.ActivityMonitor
 
 if [ "$(uname)" != "Darwin" ]; then
-	echo "Refusing to run on a system that is not macOS."
-	exit 0
+  echo "Refusing to run on a system that is not macOS."
+  exit 0
 fi
 
 set +e
@@ -15,8 +15,8 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 
 title() {
-	echo "${bold}==> $1${normal}"
-	echo
+  echo "${bold}==> $1${normal}"
+  echo
 }
 
 # Close any open System Preferences panes, to prevent them from overriding
@@ -28,9 +28,9 @@ sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished
 while true; do
-	sudo -n true
-	sleep 60
-	kill -0 "$$" || exit
+  sudo -n true
+  sleep 60
+  kill -0 "$$" || exit
 done 2>/dev/null &
 
 ###############################################################################
@@ -44,12 +44,12 @@ title "General UI/UX"
 
 # Menu bar: hide the Time Machine icon
 defaults write com.apple.systemuiserver menuExtras -array \
-	"/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-	"/System/Library/CoreServices/Menu Extras/Volume.menu" \
-	"/System/Library/CoreServices/Menu Extras/Battery.menu" \
-	"/System/Library/CoreServices/Menu Extras/Clock.menu" \
-	"/System/Library/CoreServices/Menu Extras/User.menu"
+  "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+  "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+  "/System/Library/CoreServices/Menu Extras/Volume.menu" \
+  "/System/Library/CoreServices/Menu Extras/Battery.menu" \
+  "/System/Library/CoreServices/Menu Extras/Clock.menu" \
+  "/System/Library/CoreServices/Menu Extras/User.menu"
 
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
@@ -185,8 +185,8 @@ sudo chmod 444 /private/var/db/.AccessibilityAPIEnabled
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 2
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain "KeyRepeat" -int 2
+defaults write NSGlobalDomain "InitialKeyRepeat" -int 25
 
 # Automatically illuminate built-in MacBook keyboard in low light
 defaults write com.apple.BezelServices kDim -bool true
@@ -328,9 +328,9 @@ sudo chflags nohidden /Volumes
 # Expand the following File Info panes:
 # “General”, “Open with”, and “Sharing & Permissions”
 defaults write com.apple.finder FXInfoPanesExpanded -dict \
-	General -bool true \
-	OpenWith -bool true \
-	Privileges -bool true
+  General -bool true \
+  OpenWith -bool true \
+  Privileges -bool true
 
 # # Skip DMG verification
 # defaults write com.apple.frameworks.diskimages skip-verify true
@@ -699,8 +699,8 @@ defaults write -g NSMenuEnableActionImages -bool NO
 ###############################################################################
 
 for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" \
-	"Mail" "Safari" "SystemUIServer" "Transmission" \
-	"Activity Monitor" "iCal" "iTunes" "Google Chrome"; do
-	killall "$app" >/dev/null 2>&1
+  "Mail" "Safari" "SystemUIServer" "Transmission" \
+  "Activity Monitor" "iCal" "iTunes" "Google Chrome"; do
+  killall "$app" >/dev/null 2>&1
 done
 title "Done. Note that some of these changes require a logout/restart to take effect."
