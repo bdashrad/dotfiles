@@ -64,7 +64,7 @@
   autoSetupRebase = always
 
 [color]
-  ui = always
+  ui = auto
 
 [color "branch"]
   current = yellow reverse
@@ -212,7 +212,7 @@
 
 [pull]
   ff = only
-	twohead = ort
+  twohead = ort
 
 [rebase]
   autoStash = true
@@ -220,7 +220,7 @@
   updateRefs = true
 
 [rerere]
-	enabled = true
+  enabled = true
   autoupdate = true
 
 [stash]
@@ -261,9 +261,9 @@
   path = ~/.gitconfig.local
 
 [credential "https://github.com"]
-	helper =
-	helper = !/opt/homebrew/bin/gh auth git-credential
+  helper =
+  helper = !/opt/homebrew/bin/gh auth git-credential
 
 [credential "https://gist.github.com"]
-	helper =
-	helper = !/opt/homebrew/bin/gh auth git-credential
+  helper =
+  helper = !/opt/homebrew/bin/gh auth git-credential
