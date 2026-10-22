@@ -92,7 +92,7 @@ brew "jq"
 brew "ijq"
 brew "jd"
 brew "jid"
-brew "noahgorstein/tap/jqp", trusted: true
+brew "jqp"
 
 # yaml
 brew "homeport/tap/dyff", trusted: true # yaml/json diff tool
@@ -105,12 +105,13 @@ brew "yq"
 brew "gh"
 brew "gist"
 brew "git"
+brew "git-delete-merged-branches"
 brew "git-delta"
 # brew "hub"
 
 # doc things
 brew "adr-tools"
-brew "git-cliff" # changelog generator taht supports conventional commits
+brew "git-cliff" # changelog generator that supports conventional commits
 brew "tlrc" # tldr in rust
 
 # python things
@@ -213,6 +214,7 @@ cask "deskflow/tap/deskflow", trusted: true # open source replacement for synerg
 mas "Display Menu", id: 549083868
 # cask "exiftool"
 cask "iterm2"
+cask "itermbrowserplugin"
 # cask "logitech-camera-settings"
 cask "logitune"
 # cask "menumeters"
@@ -271,6 +273,10 @@ cask "visual-studio-code"
 # cask "warp"
 brew "pre-commit"
 brew "rura" # TUI for building shell pipelines
+go "github.com/jondot/goweight" # tool for analyzing Go binaries
+go "github.com/lucasepe/modgv/modgv" # tool for visualizing Go module dependencies
+go "github.com/joho/godotenv/cmd/godotenv" # tool for loading .env files
+go "github.com/blackducksoftware/exponential-backoff-tool" # command line tool for performing intelligent retries based on the output of a shell command.
 
 # documentation tooling
 brew "homeport/tap/termshot", trusted: true # create screenshots of a terminal
