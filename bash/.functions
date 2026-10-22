@@ -116,6 +116,16 @@ function log() {
             xargs -I % sh -c 'git show --color=always % | less -R'"
 }
 
+# brew scrubs its env and ignores gh's keyring, so attestation verification
+# needs the token passed explicitly; scope it to `brew bundle` only
+function brew() {
+  if [[ "$1" == "bundle" ]] && command -v gh >/dev/null 2>&1; then
+    HOMEBREW_GITHUB_API_TOKEN="$(gh auth token)" command brew "$@"
+  else
+    command brew "$@"
+  fi
+}
+
 # validate puppet erb
 function validate_erb() {
   erb -P -x -T '-' "$1" | ruby -c
