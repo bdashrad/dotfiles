@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+# ndns — switch the NextDNS CLI profile.
+#   ndns            pick from a list of your profiles
+#   ndns <id|name>  switch directly (name match is case-insensitive)
+#   ndns status     show configured profile and what NextDNS is actually serving
+# API key lives in the macOS keychain:
+#   security add-generic-password -s nextdns-api -a "$USER" -w
+set -euo pipefail
+
+die() { echo "ndns: $*" >&2; exit 1; }
+
+current=$(nextdns config 2>/dev/null | awk '$1 == "profile" { print $2; exit }' || true)
+
+if [ "${1:-}" = status ]; then
+  echo "configured: ${current:-none}"
+  curl -sL --max-time 5 https://test.nextdns.io | jq -r '"serving:    \(.status) via \(.protocol // "-")"'
+  exit
+fi
+
+key=$(security find-generic-password -s nextdns-api -w 2>/dev/null) ||
+  die "no API key in keychain (service nextdns-api)"
+list=$(curl -sf --max-time 10 -H "X-Api-Key: $key" https://api.nextdns.io/profiles |
+  jq -r '.data[] | "\(.id)\t\(.name)"') && [ -n "$list" ] ||
+  die "could not list profiles"
+
+target=""
+if [ -n "${1:-}" ]; then
+  want=$(printf '%s' "$1" | tr '[:upper:]' '[:lower:]')
+  target=$(printf '%s\n' "$list" | awk -F'\t' -v w="$want" 'tolower($1) == w || tolower($2) == w { print $1; exit }')
+  [ -n "$target" ] || die "no profile matching '$1'"
+else
+  ids=() labels=()
+  while IFS=$'\t' read -r id name; do
+    ids+=("$id")
+    if [ "$id" = "$current" ]; then labels+=("$name ($id) *current*"); else labels+=("$name ($id)"); fi
+  done <<< "$list"
+  PS3="Profile #: "
+  select choice in "${labels[@]}"; do
+    [ -n "$choice" ] && { target=${ids[$((REPLY - 1))]}; break; }
+    echo "pick 1-${#ids[@]}"
+  done
+  [ -n "$target" ] || exit 1
+fi
+
+if [ "$target" = "$current" ]; then
+  echo "already on $target"
+  exit
+fi
+sudo nextdns config set -profile="$target" && sudo nextdns restart && echo "switched to $target"
