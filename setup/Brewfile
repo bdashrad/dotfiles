@@ -200,6 +200,7 @@ cask "1password-cli"
 cask "lulu"
 # mas "Tailscale", id: 1475387142
 cask "tailscale-app"
+brew "testssl"
 cask "tripmode"
 # cask "tunnelblick" # OpenVPN client
 # cask "wireshark"
