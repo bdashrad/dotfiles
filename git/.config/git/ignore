@@ -26,3 +26,5 @@ ehthumbs_vista.db
 ehthumbs.db
 Thumbs.db
 Thumbs.db:encryptable
+
+**/.claude/settings.local.json
