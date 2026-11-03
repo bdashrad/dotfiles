@@ -173,6 +173,9 @@ title "Stow dotfiles"
 stow {atuin,bash,blesh,colima,docker,git,golang,linters,powerline-go,iterm2,rectangle,ruby,screen,terraform,tmux,vim}
 mkdir -p "${HOME}/bin"
 stow -t "${HOME}/bin/" bin
+# ble.sh needs the BSD stty, not the coreutils one from gnubin; absolute
+# symlinks can't be stowed, so link it directly
+ln -sfn /bin/stty "${HOME}/bin/stty"
 
 title "Create code folder"
 mkdir -p "${HOME}/code"
