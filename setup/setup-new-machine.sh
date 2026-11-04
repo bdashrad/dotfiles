@@ -170,12 +170,49 @@ ln -s "${HOMEBREW_PREFIX}/etc/bash_completion.d" "${HOME}/.local/share/bash-comp
 
 
 title "Stow dotfiles"
-stow {atuin,bash,blesh,colima,docker,git,golang,linters,powerline-go,iterm2,rectangle,ruby,screen,terraform,tmux,vim}
-mkdir -p "${HOME}/bin"
+# create these first so stow links their files instead of folding the whole dir into the repo,
+# otherwise tools write credentials and runtime state into ~/.dotfiles
+mkdir -p "${HOME}"/{bin,.agents/skills,.claude,.codex,.colima,.config/gcloud}
+stow {agents,asdf,atuin,bash,blesh,btop,claude,git,github,linters,powerline-go,screen,tmux,vim}
 stow -t "${HOME}/bin/" bin
 # ble.sh needs the BSD stty, not the coreutils one from gnubin; absolute
 # symlinks can't be stowed, so link it directly
 ln -sfn /bin/stty "${HOME}/bin/stty"
+
+if [[ "$(uname)" == "Darwin" ]]; then
+  stow {iterm2,rectangle}
+fi
+
+if confirm "Stow Codex dotfiles? [y/N] "; then
+  stow codex
+fi
+
+if confirm "Stow cloud / IaC dotfiles (gcloud, terraform)? [y/N] "; then
+  stow {gcloud,terraform}
+fi
+
+if confirm "Stow Go dotfiles? [y/N] "; then
+  stow golang
+fi
+
+if confirm "Stow Ruby dotfiles? [y/N] "; then
+  stow ruby
+fi
+
+if confirm "Stow container dotfiles (docker, colima)? [y/N] "; then
+  stow {docker,colima}
+fi
+
+title "Configure dotfiles repo git filters and hooks"
+# keep claude autoMode.environment out of git; see .gitattributes and the filter script
+git config filter.claude-settings.clean 'scripts/claude-settings-filter.sh clean'
+git config filter.claude-settings.smudge 'scripts/claude-settings-filter.sh smudge'
+git config filter.claude-settings.required true
+# the clone happened before the filter existed; re-checkout so smudge adds autoMode.environment
+if git diff --quiet -- claude/.claude/settings.json; then
+  rm claude/.claude/settings.json && git checkout -- claude/.claude/settings.json
+fi
+pre-commit install
 
 title "Create code folder"
 mkdir -p "${HOME}/code"
