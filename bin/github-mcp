@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Run the official GitHub MCP server (https://github.com/github/github-mcp-server) with the token from
+# the gh login, without a third-party wrapper.
+#
+# Usage (from an MCP client config):
+#   github-mcp [github-mcp-server stdio flags]
+#   e.g. github-mcp --read-only --toolsets repos,issues,pull_requests
+#
+# Note: --read-only only hides write tools; the gh token keeps all of its scopes.
+#
+# Dependencies: gh (logged in), github-mcp-server (brew "github-mcp-server")
+#
+set -euo pipefail
+
+for dep in gh github-mcp-server; do
+  command -v "${dep}" > /dev/null || { echo "github-mcp: ${dep} not found in PATH" >&2; exit 1; }
+done
+
+# the token only ever lives in the server's environment; it is never printed
+GITHUB_PERSONAL_ACCESS_TOKEN="$(gh auth token)"
+export GITHUB_PERSONAL_ACCESS_TOKEN
+exec github-mcp-server stdio "$@"

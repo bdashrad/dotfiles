@@ -247,6 +247,18 @@ else
   echo "asdf not found, skipping plugins; install it with brew and re-run this step."
 fi
 
+title "Configure Claude Code GitHub MCP servers"
+# user-scoped MCP servers live in ~/.claude.json, which isn't stowed; bin/github-mcp uses the gh login token
+if command -v claude &> /dev/null && command -v gh &> /dev/null; then
+  gh auth status &> /dev/null || gh auth login
+  claude mcp get github &> /dev/null ||
+    claude mcp add github -s user -- "${HOME}/bin/github-mcp"
+  claude mcp get github-read-only &> /dev/null ||
+    claude mcp add github-read-only -s user -- "${HOME}/bin/github-mcp" --read-only
+else
+  echo "claude or gh not found, skipping GitHub MCP servers"
+fi
+
 title "Configure dotfiles repo git filters and hooks"
 # keep claude autoMode.environment out of git; see .gitattributes and the filter script
 git config filter.claude-settings.clean 'scripts/claude-settings-filter.sh clean'

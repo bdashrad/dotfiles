@@ -115,6 +115,7 @@ brew "dos2unix"
 # git things
 # brew "bfg" # install if needed
 brew "gh"
+brew "github-mcp-server" # run via bin/github-mcp with a 1Password token
 brew "gist"
 brew "git"
 brew "git-delete-merged-branches"
