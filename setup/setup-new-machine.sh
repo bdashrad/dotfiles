@@ -93,6 +93,11 @@ if [[ "$(uname)" == "Darwin" ]]; then
     sudo scutil --set HostName "${NEW_HOSTNAME:-${CURRENT_HOSTNAME}}"
   fi
 
+  # mas can't sign in or check sign-in status, so pause here; without it only the mas entries fail
+  title "Sign in to the App Store"
+  open -a "App Store"
+  read -r -p "Sign in to the App Store (needed for mas apps), then press Enter to continue... "
+
   # install brew apps
   title "Installing brew apps..."
   brew bundle --file "${SCRIPT_DIR}/Brewfile"
