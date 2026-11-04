@@ -77,6 +77,15 @@
             "command": "atuin hook claude-code"
           }
         ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/doppler-ask.sh"
+          }
+        ]
       }
     ],
     "SessionEnd": [
