@@ -137,6 +137,14 @@ if [[ "$(uname)" == "Darwin" ]]; then
     echo "Not installing, review \`./home.Brewfile\` to see if there is anything you want from there."
   fi
 
+  # mas needs an App Store sign-in, and each app must already be owned by that Apple ID
+  if confirm "Install Safari extensions? [y/N] "; then
+    title "Install brew safari.Brewfile"
+    brew bundle install --file "${SCRIPT_DIR}/safari.Brewfile"
+  else
+    echo "Not installing, review \`./safari.Brewfile\` to see if there is anything you want from there."
+  fi
+
   if confirm "Configure macOS defaults? [y/N] "; then
     title "Configuring macOS defaults."
     ./scripts/osx.sh
@@ -178,7 +186,7 @@ title "Stow dotfiles"
 # create these first so stow links their files instead of folding the whole dir into the repo,
 # otherwise tools write credentials and runtime state into ~/.dotfiles
 mkdir -p "${HOME}"/{bin,.agents/skills,.claude,.codex,.colima,.config/gcloud}
-stow {agents,asdf,atuin,bash,blesh,btop,claude,git,github,linters,powerline-go,screen,tmux,vim}
+stow {agents,asdf,atuin,bash,blesh,btop,claude,git,linters,powerline-go,screen,tmux,vim}
 stow -t "${HOME}/bin/" bin
 # ble.sh needs the BSD stty, not the coreutils one from gnubin; absolute
 # symlinks can't be stowed, so link it directly
