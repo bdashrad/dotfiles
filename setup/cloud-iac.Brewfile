@@ -14,7 +14,6 @@ brew "hashicorp/tap/terraform-ls", trusted: true
 brew "hcl2json"
 
 ## IAC scanners, linters, checks
-brew "checkov"
 brew "minamijoyo/hcledit/hcledit", trusted: true
 brew "minamijoyo/tfedit/tfedit", trusted: true
 # cask "terraform-linters/tap/tflint", trusted: true
