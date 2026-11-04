@@ -15,3 +15,6 @@ sublime/User/oscrypto-ca-bundle.crt
 # vim things
 /vim/.vim/plugged/**
 /vim/.vim/.netrwhist
+
+# claude: machine-specific settings merged in by the claude-settings git filter
+claude/.claude/settings.private.json

@@ -37,6 +37,16 @@
             "command": "atuin hook claude-code"
           }
         ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_response.filePath // .tool_input.file_path' | { read -r f; case \"$f\" in *.sh) shellcheck --severity=warning \"$f\" >&2 || exit 2;; esac; }",
+            "statusMessage": "Running shellcheck..."
+          }
+        ]
       }
     ],
     "PostToolUseFailure": [
@@ -134,9 +144,32 @@
     "type": "command",
     "command": "node $HOME/.claude/statusline/hsablonniere.js"
   },
-  "enabledPlugins": {},
+  "enabledPlugins": {
+    "mattpocock-skills@claude-plugins-official": true,
+    "cc-plugin-you-should-know@builtin": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    },
+    "goland-claude-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "JetBrains/go-modern-guidelines"
+      }
+    }
+  },
+  "modelSettings": {
+    "claude-sonnet-5": {
+      "effortLevel": "medium"
+    }
+  },
   "theme": "dark",
   "editorMode": "normal",
   "autoCompactEnabled": true,
-  "remoteControlAtStartup": true
+  "remoteControlAtStartup": true,
+  "agentPushNotifEnabled": true
 }

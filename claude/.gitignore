@@ -33,3 +33,10 @@ project_clones/
 !hooks/
 !agents/
 !rules/
+
+# claude.ai-synced skills are per-account (may include company content); keep after the allowlist
+.claude/skills/synced/
+.claude/skills/.trash/
+
+# installed per machine by the skills CLI (symlink into ~/.agents/skills)
+.claude/skills/find-skills

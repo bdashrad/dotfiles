@@ -1,0 +1,10 @@
+{
+  "autoMode": {
+    "environment": [
+      "**~/.dotfiles repo**: the user's personal dotfiles (github.com/bdashrad/dotfiles), deployed into $HOME with GNU stow; tools are installed mostly with Homebrew (Brewfiles, brew bundle) and asdf (.tool-versions). There, editing shell profiles, git config and tool configs, running stow / stow -R / stow -D, brew bundle, and asdf install are routine. stow --adopt moves real files from $HOME into this public repo, so it needs the user to name it and the file. Adding SSH keys, cron jobs or launchd agents, or sourcing remote URLs from a profile, is still Unauthorized Persistence",
+      "**Repository visibility** (overrides the default for this one repo): ~/.dotfiles (github.com/bdashrad/dotfiles) is PUBLIC, so committing or pushing there is publishing; other repos follow the default rule. Never bring into it ~/.extra, shell history, op session tokens, anything under ~/.ssh or ~/.config/gcloud, or claude/.claude/settings.private.json",
+      "**Secrets management** (overrides the default \"None configured\"): 1Password CLI (op), plus ~/.extra (untracked, sourced by the shell). Feeding op read / op inject output straight into the command or out-of-repo file that consumes it is fine; op item get --reveal, printing op read output, or printing ~/.extra is Credential Materialization. op:// references contain no secret and can be committed; resolved values cannot. ~/.extra is a sensitive data location",
+      "**Default / protected branches**: in ~/.dotfiles (a solo repo with no required reviewers) the default branch is main and it is protected; pushing to main normally, and merging the user's own PRs when they ask, are routine there, but a force-push to main is still judged under Git Destructive. In other repos, use that repo's own default branch, protection and review rules rather than assuming"
+    ]
+  }
+}
