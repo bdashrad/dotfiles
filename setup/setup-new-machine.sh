@@ -192,7 +192,10 @@ if confirm "Stow Codex dotfiles? [y/N] "; then
   stow codex
 fi
 
-if confirm "Stow cloud / IaC dotfiles (gcloud, terraform)? [y/N] "; then
+if confirm "Set up cloud / IaC (gcloud, terraform dotfiles and cloud-iac.Brewfile)? [y/N] "; then
+  if command -v brew &> /dev/null; then
+    brew bundle install --file "${SCRIPT_DIR}/cloud-iac.Brewfile"
+  fi
   stow {gcloud,terraform}
 fi
 

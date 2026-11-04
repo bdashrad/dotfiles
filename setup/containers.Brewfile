@@ -27,4 +27,5 @@ brew "snyk/tap/snyk", trusted: true
 brew "trivy" # container vulnerability/misconfiguration scanner
 
 ## container tooling
+# brew "jesseduffield/lazydocker/lazydocker" # TUI for docker and docker-compose
 brew "homeport/tap/forklift", trusted: true # manuipulate container images, layers, and filesystems

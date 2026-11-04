@@ -90,6 +90,11 @@ brew "direnv"
 brew "jc"
 # brew "tmate" # deprecated
 
+# log parsing things
+# brew "logstalgia"
+# brew "lnav"
+# brew "goaccess"
+
 # json
 brew "jq"
 brew "ijq"
@@ -102,6 +107,10 @@ brew "homeport/tap/dyff", trusted: true # yaml/json diff tool
 cask "homeport/tap/yft", trusted: true # yaml formatter
 brew "yamllint"
 brew "yq"
+
+# data things
+brew "csvq"
+brew "dos2unix"
 
 # git things
 # brew "bfg" # install if needed
@@ -226,7 +235,10 @@ cask "MonitorControl"
 # cask "oversight"
 go "github.com/catilac/plistwatch"
 brew "poppler" # pdf tool
+brew "lftp" # scriptable ftp/sftp client
 brew "rclone"
+# cask "cyberduck"
+# cask "mountain-duck"
 brew "showkey"
 cask "the-unarchiver"
 cask "whatcable"
@@ -273,6 +285,7 @@ brew "cloc" # count lines of code
 cargo "tokei" # count lines of code
 # cask "fig"
 # cask "kdiff3"
+# cask "postman"
 cask "ngrok"
 cask "p4v" # p4merge
 # cask "sublime-text"
@@ -284,6 +297,11 @@ go "github.com/jondot/goweight" # tool for analyzing Go binaries
 # go "github.com/lucasepe/modgv/modgv" # tool for visualizing Go module dependencies
 go "github.com/joho/godotenv/cmd/godotenv" # tool for loading .env files
 go "github.com/blackducksoftware/exponential-backoff-tool" # command line tool for performing intelligent retries based on the output of a shell command.
+
+## golang
+brew "golangci-lint"
+brew "ko" # Build and deploy Go applications on Kubernetes without a Dockerfile
+brew "mockery" # generate mock objects for testing in Go
 
 # documentation tooling
 brew "homeport/tap/termshot", trusted: true # create screenshots of a terminal
