@@ -32,6 +32,9 @@ export ASDF_DATA_DIR
 # kubectl krew
 [[ -d "${KREW_ROOT:-${HOME}/.krew}/bin" ]] && PATH="${KREW_ROOT:-${HOME}/.krew}/bin:${PATH}"
 
+# cargo (rust) binaries, e.g. brew bundle's `cargo "..."` entries
+[[ -d "${CARGO_HOME:-${HOME}/.cargo}/bin" ]] && PATH="${CARGO_HOME:-${HOME}/.cargo}/bin:${PATH}"
+
 # rancher-desktop or docker desktop
 # [[ -d "${HOME}/.rd/bin/" ]] && PATH="${PATH}:${HOME}/.rd/bin"
 # [[ -d "/Applications/Docker.app/Contents/Resources/bin/" ]] && PATH="${PATH}:/Applications/Docker.app/Contents/Resources/bin"

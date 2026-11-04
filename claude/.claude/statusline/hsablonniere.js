@@ -129,9 +129,9 @@ try {
   if (contextWindow?.current_usage && contextWindow?.context_window_size) {
     const usage = contextWindow.current_usage;
     const currentTokens = (usage.input_tokens || 0) +
-                          (usage.output_tokens || 0) +
-                          (usage.cache_creation_input_tokens || 0) +
-                          (usage.cache_read_input_tokens || 0);
+      (usage.output_tokens || 0) +
+      (usage.cache_creation_input_tokens || 0) +
+      (usage.cache_read_input_tokens || 0);
     const contextSize = contextWindow.context_window_size;
     const ctxPercent = Math.round((currentTokens / contextSize) * 100);
 

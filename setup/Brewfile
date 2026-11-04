@@ -11,6 +11,9 @@ brew "mas"
 # install golang so we can install golang apps
 brew "go"
 
+# install rust so we can install cargo apps
+brew "rust"
+
 # Node (with Corepack)
 # https://nodejs.org/api/corepack.html
 brew "node"
@@ -258,6 +261,7 @@ cask "google-chrome", args: { adopt: true }
 
 # communication
 cask "slack", args: { adopt: true }
+cask "slack-cli"
 cask "zoom", args: { adopt: true }
 
 # screen sharing
@@ -265,6 +269,8 @@ cask "zoom", args: { adopt: true }
 # cask "pop-app"
 
 # development
+brew "cloc" # count lines of code
+cargo "tokei" # count lines of code
 # cask "fig"
 # cask "kdiff3"
 cask "ngrok"
@@ -275,7 +281,7 @@ cask "visual-studio-code"
 brew "pre-commit"
 brew "rura" # TUI for building shell pipelines
 go "github.com/jondot/goweight" # tool for analyzing Go binaries
-go "github.com/lucasepe/modgv/modgv" # tool for visualizing Go module dependencies
+# go "github.com/lucasepe/modgv/modgv" # tool for visualizing Go module dependencies
 go "github.com/joho/godotenv/cmd/godotenv" # tool for loading .env files
 go "github.com/blackducksoftware/exponential-backoff-tool" # command line tool for performing intelligent retries based on the output of a shell command.
 
@@ -291,15 +297,20 @@ brew "homeport/tap/termshot", trusted: true # create screenshots of a terminal
 
 # fonts
 ## Nerd Fonts
-# https://www.nerdfonts.com/font-downloads
-cask "font-b612-mono"
-cask "font-b612"
+## https://www.nerdfonts.com/font-downloads
+cask "font-fira-code-nerd-font"
+cask "font-fira-mono-nerd-font"
+cask "font-geist-mono-nerd-font"
 cask "font-hack-nerd-font"
-cask "font-monaspace"
-cask "font-powerline-symbols"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-monaspice-nerd-font"
 
 ## Other Fonts
+cask "font-b612-mono"
+cask "font-b612"
 cask "font-manrope"
+cask "font-monaspace"
+cask "font-powerline-symbols"
 
 # quicklook plugins
 # cask "betterzipql"
