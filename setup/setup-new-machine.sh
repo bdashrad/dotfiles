@@ -95,7 +95,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 
   # install brew apps
   title "Installing brew apps..."
-  brew bundle --file "${SCRIPT_DIR}/setup/Brewfile"
+  brew bundle --file "${SCRIPT_DIR}/Brewfile"
 
   # Ensure Brew Bash is a valid shell option
   if ! grep -q "${HOMEBREW_PREFIX}/bin/bash" /etc/shells ; then
@@ -126,10 +126,15 @@ if [[ "$(uname)" == "Darwin" ]]; then
   if confirm "Install work applications? [y/N] "; then
     title "Install brew work.Bundlefile"
     brew bundle install --file "${SCRIPT_DIR}/work.Brewfile"
-    title "Install asdf plugins."
-    ./scripts/asdf.sh
   else
-    echo "Not installing, review \`./work.Brewfile\` and \`asdf.sh\` to see if there is anything you want from there."
+    echo "Not installing, review \`./work.Brewfile\` to see if there is anything you want from there."
+  fi
+
+  if confirm "Install home applications? [y/N] "; then
+    title "Install brew home.Brewfile"
+    brew bundle install --file "${SCRIPT_DIR}/home.Brewfile"
+  else
+    echo "Not installing, review \`./home.Brewfile\` to see if there is anything you want from there."
   fi
 
   if confirm "Configure macOS defaults? [y/N] "; then
@@ -199,8 +204,31 @@ if confirm "Stow Ruby dotfiles? [y/N] "; then
   stow ruby
 fi
 
-if confirm "Stow container dotfiles (docker, colima)? [y/N] "; then
+if confirm "Set up containers (docker, colima dotfiles and containers.Brewfile)? [y/N] "; then
+  if command -v brew &> /dev/null; then
+    brew bundle install --file "${SCRIPT_DIR}/containers.Brewfile"
+  fi
   stow {docker,colima}
+fi
+
+if confirm "Set up Kubernetes tooling (kubernetes.Brewfile)? [y/N] "; then
+  if command -v brew &> /dev/null; then
+    brew bundle install --file "${SCRIPT_DIR}/kubernetes.Brewfile"
+  fi
+fi
+
+title "Install asdf plugins and tools"
+# bootstrap asdf-plugin-manager at the ref and version pinned in the stowed asdf package, then let it
+# add every plugin from ~/.plugin-versions and install every tool from ~/.tool-versions
+if command -v asdf &> /dev/null; then
+  apm_ref="$(awk '$1 == "asdf-plugin-manager" { print $3 }' "${HOME}/.plugin-versions")"
+  apm_version="$(awk '$1 == "asdf-plugin-manager" { print $2 }' "${HOME}/.tool-versions")"
+  asdf plugin add asdf-plugin-manager https://github.com/asdf-community/asdf-plugin-manager.git
+  asdf plugin update asdf-plugin-manager "${apm_ref}"
+  asdf install asdf-plugin-manager "${apm_version}"
+  (cd "${HOME}" && asdf exec asdf-plugin-manager add-all && asdf install)
+else
+  echo "asdf not found, skipping plugins; install it with brew and re-run this step."
 fi
 
 title "Configure dotfiles repo git filters and hooks"
