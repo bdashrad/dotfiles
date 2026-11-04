@@ -14,6 +14,7 @@ brew "krew" # kubectl plugin manager
 
 # helm
 # brew "norwoodj/tap/helm-docs", trusted: true
+brew "chart-testing" # lint and test helm charts (ct)
 
 tap "kptdev/kpt", "https://github.com/kptdev/kpt.git"
 brew "kptdev/kpt/kpt", trusted: true
