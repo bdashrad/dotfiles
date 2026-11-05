@@ -247,6 +247,13 @@ else
   echo "asdf not found, skipping plugins; install it with brew and re-run this step."
 fi
 
+if confirm "Install GitHub CLI extensions (gh-clone-org, gh-poi)? [y/N] "; then
+  title "Installing GitHub CLI extensions."
+  ./scripts/gh-cli.sh
+else
+  echo "Not installing, review \`./scripts/gh-cli.sh\` for the extension list."
+fi
+
 if confirm "Configure Claude Code (GitHub and Notion MCP servers)? [y/N] "; then
   title "Configuring Claude Code."
   ./scripts/claude-setup.sh

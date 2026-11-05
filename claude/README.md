@@ -37,26 +37,18 @@ Settings for claude code and claude desktop.
   claude plugin install context7@claude-plugins-official
   ```
 
-* GitHub
+* GitHub and Notion
 
-  With [gh cli plugin for auth](https://github.com/shuymn/gh-mcp)
+  User-scoped MCP servers live in `~/.claude.json`, so they can't be stowed. Register them with:
 
   ```shell
-  gh extension install shuymn/gh-mcp
+  ./scripts/claude-setup.sh
   ```
 
-  * Install the MCP server in read-only mode:
-
-    ```shell
-    GITHUB_READ_ONLY=1
-    claude mcp add-json github '{"command":"gh","args":["mcp"],"env":{"GITHUB_READ_ONLY":"1"}}'
-    ```
-
-  * Install the MCP server in read-write mode:
-
-    ```shell
-    claude mcp add-json github '{"command":"gh","args":["mcp"]}'
-    ```
+  GitHub uses [`bin/github-mcp`](../bin/github-mcp), which runs the official
+  [github-mcp-server](https://github.com/github/github-mcp-server) with the `gh auth token`. It's
+  registered twice: `github` (read-write) and `github-read-only` (`--read-only`, which only hides
+  write tools; the token keeps all of its scopes).
 
 * Terraform
 
