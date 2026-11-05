@@ -247,16 +247,11 @@ else
   echo "asdf not found, skipping plugins; install it with brew and re-run this step."
 fi
 
-title "Configure Claude Code GitHub MCP servers"
-# user-scoped MCP servers live in ~/.claude.json, which isn't stowed; bin/github-mcp uses the gh login token
-if command -v claude &> /dev/null && command -v gh &> /dev/null; then
-  gh auth status &> /dev/null || gh auth login
-  claude mcp get github &> /dev/null ||
-    claude mcp add github -s user -- "${HOME}/bin/github-mcp"
-  claude mcp get github-read-only &> /dev/null ||
-    claude mcp add github-read-only -s user -- "${HOME}/bin/github-mcp" --read-only
+if confirm "Configure Claude Code (GitHub and Notion MCP servers)? [y/N] "; then
+  title "Configuring Claude Code."
+  ./scripts/claude-setup.sh
 else
-  echo "claude or gh not found, skipping GitHub MCP servers"
+  echo "Not configuring, review \`./scripts/claude-setup.sh\` for anything you want to set up."
 fi
 
 title "Configure dotfiles repo git filters and hooks"
