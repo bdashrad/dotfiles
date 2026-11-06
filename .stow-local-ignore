@@ -25,5 +25,5 @@ _darcs
 
 # custom stow-local-ignore below
 
-^/scripts/
-^/setup/
+^/_setup/
+^/_tools/

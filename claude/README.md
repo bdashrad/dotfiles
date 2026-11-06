@@ -42,7 +42,7 @@ Settings for claude code and claude desktop.
   User-scoped MCP servers live in `~/.claude.json`, so they can't be stowed. Register them with:
 
   ```shell
-  ./scripts/claude-setup.sh
+  ./_setup/claude-setup.sh
   ```
 
   GitHub uses [`bin/github-mcp`](../bin/github-mcp), which runs the official

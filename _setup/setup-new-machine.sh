@@ -82,7 +82,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
   eval "$("${HOMEBREW_PREFIX}/bin/brew" shellenv)"
 
   title "Use Touch ID for sudo."
-  sudo ./scripts/touchid_sudo.sh || echo "Configuring sudo failed!"
+  sudo ./_setup/touchid_sudo.sh || echo "Configuring sudo failed!"
 
   # set a stable hostname so it doesn't change with DHCP (used by atuin, etc.)
   title "Set a stable hostname."
@@ -152,9 +152,9 @@ if [[ "$(uname)" == "Darwin" ]]; then
 
   if confirm "Configure macOS defaults? [y/N] "; then
     title "Configuring macOS defaults."
-    ./scripts/osx.sh
+    ./_setup/osx.sh
   else
-    echo "Not configuring defaults, review \`./scripts/osx.sh\` for any settings you want to configure"
+    echo "Not configuring defaults, review \`./_setup/osx.sh\` for any settings you want to configure"
   fi
 
   # gpg
@@ -200,7 +200,7 @@ stow -t "${HOME}/bin/" bin
 # symlinks can't be stowed, so link it directly
 ln -sfn /bin/stty "${HOME}/bin/stty"
 # blesh only stows the config; install ble.sh itself
-./scripts/install-ble.sh
+./_setup/install-ble.sh
 
 if [[ "$(uname)" == "Darwin" ]]; then
   stow {iterm2,rectangle}
@@ -254,22 +254,22 @@ fi
 
 if confirm "Install GitHub CLI extensions (gh-clone-org, gh-poi)? [y/N] "; then
   title "Installing GitHub CLI extensions."
-  ./scripts/gh-cli.sh
+  ./_setup/gh-cli.sh
 else
-  echo "Not installing, review \`./scripts/gh-cli.sh\` for the extension list."
+  echo "Not installing, review \`./_setup/gh-cli.sh\` for the extension list."
 fi
 
 if confirm "Configure Claude Code (GitHub and Notion MCP servers)? [y/N] "; then
   title "Configuring Claude Code."
-  ./scripts/claude-setup.sh
+  ./_setup/claude-setup.sh
 else
-  echo "Not configuring, review \`./scripts/claude-setup.sh\` for anything you want to set up."
+  echo "Not configuring, review \`./_setup/claude-setup.sh\` for anything you want to set up."
 fi
 
 title "Configure dotfiles repo git filters and hooks"
 # keep claude autoMode.environment out of git; see .gitattributes and the filter script
-git config filter.claude-settings.clean 'scripts/claude-settings-filter.sh clean'
-git config filter.claude-settings.smudge 'scripts/claude-settings-filter.sh smudge'
+git config filter.claude-settings.clean '_tools/claude-settings-filter.sh clean'
+git config filter.claude-settings.smudge '_tools/claude-settings-filter.sh smudge'
 git config filter.claude-settings.required true
 # the clone happened before the filter existed; re-checkout so smudge adds autoMode.environment
 if git diff --quiet -- claude/.claude/settings.json; then

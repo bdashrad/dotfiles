@@ -4,6 +4,6 @@
 ^/README.*
 \.DS_Store
 
-# read in the repo by scripts/claude-settings-filter.sh; Claude Code doesn't need them in ~/.claude
+# read in the repo by _tools/claude-settings-filter.sh; Claude Code doesn't need them in ~/.claude
 \.claude/settings\.private\.json
 \.claude/automode\.dotfiles\.json
