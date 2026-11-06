@@ -182,9 +182,12 @@ stow -t "${HOME}/.ssh" ssh
 [[ ! -f "${HOME}/.ssh/authorized_keys" ]] && \
   curl -o "${HOME}/.ssh/authorized_keys" https://github.com/bdashrad.keys
 
-# setup lazy loading for homebrew bash completions
+# setup lazy loading for homebrew bash completions: formulae with modern completions already land in
+# bash-completion's own dir, this exposes the legacy etc/bash_completion.d ones (see bash/.completion)
 mkdir -p "${HOME}/.local/share/bash-completion"
-ln -s "${HOMEBREW_PREFIX}/etc/bash_completion.d" "${HOME}/.local/share/bash-completion/completions"
+# -n replaces an existing link instead of creating a self-loop inside etc/bash_completion.d
+ln -sfn "${HOMEBREW_PREFIX}/etc/bash_completion.d" "${HOME}/.local/share/bash-completion/completions"
+./_tools/bun-completion-patch.sh
 
 
 title "Stow dotfiles"
@@ -196,6 +199,8 @@ stow -t "${HOME}/bin/" bin
 # ble.sh needs the BSD stty, not the coreutils one from gnubin; absolute
 # symlinks can't be stowed, so link it directly
 ln -sfn /bin/stty "${HOME}/bin/stty"
+# blesh only stows the config; install ble.sh itself
+./scripts/install-ble.sh
 
 if [[ "$(uname)" == "Darwin" ]]; then
   stow {iterm2,rectangle}
