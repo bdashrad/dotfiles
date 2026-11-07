@@ -267,15 +267,7 @@ else
 fi
 
 title "Configure dotfiles repo git filters and hooks"
-# keep claude autoMode.environment out of git; see .gitattributes and the filter script
-git config filter.claude-settings.clean '_tools/claude-settings-filter.sh clean'
-git config filter.claude-settings.smudge '_tools/claude-settings-filter.sh smudge'
-git config filter.claude-settings.required true
-# the clone happened before the filter existed; re-checkout so smudge adds autoMode.environment
-if git diff --quiet -- claude/.claude/settings.json; then
-  rm claude/.claude/settings.json && git checkout -- claude/.claude/settings.json
-fi
-pre-commit install
+./_setup/repo-setup.sh
 
 title "Create code folder"
 mkdir -p "${HOME}/code"
