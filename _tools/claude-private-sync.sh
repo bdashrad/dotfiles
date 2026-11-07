@@ -5,7 +5,8 @@
 #   git config dotfiles.claudePrivateOpRef 'op://<vault>/<item>/<file>'
 #
 # Usage:
-#   claude-private-sync.sh pull   # 1Password -> local file (overwrites it), then re-smudge settings.json
+#   claude-private-sync.sh pull   # 1Password -> local file, then re-smudge settings.json; if the local file
+#                                 # differs, asks to vimdiff, overwrite, or keep it
 #   claude-private-sync.sh push   # local file -> 1Password document (overwrites it)
 
 set -euo pipefail
@@ -27,13 +28,48 @@ fi
 
 case "${1:-}" in
   pull)
-    tmp="$(mktemp)"
-    trap 'rm -f "${tmp}"' EXIT
-    op read --force --out-file "${tmp}" "${ref}" > /dev/null
-    jq -e . "${tmp}" > /dev/null || { echo "Error: ${ref} is not valid JSON." >&2; exit 1; }
-    mv "${tmp}" "${private}"
+    tmpdir="$(mktemp -d)"
+    trap 'rm -rf "${tmpdir}"' EXIT
+    # named so it's recognizable in vimdiff
+    remote="${tmpdir}/settings.private.1password.json"
+    op read --force --out-file "${remote}" "${ref}" > /dev/null
+    jq -e . "${remote}" > /dev/null || { echo "Error: ${ref} is not valid JSON." >&2; exit 1; }
+
+    if [[ -f "${private}" ]] && cmp -s "${private}" "${remote}"; then
+      echo "Already up to date: ${private}"
+      exit 0
+    fi
+
+    if [[ -f "${private}" ]]; then
+      # never overwrite local changes without asking
+      [[ -t 0 ]] || { echo "Error: ${private} differs from 1Password; re-run interactively." >&2; exit 1; }
+      echo "${private} differs from the 1Password copy."
+      read -r -p "[v]imdiff and edit local, [o]verwrite local with 1Password, or [k]eep local? [v/o/K] " reply
+      case "${reply}" in
+        [Vv])
+          # left: local file (editable); right: 1Password copy (read-only). ]c/[c jump between changes,
+          # `do` copies the 1Password side's change into local; :wqa saves and quits
+          vim -d "${private}" "${remote}" -c 'wincmd l' -c 'setlocal nomodifiable' -c 'wincmd h'
+          jq -e . "${private}" > /dev/null || { echo "Error: ${private} is no longer valid JSON." >&2; exit 1; }
+          ;;
+        [Oo])
+          cp "${remote}" "${private}"
+          echo "Wrote ${private}"
+          ;;
+        *)
+          echo "Kept ${private}."
+          ;;
+      esac
+      if ! cmp -s "${private}" "${remote}" 2> /dev/null; then
+        echo "Local and 1Password still differ. To make 1Password match local, run:"
+        echo "  ${repo}/_tools/claude-private-sync.sh push"
+      fi
+    else
+      cp "${remote}" "${private}"
+      echo "Wrote ${private}"
+    fi
     chmod 600 "${private}"
-    echo "Wrote ${private}"
+
     # re-smudge settings.json if the filter is set up and the file has no local edits
     if git -C "${repo}" config --get filter.claude-settings.smudge > /dev/null &&
       git -C "${repo}" diff --quiet -- "${settings}"; then

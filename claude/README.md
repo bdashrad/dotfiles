@@ -96,8 +96,8 @@ the repo checked out and Claude Code using its own local config:
     ```
 
 1. Run `_setup/claude-setup.sh`. It registers the GitHub MCP servers, asks once for this machine's
-   `settings.private.json` 1Password reference (blank skips it), pulls the file, re-runs the filter on
-   `settings.json`, and registers that file's `mcpServers`.
+   `settings.private.json` 1Password reference (blank skips it), pulls the file (asking first if a
+   local copy differs), re-runs the filter on `settings.json`, and registers that file's `mcpServers`.
 1. Preview the stow, which changes nothing: `stow -n -v claude`. Every existing real file or directory
    in `~/.claude` that the package links (`settings.json`, `CLAUDE.md`, `remote-settings.json`,
    `agents/`, `commands/`, `docs/`, `hooks/`, `output-styles/`, `prompts/`, `rules/`, `scripts/`,
@@ -125,9 +125,11 @@ working around the block.
 
 ## Maintenance
 
-* After editing `settings.private.json`, run `_tools/claude-private-sync.sh push`. On other machines
-  using the same document, run `_tools/claude-private-sync.sh pull`. Both overwrite their destination;
-  nothing is merged.
+* After editing `settings.private.json`, run `_tools/claude-private-sync.sh push`, which overwrites the
+  1Password copy. On other machines using the same document, run `_tools/claude-private-sync.sh pull`
+  (`claude-setup.sh` runs it too). If the local file differs from 1Password, `pull` asks whether to
+  open both in vimdiff and edit the local one (the 1Password side is read-only), overwrite local, or
+  keep local. If they still differ afterwards, it prints the `push` command to make 1Password match.
 * `/model` writes `model` into the live `settings.json`, which the filter strips on commit and the next
   checkout replaces. To keep a model on a machine, set it in that machine's `settings.private.json`.
 * `_tools/claude-settings-filter.sh` runs on every checkout, `git add`, and `git status` that touches

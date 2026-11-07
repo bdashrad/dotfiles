@@ -33,7 +33,8 @@ if [[ -z "${op_ref}" ]] && command -v op > /dev/null; then
     op_ref=""
   fi
 fi
-if [[ -n "${op_ref}" && ! -f "${private}" ]]; then
+# pull also checks an existing file against 1Password and asks before changing it
+if [[ -n "${op_ref}" ]]; then
   "${repo}/_tools/claude-private-sync.sh" pull || echo "Could not pull settings.private.json; skipping." >&2
 fi
 
