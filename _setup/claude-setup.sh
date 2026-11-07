@@ -23,3 +23,22 @@ claude mcp get notion &> /dev/null ||
   claude mcp add notion -s user --transport http https://mcp.notion.com/mcp
 
 claude mcp list | grep -E '^(github|notion)'
+
+# settings.private.json (machine-specific auto mode rules and model) is gitignored. Ask once for the
+# 1Password reference to pull it from and keep it in this clone's git config, so vault and item names are
+# never committed. _tools/claude-private-sync.sh pull|push uses the same reference later.
+repo="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+private="${repo}/claude/.claude/settings.private.json"
+op_ref="$(git -C "${repo}" config --get dotfiles.claudePrivateOpRef || true)"
+if [[ -z "${op_ref}" ]] && command -v op > /dev/null; then
+  read -r -p "1Password reference for settings.private.json (op://<vault>/<item>/<file>), blank to skip: " op_ref
+  if [[ "${op_ref}" == op://* ]]; then
+    git -C "${repo}" config dotfiles.claudePrivateOpRef "${op_ref}"
+  elif [[ -n "${op_ref}" ]]; then
+    echo "Not an op:// reference; skipping." >&2
+    op_ref=""
+  fi
+fi
+if [[ -n "${op_ref}" && ! -f "${private}" ]]; then
+  "${repo}/_tools/claude-private-sync.sh" pull || echo "Could not pull settings.private.json; skipping." >&2
+fi

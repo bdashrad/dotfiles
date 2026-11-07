@@ -259,7 +259,7 @@ else
   echo "Not installing, review \`./_setup/gh-cli.sh\` for the extension list."
 fi
 
-if confirm "Configure Claude Code (GitHub and Notion MCP servers)? [y/N] "; then
+if confirm "Configure Claude Code (GitHub and Notion MCP servers, settings.private.json)? [y/N] "; then
   title "Configuring Claude Code."
   ./_setup/claude-setup.sh
 else
