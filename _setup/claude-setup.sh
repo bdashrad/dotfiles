@@ -6,7 +6,7 @@
 
 set -euo pipefail
 
-for dep in claude gh; do
+for dep in claude gh jq; do
   command -v "${dep}" > /dev/null || { echo "Error: \`${dep}\` not found in \$PATH." >&2; exit 1; }
 done
 
@@ -17,12 +17,6 @@ claude mcp get github &> /dev/null ||
   claude mcp add github -s user -- "${HOME}/bin/github-mcp"
 claude mcp get github-read-only &> /dev/null ||
   claude mcp add github-read-only -s user -- "${HOME}/bin/github-mcp" --read-only
-
-# OAuth happens on first use (/mcp)
-claude mcp get notion &> /dev/null ||
-  claude mcp add notion -s user --transport http https://mcp.notion.com/mcp
-
-claude mcp list | grep -E '^(github|notion)'
 
 # settings.private.json (machine-specific auto mode rules and model) is gitignored. Ask once for the
 # 1Password reference to pull it from and keep it in this clone's git config, so vault and item names are
@@ -42,3 +36,13 @@ fi
 if [[ -n "${op_ref}" && ! -f "${private}" ]]; then
   "${repo}/_tools/claude-private-sync.sh" pull || echo "Could not pull settings.private.json; skipping." >&2
 fi
+
+# machine-specific user-scoped MCP servers, from settings.private.json's mcpServers (same shape as
+# ~/.claude.json); the settings filter ignores this key, so it never reaches settings.json
+if [[ -f "${private}" ]]; then
+  while IFS=$'\t' read -r name config; do
+    claude mcp get "${name}" &> /dev/null || claude mcp add-json -s user "${name}" "${config}"
+  done < <(jq -r '.mcpServers // {} | to_entries[] | "\(.key)\t\(.value | tojson)"' "${private}")
+fi
+
+claude mcp list
