@@ -5,9 +5,9 @@ Manage dotfiles, configs, etc using bash, gnu stow, and more.
 ## How to use
 
 1. Download dotfiles
-    * Clone repo: `git clone git@github.com:bdashrad/dotfiles.git ~/dotfiles`
+    * Clone repo: `git clone git@github.com:bdashrad/dotfiles.git ~/.dotfiles`
     * Install without git: `mkdir -p ~/.dotfiles; curl -#L https://github.com/bdashrad/dotfiles/tarball/main | tar -xzv --strip-components=1 -C ~/.dotfiles/`
-1. `cd ~/dotfiles`
+1. `cd ~/.dotfiles`
 1. Set a stable hostname so it doesn't change with DHCP (needed for things like [atuin](https://atuin.sh/) hostname resolution): `sudo scutil --set HostName <HOSTNAME>`
 1. `_setup/setup-new-machine.sh`
 1. use [stow](https://www.gnu.org/software/stow/) to install various config files:
