@@ -62,7 +62,7 @@ Settings for claude code and claude desktop.
 `~/.dotfiles` is a public repo, so machine-specific and work settings never get committed.
 
 | File | In git | Holds |
-|---|---|---|
+| --- | --- | --- |
 | `.claude/settings.json` | yes (filtered) | shared settings: hooks, permissions, plugins, status line |
 | `.claude/automode.dotfiles.json` | yes | shared auto mode `environment` entries |
 | `.claude/settings.private.json` | no (gitignored) | this machine's `model`, auto mode `environment` entries, and `mcpServers` |
