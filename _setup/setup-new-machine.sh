@@ -84,13 +84,17 @@ if [[ "$(uname)" == "Darwin" ]]; then
   title "Use Touch ID for sudo."
   sudo ./_setup/touchid_sudo.sh || echo "Configuring sudo failed!"
 
-  # set a stable hostname so it doesn't change with DHCP (used by atuin, etc.)
+  # set a stable hostname (used by atuin, etc.). With HostName unset, `hostname` comes from DHCP or
+  # reverse DNS, or falls back to LocalHostName.local, so it changes with the network. Set all three so
+  # the Sharing name, the Bonjour name, and `hostname` match; use letters, digits, and hyphens only
   title "Set a stable hostname."
-  CURRENT_HOSTNAME="$(scutil --get HostName 2>/dev/null || hostname)"
+  CURRENT_HOSTNAME="$(scutil --get HostName 2> /dev/null || scutil --get LocalHostName)"
   echo "Current hostname: ${CURRENT_HOSTNAME}"
   if confirm "Set a static hostname with scutil? [y/N] "; then
     read -r -p "Hostname [${CURRENT_HOSTNAME}]: " NEW_HOSTNAME
-    sudo scutil --set HostName "${NEW_HOSTNAME:-${CURRENT_HOSTNAME}}"
+    for name in ComputerName LocalHostName HostName; do
+      sudo scutil --set "${name}" "${NEW_HOSTNAME:-${CURRENT_HOSTNAME}}"
+    done
   fi
 
   # mas can't sign in or check sign-in status, so pause here; without it only the mas entries fail
@@ -114,10 +118,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
     chsh -s "${BASHPATH}" # will set for current user only.
   fi
   "${BASHPATH}" --version | head -1 # should be 5.x, not the macOS 3.2.x
-
-  # install fzf keybindings
-  title "Install fzf keybindings"
-  "$(brew --prefix fzf)/install" --key-bindings --completion --no-update-rc
 
   # add symlink to iCloud drive
   title "Add symlink ~/icloud for iCloud drive"
@@ -237,6 +237,12 @@ fi
 if confirm "Set up Kubernetes tooling (kubernetes.Brewfile)? [y/N] "; then
   if command -v brew &> /dev/null; then
     brew bundle install --file "${SCRIPT_DIR}/kubernetes.Brewfile"
+  fi
+  # brew bundle can't manage krew plugins; update the list from a machine with
+  # `kubectl krew list > _setup/krew-plugins.txt`
+  if command -v kubectl-krew &> /dev/null; then
+    title "Installing krew plugins"
+    kubectl-krew install < "${SCRIPT_DIR}/krew-plugins.txt"
   fi
 fi
 
