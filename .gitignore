@@ -3,6 +3,7 @@
 
 # local config settings
 .extra
+.override.local
 .gitconfig.local
 
 # ssh config

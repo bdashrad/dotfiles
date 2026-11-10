@@ -35,6 +35,7 @@ export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}";
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
+# * ~/.override.local (also uncommitted) loads last, after ~/.override, so its settings win.
 # shellcheck disable=SC1090
 for file in ${HOME}/.{extra,bash_prompt,path,exports,aliases,functions}; do
   [[ -f "${file}" ]] && [[ -r "${file}" ]] && . "${file}"
@@ -124,18 +125,19 @@ fi
 # shellcheck disable=SC1091
 [[ -f "${HOME}/.completion" ]] && . "${HOME}/.completion"
 
-# # set up fzf keybindings
-# # shellcheck disable=SC1091
-# [[ -f "${HOME}/.fzf.bash" ]] && . "${HOME}/.fzf.bash"
+# fzf key bindings and completion; ble.sh loads its own fzf integrations. Before atuin so atuin keeps ctrl-r
+[[ ${BLE_VERSION-} ]] || eval "$(fzf --bash)"
 
 # atuin
 # atuin requires ble.sh above
 # shellcheck disable=SC1091
 [[ -f "${HOME}/.atuin.load" ]] && source "${HOME}/.atuin.load"
 
-# source override last for overrides
+# source override last for overrides, then the uncommitted ~/.override.local
 # shellcheck disable=SC1091
 [[ -f "${HOME}/.override" ]] && . "${HOME}/.override"
+# shellcheck disable=SC1091
+[[ -f "${HOME}/.override.local" ]] && . "${HOME}/.override.local"
 
 # ble.sh
 # shellcheck disable=SC1091
