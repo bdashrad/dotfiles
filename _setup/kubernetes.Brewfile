@@ -21,4 +21,6 @@ brew "kptdev/kpt/kpt", trusted: true
 
 brew "homeport/tap/havener", trusted: true # manage multiple resources at once in kubernetes
 
-# kubectl krew plugins are in krew-plugins.txt
+# kubectl krew plugins
+krew "access-matrix"
+krew "ingress-nginx"

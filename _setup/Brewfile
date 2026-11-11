@@ -129,6 +129,10 @@ brew "tlrc" # tldr in rust
 
 # python things
 # cask "miniconda"
+uv "pygments" # pygmentize
+uv "petname"
+uv "yamale"
+uv "yamlfix"
 
 # install heroku-cli
 # tap "heroku/brew"

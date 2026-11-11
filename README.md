@@ -39,8 +39,6 @@ Run by, or alongside, `setup-new-machine.sh`.
 | `install-ble.sh` | Installs [ble.sh](https://github.com/akinomyoga/ble.sh) |
 | `osx.sh` | macOS defaults |
 | `touchid_sudo.sh` | Enables Touch ID for `sudo` |
-| `requirements.in` | Python packages to move to `uv` entries in the Brewfiles; nothing installs it |
-| `krew-plugins.txt` | kubectl plugins, installed with the Kubernetes tools |
 
 ### Brewfiles
 
@@ -107,10 +105,9 @@ Things this repo doesn't cover, to carry over from the old machine.
   `brew bundle cleanup --file=<(cat _setup/Brewfile _setup/*.Brewfile)` and answer no at the prompt. Without
   `--force` it only lists the formulae, casks, taps, and Mac App Store apps no Brewfile mentions; add any you
   want to one. It fails on taps that aren't trusted on that machine, so leave out Brewfiles you didn't install
-* [ ] krew plugins, on machines with Kubernetes: `kubectl krew list > _setup/krew-plugins.txt`, then commit it
+* [ ] krew plugins, on machines with Kubernetes: add any from `kubectl krew list` to `kubernetes.Brewfile`
 * [ ] Global npm packages (`npm list -g --depth=0`) and gems (`gem list`) missing from `node-modules.txt` or
   `Gemfile`
-* [ ] Python packages listed in `_setup/requirements.in`, until they move to the Brewfiles
 * [ ] Install Package Control for Sublime Text 3 from `sublime/`
 * [ ] If they aren't in iCloud:
   * Wi-Fi networks and passwords: the System keychain, and `/Library/Preferences/com.apple.wifi.known-networks.plist`

@@ -238,12 +238,6 @@ if confirm "Set up Kubernetes tooling (kubernetes.Brewfile)? [y/N] "; then
   if command -v brew &> /dev/null; then
     brew bundle install --file "${SCRIPT_DIR}/kubernetes.Brewfile"
   fi
-  # brew bundle can't manage krew plugins; update the list from a machine with
-  # `kubectl krew list > _setup/krew-plugins.txt`
-  if command -v kubectl-krew &> /dev/null; then
-    title "Installing krew plugins"
-    kubectl-krew install < "${SCRIPT_DIR}/krew-plugins.txt"
-  fi
 fi
 
 title "Install asdf plugins and tools"
