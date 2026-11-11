@@ -39,7 +39,7 @@ Run by, or alongside, `setup-new-machine.sh`.
 | `install-ble.sh` | Installs [ble.sh](https://github.com/akinomyoga/ble.sh) |
 | `osx.sh` | macOS defaults |
 | `touchid_sudo.sh` | Enables Touch ID for `sudo` |
-| `requirements.in`, `requirements.txt` | Python packages; edit `requirements.in`, then regenerate `requirements.txt` with [pip-tools](https://github.com/jazzband/pip-tools) `pip-compile`. Moving to `uv` entries in the Brewfiles |
+| `requirements.in` | Python packages to move to `uv` entries in the Brewfiles; nothing installs it |
 | `krew-plugins.txt` | kubectl plugins, installed with the Kubernetes tools |
 
 ### Brewfiles
@@ -110,7 +110,7 @@ Things this repo doesn't cover, to carry over from the old machine.
 * [ ] krew plugins, on machines with Kubernetes: `kubectl krew list > _setup/krew-plugins.txt`, then commit it
 * [ ] Global npm packages (`npm list -g --depth=0`) and gems (`gem list`) missing from `node-modules.txt` or
   `Gemfile`
-* [ ] Python packages from `_setup/requirements.txt`, until they move to the Brewfiles
+* [ ] Python packages listed in `_setup/requirements.in`, until they move to the Brewfiles
 * [ ] Install Package Control for Sublime Text 3 from `sublime/`
 * [ ] If they aren't in iCloud:
   * Wi-Fi networks and passwords: the System keychain, and `/Library/Preferences/com.apple.wifi.known-networks.plist`
