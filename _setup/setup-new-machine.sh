@@ -192,49 +192,42 @@ ln -sfn "${HOMEBREW_PREFIX}/etc/bash_completion.d" "${HOME}/.local/share/bash-co
 title "Stow dotfiles"
 # create these first so stow links their files instead of folding the whole dir into the repo,
 # otherwise tools write credentials and runtime state into ~/.dotfiles
-mkdir -p "${HOME}"/{bin,.agents/skills,.claude,.codex,.colima,.config/gcloud}
-stow {agents,asdf,atuin,bash,blesh,btop,claude,git,linters,powerline-go,screen,tmux,vim}
-stow -t "${HOME}/bin/" bin
+mkdir -p "${HOME}"/{bin,prefs,.agents/skills,.claude,.codex,.colima,.docker,.homebrew,.terraform.d/plugin-cache}
+mkdir -p "${HOME}"/.config/{gcloud,iterm2}
+# stow every package, even for tools that aren't installed; their config sits unused until they are.
+# one at a time, since a conflict aborts the whole stow command
+packages=(agents asdf atuin bash blesh btop claude codex colima docker gcloud git golang linters powerline-go
+  ruby screen terraform tmux vim)
+if [[ "$(uname)" == "Darwin" ]]; then
+  packages+=(iterm2 rectangle)
+fi
+STOW_FAILED=()
+for pkg in "${packages[@]}"; do
+  stow "${pkg}" || STOW_FAILED+=("${pkg}")
+done
+stow -t "${HOME}/bin/" bin || STOW_FAILED+=(bin)
 # ble.sh needs the BSD stty, not the coreutils one from gnubin; absolute
 # symlinks can't be stowed, so link it directly
 ln -sfn /bin/stty "${HOME}/bin/stty"
 # blesh only stows the config; install ble.sh itself
 ./_setup/install-ble.sh
 
-if [[ "$(uname)" == "Darwin" ]]; then
-  stow {iterm2,rectangle}
-fi
-
 title "Configure dotfiles repo git filters and hooks"
 ./_setup/repo-setup.sh
 
-if confirm "Stow Codex dotfiles? [y/N] "; then
-  stow codex
-fi
-
-if confirm "Set up cloud / IaC (gcloud, terraform dotfiles and cloud-iac.Brewfile)? [y/N] "; then
+if confirm "Install cloud / IaC tools (cloud-iac.Brewfile)? [y/N] "; then
   if command -v brew &> /dev/null; then
     brew bundle install --file "${SCRIPT_DIR}/cloud-iac.Brewfile"
   fi
-  stow {gcloud,terraform}
 fi
 
-if confirm "Stow Go dotfiles? [y/N] "; then
-  stow golang
-fi
-
-if confirm "Stow Ruby dotfiles? [y/N] "; then
-  stow ruby
-fi
-
-if confirm "Set up containers (docker, colima dotfiles and containers.Brewfile)? [y/N] "; then
+if confirm "Install container tools (containers.Brewfile)? [y/N] "; then
   if command -v brew &> /dev/null; then
     brew bundle install --file "${SCRIPT_DIR}/containers.Brewfile"
   fi
-  stow {docker,colima}
 fi
 
-if confirm "Set up Kubernetes tooling (kubernetes.Brewfile)? [y/N] "; then
+if confirm "Install Kubernetes tools (kubernetes.Brewfile)? [y/N] "; then
   if command -v brew &> /dev/null; then
     brew bundle install --file "${SCRIPT_DIR}/kubernetes.Brewfile"
   fi
@@ -289,3 +282,8 @@ fi
 
 # setup cpan
 cpan local::lib
+
+if (( ${#STOW_FAILED[@]} )); then
+  echo "These packages didn't stow, most likely because of existing files; preview with \`stow -n -v <pkg>\`:"
+  echo "  ${STOW_FAILED[*]}"
+fi

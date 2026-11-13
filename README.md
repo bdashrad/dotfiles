@@ -11,8 +11,9 @@ Manage dotfiles, configs, etc. for macOS using bash, GNU stow, and more.
 1. `cd ~/.dotfiles`
 1. `_setup/setup-new-machine.sh`
     * It asks before each optional step.
-    * It stows every package, so there's no separate stow step. To add or re-check a single package
-      later, preview it first with `stow -n -v <pkg>`, then run `stow <pkg>`.
+    * It stows every package, even for tools you don't install, so there's no separate stow step. At the
+      end it lists any package that didn't stow because of existing files. To add or re-check a single
+      package later, preview it first with `stow -n -v <pkg>`, then run `stow <pkg>`.
 1. Add machine-specific settings that shouldn't be committed (see [Local, uncommitted config](#local-uncommitted-config)).
 1. Enjoy!
 
@@ -51,8 +52,8 @@ which it doesn't install.
 | `work.Brewfile` | Work-only apps |
 | `home.Brewfile` | Personal-only apps |
 | `safari.Brewfile` | Safari extensions (Mac App Store) |
-| `cloud-iac.Brewfile` | Cloud and infrastructure-as-code tools, with the `gcloud` and `terraform` packages |
-| `containers.Brewfile` | Container tools, with the `docker` and `colima` packages |
+| `cloud-iac.Brewfile` | Cloud and infrastructure-as-code tools |
+| `containers.Brewfile` | Container tools |
 | `kubernetes.Brewfile` | Kubernetes tools |
 | `vscode.Brewfile` | VS Code extensions |
 
