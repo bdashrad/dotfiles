@@ -5,8 +5,6 @@
 # brew "kops"
 # brew "aws-iam-authenticator"
 brew "k9s" # kubernetes TUI
-# tap "kptdev/kpt", "https://github.com/kptdev/kpt.git"
-# brew "kptdev/kpt/kpt", trusted: true
 # brew "kubectx"
 # brew "kube-ps1" # prefer powerline for now
 brew "kubie" # manage multiple kubernetes clusters and namespaces
@@ -16,11 +14,10 @@ brew "krew" # kubectl plugin manager
 # brew "norwoodj/tap/helm-docs", trusted: true
 brew "chart-testing" # lint and test helm charts (ct)
 
-tap "kptdev/kpt", "https://github.com/kptdev/kpt.git"
-brew "kptdev/kpt/kpt", trusted: true
+brew "kpt" # kubernetes package management
 
 brew "homeport/tap/havener", trusted: true # manage multiple resources at once in kubernetes
 
-# kubectl krew plugins
+# kubectl krew plugins; brew bundle needs the krew index, so run `kubectl krew update` once first
 krew "access-matrix"
 krew "ingress-nginx"

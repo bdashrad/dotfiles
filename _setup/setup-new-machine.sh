@@ -229,6 +229,8 @@ fi
 
 if confirm "Install Kubernetes tools (kubernetes.Brewfile)? [y/N] "; then
   if command -v brew &> /dev/null; then
+    # the Brewfile's krew plugins need krew and its plugin index first
+    brew install krew && kubectl-krew update
     brew bundle install --file "${SCRIPT_DIR}/kubernetes.Brewfile"
   fi
 fi
