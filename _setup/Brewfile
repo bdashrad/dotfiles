@@ -54,7 +54,6 @@ brew "tsonglew/dutis/dutis", trusted: true
 
 # Install bash-completion
 brew "bash-completion@2"
-# brew "brew-cask-completion" # deprecated
 
 # Atuin puts your shell history in sqlite
 brew "atuin"
@@ -88,7 +87,7 @@ brew "bats-core"
 brew "devcontainer"
 brew "direnv"
 brew "jc"
-# brew "tmate" # deprecated
+# brew "tmate" # deprecated, leave out for now unless I want to run my own server
 
 # log parsing things
 # brew "logstalgia"
