@@ -22,7 +22,6 @@ brew "tfupdate"
 brew "terraform-docs"
 brew "fujiwara/tap/tfstate-lookup", trusted: true
 brew "infracost"
-brew "terrascan"
 brew "zizmor" # GitHub Actions workflow security linter
 
 # policy management
