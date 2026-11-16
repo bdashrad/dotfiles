@@ -166,6 +166,10 @@ brew "pngcrush"
 brew "pngquant"
 cask "spotify"
 
+# PDF manipulation
+brew "poppler" # pdf tool
+brew "ocrmypdf" # pdf ocr tool
+
 # Install everything else
 brew "bat"
 brew "ncdu"
@@ -240,7 +244,6 @@ cask "logitune"
 cask "MonitorControl"
 # cask "oversight"
 go "github.com/catilac/plistwatch"
-brew "poppler" # pdf tool
 brew "lftp" # scriptable ftp/sftp client
 brew "rclone"
 # cask "cyberduck"
