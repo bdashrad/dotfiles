@@ -20,4 +20,3 @@ brew "homeport/tap/havener", trusted: true # manage multiple resources at once i
 
 # kubectl krew plugins; brew bundle needs the krew index, so run `kubectl krew update` once first
 krew "access-matrix"
-krew "ingress-nginx"
