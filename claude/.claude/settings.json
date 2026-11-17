@@ -189,5 +189,6 @@
   "editorMode": "normal",
   "autoCompactEnabled": true,
   "remoteControlAtStartup": true,
+  "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true
 }
