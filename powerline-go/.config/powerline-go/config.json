@@ -10,6 +10,7 @@
     "ssh",
     "cwd",
     "perms",
+    "kube",
     "terraform-workspace",
     "git",
     "jobs",
