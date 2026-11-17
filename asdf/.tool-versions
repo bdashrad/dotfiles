@@ -5,7 +5,7 @@ gcloud 544.0.0
 golang 1.26.2
 helm 3.19.2
 kubeconform 0.6.4
-kubectl 1.29.2
+kubectl 1.36.6
 kustomize 5.3.0
 minikube 1.32.0
 nodejs 26.10.0
