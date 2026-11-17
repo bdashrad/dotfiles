@@ -2,6 +2,7 @@
 
 # data things
 # brew "slingdata-io/sling/sling", trusted: true
+brew "pg_partman" # postgres partition management
 
 # communication
 # cask "microsoft-teams"
