@@ -184,7 +184,6 @@ brew "watch"
 brew "powerline-go"
 
 # Install pgp stuff
-brew "gpg"
 brew "gnupg"
 brew "pinentry-mac"
 cask "keybase"

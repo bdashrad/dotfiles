@@ -97,8 +97,12 @@ Things this repo doesn't cover, to carry over from the old machine.
 
 * [ ] Keybase: remove the old machine from your devices (keybase.io, or `keybase device remove` on it), then add
   the new machine as a new device
-* [ ] gpg keys: import from Keybase (`keybase pgp export -s | gpg --allow-secret-key-import --import`) or
-  1Password, and keep a copy in 1Password
+* [ ] gpg keys: import from Keybase or 1Password, and keep a copy in 1Password. From Keybase:
+  1. `keybase pgp list` to find the key ID, if you have more than one
+  2. `keybase pgp export -s -q <key-id> | gpg --allow-secret-key-import --import`; Keybase asks for a
+     passphrase to protect the export, then gpg asks for it again through pinentry-mac
+  3. `gpg --edit-key <key-id> trust`, choose `5` (ultimate), then `quit`, so gpg trusts your own key
+  4. `gpg -K` should list it as `sec`
 * [ ] `~/.extra`, `~/.override.local`, `~/.gitconfig.local`, and `~/.ssh/config.d/`
 * [ ] atuin: `atuin login` to sync shell history
 * [ ] Sign in to CLIs: `gh auth login`, `gcloud auth login`, 1Password CLI, and kube contexts

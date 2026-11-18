@@ -161,6 +161,8 @@ if [[ "$(uname)" == "Darwin" ]]; then
   mkdir -p "${HOME}/.gnupg" && chmod 700 "${HOME}/.gnupg"
   "${HOMEBREW_PREFIX}/bin/gsed" "s@HOMEBREW_PREFIX@${HOMEBREW_PREFIX}@g" gnupg/gpg-agent.conf > ~/.gnupg/gpg-agent.conf
   gpgconf --kill gpg-agent
+  # GitHub's web-flow key, so `git log --show-signature` can verify commits made on github.com
+  curl -fsSL https://github.com/web-flow.gpg | gpg --import
 
   # iterm2
   title "Configuring iterm2."
