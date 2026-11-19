@@ -220,6 +220,12 @@ title "Configure dotfiles repo git filters and hooks"
 if confirm "Install cloud / IaC tools (cloud-iac.Brewfile)? [y/N] "; then
   if command -v brew &> /dev/null; then
     brew bundle install --file "${SCRIPT_DIR}/cloud-iac.Brewfile"
+    # gcloud comes from the cask and updates with `gcloud components update`; asdf only installs other versions on demand
+    if command -v gcloud &> /dev/null; then
+      components=()
+      while read -r c; do components+=("${c}"); done < "${SCRIPT_DIR}/../gcloud/.config/gcloud/.default-cloud-sdk-components"
+      gcloud components install --quiet "${components[@]}"
+    fi
   fi
 fi
 

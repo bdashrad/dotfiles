@@ -1,7 +1,6 @@
 argo 3.5.5
 asdf-plugin-manager 1.5.0
 colima 0.9.1
-gcloud 544.0.0
 golang 1.26.2
 helm 3.19.2
 kubeconform 0.6.4
