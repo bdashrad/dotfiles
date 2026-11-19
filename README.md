@@ -103,6 +103,8 @@ Things this repo doesn't cover, to carry over from the old machine.
      passphrase to protect the export, then gpg asks for it again through pinentry-mac
   3. `gpg --edit-key <key-id> trust`, choose `5` (ultimate), then `quit`, so gpg trusts your own key
   4. `gpg -K` should list it as `sec`
+  5. `gpg --quick-lsign-key 968479A1AFF927E37D1A566BB5690EEEBB952194` to trust GitHub's web-flow key, which
+     setup imports, so commits made on github.com verify without a "not certified" warning
 * [ ] `~/.extra`, `~/.override.local`, `~/.gitconfig.local`, and `~/.ssh/config.d/`
 * [ ] atuin: `atuin login` to sync shell history
 * [ ] Sign in to CLIs: `gh auth login`, `gcloud auth login`, 1Password CLI, and kube contexts
