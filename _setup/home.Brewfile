@@ -7,7 +7,7 @@ cask "brave-browser"
 cask "backblaze"
 cask "qmk-toolbox"
 cask "transmission"
-cask "unraid-usb-creator-next"
+cask "unraid-usb-creator"
 
 # communication
 cask "krisp"

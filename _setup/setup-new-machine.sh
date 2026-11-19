@@ -280,10 +280,6 @@ else
   echo "Review \`Gemfile\` for uninstalled ruby gems."
 fi
 
-# install pip and apps
-# sudo easy_install pip
-# ./pip-applications.sh
-
 # setup cpan
 cpan local::lib
 

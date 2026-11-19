@@ -113,8 +113,8 @@ Things this repo doesn't cover, to carry over from the old machine.
   `--force` it only lists the formulae, casks, taps, and Mac App Store apps no Brewfile mentions; add any you
   want to one. It fails on taps that aren't trusted on that machine, so leave out Brewfiles you didn't install
 * [ ] krew plugins, on machines with Kubernetes: add any from `kubectl krew list` to `kubernetes.Brewfile`
-* [ ] Global npm packages (`npm list -g --depth=0`) and gems (`gem list`) missing from `node-modules.txt` or
-  `Gemfile`
+* [ ] Global npm packages (`npm list -g --depth=0`): add the tools you want to a Brewfile or, if asdf has a
+  plugin, `asdf/.tool-versions`. Add gems (`gem list`) to `Gemfile`
 * [ ] Install Package Control for Sublime Text 3 from `sublime/`
 * [ ] If they aren't in iCloud:
   * Wi-Fi networks and passwords: the System keychain, and `/Library/Preferences/com.apple.wifi.known-networks.plist`
