@@ -2,6 +2,7 @@ alpha
 beta
 bq
 cloud-run-proxy
+cloud-sql-proxy
 core
 gcloud-crc32c
 gke-gcloud-auth-plugin

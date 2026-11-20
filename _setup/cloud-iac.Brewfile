@@ -35,4 +35,3 @@ brew "conftest"
 
 # gcp
 cask "gcloud-cli"
-brew "cloud-sql-proxy"
